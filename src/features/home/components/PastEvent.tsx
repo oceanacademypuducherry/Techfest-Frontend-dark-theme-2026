@@ -52,7 +52,7 @@ export default function PastEvent() {
 
         {/* SUBTITLE */}
 
-        <p className="text-gray-600 text-[15px] sm:text-[18px] max-w-3xl mx-auto leading-7">
+        <p className="text-[#ffffffb3] text-[15px] sm:text-[18px] max-w-3xl mx-auto leading-7">
           From inspiring talks to breakthrough showcases, explore the remarkable
           moments that shaped our journey.
         </p>

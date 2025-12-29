@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigation } from "../../../common/ui";
+import { Footer, Navigation } from "../../../common/ui";
 import { speakersData } from "../utils/speaker";
 import SpeakerModal from "./SpeakerModal";
 
@@ -12,9 +12,9 @@ const Speakers: React.FC = () => {
 
 
 
-      <main className="bg-gray-50 px-3 sm:px-6 md:px-0 xl:px-10 text-center">
+      <main className="bg-[#0A0C12] px-3 sm:px-6 md:px-0 xl:px-10 text-center">
         {/* Heading */}
-        <h2 className="mb-4 pt-5 text-[26px] sm:text-4xl md:text-5xl font-semibold text-gray-900">
+        <h2 className="mb-4 pt-5 text-[26px] sm:text-4xl md:text-5xl font-semibold text-gray-200">
 
           All{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E64F8F] to-[#671AD2]">
@@ -116,6 +116,7 @@ const Speakers: React.FC = () => {
           onClose={() => setSelectedSpeaker(null)}
         />
       )}
+      <Footer />
     </>
   );
 };

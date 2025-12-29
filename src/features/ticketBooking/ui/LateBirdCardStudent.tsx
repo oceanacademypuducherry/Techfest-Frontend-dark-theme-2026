@@ -47,7 +47,7 @@ export default function LateBirdCardStudent({ data }: LateBirdCardStudentProps) 
 
           {lateBirdData.isActive ? (
 
-            <FaCheckCircle className="text-[#01C1FB]/100 text-2xl sm:text-3xl drop-shadow" />
+            <FaCheckCircle className="text-white text-2xl sm:text-3xl drop-shadow" />
           ) : (
             <div className="p-2 rounded-full bg-[#cfcfcf]">
               <FiLock size={18} className="text-[#6b6b6b]" />

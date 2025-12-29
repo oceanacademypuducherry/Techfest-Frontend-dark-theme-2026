@@ -28,9 +28,9 @@ export default function About() {
   const StatCard = ({ icon: Icon, color, value, label }) => (
     <div
       className="
-        bg-white p-3 sm:p-5 rounded-xl border border-gray-200 shadow-md text-center
+        bg-[#0F121A] p-3 sm:p-5 rounded-xl border border-white/10 shadow-lg text-center
         transition-all duration-300 hover:-translate-y-2
-        hover:border-[#01C1FB] hover:shadow-[0_0_15px_rgba(1,193,251,0.35)]
+        hover:border-[#01C1FB] hover:shadow-[0_0_20px_rgba(1,193,251,0.35)]
       "
     >
       <div
@@ -50,7 +50,7 @@ export default function About() {
         {value}
       </p>
 
-      <p className="text-gray-700 font-semibold text-[14px] sm:text-[16px] lg:text-[18px]">
+      <p className="text-white/70 font-semibold text-[14px] sm:text-[16px] lg:text-[18px]">
         {label}
       </p>
     </div>
@@ -61,9 +61,9 @@ export default function About() {
   const InfoCard = ({ title, text, lineColor }) => (
     <div
       className="
-        group bg-white p-6 rounded-xl border border-gray-200 shadow-md text-left
+        group bg-[#0F121A] p-6 rounded-xl border border-white/10 shadow-lg text-left
         transition-all duration-300
-        hover:border-[#01C1FB] hover:shadow-[0_0_15px_rgba(1,193,251,0.35)]
+        hover:border-[#01C1FB] hover:shadow-[0_0_20px_rgba(1,193,251,0.35)]
       "
     >
       <div
@@ -71,13 +71,17 @@ export default function About() {
         style={{ backgroundColor: lineColor }}
       ></div>
 
-      <h3 className="font-semibold mb-2 border-b border-gray-200 pb-2 text-gray-900
-        text-[16px] sm:text-[18px] lg:text-[22px]">
+      <h3
+        className="font-semibold mb-2 border-b border-white/10 pb-2 text-white
+        text-[16px] sm:text-[18px] lg:text-[22px]"
+      >
         {title}
       </h3>
 
-      <p className="text-gray-600 text-[14px] sm:text-[16px] lg:text-[18px]
-        leading-6 sm:leading-7 lg:leading-8">
+      <p
+        className="text-white/70 text-[14px] sm:text-[16px] lg:text-[18px]
+        leading-6 sm:leading-7 lg:leading-8"
+      >
         {text}
       </p>
     </div>
@@ -88,13 +92,15 @@ export default function About() {
   return (
     <section
       id="about_section"
-      className="bg-white text-gray-900 py-0 px-2 sm:px-4 relative overflow-hidden"
+      className="bg-[#0A0C12] text-white py-0 px-2 sm:px-4 relative overflow-hidden"
     >
       <div className="max-w-6xl mx-auto text-center">
 
         {/* Badge */}
-        <div className="inline-block bg-[#EAF8FF] text-[#01C1FB]
-          text-[16px] px-6 py-3 mb-5 rounded-full border border-[#01C1FB]/30">
+        <div
+          className="inline-block bg-white/5 text-[#01C1FB]
+          text-[16px] px-6 py-3 mb-5 rounded-full border border-[#01C1FB]/30 backdrop-blur"
+        >
           About the Event
         </div>
 
@@ -103,15 +109,19 @@ export default function About() {
           Where Innovation{" "}
           <span className="text-[#01C1FB]">Meets</span>
           <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r
-            from-[#00C2FF] to-[#EE4C9C]">
+          <span
+            className="text-transparent bg-clip-text bg-gradient-to-r
+            from-[#00C2FF] to-[#EE4C9C]"
+          >
             Opportunity
           </span>
         </h2>
 
         {/* Description */}
-        <p className="mt-4 text-gray-600 text-[14px] sm:text-[16px] lg:text-[18px]
-          max-w-3xl mx-auto leading-6 lg:leading-8">
+        <p
+          className="mt-4 text-white/70 text-[14px] sm:text-[16px] lg:text-[18px]
+          max-w-3xl mx-auto leading-6 lg:leading-8"
+        >
           FutureTech Summit is the premier gathering for innovators, investors,
           and technology leaders. For eight consecutive years, we’ve been the
           catalyst for groundbreaking collaborations and transformative ideas.

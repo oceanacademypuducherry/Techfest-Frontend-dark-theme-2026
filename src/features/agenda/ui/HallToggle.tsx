@@ -12,7 +12,7 @@ interface HallToggleProps {
 
 const HallToggle: React.FC<HallToggleProps> = ({ halls, selectedHall, setSelectedHall }) => {
   return (
-    <div className="flex justify-center items-center bg-gray-100 p-[12px] sm:p-5 rounded-full shadow-md gap-3">
+    <div className="flex justify-center items-center bg-[#0F172A] p-[12px] sm:p-5 rounded-full shadow-md gap-3">
   {halls.map(hall => (
     <button
       key={hall}

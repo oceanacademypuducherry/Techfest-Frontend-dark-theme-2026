@@ -129,11 +129,11 @@ export default function TicketSummaryCard() {
   return (
     <section className="flex items-center justify-around px-4 md:px-4 gap-0 relative">
       <div className="w-full xl:max-w-[600px] md:max-w-[500px] md:h-auto 
-                      bg-[#f7f7f7] shadow-md rounded-lg 
+                      bg-[#1f2937] shadow-md rounded-lg 
                       sm:p-4 md:p-4 lg:p-6 flex flex-col items-center">
         <div className="w-full xl:max-w-[578px] xl:h-[555px] md:p-4 lg:p-6">
           <h2 className="text-start md:text-2xl mb-6 lg:text-4xl 
-                         font-medium text-[#333] pb-4 text-xl sm:text-lg">
+                         font-medium text-white pb-4 text-xl sm:text-lg">
             Ticket Summary
           </h2>
 
@@ -141,13 +141,13 @@ export default function TicketSummaryCard() {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr>
-                  <th className="pb-6 font-medium text-[#777] text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
+                  <th className="pb-6 font-semibold text-[#828282] text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
                     Item
                   </th>
-                  <th className="pb-6 font-medium text-[#777] text-center text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
+                  <th className="pb-6 font-semibold text-[#828282] text-center text-xs sm:text-sm md:text-[16px] lg:text-[16px]">
                     No.of.Unit
                   </th>
-                  <th className="pb-6 font-medium text-[#777] text-right text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
+                  <th className="pb-6 font-semibold text-[#828282] text-right text-xs sm:text-sm md:text-[16px] lg:text-[16px]">
                     Amount
                   </th>
                 </tr>
@@ -155,25 +155,25 @@ export default function TicketSummaryCard() {
 
               <tbody>
                 <tr className="font-bold border-t-2 border-gray-300">
-                  <td className="pt-6 font-medium text-[#444] text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
+                  <td className="pt-6 font-medium text-white text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
                     Early Bird <br /> (Student)
                   </td>
-                  <td className="pt-6 font-medium text-[#444] text-center text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
+                  <td className="pt-6 font-medium text-white text-center text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
                     {studentCount}
                   </td>
-                  <td className="pt-6 font-medium text-[#444] text-right text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
+                  <td className="pt-6 font-medium text-white text-right text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
                     ₹ {studentCount * studentPrice}
                   </td>
                 </tr>
 
                 <tr>
-                  <td className="pt-3 font-medium text-[#444] text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
+                  <td className="pt-3 font-medium text-white text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
                     Early Bird <br /> (Professional)
                   </td>
-                  <td className="pt-3 font-medium text-[#444] text-center text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
+                  <td className="pt-3 font-medium text-white text-center text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
                     {professionalCount}
                   </td>
-                  <td className="pt-3 font-medium text-[#444] text-right text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
+                  <td className="pt-3 font-medium text-white text-right text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
                     ₹ {professionalCount * professionalPrice}
                   </td>
                 </tr>
@@ -181,11 +181,11 @@ export default function TicketSummaryCard() {
 
               <tfoot>
                 <tr>
-                  <td className="pt-3 pb-8 font-medium text-[#444] text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
+                  <td className="pt-3 pb-8 font-medium text-white text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
                     10% Discount
                   </td>
                   <td></td>
-                  <td className="pt-3 pb-6 font-medium text-[#444] text-right text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
+                  <td className="pt-3 pb-6 font-medium text-white text-right text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
                     {discount > 0 && "-"} ₹ {discount.toFixed(2)}
                     {discount > 0 && (
                       <p className="text-green-600">Offer applied</p>
@@ -194,13 +194,13 @@ export default function TicketSummaryCard() {
                 </tr>
 
                 <tr className="font-bold border-t-2 border-b-2 border-gray-300">
-                  <td className="pt-6 pb-6 font-medium text-[#444] text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
+                  <td className="pt-6 pb-6 font-medium text-white text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
                     Total Amount
                   </td>
-                  <td className="pt-6 pb-6 font-medium text-[#444] text-center text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
+                  <td className="pt-6 pb-6 font-medium text-white text-center text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
                     {totalTickets}
                   </td>
-                  <td className="pt-6 pb-6 font-medium text-[#444] text-right text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
+                  <td className="pt-6 pb-6 font-medium text-white text-right text-xs sm:text-sm md:text-[14px] lg:text-[16px]">
                     ₹ {totalAmountAfterDiscount || 0}
                   </td>
                 </tr>

@@ -64,48 +64,47 @@ const ViewSummaryBottomsheet: React.FC<ViewSummaryBottomsheetProps> = ({
   const totalAmountAfterDiscount = totalAmount - discount;
 
   return (
-  <div
-    className={`flex justify-between items-center px-5 py-4 pb-10 rounded-t-lg
-      bg-[#F8FAFC] border border-[#E5E7EB]
-      ${containerClassName}`}
-  >
-    <div className="flex-1">
-      {/* Total */}
-      <p
-        className={`font-semibold text-[20px] text-[#111827] ${totalClassName}`}
-      >
-        Total: ₹{totalAmountAfterDiscount}
-      </p>
+    <div
+      className={`flex justify-between items-center px-5 py-4 pb-10 rounded-t-lg
+        bg-[#1E293B] border border-[#334155]
+        ${containerClassName}`}
+    >
+      <div className="flex-1">
+        {/* Total */}
+        <p
+          className={`font-semibold text-[20px] text-white ${totalClassName}`}
+        >
+          Total: ₹{totalAmountAfterDiscount}
+        </p>
 
-      {/* View Summary (UNCHANGED COLOR) */}
-      <p
-        className={`font-semibold text-[15px] text-[#FFA908] cursor-pointer ${summaryClassName}`}
-        onClick={onViewSummaryClick}
-      >
-        {summaryText}
-      </p>
+        {/* View Summary */}
+        <p
+          className={`font-semibold text-[15px] text-[#FFA908] cursor-pointer ${summaryClassName}`}
+          onClick={onViewSummaryClick}
+        >
+          {summaryText}
+        </p>
+      </div>
+
+      <div className="text-right">
+        {/* Continue Button */}
+        <button
+          className={`bg-[#FFA908] text-textBlack py-2 px-4 rounded text-[14px] font-[600]
+            border-[1px] border-[#B57600]
+            ${
+              totalTickets === 0
+                ? "opacity-50 cursor-not-allowed"
+                : ""
+            }
+            ${buttonClassName}`}
+          onClick={onContinueClick}
+          disabled={totalTickets === 0}
+        >
+          {buttonText}
+        </button>
+      </div>
     </div>
-
-    <div className="text-right">
-      {/* Continue Button (UNCHANGED COLORS) */}
-      <button
-        className={`bg-[#FFA908] text-textBlack py-2 px-4 rounded text-[14px] font-[600]
-          border-[1px] border-[#B57600]
-          ${
-            totalTickets === 0
-              ? "opacity-50 cursor-not-allowed"
-              : ""
-          }
-          ${buttonClassName}`}
-        onClick={onContinueClick}
-        disabled={totalTickets === 0}
-      >
-        {buttonText}
-      </button>
-    </div>
-  </div>
-);
-
+  );
 };
 
 export default ViewSummaryBottomsheet;

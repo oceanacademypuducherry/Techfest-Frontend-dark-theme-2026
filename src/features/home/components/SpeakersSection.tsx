@@ -13,11 +13,11 @@ export default function SpeakersSection() {
       key={index}
       className="
         relative min-w-[260px] max-w-[260px]
-        bg-white border border-gray-200
+        bg-[#0F121A] border border-white/10
         rounded-2xl overflow-hidden
         transition-all duration-300
         hover:border-[#EE4C9C]
-        hover:shadow-[0_0_20px_rgba(238,76,156,0.25)]
+        hover:shadow-[0_0_25px_rgba(238,76,156,0.35)]
         cursor-pointer
       "
       onClick={() =>
@@ -29,18 +29,20 @@ export default function SpeakersSection() {
       <img
         src={speaker.image}
         alt={speaker.name}
-        className="w-full h-[250px] object-cover bg-gray-100 object-top brightness-50"
+        className="w-full h-[250px] object-cover bg-black object-top brightness-50"
       />
 
       {/* Overlay */}
-      <div className="
+      <div
+        className="
         absolute bottom-0 w-full p-3 text-center
-        bg-gradient-to-t  to-transparent
-      ">
+        bg-gradient-to-t from-black/80 to-transparent
+      "
+      >
         <h3 className="text-white text-lg font-bold">
           {speaker.name}
         </h3>
-        <p className="text-white text-sm mt-1">
+        <p className="text-white/80 text-sm mt-1">
           {speaker.achievements}
         </p>
       </div>
@@ -48,36 +50,41 @@ export default function SpeakersSection() {
   );
 
   return (
-    <section className="bg-white py-[20px] sm:py-20 overflow-hidden">
+    <section className="bg-[#0A0C12] py-[20px] sm:py-20 overflow-hidden">
 
       {/* Top Label */}
       <div className="flex justify-center mb-10">
-        <span className="
+        <span
+          className="
           px-5 py-3 text-[16px]
           text-[#EE4C9C]
           rounded-full
-          bg-[#FCEAF4]
+          bg-white/5
           border border-[#EE4C9C]/40
-        ">
+          backdrop-blur
+        "
+        >
           Featured Speakers
         </span>
       </div>
 
       {/* Heading */}
-      <h2 className="text-center text-[30px] sm:text-4xl md:text-5xl font-semibold text-gray-900">
+      <h2 className="text-center text-[30px] sm:text-4xl md:text-5xl font-semibold text-white">
         Learn from the{" "}
         <span className="text-[#00C2FF]">Industry</span>
         <br />
-        <span className="
+        <span
+          className="
           bg-gradient-to-r from-[#00C2FF] via-[#9b5de5] to-[#EE4C9C]
           bg-clip-text text-transparent
-        ">
+        "
+        >
           Leaders
         </span>
       </h2>
 
       {/* Subtext */}
-      <p className="text-center sm:text-[18px] text-[16px] text-gray-600 mt-4 px-4">
+      <p className="text-center sm:text-[18px] text-[16px] text-white/70 mt-4 px-4">
         Join sessions led by visionaries who are shaping the future of technology
       </p>
 
@@ -111,7 +118,7 @@ export default function SpeakersSection() {
             px-7 py-3 rounded-lg
             text-white font-semibold
             hover:scale-105 transition
-            shadow-md
+            shadow-[0_0_20px_rgba(238,76,156,0.35)]
           "
         >
           View All Speakers

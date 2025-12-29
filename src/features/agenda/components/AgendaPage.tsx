@@ -20,12 +20,13 @@ const AgendaPage: React.FC = () => {
     <>
       <Navigation />
 
-      <div className="bg-white">
+      {/* PAGE BACKGROUND */}
+      <div className="bg-[#0A0C12] min-h-screen">
         {/* Header */}
-        <div className="flex flex-col items-center justify-center text-center mb-4 px-4">
+        <div className="flex flex-col items-center justify-center text-center mb-6 px-4">
 
           {/* TITLE */}
-          <h2 className="mt-6 mb-4 text-[30px] sm:text-[36px] font-semibold text-gray-900">
+          <h2 className="mt-6 mb-4 text-[30px] sm:text-[36px] font-semibold text-white">
             One Day Of
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]">
@@ -34,14 +35,16 @@ const AgendaPage: React.FC = () => {
           </h2>
 
           {/* SUBTITLE */}
-          <p className="text-gray-600 text-[18px] max-w-3xl mx-auto leading-7">
+          <p className="text-gray-300 text-[18px] max-w-3xl mx-auto leading-7">
             Join us for inspiring day of keynotes, workshops, and networking across
             three specialized halls
           </p>
         </div>
 
         {/* Hall Toggle */}
-        <div className="flex flex-col md:flex-row justify-center items-center px-3 sm:px-6 py-2 mb-8 sticky top-0 z-10  sm:static">
+        <div className="flex flex-col md:flex-row justify-center items-center
+                        px-3 sm:px-6 py-3 mb-8 sticky top-0 z-10
+                         sm:static">
           <HallToggle
             halls={halls}
             selectedHall={selectedHall}

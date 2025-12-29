@@ -219,7 +219,7 @@ const handleConfirm = () => {
   };
   return (
     <>
-    <div className="bg-white  min-h-screen">
+    <div className="bg-[#0A0C12]  min-h-screen">
       <Navigation />
       {/* {showPopup && isSessionExpired && (
         <div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50'>
@@ -423,7 +423,7 @@ const handleConfirm = () => {
                 onContinueClick={handleCheckout(submitForm)}
               />
             )}
-            <div className='p-4 bg-white rounded-t-xl  overflow-y-auto'>
+            <div className='p-4 bg-[#1E293B] rounded-t-xl  overflow-y-auto'>
               <TicketSummaryMobile
                 setIsBottomSheetOpen={handleCloseSummary}
                 // onButtonClick={handleContinueClick}

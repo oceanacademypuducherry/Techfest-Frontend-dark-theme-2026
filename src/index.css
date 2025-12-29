@@ -456,4 +456,7 @@ body {
 .animate-float-fast { animation: float-fast 3s ease-in-out infinite; }
 
 
+.white-logo {
+  filter: brightness(0) invert(1);
+}
 

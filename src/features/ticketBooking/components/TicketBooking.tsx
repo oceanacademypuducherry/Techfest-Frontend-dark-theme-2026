@@ -40,23 +40,24 @@ export default function TicketBooking() {
 
   return (
     <>
-      <div className="bg-gray-50 min-h-screen w-full">
+      <div className="bg-[#0B0F1A] min-h-screen w-full text-gray-300">
         <Navigation />
 
         <main className="w-[95%] mx-auto max-w-[700px] mt-6">
-          {/* Header Section */}
+
+          {/* ---------- HEADER ---------- */}
           <section className="flex justify-between items-center w-full">
             <div>
-              <h2 className="mt-6 mb-4 text-[30px] sm:text-[36px] font-semibold text-gray-900">
+              <h2 className="mt-6 mb-4 text-[30px] sm:text-[36px] font-semibold text-white">
                 Ticket{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]">
                   Booking
                 </span>
               </h2>
 
-              <p className="text-green-600 text-xl font-medium mt-2 max-sm:text-[17px]">
+              <p className="text-green-400 text-xl font-medium mt-2 max-sm:text-[17px]">
                 {isLoading ? (
-                  <span className="animate-pulse bg-gray-300 w-32 h-6 inline-block rounded-md"></span>
+                  <span className="animate-pulse bg-white/10 w-32 h-6 inline-block rounded-md"></span>
                 ) : activePlan ? (
                   `Now ${
                     activePlan.type.charAt(0).toUpperCase() +
@@ -70,10 +71,11 @@ export default function TicketBooking() {
 
             {/* Info Icon */}
             <div
-              className="border border-gray-300 shadow-md rounded-full p-2 flex items-center justify-center bg-white cursor-pointer"
+              className="border border-white/10 shadow-md rounded-full p-2 
+                         flex items-center justify-center bg-[#111827] cursor-pointer"
               onClick={() => setIsPopupOpen(true)}
             >
-              <BsInfoCircle className="text-[24px] text-gray-600" />
+              <BsInfoCircle className="text-[24px] text-gray-400" />
             </div>
           </section>
 
@@ -88,17 +90,19 @@ export default function TicketBooking() {
 🚫 You can't pick Early or Regular manually."
           />
 
-          {/* Ticket Types */}
-          <article className="w-full flex flex-col gap-y-8 mx-auto justify-center items-center mt-16 max-sm:mt-10 max-[800px]:gap-y-6">
-            {/* Student Section */}
+          {/* ---------- TICKET TYPES ---------- */}
+          <article className="w-full flex flex-col gap-y-8 mx-auto mt-16 max-sm:mt-10">
+
+            {/* STUDENT */}
             <div className="w-full">
               <div
-                className="flex justify-between items-center cursor-pointer p-4 bg-white border border-gray-200 rounded-md shadow-sm"
+                className="flex justify-between items-center cursor-pointer p-4
+                           bg-[#111827] border border-white/10 rounded-md"
                 onClick={toggleStudentDropdown}
               >
-                <h3 className="text-lg text-gray-900 font-bold">Student</h3>
+                <h3 className="text-lg text-white font-bold">Student</h3>
                 <span
-                  className={`text-gray-600 transform transition-transform ${
+                  className={`text-gray-400 transform transition-transform ${
                     isStudentOpen ? "rotate-180" : ""
                   }`}
                 >
@@ -107,20 +111,18 @@ export default function TicketBooking() {
               </div>
 
               <div
-                className={`w-full transition-all duration-700 ${
-                  isStudentOpen
-                    ? "max-h-[500px] opacity-100"
-                    : "max-h-0 opacity-0"
+                className={`transition-all duration-700 ${
+                  isStudentOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <section className="w-full flex justify-start gap-y-6 gap-x-4 max-w-[1400px] mx-auto mt-6">
+                <section className="flex gap-x-4 mt-6">
                   {ProfessionalPlanDetails.length > 0 ? (
                     <>
                       <EarlyBirdCardStudent data={StudentPlanDetails} />
                       <LateBirdCardStudent data={StudentPlanDetails} />
                     </>
                   ) : (
-                    <div className="w-full flex gap-1 sm:gap-14">
+                    <div className="flex gap-6">
                       <SkeletonCard />
                       <SkeletonCard />
                     </div>
@@ -129,17 +131,18 @@ export default function TicketBooking() {
               </div>
             </div>
 
-            {/* Working Professional Section */}
+            {/* WORKING PROFESSIONAL */}
             <div className="w-full">
               <div
-                className="flex justify-between items-center cursor-pointer p-4 bg-white border border-gray-200 rounded-md shadow-sm"
+                className="flex justify-between items-center cursor-pointer p-4
+                           bg-[#111827] border border-white/10 rounded-md"
                 onClick={toggleWorkingProfDropdown}
               >
-                <h3 className="text-lg text-gray-900 font-bold">
+                <h3 className="text-lg text-white font-bold">
                   Working Professional
                 </h3>
                 <span
-                  className={`text-gray-600 transform transition-transform ${
+                  className={`text-gray-400 transform transition-transform ${
                     isWorkingProfOpen ? "rotate-180" : ""
                   }`}
                 >
@@ -148,24 +151,18 @@ export default function TicketBooking() {
               </div>
 
               <div
-                className={`w-full transition-all duration-700 ${
-                  isWorkingProfOpen
-                    ? "max-h-[500px] opacity-100"
-                    : "max-h-0 opacity-0"
+                className={`transition-all duration-700 ${
+                  isWorkingProfOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <section className="w-full flex justify-start gap-y-6 gap-x-4 max-w-[1400px] mx-auto mt-6">
+                <section className="flex gap-x-4 mt-6">
                   {ProfessionalPlanDetails.length > 0 ? (
                     <>
-                      <EarlyBirdWorkingProfCard
-                        data={ProfessionalPlanDetails}
-                      />
-                      <LateBirdWorkingProfCard
-                        data={ProfessionalPlanDetails}
-                      />
+                      <EarlyBirdWorkingProfCard data={ProfessionalPlanDetails} />
+                      <LateBirdWorkingProfCard data={ProfessionalPlanDetails} />
                     </>
                   ) : (
-                    <div className="w-full flex gap-1 sm:gap-14">
+                    <div className="flex gap-6">
                       <SkeletonCard />
                       <SkeletonCard />
                     </div>
@@ -175,13 +172,13 @@ export default function TicketBooking() {
             </div>
           </article>
 
-          {/* Information Section */}
-          <div className="mt-12 p-1">
-            <li className="flex gap-2 text-red-600">
+          {/* ---------- INFO ---------- */}
+          <div className="mt-12">
+            <li className="flex gap-2 text-red-400">
               <BsInfoCircle className="text-[24px]" />
-              <span className="text-[18px] font-semibold max-sm:text-[15px]">
+              <span className="text-[18px] font-semibold">
                 {isLoading ? (
-                  <span className="animate-pulse bg-gray-300 w-48 h-6 inline-block rounded-md"></span>
+                  <span className="animate-pulse bg-white/10 w-48 h-6 inline-block rounded-md"></span>
                 ) : activePlan?.type ? (
                   `${activePlan.type.charAt(0).toUpperCase() +
                     activePlan.type.slice(1)} tickets are limited!`
@@ -191,30 +188,31 @@ export default function TicketBooking() {
               </span>
             </li>
 
-            <ul className="flex flex-col gap-2 mt-9">
-              <li className="flex gap-2">
-                <FaCheck className="text-green-600 text-[24px]" />
-                <span className="text-[18px] text-green-600 font-semibold max-sm:text-[15px]">
+            <ul className="flex flex-col gap-3 mt-9">
+              <li className="flex gap-2 text-green-400">
+                <FaCheck className="text-[24px]" />
+                <span className="text-[18px] font-semibold">
                   Participation E-Certificate Showcase Your Achievement.
                 </span>
               </li>
 
-              <li className="flex gap-2">
-                <FaCheck className="text-green-600 text-[24px]" />
-                <span className="text-[18px] text-green-600 font-semibold max-sm:text-[15px]">
+              <li className="flex gap-2 text-green-400">
+                <FaCheck className="text-[24px]" />
+                <span className="text-[18px] font-semibold">
                   Get 10% off when purchasing 10 or more tickets!
                 </span>
               </li>
             </ul>
           </div>
 
-          {/* Continue Button */}
-          <div className="sticky bottom-12 md:bottom-0 py-6 flex justify-center px-4 max-sm:mt-8">
+          {/* ---------- CONTINUE BUTTON ---------- */}
+          <div className="sticky bottom-12 md:bottom-0 py-6 flex justify-center">
             <button
-              className={`bg-[#FFA908] shadow-md text-black p-4 w-[500px] max-w-full font-semibold rounded-lg ${
+              className={`bg-[#FFA908] text-black p-4 w-[500px] rounded-lg font-semibold
+              ${
                 data.length === 0
-                  ? "cursor-not-allowed bg-gray-400 text-white"
-                  : ""
+                  ? "cursor-not-allowed bg-gray-600 text-white"
+                  : "hover:scale-105 transition"
               }`}
               onClick={moveToSummaryPage}
               disabled={data.length === 0}

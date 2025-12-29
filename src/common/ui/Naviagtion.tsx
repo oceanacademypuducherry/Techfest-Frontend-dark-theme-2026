@@ -68,11 +68,11 @@ export default function Navigation() {
   ];
 
   return (
-    <main className="bg-white p-5 w-full sticky top-0 z-50 shadow-md border-b border-gray-200">
+    <main className="bg-[#0A0C12] p-5 w-full sticky top-0 z-50 shadow-lg border-b border-white/10">
       <section className="flex justify-between items-center max-w-[1400px] mx-auto">
 
         {/* Logo */}
-        <h1 className="text-gray-900 text-2xl font-semibold">Logo</h1>
+        <h1 className="text-white text-2xl font-semibold">Logo</h1>
 
         {/* Hamburger */}
         {!menuOpen && (
@@ -80,9 +80,9 @@ export default function Navigation() {
             className="lg:hidden flex flex-col justify-between w-5 h-4"
             onClick={() => setMenuOpen(true)}
           >
-            <span className="block w-full h-[3px] bg-gray-800 rounded"></span>
-            <span className="block w-full h-[3px] bg-gray-800 rounded"></span>
-            <span className="block w-full h-[3px] bg-gray-800 rounded"></span>
+            <span className="block w-full h-[3px] bg-white rounded"></span>
+            <span className="block w-full h-[3px] bg-white rounded"></span>
+            <span className="block w-full h-[3px] bg-white rounded"></span>
           </button>
         )}
 
@@ -95,13 +95,15 @@ export default function Navigation() {
                 href={path}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative group text-gray-800 hover:text-[#01C1FB]"
+                className="relative group text-white/80 hover:text-[#01C1FB]"
               >
                 {label}
-                <span className="absolute left-1/2 -translate-x-1/2 top-[140%]
-                  px-3 py-2 text-sm rounded-md bg-gray-900 text-white
+                <span
+                  className="absolute left-1/2 -translate-x-1/2 top-[140%]
+                  px-3 py-2 text-sm rounded-md bg-black text-white
                   opacity-0 scale-95 transition-all duration-300
-                  group-hover:opacity-100 group-hover:scale-100">
+                  group-hover:opacity-100 group-hover:scale-100"
+                >
                   {hoverLabel}
                 </span>
               </a>
@@ -110,7 +112,7 @@ export default function Navigation() {
                 key={path}
                 to={path}
                 onClick={(e) => handleClick(e, path)}
-                className={`relative text-gray-800 hover:text-[#01C1FB]
+                className={`relative text-white/80 hover:text-[#01C1FB]
                 after:absolute after:left-0 after:bottom-[-6px]
                 after:w-full after:h-[2px] after:bg-[#01C1FB]
                 after:opacity-0 hover:after:opacity-100 transition-all duration-300
@@ -136,40 +138,46 @@ export default function Navigation() {
       {/* Overlay */}
       {menuOpen && (
         <div
-          className="lg:hidden fixed inset-0 bg-black/20"
+          className="lg:hidden fixed inset-0 bg-black/60"
           onClick={() => setMenuOpen(false)}
         ></div>
       )}
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed top-0 right-0 w-[270px] bg-white h-screen
+        className={`lg:hidden fixed top-0 right-0 w-[270px] bg-[#0A0C12] h-screen
         shadow-xl z-50 transition-transform duration-300
         ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <button
-          className="absolute top-5 right-5 w-8 h-8 border border-gray-400 rounded-full
+          className="absolute top-5 right-5 w-8 h-8 border border-white/30 rounded-full
           flex items-center justify-center"
           onClick={() => setMenuOpen(false)}
         >
-          <span className="absolute block w-4 h-[2px] bg-gray-800 rotate-45"></span>
-          <span className="absolute block w-4 h-[2px] bg-gray-800 -rotate-45"></span>
+          <span className="absolute block w-4 h-[2px] bg-white rotate-45"></span>
+          <span className="absolute block w-4 h-[2px] bg-white -rotate-45"></span>
         </button>
 
         <div className="flex flex-col px-6 py-16 space-y-6">
           {navItems.map(({ path, label, hoverLabel, external }) =>
             external ? (
-              <a key={path} href={path} target="_blank"
-                className="text-gray-800 text-[18px]">
+              <a
+                key={path}
+                href={path}
+                target="_blank"
+                className="text-white text-[18px]"
+              >
                 {label}
-                <span className="block text-sm text-gray-500">{hoverLabel}</span>
+                <span className="block text-sm text-white/50">
+                  {hoverLabel}
+                </span>
               </a>
             ) : (
               <Link
                 key={path}
                 to={path}
                 onClick={(e) => handleClick(e, path)}
-                className={`text-gray-800 text-[16px]
+                className={`text-white text-[16px]
                 ${isActive(path) ? "text-[#01C1FB]" : ""}`}
               >
                 {label}

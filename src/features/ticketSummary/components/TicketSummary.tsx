@@ -107,14 +107,15 @@ export default function TicketSummary() {
       <Navigation />
 
       {/* PAGE BACKGROUND */}
-      <div className="min-h-screen bg-[#ffffff]">
-        <main className="w-[100%] md:w-[95%] mx-auto sm:pt-[60px] pt-[30px]
-                         flex flex-col gap-5 justify-center sm:flex-row
-                         overflow-y-auto max-w-screen-xl py-6">
-
+      <div className="min-h-screen bg-[#0A0C12]">
+        <main
+          className="w-[100%] md:w-[95%] mx-auto sm:pt-[60px] pt-[30px]
+                     flex flex-col gap-5 justify-center sm:flex-row
+                     overflow-y-auto max-w-screen-xl py-6"
+        >
           {isBottomSheetOpen && (
             <div
-              className="fixed inset-0 bg-black bg-opacity-20 z-10"
+              className="fixed inset-0 bg-black/20  z-10"
               onClick={handleCloseSummary}
             />
           )}
@@ -123,8 +124,8 @@ export default function TicketSummary() {
           <section className="w-[95%] sm:w-[90%] md:w-[50%] lg:w-[40%] mx-auto">
             <h2
               className="mt-0 mb-4 text-[30px] text-transparent bg-clip-text
-                         bg-gradient-to-r from-[#333] to-[#777]
-                         text-xxs sm:text-[36px] font-semibold"
+                         bg-gradient-to-r from-[#E5E7EB] to-[#9CA3AF]
+                         sm:text-[36px] font-semibold"
             >
               Ticket{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]">
@@ -132,7 +133,7 @@ export default function TicketSummary() {
               </span>
             </h2>
 
-            <p className="mt-3 text-[#444] font-semibold max-sm:text-[14px]">
+            <p className="mt-3 text-gray-300 font-semibold max-sm:text-[14px]">
               Get 10% off when purchasing 10 or more tickets!
             </p>
 
@@ -145,13 +146,13 @@ export default function TicketSummary() {
           {/* RIGHT SECTION */}
           {isMobile ? (
             <div
-              className={`fixed bottom-0 z-10 bg-[#f7f7f7]
+              className={`fixed bottom-0 z-10 bg-[#111827]
                 transition-all duration-500 ease-in-out
                 ${
                   isBottomSheetOpen
-                    ? "translate-y-0 border-none shadow-lg left-3 right-3"
-                    : "translate-y-[85%] shadow-md left-0 right-0"
-                } rounded-t-lg`}
+                    ? "translate-y-0 border border-white/10 shadow-xl left-3 right-3"
+                    : "translate-y-[85%] shadow-lg left-0 right-0"
+                } rounded-t-xl`}
             >
               {isSummaryVisible && (
                 <ViewSummaryBottomsheet

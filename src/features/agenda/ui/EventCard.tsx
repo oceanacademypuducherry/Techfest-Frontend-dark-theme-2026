@@ -33,20 +33,20 @@ const EventCard: React.FC<EventProps> = ({
     borderStyles[index % borderStyles.length];
 
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-md hover:shadow-xl transition-all">
+    <div className="bg-[#0F172A] border border-[#0F172A] rounded-xl p-4 shadow-md hover:shadow-xl transition-all">
 
       {/* Time (mobile) */}
-      <span className="sm:hidden block text-xs bg-gray-100 text-cyan-600 px-3 py-1 rounded-md w-fit ml-auto mb-1">
+      <span className="sm:hidden block text-xs bg-[#1e293b] text-[#22d3ee] px-3 py-1 rounded-md w-fit ml-auto mb-1">
         {time}
       </span>
 
       {/* Title + Desktop Time */}
       <div className="flex justify-between items-start">
-        <h3 className="text-[16px] sm:text-[18px] font-semibold text-gray-900">
+        <h3 className="text-[16px] sm:text-[18px] font-semibold text-[#22d3ee]">
           {title}
         </h3>
 
-        <span className="hidden sm:flex items-center gap-2 text-sm bg-gray-100 text-gray-500 px-3 py-1 rounded-md">
+        <span className="hidden sm:flex items-center gap-2 text-sm bg-[#1e293b] text-[#bc588e] px-3 py-1 rounded-md">
           <FaRegClock className="text-[14px]" />
           {time}
         </span>
@@ -72,12 +72,12 @@ const EventCard: React.FC<EventProps> = ({
           ))}
         </div>
       ) : (
-        <p className="text-gray-600 text-sm mt-3">{description}</p>
+        <p className="text-white text-sm mt-3">{description}</p>
       )}
 
       {/* Speaker Names */}
       {speakers.length > 0 && (
-        <p className="text-gray-600 text-sm mt-3">
+        <p className="text-white text-sm mt-3">
           {speakers.map(s => s.name).join(" | ")}
         </p>
       )}
