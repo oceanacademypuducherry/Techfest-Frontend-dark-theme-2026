@@ -1,0 +1,11 @@
+export { default as AIC} from "./aic.svg";
+export { default as BOIKO } from "./boiko.svg";
+export { default as DUSKCODER } from "./duskcoder.svg";
+export { default as FIA } from "./fia.svg";
+export { default as FOUNDERX } from "./founderx.svg";
+export { default as JPINFOTECH } from "./jpinfotech.svg";
+export { default as NAMMAFLUTTER } from "./namma_flutter.svg";
+export { default as SFM } from "./sfm.svg";
+export { default as SNIPPET } from "./snippet.svg";
+export { default as HIRENOW} from "./hirenow.svg";
+export { default as divyam } from "./Divyam.svg";

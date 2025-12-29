@@ -1,0 +1,459 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: poppins;
+}
+
+/* .bg-agenda {
+  background-image: url("./assets/images/agenda-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} */
+
+.hero-container {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+ }
+
+ .text-pondy-container{
+      /* width: 100%; */
+    /* height: 0%; */
+    position: absolute;
+    margin: auto;
+    top: 37%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+ }
+
+.pondicherry-text {
+  font-size: 7vw; /* Responsive text size */
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: grey;
+  text-transform: uppercase;
+  z-index: 1; /* Behind the hero image */
+  opacity: 0.2; /* Subtle background effect */
+  letter-spacing: 10px; /* Expand spacing */
+  white-space: nowrap; 
+  /* margin-left:1700px; */
+}
+
+
+.hero {
+  margin-top: 80px;
+  position: relative;
+  z-index: 2; /* Ensure hero image stays above text */
+}
+.image-wrapper {
+  position: relative;
+  width: 2500px;
+}
+
+/* Hero animation (controls background movement) */
+.hero-animation {
+  display: flex;
+  width: 200%;
+  animation: moving 12s linear infinite;
+}
+.hero-animation.paused {
+  animation-play-state: paused;
+}
+
+/* AutoLottie container */
+.lottie-container {
+  position: absolute;
+  top: 73%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  z-index: 10;
+  cursor: pointer;
+}
+.fireworks-wrapper {
+  position: absolute;
+  top: 100px; /* Moves the fireworks slightly above */
+  left:2050px;
+  transform: translateX(-50%);
+  z-index: 5; /* Ensure it appears above */
+}
+
+
+/* Moving animation */
+@keyframes moving {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Birds animation */
+.bird {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  animation: flyAnimation 5s infinite linear;
+}
+.bird-1 { top: 100px; left: 60%; animation-delay: 0s; }
+.bird-2 { top: 100px; left: 40%; animation-delay: 1s; }
+.bird-3 { top: 80px; left: 70%; animation-delay: 2s; }
+.bird-4 { top: 80px; left: 50%; animation-delay: 2s; }
+.bird-5 { top: 80px; left: 65%; animation-delay: 4s; }
+
+/* Flying animation */
+@keyframes flyAnimation {
+  0% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-20px) translateX(10px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+/* Plane wrapper - positioned above */
+.plane-wrapper {
+  position: absolute;
+  top: 10%;  /* Adjust the height */
+  left: -10%; /* Start off-screen */
+  width: 150px; /* Decrease the size */
+  height: auto;
+  animation: flyAcross 10s linear infinite;
+  z-index: 10;
+  animation-fill-mode: forwards; 
+}
+
+/* Plane Image */
+.plane-image {
+  width: 100%; /* Ensure it scales properly */
+  height: auto;
+}
+
+/* Keyframes for Plane Animation */
+@keyframes flyAcross {
+  0% {
+    left: 110%;
+    transform: scale(1);
+  }
+  50% {
+    left: 50%;
+    transform: scale(1.2); /* Slight zoom effect */
+  }
+  100% {
+    left: -10%; /* Moves off-screen */
+    transform: scale(1);
+  }
+}
+
+/* Paused state for the animation */
+.plane-wrapper.paused {
+  animation-play-state: paused;
+}
+/* Clouds move together with hero animation */
+.cloud-wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 150px;
+  top: 0;
+  overflow: hidden;
+}
+
+.cloud {
+  position: absolute;
+  width: 120px;
+  height: auto;
+  opacity: 0.8;
+  animation: cloudMoving 20s linear infinite;
+}
+
+/* Different start positions for each cloud */
+.cloud-1 { top: 5%; left: 10%; animation-delay: 0s; }
+.cloud-2 { top: 8%; left: 30%; animation-delay: 4s; }
+.cloud-3 { top: 3%; left: 50%; animation-delay: 8s; }
+.cloud-4 { top: 6%; left: 70%; animation-delay: 12s; }
+.cloud-5 { top: 2%; left: 90%; animation-delay: 16s; }
+.cloud-6 { top: 5%; left: 110%; animation-delay: 0s; }
+.cloud-7 { top: 8%; left: 130%; animation-delay:4s; }
+.cloud-8 { top: 3%; left: 150%; animation-delay: 8ms; }
+.cloud-9 { top: 6%; left: 170%; animation-delay: 12s; }
+.cloud-10 { top: 2%; left: 190%; animation-delay: 16s; }
+
+/* Cloud movement animation */
+@keyframes cloudMoving {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-120vw); /* Moves completely off-screen */
+  }
+}
+
+/* Re-enter cloud when it exits left */
+.cloud {
+  animation: cloudMoving 20s linear infinite;
+}
+.cloud.paused {
+  animation-play-state: paused;
+}
+  
+
+
+
+/* Media Queries for Responsiveness */
+
+/* Mobile devices */
+
+@media (max-width: 767px) {
+  .hero-container {
+    width: 100%;
+  }
+
+  .image-wrapper {
+    width:2500px;
+  }
+
+  .movable {
+    width: 200%;
+  }
+
+  .movable img {
+    width: 100%;
+  }
+
+  .lottie-container {
+    left:12%;
+    top: 76%;
+    width: 80px; /* Smaller size on mobile */
+    height: 80px;
+  }
+  .cloud {
+    width: 60px; /* Even smaller clouds */
+    animation-duration: 12s; /* Even faster animation */
+  }
+
+  .cloud-1 { top: 3%; left: 2%; }
+  .cloud-2 { top: 6%; left: 20%; }
+  .cloud-3 { top: 2%; left: 40%; }
+  .cloud-4 { top: 4%; left: 60%; }
+  .cloud-5 { top: 1%; left: 80%; }
+
+  
+}
+
+
+@media (max-width: 500px) {
+  /* .hero{
+    margin-top: 0px;
+  } */
+  .lottie-container {
+    top: 77%;
+    left:7%;
+    width: 70px; /* Smaller size on mobile */
+    height: 70px;
+  }
+  .movable img {
+    width: 100%;
+    flex-shrink: 0;
+  }
+}
+
+/* Tablet devices */
+@media (min-width: 768px) and (max-width: 1023px) {
+.hero-container {
+    width: 100%;
+  }
+
+  .image-wrapper {
+    width:3000px;
+  }
+
+  .movable {
+    width: 200%;
+  }
+
+  .movable img {
+    width: 50%; /* Adjust for tablet */
+  }
+
+  .lottie-container {
+    left: 12%;
+    top:188px;
+    width: 90px; /* Adjust size on tablet */
+    height: 90px;
+  }
+  .cloud {
+    width: 80px; /* Smaller cloud size */
+    animation-duration: 15s; /* Faster animation */
+  }
+
+  .cloud-1 { top: 4%; left: 5%; }
+  .cloud-2 { top: 7%; left: 25%; }
+  .cloud-3 { top: 3%; left: 45%; }
+  .cloud-4 { top: 5%; left: 65%; }
+  .cloud-5 { top: 1%; left: 85%; }
+}
+
+
+
+/* New Animation for techfest 2026 */
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes pulse-slower {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.25);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 5s ease-in-out infinite;
+}
+
+.animate-pulse-slower {
+  animation: pulse-slower 7s ease-in-out infinite;
+}
+@media (max-width: 400px) {
+  .text-xxs {
+    font-size: 24px; /* change to any size you want */
+  }
+  .text-xls {
+    font-size: 29px; /* change to any size you want */
+  }
+  .space-x-low > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+
+/* Marquee container */
+.marquee-row {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* Track that scrolls */
+.marquee-track {
+  display: flex;
+  gap: 20px;
+}
+
+/* Speaker Card */
+
+.speaker-card {
+  width: 260px;            /* 🔥 Fixed consistent width */
+  height: 330px;           /* Same height for all cards */
+  background: #111111;
+  border: 1px solid #222;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;          /* Prevent shrinking */
+  transition: all 0.3s;
+}
+
+.speaker-card img {
+  width: 100%;
+  height: 200px;           /* 🔥 Fixed consistent image height */
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+.speaker-card:hover {
+  border-color: #ff4fd8;
+  transform: scale(1.05);
+}
+
+
+/* Marquee Animations */
+/* Continuous infinite loop scrolling */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Apply animations */
+.marquee-left {
+  animation: scroll-left 25s linear infinite;
+}
+
+.marquee-right {
+  animation: scroll-right 25s linear infinite;
+}
+
+/* Pause on hover */
+.marquee-left:hover,
+.marquee-right:hover {
+  animation-play-state: paused;
+}
+
+
+.floating-icon {
+  position: absolute;
+  z-index: 0;
+}
+
+.circle {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 35px;
+  color: #00C2FF;
+}
+
+/* FLOAT ANIMATIONS */
+@keyframes float-slow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-mid {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-fast {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-35px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+.animate-float-mid  { animation: float-mid  4.5s ease-in-out infinite; }
+.animate-float-fast { animation: float-fast 3s ease-in-out infinite; }
+
+
+

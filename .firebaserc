@@ -1,0 +1,22 @@
+{
+  "projects": {
+    "default": "oceanlivereact"
+  },
+  "targets": {
+    "oceanlivereact": {
+      "hosting": {
+        "techfest": [
+          "oa-techfest"
+        ],
+        "oa-techfest-test": [
+          "oa-techfest-test"
+        ],
+        "oa-techfest-refactor": [
+          "oa-techfest-refactor"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
