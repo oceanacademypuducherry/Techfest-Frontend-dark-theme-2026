@@ -236,29 +236,53 @@ const handleConfirm = () => {
         </div>
       )} */}
 
-      {showPopup && isSessionExpired && (
-  <div className="fixed inset-0 bg-white backdrop-blur-sm flex justify-center items-center z-50">
-    <div className="bg-[#0A0C12] border border-[#1F2430] p-8 rounded-2xl text-center shadow-2xl w-[90%] max-w-md">
-      <h2 className="text-xl font-semibold mb-2 text-black">
+    {showPopup && isSessionExpired && (
+  <div className="
+    fixed inset-0 
+    bg-black/70 backdrop-blur-sm
+    flex justify-center items-center 
+    z-50
+  ">
+    <div
+      className="
+        relative
+        bg-[#0A0C12]
+        border border-white/10
+        p-8 rounded-2xl
+        text-center
+        shadow-[0_0_40px_rgba(0,194,255,0.15)]
+        w-[90%] max-w-md
+      "
+    >
+      {/* Title */}
+      <h2 className="text-xl font-semibold mb-2 text-white">
         Session Expired
       </h2>
 
-      <p className="text-gray-400">
+      {/* Message */}
+      <p className="text-gray-400 text-sm sm:text-base">
         Your session has expired. Please try again.
       </p>
 
+      {/* Action Button */}
       <button
-        className="mt-6 px-6 py-2 rounded-lg 
-                   bg-gradient-to-r from-yellow-500 to-yellow-600
-                   hover:from-yellow-400 hover:to-yellow-500
-                   text-black font-semibold transition-all"
-        onClick={() => handlePopupClose()}
+        className="
+          mt-6 px-6 py-2 rounded-lg
+          bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+          hover:from-[#00b5ea] hover:to-[#e43f8c]
+          text-white font-semibold
+          transition-all duration-300
+          hover:scale-105
+          shadow-[0_0_20px_rgba(238,76,156,0.35)]
+        "
+        onClick={handlePopupClose}
       >
         Go Back
       </button>
     </div>
   </div>
 )}
+
 
 
 {backPopup && (
