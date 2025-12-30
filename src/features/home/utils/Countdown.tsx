@@ -76,7 +76,7 @@ export default function Countdown() {
   }, []);
 
   function calculateTimeLeft() {
-    const targetDate = new Date("2026-03-02T08:30:00");
+    const targetDate = new Date("2026-03-15T08:30:00");
     const now = new Date();
     const difference = targetDate.getTime() - now.getTime();
 
@@ -93,12 +93,12 @@ export default function Countdown() {
   }
 
   return (
-    <div className="flex justify-center gap-4 sm:gap-6 mt-10">
+    <div className="flex justify-center gap-2 sm:gap-6 mt-10">
       {["Days", "Hours", "Minutes", "Seconds"].map((unit) => (
         <div
           key={unit}
           className="
-            w-[78px] sm:w-[130px]
+            w-[84px] sm:w-[130px]
             rounded-xl
             bg-white/5 backdrop-blur-md
             border border-white/10
@@ -106,7 +106,7 @@ export default function Countdown() {
             hover:shadow-[0_0_25px_rgba(238,76,156,0.25)]
             transition-all duration-300
             hover:-translate-y-1
-            py-4 flex flex-col items-center
+            py-3 sm:py-4 flex flex-col items-center
           "
         >
           <p

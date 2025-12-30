@@ -70,7 +70,7 @@ export default function SponsorsSection() {
       src={item.src}
       alt={item.alt}
       className={`
-        h-8 sm:h-12 md:h-12 lg:h-12 object-contain
+        h-8 sm:h-12 md:h-12 lg:h-16 object-contain
         ${index !== 0 &&  index !==2 ? "white-logo" : ""}
       `}
     />
@@ -89,7 +89,7 @@ export default function SponsorsSection() {
       src={item.src}
       alt={item.alt}
       className={`
-        h-10 object-contain
+        h-7 object-contain
         ${index !== 0 && index !==2 ? "white-logo" : ""}
       `}
     />

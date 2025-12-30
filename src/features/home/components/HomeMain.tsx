@@ -130,7 +130,7 @@ export default function HomeMain() {
           >
             <div className="flex items-center text-white gap-2">
               <FaCalendarAlt className="text-white text-[18px]" />
-              March 2, 2026
+              March 15, 2026
             </div>
 
             <div className="flex items-center text-white gap-2">
