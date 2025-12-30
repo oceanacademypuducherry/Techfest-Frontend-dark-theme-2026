@@ -69,14 +69,14 @@ export default function Navigation() {
   ];
 
   return (
-    <main className="bg-[#0A0C12] p-5 w-full sticky top-0 z-50 shadow-lg border-b border-white/10">
+    <main className="bg-[#0A0C12] p-3 w-full sticky top-0 z-50 shadow-lg border-b border-white/10">
       <section className="flex justify-between items-center max-w-[1400px] mx-auto">
 
         {/* Logo */}
         <img
   src={techfestImg}
   alt="Techfest Logo"
-  className="h-10 sm:h-24 object-contain"
+  className="h-[80px] sm:h-24 object-contain"
 />
 
 

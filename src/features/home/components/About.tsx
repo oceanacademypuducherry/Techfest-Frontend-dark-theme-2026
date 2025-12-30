@@ -28,7 +28,7 @@ export default function About() {
   const StatCard = ({ icon: Icon, color, value, label }) => (
     <div
       className="
-        bg-[#0F121A] p-3 sm:p-5 rounded-xl border border-white/10 shadow-lg text-center
+        bg-[#0F121A] p-3 sm:p-5  rounded-xl border border-white/10 shadow-lg text-center
         transition-all duration-300 hover:-translate-y-2
         hover:border-[#01C1FB] hover:shadow-[0_0_20px_rgba(1,193,251,0.35)]
       "
@@ -92,7 +92,7 @@ export default function About() {
   return (
     <section
       id="about_section"
-      className="bg-[#0A0C12] text-white py-0 px-2 sm:px-4 relative overflow-hidden"
+      className="bg-[#0A0C12] text-white py-6 sm:py-12 px-2 sm:px-4 relative overflow-hidden"
     >
       <div className="max-w-6xl mx-auto text-center">
 

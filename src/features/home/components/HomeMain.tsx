@@ -2,9 +2,9 @@ import { useNavigate } from "react-router-dom";
 import { Countdown } from "../utils/index";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import techfestImg from '../../../assets/images/hero/techfest.png'
 
-
+import techfestImg from "../../../assets/images/hero/techfest.png";
+import heroVideo from "../../../assets/images/hero/techfest.mp4";
 
 export default function HomeMain() {
   const navigate = useNavigate();
@@ -12,12 +12,26 @@ export default function HomeMain() {
   return (
     <>
       <div
-        className="relative w-full bg-[#0A0C12] sm:min-h-[90svh] min-h-[80svh]
-        text-white py-10 sm:py-16 px-2 sm:px-4 overflow-hidden"
+        className="relative w-full sm:min-h-[90svh] min-h-[80svh]
+        text-white py-10 sm:py-16 px-2  sm:px-4 overflow-hidden"
       >
 
+        {/* 🎥 BACKGROUND VIDEO */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/60 z-10"></div>
+
         {/* 🔥 Soft Glow Background */}
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 pointer-events-none z-10">
 
           {/* Blue Glow */}
           <div
@@ -52,34 +66,21 @@ export default function HomeMain() {
           ></div>
         </div>
 
-        {/* Center Content */}
-        <div className="relative  mt-0 max-w-4xl mx-auto text-center">
+        {/* 🌟 CENTER CONTENT */}
+        <div className="relative z-20 mt-0 max-w-4xl mx-auto text-center">
 
-          {/* Tagline */}
-          {/* Tagline */}
-<div
-  className="inline-block bg-white/5 text-[#01C1FB]
-  text-[14px] sm:text-[16px] px-6 py-4 rounded-full
-  border border-[#01C1FB]/30 shadow-sm backdrop-blur"
->
-  The Future of Innovation Starts Here
-</div>
-
-{/* Title */}
-<div className="flex justify-center items-center w-full">
-  <img
-    src={techfestImg}
-    alt="The Future of Innovation Starts Here"
-    className="h-[132px] sm:h-[300px] object-contain"
-  />
-</div>
-
-
-
+          {/* Logo */}
+          <div className="flex justify-center items-center w-full">
+            <img
+              src={techfestImg}
+              alt="The Future of Innovation Starts Here"
+              className="h-[222px] sm:h-[460px] object-contain"
+            />
+          </div>
 
           {/* Subtitle */}
           <p
-            className="mt-4 text-white/70 text-[16px] sm:text-[18px]
+            className="mt-4 text-white text-[16px] sm:text-[18px]
             max-w-[690px] mx-auto"
           >
             Unlock the future of technology at our exclusive tech event!
@@ -127,13 +128,13 @@ export default function HomeMain() {
             className="flex justify-center items-center gap-6
             sm:mt-10 mt-10 text-white/70 text-[15px]"
           >
-            <div className="flex items-center gap-2">
-              <FaCalendarAlt className="text-[#01C1FB] text-[18px]" />
+            <div className="flex items-center text-white gap-2">
+              <FaCalendarAlt className="text-white text-[18px]" />
               March 2, 2026
             </div>
 
-            <div className="flex items-center gap-2">
-              <FaLocationDot className="text-[#EE4C9C] text-[20px]" />
+            <div className="flex items-center text-white gap-2">
+              <FaLocationDot className="text-white text-[20px]" />
               PTU, Puducherry
             </div>
           </div>
