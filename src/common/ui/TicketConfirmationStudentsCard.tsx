@@ -45,6 +45,39 @@ const [inputValue, setInputValue] = useState('');
 const [collegeOptions, setCollegeOptions] = useState<string[]>([]);
 const [showDropdown, setShowDropdown] = useState(false);
 const [debounceTimer, setDebounceTimer] = useState<NodeJS.Timeout | null>(null);
+const [inputValues, setInputValues] = useState<Record<number, string>>({})
+const [instituteErrors, setInstituteErrors] = useState<Record<number, string | null>>({})
+
+
+
+const validateInstituteName = (value: string) => {
+  if (!value || value.trim().length < 3) {
+    return 'Must be at least 3 characters'
+  }
+
+  // Prevent only numbers
+  if (/^\d+$/.test(value.trim())) {
+    return 'Numbers only are not allowed'
+  }
+
+  // Must contain at least one letter
+  if (!/[a-zA-Z]/.test(value)) {
+    return 'Must contain alphabets'
+  }
+
+  return null
+}
+
+const handleInstituteChange = (index: number, value: string) => {
+  setInputValues(prev => ({ ...prev, [index]: value }))
+
+  const error = validateInstituteName(value)
+  setInstituteErrors(prev => ({ ...prev, [index]: error }))
+
+  handleInputChange(`items.${index}.instituteName`, value)
+}
+
+
 
   // get count from session storage
   let studentCount = Number(sessionStorage.getItem('studentsTicketCount') || 0)
@@ -129,63 +162,81 @@ const [debounceTimer, setDebounceTimer] = useState<NodeJS.Timeout | null>(null);
               <div className='p-4 sm:p-5'>
                 {/* Name and Email */}
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mb-2'>
-                  <div className='sm:pb-4 pb-0 pt-0 sm:pt-5'>
-                    <label
-                      htmlFor={`name-${data.number}`}
-                      className='block text-sm sm:text-[16px] font-normal text-gray-600 mb-1'
-                    >
-                      Name <span className='text-red-500'>*</span>
-                    </label>
-                    <input
-                      id={`name-${data.number}`}
-                      type='text'
-                      placeholder='Your Full name'
-                      className='w-full border placeholder-transparent rounded-lg px-3 py-2 text-sm placeholder:text-[14px] h-[48px]'
-                      {...register(`items.${index}.name`)} // No need for defaultValue here
-                      onChange={e =>
-                        handleInputChange(`items.${index}.name`, e.target.value)
-                      } // Correct field name
-                    />
-                    {errors?.items?.[index]?.name && (
-                      <p className='text-red-500 text-xs mt-2'>
-                        {errors.items[index]?.name?.message}
-                      </p>
-                    )}
-                  </div>
 
-                  <div className='sm:pb-4 pb-0 pt-0 sm:pt-5'>
-                    <label
-                      htmlFor={`email-${data.number}`}
-                      className='block text-sm sm:text-[16px] font-normal text-gray-600 mb-1'
-                    >
-                      Email Address <span className='text-red-500'>*</span>
-                    </label>
-                    <input
-                     id={`email-${data.number}`} // Use dynamic index here
-                      type='email'
-                      placeholder='Example@123.com'
-                      className='w-full border placeholder-transparent rounded-lg px-3 py-2 text-sm placeholder:text-[14px] h-[48px]'
-                      {...register(`items.${index}.email`)} // Use dynamic index
-                      onChange={e =>
-                        handleInputChange(
-                          `items.${index}.email`,
-                          e.target.value
-                        )
-                      }
-                    />
-                    {errors?.items?.[index]?.email && (
-                      <p className='text-red-500 text-xs mt-2'>
-                        {errors.items[index]?.email?.message}
-                      </p>
-                    )}
-                     {errors?.items && (
-                      <p className='text-red-500 text-xs mt-2'>
-                        {/* {errors.items.message} */}
-                        Email must be unique
-                      </p>
-                    )}
-                  </div>
-                </div>
+  {/* ================= NAME FIELD ================= */}
+  <div className='sm:pb-4 pb-0 pt-0 sm:pt-5'>
+    <label
+      htmlFor={`name-${data.number}`}
+      className='block text-sm sm:text-[16px] font-normal text-gray-600 mb-1'
+    >
+      Name <span className='text-red-500'>*</span>
+    </label>
+
+    <input
+      id={`name-${data.number}`}
+      type='text'
+      placeholder='Your Full Name'
+      className='w-full border rounded-lg px-3 py-2 text-sm h-[48px]'
+      {...register(`items.${index}.name`, {
+        required: 'Name is required',
+        minLength: {
+          value: 3,
+          message: 'Name must be at least 3 characters',
+        },
+        pattern: {
+          value: /^[A-Za-z\s]+$/,
+          message: 'Name should contain only letters',
+        },
+      })}
+      onChange={e =>
+        handleInputChange(`items.${index}.name`, e.target.value)
+      }
+    />
+
+    {/* NAME ERROR */}
+    {errors?.items?.[index]?.name && (
+      <p className='text-red-500 text-xs mt-2'>
+        {errors.items[index].name.message}
+      </p>
+    )}
+  </div>
+
+  {/* ================= EMAIL FIELD ================= */}
+  <div className='sm:pb-4 pb-0 pt-0 sm:pt-5'>
+    <label
+      htmlFor={`email-${data.number}`}
+      className='block text-sm sm:text-[16px] font-normal text-gray-600 mb-1'
+    >
+      Email Address <span className='text-red-500'>*</span>
+    </label>
+
+    <input
+      id={`email-${data.number}`}
+      type='email'
+      placeholder='example@email.com'
+      className='w-full border rounded-lg px-3 py-2 text-sm h-[48px]'
+      {...register(`items.${index}.email`, {
+        required: 'Email is required',
+        pattern: {
+          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+          message: 'Enter a valid email address',
+        },
+      })}
+      onChange={e =>
+        handleInputChange(`items.${index}.email`, e.target.value)
+      }
+    />
+
+    {/* EMAIL ERROR */}
+    {errors?.items?.[index]?.email && (
+      <p className='text-red-500 text-xs mt-2'>
+        {errors.items[index].email.message}
+      </p>
+    )}
+  </div>
+
+</div>
+
 
                 {/* Mobile Number and T-Shirt Size */}
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mb-2 sm:pt-5 pt-2'>
@@ -303,38 +354,31 @@ const [debounceTimer, setDebounceTimer] = useState<NodeJS.Timeout | null>(null);
   {data.isStudent ? (
     <div className="relative">
       <input
-        type="text"
-        placeholder="Type college name"
-        className="w-full border rounded-lg px-3 py-2 text-sm h-[48px]"
-        value={inputValue}
-        onChange={e => {
-          const val = e.target.value
-          setInputValue(val)
-          handleInputChange(`items.${index}.instituteName`, val)
+  type="text"
+  placeholder="Type college name"
+  value={inputValues[index] || ''}
+  className={`w-full border rounded-lg px-3 py-2 text-sm h-[48px]
+    ${instituteErrors[index] ? 'border-red-500' : 'border-gray-300'}
+  `}
+  onChange={e => {
+    const val = e.target.value
+    handleInstituteChange(index, val)
 
-          if (debounceTimer) clearTimeout(debounceTimer)
-          setDebounceTimer(
-            setTimeout(() => {
-              const filtered = collegesList.filter(col =>
-                col.toLowerCase().includes(val.toLowerCase())
-              )
-              setCollegeOptions(filtered)
-              setShowDropdown(true)
-            }, 300)
-          )
-        }}
-        onFocus={() => {
-          const filtered = inputValue
-            ? collegesList.filter(col =>
-                col.toLowerCase().includes(inputValue.toLowerCase())
-              )
-            : collegesList
+    if (debounceTimer) clearTimeout(debounceTimer)
+    setDebounceTimer(
+      setTimeout(() => {
+        const filtered = collegesList.filter(col =>
+          col.toLowerCase().includes(val.toLowerCase())
+        )
+        setCollegeOptions(filtered)
+        setShowDropdown(true)
+      }, 300)
+    )
+  }}
+  onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
+/>
 
-          setCollegeOptions(filtered)
-          setShowDropdown(true)
-        }}
-        onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
-      />
+
 
       {/* DROPDOWN */}
       {showDropdown && collegeOptions.length > 0 && (
@@ -357,16 +401,26 @@ const [debounceTimer, setDebounceTimer] = useState<NodeJS.Timeout | null>(null);
     </div>
   ) : (
     <input
-      type="text"
-      placeholder="Company / Organization Name"
-      className="w-full border rounded-lg px-3 py-2 text-sm h-[48px]"
-      {...register(`items.${index}.instituteName`)}
-      onChange={e =>
-        handleInputChange(`items.${index}.instituteName`, e.target.value)
-      }
-    />
+  type="text"
+  placeholder="Company / Organization Name"
+  value={inputValues[index] || ''}
+  className={`w-full border rounded-lg px-3 py-2 text-sm h-[48px]
+    ${instituteErrors[index] ? 'border-red-500' : 'border-gray-300'}
+  `}
+  {...register(`items.${index}.instituteName`)}
+  onChange={e => handleInstituteChange(index, e.target.value)}
+/>
+
+
   )}
 </div>
+{instituteErrors[index] && (
+  <p className="mt-1 text-sm text-red-500">
+    {instituteErrors[index]}
+  </p>
+)}
+
+
 
 
 

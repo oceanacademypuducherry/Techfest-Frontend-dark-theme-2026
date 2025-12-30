@@ -101,7 +101,7 @@ export default function Countdown() {
             w-[84px] sm:w-[130px]
             rounded-xl
             bg-white/5 backdrop-blur-md
-            border border-white/10
+            border border-white/6
             shadow-[inset_0_0_25px_rgba(1,193,251,0.15)]
             hover:shadow-[0_0_25px_rgba(238,76,156,0.25)]
             transition-all duration-300
