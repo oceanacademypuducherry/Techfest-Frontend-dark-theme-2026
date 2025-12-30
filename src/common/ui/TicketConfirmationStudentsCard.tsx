@@ -1,4 +1,9 @@
 import { useConfirmationFormContext } from '../../features/ticketSummary/contexts'
+import collegesList from '../../common/data/colleges.json';
+import { useState } from 'react';
+
+
+
 
 interface Student {
   name: string
@@ -29,11 +34,17 @@ export default function TicketConfirmationStudentsCard ({
     formState: { errors },
     setValue,
     trigger,
+    watch,
     handleSubmit
   } = useConfirmationFormContext()
 
   // const primaryUser = useSelector((state: RootState) => state.primaryUser.isPrimaryUserStudent)
   const primaryUser = sessionStorage.getItem('isPrimaryUserStudent') === 'true'
+
+const [inputValue, setInputValue] = useState('');
+const [collegeOptions, setCollegeOptions] = useState<string[]>([]);
+const [showDropdown, setShowDropdown] = useState(false);
+const [debounceTimer, setDebounceTimer] = useState<NodeJS.Timeout | null>(null);
 
   // get count from session storage
   let studentCount = Number(sessionStorage.getItem('studentsTicketCount') || 0)
@@ -251,7 +262,7 @@ export default function TicketConfirmationStudentsCard ({
                 </div>
 
                 {/* School/College Name */}
-                <div className='sm:pb-4 pb-0 pt-0 sm:pt-5'>
+                {/* <div className='sm:pb-4 pb-0 pt-0 sm:pt-5'>
                   <label
                     htmlFor={`instituteName-${data.number}`}
                     className='block text-sm sm:text-[16px] font-normal text-gray-600 mb-1'
@@ -279,7 +290,86 @@ export default function TicketConfirmationStudentsCard ({
                       {errors.items[index]?.instituteName?.message}
                     </p>
                   )}
-                </div>
+                </div> */}
+
+       <div className="sm:pb-4 pb-0 pt-0 sm:pt-5">
+  {/* LABEL */}
+  <label className="block text-sm sm:text-[16px] font-normal text-gray-600 mb-1">
+    {data.isStudent ? 'College / School' : 'Organizational Name'}
+    <span className="text-red-500"> *</span>
+  </label>
+
+  {/* INPUT FIELD */}
+  {data.isStudent ? (
+    <div className="relative">
+      <input
+        type="text"
+        placeholder="Type college name"
+        className="w-full border rounded-lg px-3 py-2 text-sm h-[48px]"
+        value={inputValue}
+        onChange={e => {
+          const val = e.target.value
+          setInputValue(val)
+          handleInputChange(`items.${index}.instituteName`, val)
+
+          if (debounceTimer) clearTimeout(debounceTimer)
+          setDebounceTimer(
+            setTimeout(() => {
+              const filtered = collegesList.filter(col =>
+                col.toLowerCase().includes(val.toLowerCase())
+              )
+              setCollegeOptions(filtered)
+              setShowDropdown(true)
+            }, 300)
+          )
+        }}
+        onFocus={() => {
+          const filtered = inputValue
+            ? collegesList.filter(col =>
+                col.toLowerCase().includes(inputValue.toLowerCase())
+              )
+            : collegesList
+
+          setCollegeOptions(filtered)
+          setShowDropdown(true)
+        }}
+        onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
+      />
+
+      {/* DROPDOWN */}
+      {showDropdown && collegeOptions.length > 0 && (
+        <ul className="absolute z-50 w-full bg-white border rounded-md max-h-48 overflow-y-auto mt-1 shadow-lg">
+          {collegeOptions.map((college, i) => (
+            <li
+              key={i}
+              className="px-3 py-2 hover:bg-blue-100 cursor-pointer text-sm"
+              onClick={() => {
+                handleInputChange(`items.${index}.instituteName`, college)
+                setInputValue(college)
+                setShowDropdown(false)
+              }}
+            >
+              {college}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  ) : (
+    <input
+      type="text"
+      placeholder="Company / Organization Name"
+      className="w-full border rounded-lg px-3 py-2 text-sm h-[48px]"
+      {...register(`items.${index}.instituteName`)}
+      onChange={e =>
+        handleInputChange(`items.${index}.instituteName`, e.target.value)
+      }
+    />
+  )}
+</div>
+
+
+
               </div>
             </div>
           </div>

@@ -2,6 +2,9 @@ import { useNavigate } from "react-router-dom";
 import { Countdown } from "../utils/index";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import techfestImg from '../../../assets/images/hero/techfest.png'
+
+
 
 export default function HomeMain() {
   const navigate = useNavigate();
@@ -10,7 +13,7 @@ export default function HomeMain() {
     <>
       <div
         className="relative w-full bg-[#0A0C12] sm:min-h-[90svh] min-h-[80svh]
-        text-white py-10 sm:py-20 px-2 sm:px-4 overflow-hidden"
+        text-white py-10 sm:py-16 px-2 sm:px-4 overflow-hidden"
       >
 
         {/* 🔥 Soft Glow Background */}
@@ -50,30 +53,29 @@ export default function HomeMain() {
         </div>
 
         {/* Center Content */}
-        <div className="relative sm:mt-9 mt-0 max-w-4xl mx-auto text-center">
+        <div className="relative  mt-0 max-w-4xl mx-auto text-center">
 
           {/* Tagline */}
-          <div
-            className="inline-block bg-white/5 text-[#01C1FB]
-            text-[14px] sm:text-[16px] px-6 py-4 rounded-full
-            border border-[#01C1FB]/30 shadow-sm backdrop-blur"
-          >
-            The Future of Innovation Starts Here
-          </div>
+          {/* Tagline */}
+<div
+  className="inline-block bg-white/5 text-[#01C1FB]
+  text-[14px] sm:text-[16px] px-6 py-4 rounded-full
+  border border-[#01C1FB]/30 shadow-sm backdrop-blur"
+>
+  The Future of Innovation Starts Here
+</div>
 
-          {/* Title */}
-          <h1
-            className="sm:mt-10 mt-10 text-[30px] sm:text-[50px] md:text-[60px]
-            font-bold leading-tight text-white"
-          >
-            FutureTech Summit <br />
-            <span
-              className="text-transparent bg-clip-text
-              bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]"
-            >
-              2026
-            </span>
-          </h1>
+{/* Title */}
+<div className="flex justify-center items-center w-full">
+  <img
+    src={techfestImg}
+    alt="The Future of Innovation Starts Here"
+    className="h-[132px] sm:h-[300px] object-contain"
+  />
+</div>
+
+
+
 
           {/* Subtitle */}
           <p

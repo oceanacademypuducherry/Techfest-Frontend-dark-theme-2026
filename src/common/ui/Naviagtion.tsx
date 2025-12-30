@@ -1,6 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { scrollToTop } from "../../utils/scrollTo";
+import techfestImg from '../../assets/images/hero/techfest.png';
 
 export default function Navigation() {
   const location = useLocation();
@@ -72,7 +73,12 @@ export default function Navigation() {
       <section className="flex justify-between items-center max-w-[1400px] mx-auto">
 
         {/* Logo */}
-        <h1 className="text-white text-2xl font-semibold">Logo</h1>
+        <img
+  src={techfestImg}
+  alt="Techfest Logo"
+  className="h-10 sm:h-24 object-contain"
+/>
+
 
         {/* Hamburger */}
         {!menuOpen && (

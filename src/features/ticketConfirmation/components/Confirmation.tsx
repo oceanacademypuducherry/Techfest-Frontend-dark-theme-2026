@@ -332,7 +332,7 @@ const handleConfirm = () => {
 
         {studentCount >= 1 && professionalCount >= 1 && (
   <div className="flex flex-col ml-8 max-sm:ml-1">
-    <p className="font-semibold text-gray-700 text-[18px] max-sm:text-[16px] mb-2">
+    <p className="font-semibold text-gray-100 text-[18px] max-sm:text-[16px] mb-2">
       Select your role to identify the primary user
     </p>
 
@@ -347,7 +347,7 @@ const handleConfirm = () => {
           onChange={handleChange}
           className="w-5 h-5 cursor-pointer "
         />
-        <span className="text-[16px]  text-gray-600 max-sm:text-[14px]">
+        <span className="text-[16px]  text-gray-100 max-sm:text-[14px]">
           Student
         </span>
       </label>
@@ -362,7 +362,7 @@ const handleConfirm = () => {
           onChange={handleChange}
           className="w-5 h-5 cursor-pointer "
         />
-        <span className="text-[16px] text-gray-600 max-sm:text-[14px]">
+        <span className="text-[16px] text-gray-100 max-sm:text-[14px]">
           Working Professional
         </span>
       </label>
