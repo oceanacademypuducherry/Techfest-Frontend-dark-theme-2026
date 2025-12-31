@@ -1,6 +1,7 @@
 import { useConfirmationFormContext } from '../../features/ticketSummary/contexts'
 import collegesList from '../../common/data/colleges.json';
-import { useState } from 'react';
+import { useState, useRef,useEffect } from 'react';
+import { ChevronDown } from 'lucide-react'
 
 
 
@@ -41,41 +42,69 @@ export default function TicketConfirmationStudentsCard ({
   // const primaryUser = useSelector((state: RootState) => state.primaryUser.isPrimaryUserStudent)
   const primaryUser = sessionStorage.getItem('isPrimaryUserStudent') === 'true'
 
-const [inputValue, setInputValue] = useState('');
-const [collegeOptions, setCollegeOptions] = useState<string[]>([]);
-const [showDropdown, setShowDropdown] = useState(false);
-const [debounceTimer, setDebounceTimer] = useState<NodeJS.Timeout | null>(null);
 const [inputValues, setInputValues] = useState<Record<number, string>>({})
-const [instituteErrors, setInstituteErrors] = useState<Record<number, string | null>>({})
+const [collegeOptions, setCollegeOptions] = useState<string[]>([])
+const [showDropdown, setShowDropdown] = useState<Record<number, boolean>>({})
+const [showOthers, setShowOthers] = useState<Record<number, boolean>>({})
+const dropdownRefs = useRef<Record<number, HTMLDivElement | null>>({})
+const debounceTimer = useRef<NodeJS.Timeout | null>(null)
+const [showMinCharHint, setShowMinCharHint] = useState<Record<number, boolean>>({})
+
+const [showOtherInput, setShowOtherInput] = useState<{ [key: number]: boolean }>({})
+const [otherCollege, setOtherCollege] = useState<{ [key: number]: string }>({})
 
 
 
-const validateInstituteName = (value: string) => {
-  if (!value || value.trim().length < 3) {
-    return 'Must be at least 3 characters'
-  }
 
-  // Prevent only numbers
-  if (/^\d+$/.test(value.trim())) {
-    return 'Numbers only are not allowed'
-  }
 
-  // Must contain at least one letter
-  if (!/[a-zA-Z]/.test(value)) {
-    return 'Must contain alphabets'
-  }
-
-  return null
-}
-
-const handleInstituteChange = (index: number, value: string) => {
+const handleCollegeChange = (index: number, value: string) => {
   setInputValues(prev => ({ ...prev, [index]: value }))
-
-  const error = validateInstituteName(value)
-  setInstituteErrors(prev => ({ ...prev, [index]: error }))
-
   handleInputChange(`items.${index}.instituteName`, value)
+
+  // helper text logic
+  setShowMinCharHint(prev => ({
+    ...prev,
+    [index]: value.length > 0 && value.length < 3,
+  }))
+
+  // ⛔ prevent dropdown before 3 chars
+  if (value.length < 3) {
+    setShowDropdown(prev => ({ ...prev, [index]: false }))
+    return
+  }
+
+  // ✅ only 3+ chars reach here
+  const filtered = collegesList.filter(col =>
+    col.toLowerCase().includes(value.toLowerCase())
+  )
+
+  setCollegeOptions(
+    filtered.length > 0 ? filtered : ['Others']
+  )
+
+  setShowDropdown(prev => ({ ...prev, [index]: true }))
 }
+
+
+
+
+useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    Object.keys(dropdownRefs.current).forEach(key => {
+      const index = Number(key)
+      const ref = dropdownRefs.current[index]
+
+      if (ref && !ref.contains(event.target as Node)) {
+        setShowDropdown(prev => ({ ...prev, [index]: false }))
+      }
+    })
+  }
+
+  document.addEventListener('mousedown', handleClickOutside)
+  return () =>
+    document.removeEventListener('mousedown', handleClickOutside)
+}, [])
+
 
 
 
@@ -343,55 +372,79 @@ const handleInstituteChange = (index: number, value: string) => {
                   )}
                 </div> */}
 
-       <div className="sm:pb-4 pb-0 pt-0 sm:pt-5">
-  {/* LABEL */}
-  <label className="block text-sm sm:text-[16px] font-normal text-gray-600 mb-1">
-    {data.isStudent ? 'College / School' : 'Organizational Name'}
-    <span className="text-red-500"> *</span>
-  </label>
+   {/* ================= INSTITUTE SECTION ================= */}
+{data.isStudent ? (
+  <div className="sm:pb-4 pb-0 pt-0 sm:pt-5">
+    <label className="block text-sm sm:text-[16px] font-normal text-gray-600 mb-1">
+      College / School <span className="text-red-500">*</span>
+    </label>
 
-  {/* INPUT FIELD */}
-  {data.isStudent ? (
-    <div className="relative">
+    <div
+      className="relative"
+      ref={el => (dropdownRefs.current[index] = el)}
+    >
       <input
-  type="text"
-  placeholder="Type college name"
-  value={inputValues[index] || ''}
-  className={`w-full border rounded-lg px-3 py-2 text-sm h-[48px]
-    ${instituteErrors[index] ? 'border-red-500' : 'border-gray-300'}
-  `}
-  onChange={e => {
-    const val = e.target.value
-    handleInstituteChange(index, val)
+        type="text"
+        placeholder="Select college"
+        value={inputValues[index] || ''}
+        className="w-full border rounded-lg px-3 py-2 pr-10 text-sm h-[48px]"
+        onChange={e => handleCollegeChange(index, e.target.value)}
+      />
 
-    if (debounceTimer) clearTimeout(debounceTimer)
-    setDebounceTimer(
-      setTimeout(() => {
-        const filtered = collegesList.filter(col =>
-          col.toLowerCase().includes(val.toLowerCase())
-        )
-        setCollegeOptions(filtered)
-        setShowDropdown(true)
-      }, 300)
-    )
-  }}
-  onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
-/>
+      {/* Chevron */}
+      <button
+        type="button"
+        className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded-md hover:bg-gray-100 transition"
+        onClick={() => {
+          setShowDropdown(prev => ({
+            ...prev,
+            [index]: !prev[index],
+          }))
+          setCollegeOptions(collegesList)
+        }}
+      >
+        <ChevronDown className="w-5 h-5 text-gray-500" />
+      </button>
 
-
-
-      {/* DROPDOWN */}
-      {showDropdown && collegeOptions.length > 0 && (
-        <ul className="absolute z-50 w-full bg-white border rounded-md max-h-48 overflow-y-auto mt-1 shadow-lg">
+      {/* Dropdown */}
+      {showDropdown[index] && collegeOptions.length > 0 && (
+        <ul className="absolute top-full left-0 z-50 w-full bg-white border rounded-md max-h-48 overflow-y-auto shadow-lg">
           {collegeOptions.map((college, i) => (
             <li
               key={i}
-              className="px-3 py-2 hover:bg-blue-100 cursor-pointer text-sm"
+              className="px-3 py-2 hover:bg-blue-100 cursor-pointer text-[14px]"
               onClick={() => {
-                handleInputChange(`items.${index}.instituteName`, college)
-                setInputValue(college)
-                setShowDropdown(false)
-              }}
+  if (college === 'Others') {
+    // Show Others input
+    setInputValues(prev => ({
+      ...prev,
+      [index]: 'Others',
+    }))
+
+    setShowOtherInput(prev => ({
+      ...prev,
+      [index]: true,
+    }))
+
+    // Clear actual institute name in form
+    handleInputChange(`items.${index}.instituteName`, '')
+  } else {
+    setInputValues(prev => ({
+      ...prev,
+      [index]: college,
+    }))
+
+    setShowOtherInput(prev => ({
+      ...prev,
+      [index]: false,
+    }))
+
+    handleInputChange(`items.${index}.instituteName`, college)
+  }
+
+  setShowDropdown(prev => ({ ...prev, [index]: false }))
+}}
+
             >
               {college}
             </li>
@@ -399,26 +452,67 @@ const handleInstituteChange = (index: number, value: string) => {
         </ul>
       )}
     </div>
-  ) : (
-    <input
-  type="text"
-  placeholder="Company / Organization Name"
-  value={inputValues[index] || ''}
-  className={`w-full border rounded-lg px-3 py-2 text-sm h-[48px]
-    ${instituteErrors[index] ? 'border-red-500' : 'border-gray-300'}
-  `}
-  {...register(`items.${index}.instituteName`)}
-  onChange={e => handleInstituteChange(index, e.target.value)}
-/>
 
-
+    {/* Helper text */}
+    <div className="mt-1 min-h-[20px]">
+  {showMinCharHint[index] && (
+    <div className="inline-block px-3 py-1 rounded-md
+border border-white
+bg-white w-[472px]
+shadow-lg">
+      <p className="text-[14px] text-gray-600">
+        Must be at least 3 characters
+      </p>
+    </div>
   )}
 </div>
-{instituteErrors[index] && (
-  <p className="mt-1 text-sm text-red-500">
-    {instituteErrors[index]}
-  </p>
+{showOtherInput[index] && (
+  <div className="mt-2">
+    <input
+      type="text"
+      placeholder="Enter your college / school name"
+      value={otherCollege[index] || ''}
+      onChange={e => {
+        const value = e.target.value
+
+        setOtherCollege(prev => ({
+          ...prev,
+          [index]: value,
+        }))
+
+        handleInputChange(`items.${index}.instituteName`, value)
+      }}
+      className="w-full border rounded-lg px-3 py-2 text-sm h-[48px]"
+    />
+  </div>
 )}
+
+
+  </div>
+) : (
+
+  /* ================= WORKING PROFESSIONAL ================= */
+  <div className="sm:pb-4 pb-0 pt-0 sm:pt-5">
+    <label className="block text-sm sm:text-[16px] font-normal text-gray-600 mb-1">
+      Organizational Name <span className="text-red-500">*</span>
+    </label>
+
+    <input
+      type="text"
+      placeholder="Company / Organization Name"
+      className="w-full border rounded-lg px-3 py-2 text-sm h-[48px]"
+      onChange={e =>
+        handleInputChange(
+          `items.${index}.instituteName`,
+          e.target.value
+        )
+      }
+    />
+  </div>
+)}
+
+
+
 
 
 

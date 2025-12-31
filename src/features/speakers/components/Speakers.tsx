@@ -72,7 +72,7 @@ const Speakers: React.FC = () => {
                   <img
                     src={person.image}
                     alt={person.name}
-                    className="w-full h-full object-cover bg-gray-100 object-top brightness-50"
+                    className="w-full h-full object-cover bg-gray-100 object-cover object-top brightness-75"
                   />
 
                   {/* Name & Achievement */}

@@ -105,10 +105,10 @@ export default function StudentTicketQuantity({
               </div>
             ) : (
               <div>
-                <p className="font-bold text-white text-3xl max-sm:text-2xl mt-3">
+                <p className="font-bold text-black text-3xl max-sm:text-2xl mt-3">
                   ₹{data?.price}
                 </p>
-                <p className="text-white font-semibold text-[16px] sm:text-[16px] md:text-[16px] lg:text-[20px] mt-3">
+                <p className="text-black font-semibold text-[16px] sm:text-[16px] md:text-[16px] lg:text-[20px] mt-3">
                   {data?.label}
                 </p>
               </div>
@@ -118,8 +118,8 @@ export default function StudentTicketQuantity({
             <ul className="flex flex-col gap-2 mt-3">
               {benefits.map((benefit) => (
                 <li key={benefit.id} className="flex items-center gap-2">
-                  <FiCheckCircle className="text-[18px] text-white flex-shrink-0" />
-                  <p className="text-[14px] lg:text-[15px] text-white leading-6">
+                  <FiCheckCircle className="text-[18px] text-black flex-shrink-0" />
+                  <p className="text-[14px] lg:text-[15px] text-black leading-6">
                     {benefit.text}
                   </p>
                 </li>

@@ -60,7 +60,7 @@ export default function LateBirdCardStudent({ data }: LateBirdCardStudentProps) 
             <p className={`font-extrabold text-4xl max-sm:text-3xl ${lateBirdData.isActive ? "text-white" : "text-[#d1d5db]"}`}>
               ₹{lateBirdData.price || 0}
             </p>
-            <p className={`text-sm mt-2 font-medium ${lateBirdData.isActive ? "text-[#f20c2e]" : "text-[#9aa0a6]"}`}>
+            <p className={`text-sm mt-2 font-medium ${lateBirdData.isActive ? "text-white" : "text-[#9aa0a6]"}`}>
               Inclusive GST*
             </p>
           </div>

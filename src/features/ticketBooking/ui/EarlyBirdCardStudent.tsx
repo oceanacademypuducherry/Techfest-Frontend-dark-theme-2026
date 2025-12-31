@@ -59,7 +59,7 @@ export default function EarlyBirdCardStudent({ data }: EarlyBirdCardStudentProps
             <p className={`font-extrabold text-4xl max-sm:text-3xl ${earlyBirdData.isActive ? "text-white" : "text-[#9e9e9e]"}`}>
               ₹{earlyBirdData.price || 0}
             </p>
-            <p className={`text-sm mt-2 font-medium ${earlyBirdData.isActive ? "text-rose-500" : "text-[#9aa0a6]"}`}>
+            <p className={`text-sm mt-2 font-medium ${earlyBirdData.isActive ? "text-white" : "text-[#9aa0a6]"}`}>
               Inclusive GST*
             </p>
           </div>
