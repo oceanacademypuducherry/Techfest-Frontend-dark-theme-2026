@@ -8,7 +8,7 @@ const AgendaPage: React.FC = () => {
   const [selectedHall, setSelectedHall] = useState("Mark Hall");
   const halls = ["Mark Hall", "Musk Hall", "Sundar Hall"];
 
-  // Filter events based on the selected hall
+  // Filter events based on selected hall
   const filteredEvents =
     eventData.find(event => event.hall === selectedHall)?.events || [];
 
@@ -16,16 +16,24 @@ const AgendaPage: React.FC = () => {
     scrollToTop();
   }, [selectedHall]);
 
+  // 🔽 DOWNLOAD HANDLER
+  const handleDownloadSchedule = () => {
+    const link = document.createElement("a");
+    link.href = "/agenda-full-schedule.pdf";
+    link.download = "TechFest_Agenda_Schedule.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <Navigation />
 
       {/* PAGE BACKGROUND */}
       <div className="bg-[#0A0C12] min-h-screen">
-        {/* Header */}
+        {/* HEADER */}
         <div className="flex flex-col items-center justify-center text-center mb-6 px-4">
-
-          {/* TITLE */}
           <h2 className="mt-6 mb-4 text-[30px] sm:text-[36px] font-semibold text-white">
             One Day Of
             <br />
@@ -34,17 +42,17 @@ const AgendaPage: React.FC = () => {
             </span>
           </h2>
 
-          {/* SUBTITLE */}
           <p className="text-gray-300 text-[18px] max-w-3xl mx-auto leading-7">
-            Join us for inspiring day of keynotes, workshops, and networking across
-            three specialized halls
+            Join us for an inspiring day of keynotes, workshops, and networking
+            across three specialized halls
           </p>
         </div>
 
-        {/* Hall Toggle */}
-        <div className="flex flex-col md:flex-row justify-center items-center
-                        px-3 sm:px-6 py-3 mb-8 sticky top-0 z-10
-                         sm:static">
+        {/* HALL TOGGLE */}
+        <div
+          className="flex flex-col md:flex-row justify-center items-center
+                     px-3 sm:px-6 py-3 mb-8 sticky top-0 z-10 sm:static"
+        >
           <HallToggle
             halls={halls}
             selectedHall={selectedHall}
@@ -52,18 +60,30 @@ const AgendaPage: React.FC = () => {
           />
         </div>
 
-        {/* Event Cards */}
-        <div className="space-y-6 w-[92%] min-h-[88%] max-w-screen-xl mb-10 mx-auto">
+        {/* EVENT CARDS */}
+        <div className="space-y-6 w-[92%] max-w-screen-xl mb-12 mx-auto">
           {filteredEvents.map(event => (
-            <div key={event.id}>
-              <EventCard
-                time={event.time}
-                title={event.title}
-                speakers={event.speakers || []}
-                description={event.description}
-              />
-            </div>
+            <EventCard
+              key={event.id}
+              time={event.time}
+              title={event.title}
+              speakers={event.speakers || []}
+              description={event.description}
+            />
           ))}
+        </div>
+
+        {/* DOWNLOAD BUTTON */}
+        <div className="flex justify-center mb-16">
+          <button
+            onClick={handleDownloadSchedule}
+            className="px-8 py-3 rounded-full
+                       bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]
+                       text-white text-[16px] font-semibold
+                       hover:scale-105 transition-transform duration-200"
+          >
+            Download Full Schedule
+          </button>
         </div>
 
         <Footer />

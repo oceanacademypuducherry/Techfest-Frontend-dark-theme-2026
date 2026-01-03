@@ -1,7 +1,8 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { scrollToTop } from "../../utils/scrollTo";
-import techfestImg from '../../assets/images/hero/techfest.png';
+import techfestImg from "../../assets/images/hero/techfest.png";
+import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 
 export default function Navigation() {
   const location = useLocation();
@@ -9,6 +10,15 @@ export default function Navigation() {
 
   const [activeTab, setActiveTab] = useState(location.pathname);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  /* ✅ Routes where BACK button should appear */
+  const backButtonRoutes = [
+    "/ticket-booking",
+    "/ticket-summary",
+    "/ticket-confirmation",
+  ];
+
+  const showBackButton = backButtonRoutes.includes(location.pathname);
 
   useEffect(() => {
     setActiveTab(location.pathname);
@@ -74,11 +84,10 @@ export default function Navigation() {
 
         {/* Logo */}
         <img
-  src={techfestImg}
-  alt="Techfest Logo"
-  className="h-[80px] sm:h-24 object-contain"
-/>
-
+          src={techfestImg}
+          alt="Techfest Logo"
+          className="h-[80px] sm:h-24 object-contain"
+        />
 
         {/* Hamburger */}
         {!menuOpen && (
@@ -92,7 +101,7 @@ export default function Navigation() {
           </button>
         )}
 
-        {/* Desktop Nav */}
+        {/* ================= DESKTOP NAV ================= */}
         <div className="hidden lg:flex space-x-10 text-[16px] font-medium items-center">
           {navItems.map(({ path, label, hoverLabel, external }) =>
             external ? (
@@ -104,12 +113,10 @@ export default function Navigation() {
                 className="relative group text-white/80 hover:text-[#01C1FB]"
               >
                 {label}
-                <span
-                  className="absolute left-1/2 -translate-x-1/2 top-[140%]
-                  px-3 py-2 text-sm rounded-md bg-black text-white
-                  opacity-0 scale-95 transition-all duration-300
-                  group-hover:opacity-100 group-hover:scale-100"
-                >
+                <span className="absolute left-1/2 -translate-x-1/2 top-[140%]
+                px-3 py-2 text-sm rounded-md bg-black text-white
+                opacity-0 scale-95 transition-all duration-300
+                group-hover:opacity-100 group-hover:scale-100">
                   {hoverLabel}
                 </span>
               </a>
@@ -129,19 +136,34 @@ export default function Navigation() {
             )
           )}
 
-          <Link
-            to="/ticket-booking"
-            onClick={(e) => handleClick(e, "/ticket-booking")}
-            className="px-4 py-[12px] rounded-lg text-white font-semibold
-            bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-            shadow-md hover:scale-105 transition-all duration-300"
-          >
-            Book Your Tickets
-          </Link>
+          {/* ✅ Back / Book Button */}
+          {showBackButton ? (
+            <button
+              onClick={() =>
+                window.history.length > 1 ? navigate(-1) : navigate("/")
+              }
+              className="px-4 py-3 rounded-lg text-white font-semibold
+              bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+              shadow-md hover:scale-105 transition-all flex items-center gap-2"
+            >
+              <span className="text-[25px] leading-none mt-[-4px]">←</span>
+              Ticket Booking
+            </button>
+          ) : (
+            <Link
+              to="/ticket-booking"
+              onClick={(e) => handleClick(e, "/ticket-booking")}
+              className="px-4 py-3 rounded-lg text-white font-semibold
+              bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+              shadow-md hover:scale-105 transition-all"
+            >
+              Book Your Tickets
+            </Link>
+          )}
         </div>
       </section>
 
-      {/* Overlay */}
+      {/* ================= MOBILE MENU ================= */}
       {menuOpen && (
         <div
           className="lg:hidden fixed inset-0 bg-black/60"
@@ -149,7 +171,6 @@ export default function Navigation() {
         ></div>
       )}
 
-      {/* Mobile Menu */}
       <div
         className={`lg:hidden fixed top-0 right-0 w-[270px] bg-[#0A0C12] h-screen
         shadow-xl z-50 transition-transform duration-300
@@ -167,16 +188,9 @@ export default function Navigation() {
         <div className="flex flex-col px-6 py-16 space-y-6">
           {navItems.map(({ path, label, hoverLabel, external }) =>
             external ? (
-              <a
-                key={path}
-                href={path}
-                target="_blank"
-                className="text-white text-[18px]"
-              >
+              <a key={path} href={path} target="_blank" className="text-white text-[18px]">
                 {label}
-                <span className="block text-sm text-white/50">
-                  {hoverLabel}
-                </span>
+                <span className="block text-sm text-white/50">{hoverLabel}</span>
               </a>
             ) : (
               <Link
@@ -191,15 +205,30 @@ export default function Navigation() {
             )
           )}
 
-          <Link
-            to="/ticket-booking"
-            onClick={(e) => handleClick(e, "/ticket-booking")}
-            className="px-4 py-3 rounded-lg text-white font-semibold
-            bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-            text-center shadow-md hover:scale-105 transition-all"
-          >
-            Book Your Tickets
-          </Link>
+          {/* ✅ Mobile Back / Book Button */}
+          {showBackButton ? (
+            <button
+              onClick={() =>
+                window.history.length > 1 ? navigate(-1) : navigate("/")
+              }
+              className="px-4 py-3 rounded-lg text-white font-semibold
+              bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+              shadow-md hover:scale-105 transition-all flex items-center gap-2"
+            >
+              <ArrowLeftIcon className="w-5 h-5" />
+              Ticket Booking
+            </button>
+          ) : (
+            <Link
+              to="/ticket-booking"
+              onClick={(e) => handleClick(e, "/ticket-booking")}
+              className="px-4 py-3 rounded-lg text-white font-semibold
+              bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+              text-center shadow-md hover:scale-105 transition-all"
+            >
+              Book Your Tickets
+            </Link>
+          )}
         </div>
       </div>
     </main>

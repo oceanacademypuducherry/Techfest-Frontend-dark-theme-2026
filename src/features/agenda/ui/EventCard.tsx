@@ -5,6 +5,7 @@ interface Speaker {
   id: number;
   name: string;
   img: string;
+  achievements?: string[];
 }
 
 interface EventProps {
@@ -20,7 +21,6 @@ const EventCard: React.FC<EventProps> = ({
   speakers,
   description,
 }) => {
-  // Predefined border styles for dynamic assignment
   const borderStyles = [
     "rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px]",
     "rounded-tl-[20px] rounded-tr-[20px] rounded-br-[20px]",
@@ -28,13 +28,12 @@ const EventCard: React.FC<EventProps> = ({
     "rounded-tr-[20px] rounded-bl-[20px] rounded-br-[20px]",
   ];
 
-  // Function to get border-radius based on index
   const getImageBorderRadius = (index: number) =>
     borderStyles[index % borderStyles.length];
 
   return (
     <div className="bg-[#0F172A] border border-[#0F172A] rounded-xl p-4 shadow-md hover:shadow-xl transition-all">
-
+      
       {/* Time (mobile) */}
       <span className="sm:hidden block text-xs bg-[#1e293b] text-[#22d3ee] px-3 py-1 rounded-md w-fit ml-auto mb-1">
         {time}
@@ -52,13 +51,15 @@ const EventCard: React.FC<EventProps> = ({
         </span>
       </div>
 
-      {/* Speaker Images */}
+      {/* Speakers */}
       {speakers.length > 0 ? (
-        <div className="flex gap-4 mt-4">
+        <div className="mt-4 space-y-4">
           {speakers.map((speaker, index) => (
-            <div key={speaker.id} className="text-center">
+            <div key={speaker.id} className="flex gap-4 items-start">
+              
+              {/* Image */}
               <div
-                className={`w-16 h-16 sm:w-20 sm:h-20 overflow-hidden shadow-sm hover:scale-105 transition ${getImageBorderRadius(
+                className={`w-16 h-16 sm:w-20 sm:h-20 overflow-hidden shadow-sm ${getImageBorderRadius(
                   index
                 )}`}
               >
@@ -68,18 +69,25 @@ const EventCard: React.FC<EventProps> = ({
                   className="w-full h-full object-cover bg-gray-200"
                 />
               </div>
+
+              {/* Name + Description */}
+              <div>
+                <p className="text-white text-sm font-medium">
+                  {speaker.name}
+                </p>
+
+                {speaker.achievements && (
+  <p className="mt-1 text-gray-400 text-xs sm:text-sm leading-relaxed">
+    {speaker.achievements}
+  </p>
+)}
+
+              </div>
             </div>
           ))}
         </div>
       ) : (
         <p className="text-white text-sm mt-3">{description}</p>
-      )}
-
-      {/* Speaker Names */}
-      {speakers.length > 0 && (
-        <p className="text-white text-sm mt-3">
-          {speakers.map(s => s.name).join(" | ")}
-        </p>
       )}
     </div>
   );
