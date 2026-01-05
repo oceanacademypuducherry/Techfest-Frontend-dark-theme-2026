@@ -65,14 +65,7 @@ export const eventData: HallSchedule[] = [
         speakers: [],
         description: "Keynote Presentation - Chief Guest Welcome  🚀 (Happening in Musk hall)"
       },
-      // {
-      //   id: 3,
-      //   time: "10:30 am - 11:30 am",
-      //   title: "🤖 GenAI in action: Insights into LLM and Innovation  🚀",
-      //   speakers: [
-      //     { id: 5, name: "Baskar Kothandapani", img:  baskar_kothandapaniimg },
-      //   ],
-      // },
+     
       {
         id: 18,
         time: "10:30 am - 11:30 am",
@@ -81,26 +74,13 @@ export const eventData: HallSchedule[] = [
           { id: 11, name: "Bharath", img: bharath,achievements: 'Flutter Engineer at Dhoshi', },
         ],
       }, 
-      // {
-      //   id: 4,
-      //   time: "11.30 am - 12:30 pm",
-      //   title: "🖌️ Designer vs  🖥️ Developer vs 🧑‍🔬 Tester",
-      //   speakers: [
-      //     { id: 6, name: "Sanjivy", img: sanjivy },
-      //     { id: 7, name: "Sudhakar", img: sudhakarNS },
-      //     { id:10, name: "Ananda kumar" , img:anandh},
-      //     { id: 14, name: "Nishanth" , img:nishanth},
-      //     { id: 16, name: "Shahira Begam" , img:shahira},
-      //     { id: 18, name: "Havilah" , img:havilah}
-      //   ],
-      // },
+      
       {
         id: 13,
         time: "11.30 am - 12:30 pm",
         title: "🤖 Opportunities for AI Agents: 🎨 Designers | 💻 Developers | 🚀 Entrepreneurs",
         speakers: [
           { id: 1, name: "Gokul Rangarajan", img: gokul_rangarajanimg, achievements: 'General Partner at Pitchworks Venture Studio', },
-          // { id: 10, name: "Speaker 10", img: placeholder },
         ],
       },
       {
@@ -110,15 +90,7 @@ export const eventData: HallSchedule[] = [
         speakers: [],
         description: getLunch()
       },
-      // {
-      //   id: 6,
-      //   time: "1:45 pm - 03:15 pm",
-      //   title: "🤖 AI in Hiring: Revolution or 🚧 Roadblock for Fresh Graduates? ( 🎙️ PO-TA Panel Discussion)",
-      //   speakers: [
-      //     { id: 1, name: "Gokul Rangarajan", img: gokul_rangarajanimg },
-      //     // { id: 10, name: "Speaker 10", img: placeholder },
-      //   ],
-      // },
+    
       {
         id: 23,
         time: "1:45 pm - 02:30 pm",
@@ -144,15 +116,7 @@ export const eventData: HallSchedule[] = [
         speakers: [],
         description: getTeaBreakAnimation()
       },
-      // {
-      //   id: 8,
-      //   time: "3:45 pm - 04.30 pm",
-      //   title: "💼LinkedIn Mastery: Building an Impactful Profile to Kickstart Your Career 🌟 ",
-      //   speakers: [
-      //     { id: 15, name: "Sivakami Uma Muthukumar", img: sivakami },
-      //     // { id: 10, name: "Speaker 10", img: placeholder },
-      //   ],
-      // }, 
+      
       {
         id: 4,
         time: "03:45 pm - 04.30 pm",
@@ -213,24 +177,7 @@ export const eventData: HallSchedule[] = [
           { id: 18, name: "Havilah" , img:havilah,  achievements: "UI/UX Designer at Wowlabz",}
         ],
       },
-      // {
-      //   id: 12,
-      //   time: "10:30 am - 11:30 am",
-      //   title: "🔐 Cryptography : Shielding the Digital World 🌍 and Shaping the Future of 🛡️ CyberSecurity",
-      //   speakers: [
-      //     { id: 2, name: "Vijayakumar B", img: vijayakumarimg },
-      //     // { id: 15, name: "Speaker 15", img: placeholder },
-      //   ],
-      // },
-      // {
-      //   id: 13,
-      //   time: "11.30 am - 12:30 pm",
-      //   title: "🤖 Opportunities for AI Agents: 🎨 Designers | 💻 Developers | 🚀 Entrepreneurs",
-      //   speakers: [
-      //     { id: 1, name: "Gokul Rangarajan", img: gokul_rangarajanimg },
-      //     // { id: 10, name: "Speaker 10", img: placeholder },
-      //   ],
-      // },
+      
       {
         id: 14,
         time: "12:30 pm - 01.45 pm",
@@ -250,14 +197,7 @@ export const eventData: HallSchedule[] = [
           { id: 23, name: "Harish Kumar", img: harishkumar,  achievements: "JAVA | JS | Rest API | Manage Software Development Cycle | Speaks about Science & Tech", },
         ],
       },
-      // {
-      //   id: 15,
-      //   time: "01.45 pm - 02:30 pm",
-      //   title: "Public Cloud ☁️",
-      //   speakers: [
-      //     { id: 3, name: "Rajan Kannan", img: rajan_Kannanimg },
-      //   ],
-      // },
+      
       {
         id: 16,
         time: "2:30 pm - 03.15 pm",
@@ -281,17 +221,9 @@ export const eventData: HallSchedule[] = [
         speakers: [
           { id: 15, name: "Sivakami Uma Muthukumar", img: sivakami, achievements:
       'Personal Branding Strategist | Storytelling Advocate | Thought Leadership Coach', },
-          // { id: 10, name: "Speaker 10", img: placeholder },
         ],
       },
-      // {
-      //   id: 18,
-      //   time: "3:45 pm - 04.30 pm",
-      //   title: "🚀 Future of App Development: What's Next? 📱",
-      //   speakers: [
-      //     { id: 11, name: "Bharath", img: bharath },
-      //   ],
-      // }, 
+       
       {
         id: 19,
         time: "04:30 pm - 05.15 pm",
@@ -335,24 +267,7 @@ export const eventData: HallSchedule[] = [
           { id: 3, name: "Rajan Kannan", img: rajan_Kannanimg, achievements: 'Associate Software Engineer at JP Morgan Chase & Co.', },
         ],
       },
-      // {
-      //   id: 22,
-      //   time: "10:30 am - 11:30 am",
-      //   title: "Road Map to full Stack Developer 🚀",
-      //   speakers: [
-      //     { id: 17, name: "Kamalakannan", img: kamalakannan },
-      //   ],
-      // },
-      // {
-      //   id: 23,
-      //   time: "11:30 pm - 12.30 pm",
-      //   title: "🔥 Fireside Chat: Startup Ignition - How to Turn 💡 Ideas into 🌍 Impact",
-      //   speakers: [
-      //     { id: 8, name: "Vishnu Vardhan", img: vishnuVardhan },
-      //     { id: 9, name: "Dakshin", img: dakshin },
-      //   ],
-       
-      // },
+    
       {
         id: 24,
         time: "12.30 pm - 01:45 pm",

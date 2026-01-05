@@ -79,7 +79,7 @@ export default function About() {
       </h3>
 
       <p
-        className="text-white/70 text-[14px] sm:text-[16px] lg:text-[18px]
+        className="text-white/70 text-[14px] sm:text-[16px] lg:text-[16px]
         leading-6 sm:leading-7 lg:leading-8"
       >
         {text}
@@ -122,9 +122,9 @@ export default function About() {
           className="mt-4 text-white/70 text-[14px] sm:text-[16px] lg:text-[18px]
           max-w-3xl mx-auto leading-6 lg:leading-8"
         >
-          FutureTech Summit is the premier gathering for innovators, investors,
-          and technology leaders. For eight consecutive years, we’ve been the
-          catalyst for groundbreaking collaborations and transformative ideas.
+          TechFest 2026 is a technical event bringing together students,
+  educators, and industry professionals to explore emerging technologies.
+  The event features expert talks and collaborative sessions designed to inspire innovation and learning.
         </p>
 
         {/* Stats */}
@@ -135,15 +135,15 @@ export default function About() {
         </div>
 
         {/* Info Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-12 mt-14">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-12 mt-14">
           <InfoCard
             title="Network & Connect"
             text="Meet industry leaders, investors, and innovators. Build meaningful connections that last beyond the event."
             lineColor="#00C2FF"
-          />
+          />                
           <InfoCard
             title="Learn & Grow"
-            text="Attend workshops, panel discussions, and keynotes from the brightest minds in technology."
+            text="Gain practical knowledge through expert talks, panel discussions, and keynotes from the brightest minds in technology."
             lineColor="#EE4C9C"
           />
           <InfoCard
@@ -151,7 +151,27 @@ export default function About() {
             text="Showcase your startup, secure funding, and gain insights to accelerate your growth journey."
             lineColor="#8A63FF"
           />
-        </div>
+        </div> */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-12 mt-14">
+  <InfoCard
+    title="Network & Connect"
+    text="Interact with industry experts, speakers, students, and working professionals across multiple halls. Build connections through panel discussions, fireside chats, and open networking sessions."
+    lineColor="#00C2FF"
+  />
+
+  <InfoCard
+    title="Learn & Grow"
+    text="Gain real-world insights through keynote presentations, expert talks, and technical sessions on AI, App Development, Cloud, Cybersecurity, Data Science, and more."
+    lineColor="#EE4C9C"
+  />
+
+  <InfoCard
+    title="Discuss & Explore"
+    text="Participate in group discussions, panel sessions, and interactive conversations covering careers, hiring trends, non-technical skills, and emerging technologies."
+    lineColor="#8A63FF"
+  />
+</div>
+
       </div>
     </section>
   );

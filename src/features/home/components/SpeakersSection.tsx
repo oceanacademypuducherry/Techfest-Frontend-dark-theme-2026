@@ -60,7 +60,7 @@ export default function SpeakersSection() {
           backdrop-blur
         "
         >
-          Featured Speakers
+          Expert Speakers
         </span>
       </div>
 
@@ -70,7 +70,7 @@ export default function SpeakersSection() {
         <span className="text-[#00C2FF]">Industry</span>
         <br />
         <span className="bg-gradient-to-r from-[#00C2FF] via-[#9b5de5] to-[#EE4C9C] bg-clip-text text-transparent">
-          Leaders
+          Experts
         </span>
       </h2>
 

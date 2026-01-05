@@ -57,6 +57,7 @@ blue:"#00C2FF"
   },
   plugins: [
     require("daisyui"),
+    require("@tailwindcss/line-clamp"), // ✅ ADD HERE
     function ({ addUtilities, theme, e }) {
       addUtilities(
         {

@@ -53,8 +53,9 @@ export default function PastEvent() {
         {/* SUBTITLE */}
 
         <p className="text-[#ffffffb3] text-[15px] sm:text-[18px] max-w-3xl mx-auto leading-7">
-          From inspiring talks to breakthrough showcases, explore the remarkable
-          moments that shaped our journey.
+          {/* From inspiring talks to breakthrough showcases, explore the remarkable
+          moments that shaped our journey. */}
+          Explore our exciting Past Events to relive moments of innovation, collaboration, and inspiration. From coding challenges to tech talks and workshops, each event highlights our journey of excellence.
         </p>
 
         {/* CARDS */}

@@ -83,9 +83,7 @@ export default function HomeMain() {
             className="mt-4 text-white text-[16px] sm:text-[18px]
             max-w-[690px] mx-auto"
           >
-            Unlock the future of technology at our exclusive tech event!
-            Connect with innovators, explore game-changing ideas, and
-            secure your spot today
+            Unlock the future of technology at TechFest 2026. Connect with innovators, explore emerging ideas, and be part of a celebration of innovation and learning.
           </p>
 
           {/* Buttons */}

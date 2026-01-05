@@ -25,7 +25,8 @@ const Speakers: React.FC = () => {
 
         <p className="text-cyan-600 text-[15px] sm:text-[18px] mb-8">
 
-          Explore our complete lineup of 20 industry experts
+         Meet our speakers — accomplished professionals shaping the future of technology and innovation.
+
         </p>
 
         {/* Speakers Grid */}
