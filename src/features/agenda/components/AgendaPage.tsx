@@ -35,7 +35,7 @@ const AgendaPage: React.FC = () => {
         {/* HEADER */}
         <div className="flex flex-col items-center justify-center text-center mb-6 px-4">
           <h2 className="mt-6 mb-4 text-[30px] sm:text-[36px] font-semibold text-white">
-            One Day Of
+            A Day Of
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]">
               Innovation and Learning

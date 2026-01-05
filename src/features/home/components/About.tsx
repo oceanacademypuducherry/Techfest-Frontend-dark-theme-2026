@@ -124,7 +124,7 @@ export default function About() {
         >
           TechFest 2026 is a technical event bringing together students,
   educators, and industry professionals to explore emerging technologies.
-  The event features expert talks and collaborative sessions designed to inspire innovation and learning.
+  The event features expert talks and interactive sessions that inspire innovation and learning.
         </p>
 
         {/* Stats */}

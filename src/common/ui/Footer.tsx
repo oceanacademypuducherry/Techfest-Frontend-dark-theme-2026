@@ -1,5 +1,5 @@
 import { discord, linkedin, instagram, youtube } from "../../assets/images/footer";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { BiSupport } from "react-icons/bi";
 import { MdEmail, MdLocationOn } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -122,7 +122,12 @@ export default function Footer() {
                 flex flex-col md:flex-row 
                 items-center justify-center 
                 gap-4 md:gap-10 text-sm text-gray-400 text-center md:text-left">
-  <div className="flex items-center gap-2"> <MdEmail /> techfest2026@gmail.com </div>
+  <div className="flex items-center gap-2"> <MdEmail /> <Link
+                  to="mailto:oatechfest@gmail.com"
+                  className=" text-blue-600"
+                >
+                  oatechfest@gmail.com
+                </Link> </div>
   <div className="flex items-center gap-2"> <FaPhoneAlt /> 0413-2204580 </div>
   <div className="flex items-center gap-2"> <MdLocationOn /> PTU, Puducherry </div>
 </div>
@@ -153,7 +158,7 @@ export default function Footer() {
         </div>
 
         <p>
-          <span className="text-white font-medium">Tech Fest 2025</span> — All rights reserved.
+          <span className="text-white font-medium">Tech Fest 2026</span> — All rights reserved.
         </p>
       </div>
     </footer>
