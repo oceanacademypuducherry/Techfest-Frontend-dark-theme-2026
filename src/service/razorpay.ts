@@ -73,6 +73,7 @@ export const initiateRazorpay = async (
       studentCount,
       employeeCount,
       emails,
+      users
     });
 
     if (!responseData) {
@@ -89,8 +90,8 @@ export const initiateRazorpay = async (
     const ticketQuantity = studentCount + employeeCount;
 
     const paymentObject = new (window as any).Razorpay({
-      // key: "rzp_test_V5lYmgTFReqwlV",
-      key: "rzp_live_N4utv68tNASYJu", 
+      key: "rzp_test_V5lYmgTFReqwlV",
+      // key: "rzp_live_N4utv68tNASYJu", 
       order_id,
       amount,
       currency,
