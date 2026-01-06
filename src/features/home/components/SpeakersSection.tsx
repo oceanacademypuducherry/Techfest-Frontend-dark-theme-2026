@@ -46,10 +46,10 @@ export default function SpeakersSection() {
   );
 
   return (
-    <section className="bg-[#0A0C12] py-14  sm:py-20 overflow-hidden">
+    <section className="bg-[#0A0C12] py-6  sm:py-10 overflow-hidden">
 
       {/* Top Label */}
-      <div className="flex justify-center mb-10">
+      <div className="flex justify-center mb-6 sm:mb-10">
         <span
           className="
           px-5 py-3 text-[16px]
@@ -65,7 +65,7 @@ export default function SpeakersSection() {
       </div>
 
       {/* Heading */}
-      <h2 className="text-center text-[30px] sm:text-4xl md:text-5xl font-semibold text-white">
+      <h2 className="text-center text-[28px] sm:text-4xl md:text-5xl font-semibold text-white">
         Learn from the{" "}
         <span className="text-[#00C2FF]">Industry</span>
         <br />
@@ -75,7 +75,7 @@ export default function SpeakersSection() {
       </h2>
 
       {/* Subtext */}
-      <p className="text-center sm:text-[18px] text-[16px] text-white/70 mt-4 px-4">
+      <p className="text-center text-[16px] sm:text-[18px] text-white/70 mt-4 px-4">
         Join sessions led by visionaries who are shaping the future of technology
       </p>
 

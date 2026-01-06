@@ -29,7 +29,7 @@ export default function PastEvent() {
     <article
       id="past_events"
 
-      className="bg-bgcolor text-white py-12 px-4"
+      className="bg-bgcolor text-white py-8 sm:py-12 px-4"
     >
       <main className="max-w-6xl mx-auto text-center">
         
@@ -52,14 +52,14 @@ export default function PastEvent() {
 
         {/* SUBTITLE */}
 
-        <p className="text-[#ffffffb3] text-[15px] sm:text-[18px] max-w-3xl mx-auto leading-7">
+        <p className="text-[#ffffffb3] text-[16px] sm:text-[18px] max-w-3xl mx-auto leading-7">
           {/* From inspiring talks to breakthrough showcases, explore the remarkable
           moments that shaped our journey. */}
           Explore our exciting Past Events to relive moments of innovation, collaboration, and inspiration. From coding challenges to tech talks and workshops, each event highlights our journey of excellence.
         </p>
 
         {/* CARDS */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-6 sm:gap-10 mt-12">
           {eventData.map((event, index) => (
             <div
               key={index}

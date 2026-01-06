@@ -133,7 +133,7 @@ const EventCard: React.FC<EventProps> = ({
   const isRowLayout = speakers.length > 2;
 
   return (
-    <div className="bg-[#0F172A] border border-[#0F172A] rounded-xl p-4 shadow-md hover:shadow-xl transition-all">
+    <div className="bg-[#0F172A] border border-[#0F172A] rounded-xl p-2 sm:p-4 shadow-md hover:shadow-xl transition-all">
       
       {/* Time (mobile) */}
       <span className="sm:hidden block text-xs bg-[#1e293b] text-[#bc588e] px-3 py-1 rounded-md w-fit ml-auto mb-1">
@@ -166,7 +166,7 @@ const EventCard: React.FC<EventProps> = ({
   <div
     key={speaker.id}
     className="
-      flex flex-col sm:flex-row gap-3 sm:gap-4
+      flex flex-row gap-3 sm:gap-4
       sm:items-center
     "
   >
@@ -202,14 +202,20 @@ const EventCard: React.FC<EventProps> = ({
         speakers.length > 2 ? (
           <>
             {/* Short text */}
-<p className="mt-1 text-gray-400 text-[14px]  truncate">
-              {Array.isArray(speaker.achievements)
-                ? speaker.achievements.join(", ")
-                : speaker.achievements}
-            </p>
+<p className="
+  mt-1 text-gray-400 text-[14px]
+  w-full sm:w-[460px] md:w-[625px] lg:w-[355px]
+  whitespace-normal break-words
+  lg:truncate lg:whitespace-nowrap
+">
+  {Array.isArray(speaker.achievements)
+    ? speaker.achievements.join(", ")
+    : speaker.achievements}
+</p>
+
 
             {/* Hover (desktop only) */}
-            <div className="absolute left-0 top-full mt-2 hidden sm:group-hover:block bg-[#020617] text-white text-xs p-3 rounded-md shadow-lg z-30 w-178">
+            <div className="absolute left-0 top-full mt-2 hidden sm:group-hover:block bg-[#020617] text-white text-xs p-3 rounded-md shadow-lg z-30 w-178 ">
               {Array.isArray(speaker.achievements)
                 ? speaker.achievements.join(", ")
                 : speaker.achievements}

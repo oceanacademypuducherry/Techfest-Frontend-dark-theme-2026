@@ -26,7 +26,7 @@ export default function EarlyBirdWorkingProfCard({ data }: EarlyBirdWorkingProfC
     <main className="flex-1">
       <section
         className={`relative rounded-2xl p-5 max-sm:p-3 transition-all duration-300 w-full h-[210px] max-sm:h-[150px]
-          ${earlyBirdData.isActive ? "bg-gradient-to-br from-[#2a0606] via-[#9A3222]/50 to-[#D09621]/70 border-[1.5px] border-[#ff5a5a] shadow-[15px_15px_55px_rgba(200,80,80,0.18),-15px_15px_55px_rgba(120,80,80,0.18),15px_-15px_55px_rgba(120,80,80,0.18),-15px_-15px_55px_rgba(120,80,80,0.18)]"
+          ${earlyBirdData.isActive ? "bg-gradient-to-br from-[#EE4C9C] via-[#EE4C9C]/80 to-[#EE4C9C]/40 border-[1.7px] border-[#EE4C9C] shadow-[0_0_10px_3px_rgba(238,76,156,0.35)]"
             : "bg-[#777777] border border-transparent shadow-inner"}`}
       >
         {earlyBirdData.isActive && (
@@ -37,13 +37,13 @@ export default function EarlyBirdWorkingProfCard({ data }: EarlyBirdWorkingProfC
         <div className="flex items-center justify-between">
           <button
             className={`rounded-md px-3 py-1 text-[12px] sm:text-sm font-semibold
-              ${earlyBirdData.isActive ? "bg-[#EF4444] text-white" : "bg-[#545454] text-[#bdbdbd]"}`}
+              ${earlyBirdData.isActive ? "bg-[#C92F78]/100 text-[#A8FFE0]" : "bg-[#545454] text-[#bdbdbd]"}`}
           >
             {earlyBirdData.type?.[0]?.toLocaleUpperCase() + earlyBirdData.type?.slice(1) || ""}
           </button> 
 
           {earlyBirdData.isActive ? (
-            <FaCheckCircle className="text-[#16a34a] text-2xl sm:text-3xl drop-shadow" />
+            <FaCheckCircle className="text-white text-2xl sm:text-3xl drop-shadow" />
           ) : (
             <div className="p-2 rounded-full bg-[#545454]">
               <FiLock size={18} className="text-[#9aa0a6]" />

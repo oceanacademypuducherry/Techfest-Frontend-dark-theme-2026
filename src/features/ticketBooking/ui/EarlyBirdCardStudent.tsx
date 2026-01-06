@@ -25,7 +25,7 @@ export default function EarlyBirdCardStudent({ data }: EarlyBirdCardStudentProps
     <main className="flex-1">
       <section
         className={`relative rounded-2xl p-5 max-sm:p-3 transition-all duration-300 w-full h-[210px] max-sm:h-[150px]
-          ${earlyBirdData.isActive ? "bg-gradient-to-br from-[#023538] via-[#0A3B1B] to-[#123E09] border-[1.7px] border-[#0fe77f] shadow-[0_0_10px_2px_rgba(0,200,150,0.45)]"
+          ${earlyBirdData.isActive ? "bg-gradient-to-br from-[#00C2FF]/90 via-[#01C1FB]/70 to-[#01C1FB]/50 border-[2.5px] border-[#00C2FF]/100 shadow-[0_0_10px_2px_rgba(0,194,255,0.25)]"
 
             : "bg-[#777777] border border-transparent shadow-inner"}`}
 
@@ -40,7 +40,7 @@ export default function EarlyBirdCardStudent({ data }: EarlyBirdCardStudentProps
         <div className="flex items-center justify-between">
           <button
             className={`rounded-md px-3 py-1 text-[12px] sm:text-sm font-semibold
-              ${earlyBirdData.isActive ? "bg-[#3BA964] text-white" : "bg-[#545454] text-[#bdbdbd]"}`}
+              ${earlyBirdData.isActive ? "bg-[#01C1FB]/100 text-[#FFD8D8]" : "bg-[#545454] text-[#bdbdbd]"}`}
           >                               
             {earlyBirdData.type?.[0]?.toLocaleUpperCase() + earlyBirdData.type?.slice(1) || ""}
           </button>

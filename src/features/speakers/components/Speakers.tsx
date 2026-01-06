@@ -14,7 +14,7 @@ const Speakers: React.FC = () => {
 
       <main className="bg-[#0A0C12] px-3 sm:px-6 md:px-0 xl:px-10 text-center">
         {/* Heading */}
-        <h2 className="mb-4 pt-5 text-[26px] sm:text-4xl md:text-5xl font-semibold text-gray-200">
+        <h2 className="mb-4 pt-5 text-[28px] sm:text-4xl md:text-5xl font-semibold text-gray-200">
 
           Voices of{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E64F8F] to-[#671AD2]">
@@ -23,7 +23,7 @@ const Speakers: React.FC = () => {
         </h2>
 
 
-        <p className="text-cyan-600 text-[15px] sm:text-[18px] mb-8">
+        <p className="text-cyan-600 text-[16px] sm:text-[18px] mb-8">
 
          Meet our speakers — accomplished professionals shaping the future of technology and innovation.
 

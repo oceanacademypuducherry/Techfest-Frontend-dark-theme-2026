@@ -36,7 +36,7 @@ export default function SponsorsSection() {
       </div>
 
       {/* Heading */}
-      <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-semibold mt-6">
+      <h2 className="text-center text-[28px] sm:text-4xl md:text-5xl font-semibold mt-6">
         Powered by  <span className="text-[#01C1FB]">Industry</span>
         <br />
         <span className="bg-gradient-to-r from-[#00C2FF] via-[#9b5de5] to-[#EE4C9C] bg-clip-text text-transparent">
@@ -50,7 +50,7 @@ export default function SponsorsSection() {
       </p>
 
       {/* ================= EVENT SPONSORS ================= */}
-      <div className="relative max-w-7xl mx-auto mt-14 rounded-2xl p-[2px]">
+      <div className="relative max-w-7xl mx-auto mt-10 sm:mt-14 rounded-2xl p-[2px]">
         <div className=" px-4 py-3 sm:py-10 overflow-hidden">
 
           {/* Label */}

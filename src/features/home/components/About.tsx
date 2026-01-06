@@ -99,7 +99,7 @@ export default function About() {
         {/* Badge */}
         <div
           className="inline-block bg-white/5 text-[#01C1FB]
-          text-[16px] px-6 py-3 mb-5 rounded-full border border-[#01C1FB]/30 backdrop-blur"
+          text-[16px] px-6 py-3 mb-0 sm:mb-5 rounded-full border border-[#01C1FB]/30 backdrop-blur"
         >
           About the Event
         </div>
@@ -119,7 +119,7 @@ export default function About() {
 
         {/* Description */}
         <p
-          className="mt-4 text-white/70 text-[14px] sm:text-[16px] lg:text-[18px]
+          className="mt-4 text-white/70 text-[16px] text-[16px] sm:text-[18px]
           max-w-3xl mx-auto leading-6 lg:leading-8"
         >
           TechFest 2026 is a technical event bringing together students,

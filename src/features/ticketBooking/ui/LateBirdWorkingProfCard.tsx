@@ -29,7 +29,8 @@ export default function LateBirdWorkingProfCard({ data }: LateBirdWorkingProfCar
         className={`relative rounded-2xl p-5 max-sm:p-3 transition-all duration-300 w-full h-[210px] max-sm:h-[150px]
 
           ${lateBirdData.isActive ? "bg-gradient-to-br from-[#EE4C9C] via-[#EE4C9C]/80 to-[#EE4C9C]/40 border-[1.7px] border-[#EE4C9C] shadow-[0_0_10px_3px_rgba(238,76,156,0.35)]"
-            : "bg-[#b3b3b3] border border-transparent shadow-inner"}`} 
+            : "bg-[#3b3f44] border border-[#4b4f55]"}`} 
+            
       >
         <div className="flex items-center justify-between">
           <button
