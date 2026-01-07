@@ -4,7 +4,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 
 import techfestImg from "../../../assets/images/hero/techfest.png";
-import heroVideo from "../../../assets/images/hero/techfest.mp4";
+import heroVideo from "../../../assets/images/hero/techfestvideo.mp4";
 
 export default function HomeMain() {
   const navigate = useNavigate();
