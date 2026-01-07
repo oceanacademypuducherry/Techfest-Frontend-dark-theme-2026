@@ -17,7 +17,7 @@ export default function HomeMain() {
       >
 
         {/* 🎥 BACKGROUND VIDEO */}
-        <video
+        {/* <video
           autoPlay
           loop
           muted
@@ -25,7 +25,27 @@ export default function HomeMain() {
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
           <source src={heroVideo} type="video/mp4" />
-        </video>
+        </video> */}
+
+        <video
+  poster={techfestImg}
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+  className="absolute inset-0 w-full h-full object-cover z-0
+             contrast-110 brightness-105 saturate-110"
+>
+  <source src={heroVideo} type="video/mp4" />
+</video>
+
+<div className="absolute inset-0 bg-black/35 z-10"></div>
+
+<div className="absolute inset-0 pointer-events-none z-[5]">
+  {/* Glow effects */}
+</div>
+
 
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-black/60 z-10"></div>
