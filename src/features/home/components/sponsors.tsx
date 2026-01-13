@@ -1,3 +1,4 @@
+import { MouseEvent } from "react";
 import {
   SFM,
   AIC,
@@ -12,35 +13,45 @@ import {
   divyam,
 } from "../../../assets/images";
 import Marquee from "react-fast-marquee";
+import { Link, useNavigate } from "react-router-dom"; 
 
 export default function SponsorsSection() {
+  const navigate = useNavigate(); 
   const partnerLogos = [
     { src: NAMMAFLUTTER, alt: "Namma Flutter" },
     { src: FOUNDERX, alt: "FounderX" },
     { src: SNIPPET, alt: "Snippet" },
     { src: AIC, alt: "AIC" },
     { src: SFM, alt: "SFM" },
-    { src: BOIKO, alt: "BOIKO" },
+    { src: BOIKO, alt: "BOIKO" }, 
     { src: FIA, alt: "FIA" },
     { src: divyam, alt: "Divyam" },
   ];
+
+ 
 
   return (
     <section className="bg-[#0A0C12] text-white">
 
       {/* Top Badge */}
       <div className="flex justify-center">
-        <span className="bg-white/5 border border-[#01C1FB]/40 px-6 py-3 rounded-full text-[#01C1FB] font-medium backdrop-blur">
-          Our Sponsors
-        </span>
+        <div className="flex items-center justify-center gap-2 sm:gap-4 mt-6 mb-6">
+  <span className="h-[1px] sm:h-[4px] w-24 bg-gradient-to-l from-[#01C1FB] to-transparent"></span>
+
+  <span className="text-[#01C1FB] sm:text-[18px] text-[17px] tracking-[0.0em] sm:tracking-[0.1em]">
+    Our Sponsors
+  </span>
+
+  <span className="h-[1px] sm:h-[4px] w-24 bg-gradient-to-r from-[#01C1FB] to-transparent"></span>
+</div>
       </div>
 
       {/* Heading */}
-      <h2 className="text-center text-[28px] sm:text-4xl md:text-5xl font-semibold mt-6">
+      <h2 className="text-center text-[28px] sm:text-4xl md:text-5xl font-semibold  mt-0 sm:mt-6">
         Powered by  <span className="text-[#01C1FB]">Industry</span>
         <br />
         <span className="bg-gradient-to-r from-[#00C2FF] via-[#9b5de5] to-[#EE4C9C] bg-clip-text text-transparent">
-          Partners
+          Sponsors
         </span>
       </h2>
 
@@ -154,7 +165,48 @@ export default function SponsorsSection() {
 
 </div>
 
+{/* Buttons Row */}
+<div className="flex justify-center gap-4 mt-5 sm:mt-10 flex-wrap">
+  {/* Book Your Tickets Button */}
+  <Link
+    to="/ticket-booking"
+    onClick={(e) => handleClick(e, "/ticket-booking")}
+    className="w-40 sm:w-48 md:w-56 px-4 sm:px-6 py-3 rounded-lg text-white font-semibold text-sm sm:text-base md:text-lg
+      bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+      shadow-md hover:scale-105 transition-all"
+  >
+    Book Your Tickets
+  </Link>
+  {/* View Sponsors Button */}
+  <button
+          onClick={() => {
+            navigate("/sponsors");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="
+           
+            px-7 py-3 rounded-lg
+           relative 
+                text-white font-semibold text-[16px]
+                hover:scale-105 transition-all duration-300
+                before:absolute before:inset-0
+                before:rounded-lg before:p-[1.7px]
+                before:bg-gradient-to-r before:from-[#01C1FB] before:to-[#EE4C9C]
+                before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)]
+                before:[-webkit-mask-composite:xor]
+                before:[mask-composite:exclude]
+          "
+        >
+          View Sponsors
+         
+        </button>
+
+  
+</div>
+
+
 
     </section>
+    
   );
 }

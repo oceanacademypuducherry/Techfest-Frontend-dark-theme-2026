@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { speakersData } from "../../speakers/utils/speaker";
 
 export default function SpeakersSection() {
@@ -47,22 +47,29 @@ export default function SpeakersSection() {
 
   return (
     <section className="bg-[#0A0C12] py-6  sm:py-10 overflow-hidden">
+{/* <div className="flex justify-center mb-6">
+  <Link
+    to="/ticket-booking"
+    onClick={(e) => handleClick(e, "/ticket-booking")}
+    className="px-4 py-3 rounded-lg text-white font-semibold
+      bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+      shadow-md hover:scale-105 transition-all"
+  >
+    Book Your Tickets
+  </Link>
+</div> */}
 
-      {/* Top Label */}
-      <div className="flex justify-center mb-6 sm:mb-10">
-        <span
-          className="
-          px-5 py-3 text-[16px]
-          text-[#EE4C9C]
-          rounded-full
-          bg-white/5
-          border border-[#EE4C9C]/40
-          backdrop-blur
-        "
-        >
-          Expert Speakers
-        </span>
-      </div>
+      
+
+      <div className="flex items-center justify-center gap-2 sm:gap-4 mt-0 sm:mt-6 mb-6">
+  <span className="h-[1px] sm:h-[4px] w-24 bg-gradient-to-l from-[#01C1FB] to-transparent"></span>
+
+  <span className="text-[#01C1FB] sm:text-[18px] text-[17px] tracking-[0.0em] sm:tracking-[0.1em] ">
+   Expert Speakers
+  </span>
+
+  <span className="h-[1px] sm:h-[4px] w-24 bg-gradient-to-r from-[#01C1FB] to-transparent"></span>
+</div>
 
       {/* Heading */}
       <h2 className="text-center text-[28px] sm:text-4xl md:text-5xl font-semibold text-white">

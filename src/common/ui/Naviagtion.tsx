@@ -75,7 +75,9 @@ export default function Navigation() {
     { path: "/about", label: "About" },
     { path: "/speakers", label: "Speakers" },
     { path: "/agenda", label: "Agenda" },
+     { path: "/sponsors", label: "Sponsors" }, 
     { path: "/past-events", label: "Past Events" },
+    
   ];
 
   return (

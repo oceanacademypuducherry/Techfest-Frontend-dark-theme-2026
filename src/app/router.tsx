@@ -8,6 +8,7 @@ import { FAQ } from "../common/ui/faq/FAQ";
 import { CertificateDownload } from "../features/certificateDownload";
 import CertificateDesign from "../features/certificateDownload/ui/CertificateDesign";
 import {PrivacyPolicy} from "../features/privacyPolicy/components"
+import SponsorsPage from "../features/home/components/SponsorsPage";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "speakers",
     element: <Speaker />,
+  },
+  {
+  path: "sponsors",
+    element: <SponsorsPage />,
   },
   {
     path: "ticket-booking",

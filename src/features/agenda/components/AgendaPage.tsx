@@ -33,8 +33,8 @@ const AgendaPage: React.FC = () => {
       {/* PAGE BACKGROUND */}
       <div className="bg-[#0A0C12] min-h-screen">
         {/* HEADER */}
-        <div className="flex flex-col items-center justify-center text-center mb-6 px-4">
-          <h2 className="mt-6 mb-4 text-[30px] sm:text-[36px] font-semibold text-white">
+        <div className="flex flex-col items-center justify-center text-center mb-6  px-0 sm:px-4">
+          <h2 className="mt-6 mb-4 text-[28px] sm:text-[36px] font-semibold text-white">
             A Day Of
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]">

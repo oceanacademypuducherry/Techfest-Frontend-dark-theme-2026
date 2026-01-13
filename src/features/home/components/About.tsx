@@ -1,5 +1,7 @@
 import { FaMicrophone, FaUsers, FaBook } from "react-icons/fa";
 import { PiBuildingFill } from "react-icons/pi";
+import { Link } from "react-router-dom";
+
 
 export default function About() {
 
@@ -97,12 +99,15 @@ export default function About() {
       <div className="max-w-6xl mx-auto text-center">
 
         {/* Badge */}
-        <div
-          className="inline-block bg-white/5 text-[#01C1FB]
-          text-[16px] px-6 py-3 mb-0 sm:mb-5 rounded-full border border-[#01C1FB]/30 backdrop-blur"
-        >
-          About the Event
-        </div>
+        <div className="flex items-center justify-center gap-2 sm:gap-4 mt-6 mb-6">
+  <span className="h-[1px] sm:h-[4px] w-24 bg-gradient-to-l from-[#01C1FB] to-transparent"></span>
+
+  <span className="text-[#01C1FB] sm:text-[18px] text-[17px] tracking-[0.0em] sm:tracking-[0.1em] ">
+    About the Event
+  </span>
+
+  <span className="h-[1px] sm:h-[4px] w-24 bg-gradient-to-r from-[#01C1FB] to-transparent"></span>
+</div>
 
         {/* Title */}
         <h2 className="mt-6 mb-6 text-[28px] sm:text-4xl md:text-5xl font-semibold leading-tight">
@@ -171,7 +176,17 @@ export default function About() {
     lineColor="#8A63FF"
   />
 </div>
-
+<div className="flex justify-center mt-6">
+  <Link
+    to="/ticket-booking"
+    onClick={(e) => handleClick(e, "/ticket-booking")}
+    className="px-4 py-3 rounded-lg text-white font-semibold
+      bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+      shadow-md hover:scale-105 transition-all"
+  >
+    Book Your Tickets
+  </Link>
+</div>
       </div>
     </section>
   );

@@ -8,7 +8,7 @@ import CK from "./ck.jpg";
 import QUOTES from "./quotes.svg"
 import CODE_CLASH_2025 from "./codeclash2025.jpeg"
 import INTERNSHIP from "./Internship.jpeg"
-import TECHFEST2025 from "./techfest2025.jpeg"
+import TECHFEST from "./techfestimage.jpeg"
 
 export {
     IWCCT,
@@ -18,7 +18,7 @@ export {
     WORKSHOP,
     CK,
     QUOTES,
-    TECHFEST2025,
+    TECHFEST,
     INTERNSHIP,
     CODE_CLASH_2025
 }
