@@ -11,7 +11,7 @@ export default function Navigation() {
   const [activeTab, setActiveTab] = useState(location.pathname);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  /* ✅ Routes where BACK button should appear */
+  // Routes where BACK button should appear
   const backButtonRoutes = [
     "/ticket-booking",
     "/ticket-summary",
@@ -75,9 +75,8 @@ export default function Navigation() {
     { path: "/about", label: "About" },
     { path: "/speakers", label: "Speakers" },
     { path: "/agenda", label: "Agenda" },
-     { path: "/sponsors", label: "Sponsors" }, 
+    { path: "/sponsors", label: "Sponsors" },
     { path: "/past-events", label: "Past Events" },
-    
   ];
 
   return (
@@ -107,21 +106,23 @@ export default function Navigation() {
         <div className="hidden lg:flex space-x-10 text-[16px] font-medium items-center">
           {navItems.map(({ path, label, hoverLabel, external }) =>
             external ? (
-              <a
-                key={path}
-                href={path}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative group text-white/80 hover:text-[#01C1FB]"
-              >
-                {label}
-                <span className="absolute left-1/2 -translate-x-1/2 top-[140%]
-                px-3 py-2 text-sm rounded-md bg-black text-white
-                opacity-0 scale-95 transition-all duration-300
-                group-hover:opacity-100 group-hover:scale-100">
+              <div key={path} className="relative group text-white/80 cursor-pointer">
+                {/* Main label - not clickable */}
+                <span>{label}</span>
+
+                {/* Tooltip clickable */}
+                <a
+                  href={path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute left-1/2 -translate-x-1/2 top-[130%]
+                    px-3 min-w-max py-[5px] text-sm rounded-md bg-black text-white
+                    opacity-0 scale-95 transition-all duration-300
+                    group-hover:opacity-100 group-hover:scale-100"
+                >
                   {hoverLabel}
-                </span>
-              </a>
+                </a>
+              </div>
             ) : (
               <Link
                 key={path}
@@ -138,7 +139,7 @@ export default function Navigation() {
             )
           )}
 
-          {/* ✅ Back / Book Button */}
+          {/* Back / Book Button */}
           {showBackButton ? (
             <button
               onClick={() =>
@@ -190,24 +191,30 @@ export default function Navigation() {
         <div className="flex flex-col px-6 py-16 space-y-6">
           {navItems.map(({ path, label, hoverLabel, external }) =>
             external ? (
-              <a key={path} href={path} target="_blank" className="text-white text-[18px]">
-                {label}
-                <span className="block text-sm text-white/50">{hoverLabel}</span>
-              </a>
+              <div key={path} className="group">
+                <span className="text-white text-[18px] cursor-default">{label}</span>
+                <a
+                  href={path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-sm text-white/50 mt-1 opacity-70 group-hover:opacity-100"
+                >
+                  {hoverLabel}
+                </a>
+              </div>
             ) : (
               <Link
                 key={path}
                 to={path}
                 onClick={(e) => handleClick(e, path)}
-                className={`text-white text-[16px]
-                ${isActive(path) ? "text-[#01C1FB]" : ""}`}
+                className={`text-white text-[16px] ${isActive(path) ? "text-[#01C1FB]" : ""}`}
               >
                 {label}
               </Link>
             )
           )}
 
-          {/* ✅ Mobile Back / Book Button */}
+          {/* Mobile Back / Book Button */}
           {showBackButton ? (
             <button
               onClick={() =>
