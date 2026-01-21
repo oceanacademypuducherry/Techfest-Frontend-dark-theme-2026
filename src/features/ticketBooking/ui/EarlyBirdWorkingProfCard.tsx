@@ -37,7 +37,7 @@ export default function EarlyBirdWorkingProfCard({ data }: EarlyBirdWorkingProfC
         <div className="flex items-center justify-between">
           <button
             className={`rounded-md px-3 py-1 text-[12px] sm:text-sm font-semibold
-              ${earlyBirdData.isActive ? "bg-[#C92F78]/100 text-[#A8FFE0]" : "bg-[#545454] text-[#bdbdbd]"}`}
+              ${earlyBirdData.isActive ? "bg-white  text-[#5F5F5F]" : "bg-[#545454] text-[#bdbdbd]"}`}
           >
             {earlyBirdData.type?.[0]?.toLocaleUpperCase() + earlyBirdData.type?.slice(1) || ""}
           </button> 

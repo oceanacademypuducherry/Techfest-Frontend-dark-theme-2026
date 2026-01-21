@@ -55,7 +55,7 @@ export default function StudentTicketQuantity({
               {isLoading ? (
                 <div className="h-8 w-20 bg-white/40 rounded-md"></div>
               ) : (
-                <button className="bg-[#00B9FF] text-white rounded-md p-2 font-semibold px-3 text-[13px]">
+                <button className="bg-white/90 text-black rounded-md p-2 font-semibold px-3 text-[13px]">
                   {data?.type
                     ? data.type[0].toUpperCase() + data.type.slice(1)
                     : ""}

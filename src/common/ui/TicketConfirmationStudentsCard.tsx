@@ -84,19 +84,43 @@ const fetchColleges = async (search: string) => {
 
 
 
+// const handleCollegeChange = (index: number, value: string) => {
+//   setInputValues(prev => ({ ...prev, [index]: value }))
+
+//   if (value.length < 3) {
+//     setShowMinCharHint(prev => ({ ...prev, [index]: true }))
+//     setCollegeOptions([])
+//     setShowDropdown(prev => ({ ...prev, [index]: false }))
+//     return
+//   }
+
+//   setShowMinCharHint(prev => ({ ...prev, [index]: false }))
+//   fetchColleges(value)
+//   setShowDropdown(prev => ({ ...prev, [index]: true }))
+// }
 const handleCollegeChange = (index: number, value: string) => {
   setInputValues(prev => ({ ...prev, [index]: value }))
 
+  // Clear previous debounce timer
+  if (debounceTimer.current) {
+    clearTimeout(debounceTimer.current)
+  }
+
+  // Show hint if less than 3 chars
   if (value.length < 3) {
     setShowMinCharHint(prev => ({ ...prev, [index]: true }))
-    setCollegeOptions([])
     setShowDropdown(prev => ({ ...prev, [index]: false }))
+    setCollegeOptions([])
     return
   }
 
   setShowMinCharHint(prev => ({ ...prev, [index]: false }))
-  fetchColleges(value)
-  setShowDropdown(prev => ({ ...prev, [index]: true }))
+
+  // Debounce API call (500ms delay)
+  debounceTimer.current = setTimeout(() => {
+    fetchColleges(value)
+    setShowDropdown(prev => ({ ...prev, [index]: true }))
+  }, 500)
 }
 
 
@@ -401,7 +425,7 @@ useEffect(() => {
       >
         <input
           type="text"
-          placeholder="Select college"
+          placeholder="Enter your college / school name"
           value={inputValues[index] || ''}
           className="w-full border rounded-lg px-3 py-2 pr-10 text-sm h-[48px]"
           onChange={e => handleCollegeChange(index, e.target.value)}
@@ -478,11 +502,11 @@ useEffect(() => {
       </div>
 
       {/* Helper text */}
-      <div className="mt-1 min-h-[20px]">
+      <div className="mt-1 min-h-[20px] ">
     {showMinCharHint[index] && (
       <div className="inline-block px-3 py-1 rounded-md
   border border-white
-  bg-white w-[472px]
+  bg-white  w-full
   shadow-lg">
         <p className="text-[14px] text-gray-600">
           Must be at least 3 characters

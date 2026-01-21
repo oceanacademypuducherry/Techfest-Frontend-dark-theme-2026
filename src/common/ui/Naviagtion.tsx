@@ -11,7 +11,7 @@ export default function Navigation() {
   const [activeTab, setActiveTab] = useState(location.pathname);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Routes where BACK button should appear
+  /* Routes where BACK button should appear */
   const backButtonRoutes = [
     "/ticket-booking",
     "/ticket-summary",
@@ -23,6 +23,15 @@ export default function Navigation() {
   useEffect(() => {
     setActiveTab(location.pathname);
   }, [location.pathname]);
+
+  /* Auto close mobile menu on resize >= 1280px */
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1280) setMenuOpen(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const scrollToSection = () => {
     const section = document.getElementById("past_events");
@@ -67,7 +76,7 @@ export default function Navigation() {
   const navItems = [
     { path: "/", label: "Home" },
     {
-      path: "https://techfest.oceanacademy.in",
+      path: "https://techfest25.oceanacademy.in",
       label: "Past Edition",
       hoverLabel: "TechFest 2025",
       external: true,
@@ -83,17 +92,17 @@ export default function Navigation() {
     <main className="bg-[#0A0C12] p-3 w-full sticky top-0 z-50 shadow-lg border-b border-white/10">
       <section className="flex justify-between items-center max-w-[1400px] mx-auto">
 
-        {/* Logo */}
+        {/* LOGO */}
         <img
           src={techfestImg}
           alt="Techfest Logo"
           className="h-[80px] sm:h-24 object-contain"
         />
 
-        {/* Hamburger */}
+        {/* HAMBURGER (below 1280px) */}
         {!menuOpen && (
           <button
-            className="lg:hidden flex flex-col justify-between w-5 h-4"
+            className="xl:hidden flex flex-col justify-between w-5 h-4"
             onClick={() => setMenuOpen(true)}
           >
             <span className="block w-full h-[3px] bg-white rounded"></span>
@@ -102,21 +111,19 @@ export default function Navigation() {
           </button>
         )}
 
-        {/* ================= DESKTOP NAV ================= */}
-        <div className="hidden lg:flex space-x-10 text-[16px] font-medium items-center">
+        {/* ================= DESKTOP NAV (>=1280px) ================= */}
+        <div className="hidden xl:flex space-x-10 text-[16px] font-medium items-center">
           {navItems.map(({ path, label, hoverLabel, external }) =>
             external ? (
               <div key={path} className="relative group text-white/80 cursor-pointer">
-                {/* Main label - not clickable */}
                 <span>{label}</span>
 
-                {/* Tooltip clickable */}
                 <a
                   href={path}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="absolute left-1/2 -translate-x-1/2 top-[130%]
-                    px-3 min-w-max py-[5px] text-sm rounded-md bg-black text-white
+                    px-3 py-[5px] text-sm rounded-md bg-black text-white
                     opacity-0 scale-95 transition-all duration-300
                     group-hover:opacity-100 group-hover:scale-100"
                 >
@@ -139,7 +146,6 @@ export default function Navigation() {
             )
           )}
 
-          {/* Back / Book Button */}
           {showBackButton ? (
             <button
               onClick={() =>
@@ -166,16 +172,17 @@ export default function Navigation() {
         </div>
       </section>
 
-      {/* ================= MOBILE MENU ================= */}
+      {/* ================= MOBILE OVERLAY (<1280px) ================= */}
       {menuOpen && (
         <div
-          className="lg:hidden fixed inset-0 bg-black/60"
+          className="xl:hidden fixed inset-0 bg-black/60 z-40"
           onClick={() => setMenuOpen(false)}
         ></div>
       )}
 
+      {/* ================= MOBILE DRAWER (<1280px) ================= */}
       <div
-        className={`lg:hidden fixed top-0 right-0 w-[270px] bg-[#0A0C12] h-screen
+        className={`xl:hidden fixed top-0 right-0 w-[270px] bg-[#0A0C12] h-screen
         shadow-xl z-50 transition-transform duration-300
         ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
@@ -191,13 +198,13 @@ export default function Navigation() {
         <div className="flex flex-col px-6 py-16 space-y-6">
           {navItems.map(({ path, label, hoverLabel, external }) =>
             external ? (
-              <div key={path} className="group">
-                <span className="text-white text-[18px] cursor-default">{label}</span>
+              <div key={path}>
+                <span className="text-white text-[18px]">{label}</span>
                 <a
                   href={path}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-sm text-white/50 mt-1 opacity-70 group-hover:opacity-100"
+                  className="block text-sm text-white/60 mt-1"
                 >
                   {hoverLabel}
                 </a>
@@ -207,14 +214,14 @@ export default function Navigation() {
                 key={path}
                 to={path}
                 onClick={(e) => handleClick(e, path)}
-                className={`text-white text-[16px] ${isActive(path) ? "text-[#01C1FB]" : ""}`}
+                className={`text-white text-[16px]
+                ${isActive(path) ? "text-[#01C1FB]" : ""}`}
               >
                 {label}
               </Link>
             )
           )}
 
-          {/* Mobile Back / Book Button */}
           {showBackButton ? (
             <button
               onClick={() =>
@@ -222,7 +229,7 @@ export default function Navigation() {
               }
               className="px-4 py-3 rounded-lg text-white font-semibold
               bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-              shadow-md hover:scale-105 transition-all flex items-center gap-2"
+              shadow-md flex items-center gap-2"
             >
               <ArrowLeftIcon className="w-5 h-5" />
               Ticket Booking
@@ -233,7 +240,7 @@ export default function Navigation() {
               onClick={(e) => handleClick(e, "/ticket-booking")}
               className="px-4 py-3 rounded-lg text-white font-semibold
               bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-              text-center shadow-md hover:scale-105 transition-all"
+              text-center shadow-md"
             >
               Book Your Tickets
             </Link>

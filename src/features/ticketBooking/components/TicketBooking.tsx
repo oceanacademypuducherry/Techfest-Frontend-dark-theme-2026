@@ -132,7 +132,7 @@ export default function TicketBooking() {
             </div>
 
             {/* WORKING PROFESSIONAL */}
-            <div className="w-full">
+            {/* <div className="w-full">
               <div
                 className="flex justify-between items-center cursor-pointer p-4
                            bg-[#111827] border border-white/10 rounded-md"
@@ -169,7 +169,56 @@ export default function TicketBooking() {
                   )}
                 </section>
               </div>
-            </div>
+            </div> */}
+
+            <div className="w-full">
+
+  <div
+    className="relative z-10 w-full cursor-pointer"
+    onClick={toggleWorkingProfDropdown}
+  >
+    <div
+      className="flex justify-between items-center p-4
+                 bg-[#111827] border border-white/10 rounded-md"
+    >
+      <h3 className="text-lg text-white font-bold">
+        Working Professional
+      </h3>
+
+      <span
+        className={`text-gray-400 transform transition-transform duration-300 ${
+          isWorkingProfOpen ? "rotate-180" : ""
+        }`}
+      >
+        ▼
+      </span>
+    </div>
+  </div>
+
+  {/* DROPDOWN CONTENT */}
+  <div
+    className={`transition-all duration-700 overflow-hidden ${
+      isWorkingProfOpen
+        ? "max-h-[500px] opacity-100 pointer-events-auto"
+        : "max-h-0 opacity-0 pointer-events-none"
+    }`}
+  >
+    <section className="flex gap-x-4 mt-6">
+      {ProfessionalPlanDetails.length > 0 ? (
+        <>
+          <EarlyBirdWorkingProfCard data={ProfessionalPlanDetails} />
+          <LateBirdWorkingProfCard data={ProfessionalPlanDetails} />
+        </>
+      ) : (
+        <div className="flex gap-6">
+          <SkeletonCard />
+          <SkeletonCard />
+        </div>
+      )}
+    </section>
+  </div>
+</div>
+
           </article>
 
           {/* ---------- INFO ---------- */}
