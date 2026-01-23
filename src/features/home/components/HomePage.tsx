@@ -14,11 +14,11 @@ import Speakers from "../../speakers/components/Speakers";
 import SpeakersSection from "./SpeakersSection";
 
 export default function Homepage() {
-  useEffect(() => {
-    // Initialize FireworksDisplay after the component mounts
-    new FireworksDisplay();
-    sessionStorage.removeItem("paymentHistoryId");
-  }, []); // Empty dependency array ensures this runs only once
+  // useEffect(() => {
+  //   // Initialize FireworksDisplay after the component mounts
+  //   new FireworksDisplay();
+  //   sessionStorage.removeItem("paymentHistoryId");
+  // }, []); // Empty dependency array ensures this runs only once
 
   const location = useLocation();
 
@@ -39,7 +39,7 @@ export default function Homepage() {
   return (
     <main>
       {/* Position the canvas absolutely on the page */}
-      <div className="overflow-hidden">
+      {/* <div className="overflow-hidden">
         <canvas
           id="fireworks-canvas"
           style={{
@@ -52,7 +52,7 @@ export default function Homepage() {
             zIndex: -1, // Ensure it appears behind other content
           }}
         ></canvas>
-      </div>
+      </div> */}
       {/* <Navbar /> */}
       <Navigation />
 

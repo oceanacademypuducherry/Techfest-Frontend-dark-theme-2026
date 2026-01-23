@@ -94,7 +94,7 @@ export default function HomeMain() {
             <img
               src={techfestImg}
               alt="The Future of Innovation Starts Here"
-              className="h-[222px] sm:h-[460px] object-contain"
+              className=" object-contain"
             />
           </div>
 
@@ -110,7 +110,7 @@ export default function HomeMain() {
           <div className="flex justify-center sm:mt-10 mt-10 gap-4 flex-wrap">
 
             {/* Book Tickets */}
-            <button
+            {/* <button
               onClick={() => navigate("/ticket-booking")}
               className="px-7 py-3 text-[16px] font-semibold rounded-lg
               bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
@@ -119,8 +119,19 @@ export default function HomeMain() {
             >
               Book Your Tickets
               <span className="ml-2 text-2xl font-bold">→</span>
-            </button>
+            </button> */}
 
+            
+            <button
+              // onClick={() => navigate("/ticket-booking")}
+              className="px-7 py-3 text-[16px] font-semibold rounded-lg
+              bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+              shadow-lg hover:scale-105 transition-all duration-300
+              flex items-center justify-center"
+            >
+             Tickets Opening Soon
+              <span className="ml-2 text-2xl font-bold">→</span>
+            </button>
             {/* View Agenda */}
             <button
               onClick={() => navigate("/agenda")}

@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { RootState } from "../../../app/store";
 import { benefits } from "../utils/BenifitsList";
 import { FiCheckCircle } from "react-icons/fi";
+import { toast } from "react-toastify";
 
 interface StudentTicketQuantityProps {
   data?: {
@@ -27,13 +28,38 @@ export default function StudentTicketQuantity({
   const totalTicketCount = count + workingProfCount;
   const { isLoading } = useSelector((state: RootState) => state.plans);
 
-  useEffect(() => {
-    dispatch(resetCount("student"));
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(resetCount("student"));
+  // }, [dispatch]);
+
+  // useEffect(() => {
+  //   sessionStorage.setItem("studentsTicketCount", count.toString());
+    
+  // }, [count]);
 
   useEffect(() => {
-    sessionStorage.setItem("studentsTicketCount", count.toString());
-  }, [count]);
+  sessionStorage.setItem("studentsTicketCount", count.toString());
+
+  if (count < 10) {
+    sessionStorage.removeItem("discountToastShown");
+  }
+
+  const shown = sessionStorage.getItem("discountToastShown");
+
+  if (
+  count === 10 &&
+  !shown &&
+  window.matchMedia("(max-width: 640px)").matches
+) {
+  toast.success("🎉 You’ve unlocked a 10% discount on your tickets!");
+
+
+  sessionStorage.setItem("discountToastShown", "true");
+}
+
+}, [count]);
+
+
 
   return (
     <main>

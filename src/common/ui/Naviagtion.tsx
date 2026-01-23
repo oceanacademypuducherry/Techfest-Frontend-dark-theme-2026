@@ -159,15 +159,24 @@ export default function Navigation() {
               Ticket Booking
             </button>
           ) : (
-            <Link
-              to="/ticket-booking"
-              onClick={(e) => handleClick(e, "/ticket-booking")}
-              className="px-4 py-3 rounded-lg text-white font-semibold
+            // <Link
+            //   to="/ticket-booking"
+            //   onClick={(e) => handleClick(e, "/ticket-booking")}
+            //   className="px-4 py-3 rounded-lg text-white font-semibold
+            //   bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+            //   shadow-md hover:scale-105 transition-all"
+            // >
+            //   Book Your Tickets
+            // </Link>
+            <button
+              className="px-3 py-3 text-[16px] text-white font-semibold rounded-lg
               bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-              shadow-md hover:scale-105 transition-all"
+              shadow-lg hover:scale-105 transition-all duration-300
+              flex items-center justify-center"
             >
-              Book Your Tickets
-            </Link>
+             Tickets Opening Soon
+              <span className="ml-2 text-white text-2xl font-bold">→</span>
+            </button>
           )}
         </div>
       </section>
@@ -235,15 +244,25 @@ export default function Navigation() {
               Ticket Booking
             </button>
           ) : (
-            <Link
-              to="/ticket-booking"
-              onClick={(e) => handleClick(e, "/ticket-booking")}
-              className="px-4 py-3 rounded-lg text-white font-semibold
+            // <Link
+            //   to="/ticket-booking"
+            //   onClick={(e) => handleClick(e, "/ticket-booking")}
+            //   className="px-4 py-3 rounded-lg text-white font-semibold
+            //   bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+            //   text-center shadow-md"
+            // >
+            //   Book Your Tickets
+            // </Link>
+            <button
+              // onClick={() => navigate("/ticket-booking")}
+              className="px-0 py-3 text-[15px] text-white font-semibold rounded-lg
               bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-              text-center shadow-md"
+              shadow-lg hover:scale-105 transition-all duration-300
+              flex items-center justify-center"
             >
-              Book Your Tickets
-            </Link>
+             Tickets Opening Soon
+              <span className="ml-2 text-2xl font-bold">→</span>
+            </button>
           )}
         </div>
       </div>
