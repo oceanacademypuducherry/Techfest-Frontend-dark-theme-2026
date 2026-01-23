@@ -1,7 +1,5 @@
-
 import { setLoader } from "../features/ticketConfirmation/services";
 import { UserAPI } from "./apiConfig";
-
 
 export const loadScript = (src: string) => {
   return new Promise((resolve) => {
@@ -19,7 +17,7 @@ const verifyPayment = async (
   ticketQuantity: number,
   users: any,
   navigate: any,
-  dispatch: any
+  dispatch: any,
 ) => {
   dispatch(setLoader(true)); // ✅ Start loading only when verifying payment
 
@@ -60,7 +58,7 @@ export const initiateRazorpay = async (
   emails: string[],
   setMsg: (message: string) => void,
   openModal: () => void,
-  dispatch: any
+  dispatch: any,
 ) => {
   const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
   if (!res) {
@@ -73,7 +71,7 @@ export const initiateRazorpay = async (
       studentCount,
       employeeCount,
       emails,
-      users
+      users,
     });
 
     if (!responseData) {
@@ -90,8 +88,8 @@ export const initiateRazorpay = async (
     const ticketQuantity = studentCount + employeeCount;
 
     const paymentObject = new (window as any).Razorpay({
-      key: "rzp_test_V5lYmgTFReqwlV",
-      // key: "rzp_live_N4utv68tNASYJu", 
+      // key: "rzp_test_V5lYmgTFReqwlV",
+      key: "rzp_live_N4utv68tNASYJu",
       order_id,
       amount,
       currency,
@@ -101,7 +99,14 @@ export const initiateRazorpay = async (
       email: purchaserEmail,
       contact: purchaserMobileNumber,
       handler: async (response: any) => {
-        await verifyPayment(response, amount, ticketQuantity, users, navigate, dispatch);
+        await verifyPayment(
+          response,
+          amount,
+          ticketQuantity,
+          users,
+          navigate,
+          dispatch,
+        );
       },
       prefill: {
         name: purchaserName,
@@ -122,7 +127,9 @@ export const initiateRazorpay = async (
     if (responseError.emailExists && Array.isArray(responseError.emailExists)) {
       setMsg(`${responseError.emailExists.join(", ")} emails already exist.`);
     } else {
-      setMsg(responseError.message || "An unknown error occurred. Please try again.");
+      setMsg(
+        responseError.message || "An unknown error occurred. Please try again.",
+      );
     }
     openModal();
   }
