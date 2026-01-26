@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
+ import { toast } from "react-toastify";
+ import { useRef } from "react";
 
 interface TicketSummaryMobileProps {
   setIsBottomSheetOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -49,6 +51,39 @@ const TicketSummaryMobile: React.FC<TicketSummaryMobileProps> = ({
   const totalAmount = studentCount * studentPrice + professionalCount * professionalPrice;
   const discount = totalTickets >= 10 ? totalAmount * 0.1 : 0;
   const totalAmountAfterDiscount = totalAmount - discount;
+const prevTotalRef = useRef(0);
+ 
+
+ const showDiscountToast = (amount: number) => {
+  toast(({ closeToast }) => (
+    <div className="flex flex-col items-center justify-center text-center gap-2 px-3 py-4">
+      <h2 className="text-lg sm:text-xl font-bold text-green-400">
+        🎉 10% discount applied!
+      </h2>
+
+      <button
+        onClick={closeToast}
+        className="px-4 py-1 sm:px-6 sm:py-2 rounded-lg bg-yellow-500 text-white font-semibold
+                   hover:bg-yellow-600 transition text-sm sm:text-base"
+      >
+        Close
+      </button>
+    </div>
+  ));
+};
+
+
+
+
+useEffect(() => {
+  // show toast when count crosses to 10
+  if (prevTotalRef.current !== 10 && totalTickets === 10) {                                         
+    showDiscountToast(Math.round(discount));
+  }
+
+  prevTotalRef.current = totalTickets;
+}, [totalTickets, discount]);
+
 
   return (
     <div className=" text-gray-700 p-4 rounded-lg  relative">

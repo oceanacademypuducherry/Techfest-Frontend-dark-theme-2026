@@ -8,11 +8,34 @@ import { initiateRazorpay } from "../../service";
 import { setLoader } from "../../features/ticketConfirmation/services";
 import Lottie from "lottie-react";
 import { ALERT } from "../../assets/images";
+import { toast } from "react-toastify";
+import { useRef } from "react";
+
+
 
 export default function TicketSummaryCard() {
+  const prevTotalRef = useRef(0);
+
   const location = useLocation();
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
+  // const [hasShownDiscountToast, setHasShownDiscountToast] = useState(false);
+
+
+
+const [isMobile, setIsMobile] = useState(
+  window.innerWidth <= 768
+);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
 
   const studentTicCount = useSelector(
     (state: RootState) => state.ticketReducer.studentTicketCount
@@ -125,6 +148,49 @@ export default function TicketSummaryCard() {
 
   const discount = totalTickets >= 10 ? totalAmount * 0.1 : 0;
   const totalAmountAfterDiscount = totalAmount - discount;
+
+  const showDiscountToast = (amount: number) => {
+ toast(({ closeToast }) => (
+    <div className="flex flex-col items-center justify-center text-center gap-4 px-4 py-6">
+      <h2 className="text-2xl md:text-3xl font-bold text-green-400">
+        🎉 10% discount applied!
+      </h2>
+
+      <button
+        onClick={closeToast}
+        className="px-6 py-2 rounded-lg bg-yellow-500 text-white font-semibold
+                   hover:bg-yellow-600 transition"
+      >
+        Close
+      </button>
+    </div>
+  ));
+
+
+
+
+
+};
+
+
+  
+useEffect(() => {
+  // show toast when count crosses to 10
+  if (prevTotalRef.current < 10 && totalTickets >= 10) {
+    showDiscountToast(Math.round(discount));
+  }
+
+  prevTotalRef.current = totalTickets;
+}, [totalTickets, discount]);
+
+
+
+
+
+
+
+
+
 
   return (
     <section className="flex items-center justify-around px-4 md:px-4 gap-0 relative">

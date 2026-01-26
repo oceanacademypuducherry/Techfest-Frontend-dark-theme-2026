@@ -28,36 +28,36 @@ export default function StudentTicketQuantity({
   const totalTicketCount = count + workingProfCount;
   const { isLoading } = useSelector((state: RootState) => state.plans);
 
-  // useEffect(() => {
-  //   dispatch(resetCount("student"));
-  // }, [dispatch]);
-
-  // useEffect(() => {
-  //   sessionStorage.setItem("studentsTicketCount", count.toString());
-    
-  // }, [count]);
+  useEffect(() => {
+    dispatch(resetCount("student"));
+  }, [dispatch]);
 
   useEffect(() => {
-  sessionStorage.setItem("studentsTicketCount", count.toString());
+    sessionStorage.setItem("studentsTicketCount", count.toString());
+    
+  }, [count]);
 
-  if (count < 10) {
-    sessionStorage.removeItem("discountToastShown");
-  }
+//   useEffect(() => {
+//   sessionStorage.setItem("studentsTicketCount", count.toString());
 
-  const shown = sessionStorage.getItem("discountToastShown");
+//   if (count < 10) {
+//     sessionStorage.removeItem("discountToastShown");
+//   }
 
-  if (
-  count === 10 &&
-  !shown &&
-  window.matchMedia("(max-width: 640px)").matches
-) {
-  toast.success("🎉 You’ve unlocked a 10% discount on your tickets!");
+//   const shown = sessionStorage.getItem("discountToastShown");
+
+//   if (
+//   count === 10 &&
+//   !shown &&
+//   window.matchMedia("(max-width: 640px)").matches
+// ) {
+//   toast.success("🎉 You’ve unlocked a 10% discount on your tickets!");
 
 
-  sessionStorage.setItem("discountToastShown", "true");
-}
+//   sessionStorage.setItem("discountToastShown", "true");
+// }
 
-}, [count]);
+// }, [count]);
 
 
 

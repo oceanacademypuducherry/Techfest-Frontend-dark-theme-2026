@@ -300,24 +300,37 @@ body {
 
 /* New Animation for techfest 2026 */
 /* Force container to center */
-.center-toast-container {
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  width: auto !important;
-  padding: 0 !important;
+.Toastify__toast {
+  max-width: none !important;
+  width: 520px !important;       /* desktop width */
+  min-height: 200px !important;  /* desktop height */
+  padding: 1rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
 }
 
-/* Toast box styling */
-.center-toast {
-  background-color: #000 !important;
-  color: #fff !important;
-  font-weight: 500;
-  text-align: center;
-  border-radius: 12px;
-  padding: 16px 22px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+/* Mobile screens */
+@media (max-width: 768px) {
+  .Toastify__toast {
+    width: 90% !important;       /* responsive width */
+    min-height: auto !important; /* height adjusts to content */
+    padding: 0.75rem !important; /* smaller padding */
+  }
 }
+.Toastify__progress-bar {
+  background: #22c55e !important; /* green progress bar */
+}
+.Toastify__close-button {
+  color: #ef4444 !important;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+
+
 
 
 
