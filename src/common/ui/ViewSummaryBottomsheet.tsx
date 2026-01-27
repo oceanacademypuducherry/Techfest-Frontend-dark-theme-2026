@@ -79,7 +79,7 @@ const ViewSummaryBottomsheet: React.FC<ViewSummaryBottomsheetProps> = ({
 
         {/* View Summary */}
         <p
-          className={`font-semibold text-[15px] text-[#FFA908] cursor-pointer ${summaryClassName}`}
+          className={`font-semibold text-[15px] text-[#01C1FB] cursor-pointer ${summaryClassName}`}
           onClick={onViewSummaryClick}
         >
           {summaryText}
@@ -89,8 +89,8 @@ const ViewSummaryBottomsheet: React.FC<ViewSummaryBottomsheetProps> = ({
       <div className="text-right">
         {/* Continue Button */}
         <button
-          className={`bg-[#FFA908] text-textBlack py-2 px-4 rounded text-[14px] font-[600]
-            border-[1px] border-[#B57600]
+          className={`bg-[#FFA908] text-textBlack py-2 px-4 rounded text-[16px] font-[600]
+            bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] text-white
             ${
               totalTickets === 0
                 ? "opacity-50 cursor-not-allowed"

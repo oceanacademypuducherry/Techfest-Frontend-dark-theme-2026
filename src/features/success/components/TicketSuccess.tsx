@@ -149,9 +149,9 @@ const TicketSuccess: React.FC = () => {
           <button
             onClick={downloadTickets}
             className="
-              bg-[#FACC15] text-black font-semibold
+              bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] text-white font-semibold
               py-2 px-4 md:py-3 md:px-5
-              rounded-lg hover:bg-[#EAB308] transition
+              rounded-lg  transition
               text-xs sm:text-sm md:text-base
               flex items-center gap-2
             "

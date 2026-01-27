@@ -42,8 +42,18 @@ export default function TicketBooking() {
     <>
       <div className="bg-[#0B0F1A] min-h-screen w-full text-gray-300">
         <Navigation />
+    {/* ---------- BACK BUTTON ---------- */}
+  <div
+  className="hidden sm:inline-flex items-center cursor-pointer border border-white/30 rounded-md mt-5 ml-3 px-3 py-1 hover:bg-white/10 transition"
+  onClick={() => navigate(-1)}
+>
+  <span className="text-white text-2xl mr-2">←</span>
+  <span className="text-white font-semibold text-lg">Back</span>
+</div>
+
 
         <main className="w-[95%] mx-auto max-w-[700px] mt-6">
+      
 
           {/* ---------- HEADER ---------- */}
           <section className="flex justify-between items-center w-full">
@@ -257,7 +267,8 @@ export default function TicketBooking() {
           {/* ---------- CONTINUE BUTTON ---------- */}
           <div className="sticky bottom-12 md:bottom-0 py-6 flex justify-center">
             <button
-              className={`bg-[#FFA908] text-black p-4 w-[500px] rounded-lg font-semibold
+              // className={`bg-[#FFA908] text-black p-4 w-[500px] rounded-lg font-semibold
+              className={`bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] text-white text-[18px] p-4 w-[500px] rounded-lg font-semibold
               ${
                 data.length === 0
                   ? "cursor-not-allowed bg-gray-600 text-white"

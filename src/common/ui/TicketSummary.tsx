@@ -158,8 +158,8 @@ useEffect(() => {
 
       <button
         onClick={closeToast}
-        className="px-6 py-2 rounded-lg bg-yellow-500 text-white font-semibold
-                   hover:bg-yellow-600 transition"
+        className="px-6 py-2 rounded-lg bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] text-white  font-semibold
+                    transition"
       >
         Close
       </button>
@@ -282,8 +282,8 @@ useEffect(() => {
                 className={`mt-6 w-full ${
                   isCheckoutLoading
                     ? "bg-gray-300 border-gray-400"
-                    : "bg-[#FFA908] border-[#B57600]"
-                } text-[#1a1a1a] py-3 rounded text-[16px] font-[600] border-[1px] md:text-sm`}
+                    : "bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] text-white"
+                } text-[#1a1a1a] py-3 rounded text-[16px] font-[600] border-[0px]`}
               >
                 {isCheckoutLoading ? "Loading..." : "Checkout"}
               </button>
@@ -291,15 +291,15 @@ useEffect(() => {
               <button
                 onClick={handleContinue}
                 disabled={totalTickets === 0 || isLoading}
-                className={`mt-6 w-full py-3 rounded text-[16px] font-[600] border-[1px] md:text-sm 
+                className={`mt-6 w-full py-3 rounded text-[16px] font-[600] border-[0px] 
                 ${
                   totalTickets === 0 || isLoading
                     ? "bg-gray-300 text-gray-600 border-gray-300 cursor-not-allowed"
-                    : "bg-[#FFA908] text-[#1a1a1a] border-[#B57600]"
+                    : "bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] text-white "
                 }`}
               >
                 {isLoading ? "Loading..." : "Continue"}
-              </button>
+              </button>                                 
             )}
           </div>
         </div>

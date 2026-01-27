@@ -1,7 +1,9 @@
 import { useConfirmationFormContext } from '../../features/ticketSummary/contexts'
 import collegesList from '../../common/data/colleges.json';
 import { useState, useRef,useEffect } from 'react';
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown } from 'lucide-react';
+import axios from 'axios';
+
 
 interface College {
   _id?: string        // optional for Others
@@ -60,25 +62,48 @@ const [showOtherInput, setShowOtherInput] = useState<{ [key: number]: boolean }>
 const [otherCollege, setOtherCollege] = useState<{ [key: number]: string }>({})
 
 
+// const fetchColleges = async (search: string) => {
+//   try {
+//     const res = await fetch(
+//       `https://techfest-test-api-y5x6yhhkmq-el.a.run.app/app/college/data?search=${search}`
+//     )
+//     const result = await res.json()
+
+//     const apiColleges: College[] = result?.data || []
+
+//     // Always add Others at bottom
+//     setCollegeOptions([
+//       ...apiColleges,
+//       { collegeName: 'Others', isOther: true }
+//     ])
+//   } catch (error) {
+//     console.error('College fetch failed', error)
+//     setCollegeOptions([{ collegeName: 'Others', isOther: true }])
+//   }
+// }
+
 const fetchColleges = async (search: string) => {
   try {
-    const res = await fetch(
-      `https://techfest-test-api-y5x6yhhkmq-el.a.run.app/app/college/data?search=${search}`
+    const res = await axios.get(
+      'https://techfest-test-api-y5x6yhhkmq-el.a.run.app/app/college/data',
+      {
+        params: { search },
+      }
     )
-    const result = await res.json()
 
-    const apiColleges: College[] = result?.data || []
+    const apiColleges: College[] = res.data?.data || []
 
     // Always add Others at bottom
     setCollegeOptions([
       ...apiColleges,
-      { collegeName: 'Others', isOther: true }
+      { collegeName: 'Others', isOther: true },
     ])
   } catch (error) {
     console.error('College fetch failed', error)
     setCollegeOptions([{ collegeName: 'Others', isOther: true }])
   }
 }
+
 
 
 
@@ -207,8 +232,8 @@ useEffect(() => {
               <div
   className={`flex flex-wrap sm:flex-nowrap justify-between items-center p-4 sm:p-6 rounded-t-lg ${
     data.isStudent === true
-      ? 'bg-gradient-to-r from-[#00C2FF] via-[#01C1FB] to-[#9ce8ff]'
-      : 'bg-gradient-to-r from-[#FF5FA2] via-[#FF78B7] to-[#FF9ACD]'
+      ? 'bg-[#00C2FF]'
+      : 'bg-[#FF5FA2]'
   }`}
 >
 
@@ -217,7 +242,7 @@ useEffect(() => {
                   <h2 className='text-lg sm:text-2xl font-semibold text-white'>
                     Person : {index + 1}{' '}
                   </h2>
-                  <p className='text-sm text-red-600'>
+                  <p className='text-sm font-semibold text-red-600'>
                     {index == 0 && 'Purchaser'}
                   </p>
                 </article>
@@ -414,7 +439,7 @@ useEffect(() => {
 
    {/* ================= INSTITUTE SECTION ================= */}
   {data.isStudent ? (
-    <div className="sm:pb-4 pb-0 pt-0 sm:pt-5">
+    <div className="sm:pb-2 pb-0 pt-0 sm:pt-5">
       <label className="block text-sm sm:text-[16px] font-normal text-gray-600 mb-1">
         College / School <span className="text-red-500">*</span>
       </label>
@@ -427,9 +452,11 @@ useEffect(() => {
           type="text"
           placeholder="Enter your college / school name"
           value={inputValues[index] || ''}
+          {...register(`items.${index}.instituteName`)}
           className="w-full border rounded-lg px-3 py-2 pr-10 text-sm h-[48px]"
           onChange={e => handleCollegeChange(index, e.target.value)}
-        />
+          
+        />    
 
         {/* Chevron */}
         <button
@@ -502,7 +529,7 @@ useEffect(() => {
       </div>
 
       {/* Helper text */}
-      <div className="mt-1 min-h-[20px] ">
+      <div className="mt-1">
     {showMinCharHint[index] && (
       <div className="inline-block px-3 py-1 rounded-md
   border border-white
@@ -540,7 +567,7 @@ useEffect(() => {
   ) : (
 
   /* ================= WORKING PROFESSIONAL ================= */
-  <div className="sm:pb-4 pb-0 pt-0 sm:pt-5">
+  <div className="sm:pb-2 pb-0 pt-0 sm:pt-5">
     <label className="block text-sm sm:text-[16px] font-normal text-gray-600 mb-1">
       Organizational Name <span className="text-red-500">*</span>
     </label>
@@ -549,6 +576,7 @@ useEffect(() => {
       type="text"
       placeholder="Company / Organization Name"
       className="w-full border rounded-lg px-3 py-2 text-sm h-[48px]"
+       {...register(`items.${index}.instituteName`)}
       onChange={e =>
         handleInputChange(
           `items.${index}.instituteName`,
@@ -560,6 +588,11 @@ useEffect(() => {
 )}
 
 
+{errors?.items?.[index]?.instituteName && (
+  <p className="text-red-500 text-xs">
+    {errors.items[index].instituteName.message}
+  </p>
+)}
 
 
 

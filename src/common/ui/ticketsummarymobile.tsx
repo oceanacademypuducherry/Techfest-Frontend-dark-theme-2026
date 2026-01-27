@@ -101,7 +101,7 @@ useEffect(() => {
         <div className="flex justify-between items-center mb-6  pb-4">
           <h2 className="text-white text-[16px] font-bold">Ticket Summary</h2>
           <button
-            className={`bg-yellow-400 text-black py-2 px-4 rounded text-[14px] font-semibold border border-yellow-500 ${
+            className={`bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] text-white py-2 px-4 rounded text-[16px] font-semibold  ${
               totalTickets === 0 ? "opacity-50 cursor-not-allowed" : ""
             }`}
             onClick={onButtonClick}

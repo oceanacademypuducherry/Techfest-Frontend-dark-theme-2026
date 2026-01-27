@@ -1,3 +1,130 @@
+// import React, { useState } from "react";
+// import { Footer, Navigation } from "../../../common/ui";
+// import { speakersData } from "../utils/speaker";
+// import SpeakerModal from "./SpeakerModal";
+
+// const Speakers: React.FC = () => {
+//   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
+
+//   return (
+//     <>
+//       <Navigation />
+
+
+
+//       <main className="bg-[#0A0C12] px-3 sm:px-6 md:px-0 xl:px-10 text-center">
+//         {/* Heading */}
+//         <h2 className="mb-4 pt-5 text-[28px] sm:text-4xl md:text-5xl font-semibold text-gray-200">
+
+//           Voices of{" "}
+//           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E64F8F] to-[#671AD2]">
+//             Techfest
+//           </span>
+//         </h2>
+
+
+//         <p className="text-cyan-600 text-[16px] sm:text-[18px] mb-8">
+
+//          Meet our speakers — accomplished professionals shaping the future of technology and innovation.
+
+//         </p>
+
+//         {/* Speakers Grid */}
+//         <div className="mx-auto max-w-[1600px] px-2 sm:px-6 md:px-12 lg:px-20 pb-16">
+
+//           <div
+//             className="
+//               grid gap-5
+//               grid-cols-1
+//               sm:grid-cols-2
+//               md:grid-cols-3
+//               xl:grid-cols-4
+//             "
+//           >
+
+//             {speakersData.map((person, index) => (
+//               <div
+//                 key={index}
+//                 className="
+//                   relative rounded-xl overflow-hidden cursor-pointer
+//                   hover:scale-[1.03] transition-all duration-300
+
+//                   bg-white border border-gray-200
+//                   shadow-md hover:shadow-xl
+
+//                 "
+//                 onClick={() =>
+//                   person.socialLinks?.linkedin &&
+//                   window.open(person.socialLinks.linkedin, "_blank")
+//                 }
+//               >
+//                 {/* Image */}
+
+//                 <div
+//                   className="
+//                     w-full
+//                     h-[260px]
+//                     sm:h-[280px]
+//                     md:h-[300px]
+//                     xl:h-[320px]
+//                     relative
+//                   "
+//                 >
+//                   <img
+//                     src={person.image}
+//                     alt={person.name}
+//                     className="w-full h-full  bg-gray-100 object-cover object-top brightness-75"
+//                   />
+
+//                   {/* Name & Achievement */}
+//                   <div
+//                     className="
+//                       absolute bottom-0 w-full
+//                       bg-gradient-to-t to-transparent
+//                       px-4 py-3
+//                     "
+//                   >
+//                     <h3
+//                       className="
+//                         text-white font-semibold
+//                         text-[16px] sm:text-lg
+//                       "
+//                     >
+//                       {person.name}
+//                     </h3>
+
+//                     <p
+//                       className="
+//                         text-white
+//                         text-[13px] sm:text-sm
+//                         mt-1 line-clamp-2
+//                       "
+//                     >
+
+//                       {person.achievements}
+//                     </p>
+//                   </div>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </main>
+
+//       {selectedSpeaker && (
+//         <SpeakerModal
+//           speaker={selectedSpeaker}
+//           onClose={() => setSelectedSpeaker(null)}
+//         />
+//       )}
+//       <Footer />
+//     </>
+//   );
+// };
+
+// export default Speakers;
+
+
 import React, { useState } from "react";
 import { Footer, Navigation } from "../../../common/ui";
 import { speakersData } from "../utils/speaker";
@@ -10,105 +137,90 @@ const Speakers: React.FC = () => {
     <>
       <Navigation />
 
-
-
       <main className="bg-[#0A0C12] px-3 sm:px-6 md:px-0 xl:px-10 text-center">
         {/* Heading */}
         <h2 className="mb-4 pt-5 text-[28px] sm:text-4xl md:text-5xl font-semibold text-gray-200">
-
           Voices of{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E64F8F] to-[#671AD2]">
             Techfest
           </span>
         </h2>
 
-
         <p className="text-cyan-600 text-[16px] sm:text-[18px] mb-8">
-
-         Meet our speakers — accomplished professionals shaping the future of technology and innovation.
-
+          Meet our speakers — accomplished professionals shaping the future of technology and innovation.
         </p>
 
-        {/* Speakers Grid */}
-        <div className="mx-auto max-w-[1600px] px-2 sm:px-6 md:px-12 lg:px-20 pb-16">
+        
+      {/* Speakers Grid */}
+<div className="mx-auto max-w-[1600px] px-2 sm:px-6 md:px-12 lg:px-20 pb-16">
+  <div className="
+      grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4
+      gap-5
+      justify-items-center
+    "
+  >
+    {speakersData.map((person, index) => (
+      <div
+        key={index}
+        onClick={() =>
+          person.socialLinks?.linkedin &&
+          window.open(person.socialLinks.linkedin, "_blank")
+        }
+        className="
+          relative w-full max-w-[340px]
+          h-[280px]
+          rounded-2xl overflow-hidden
+          cursor-pointer group
+          border border-black
+          bg-gray-800
+          transition-transform duration-300
+          hover:scale-105
+        "
+      >
+        {/* IMAGE */}
+        <img
+          src={person.image}
+          alt={person.name}
+          className="
+            absolute inset-0 w-full h-full object-cover object-top
+            transition-all duration-300 brightness-75
+            group-hover:scale-105
+          "
+        />
 
-          <div
-            className="
-              grid gap-5
-              grid-cols-1
-              sm:grid-cols-2
-              md:grid-cols-3
-              xl:grid-cols-4
-            "
-          >
+        {/* WHITE OVERLAY ON HOVER */}
+        <div
+          className="
+            absolute inset-0
+            bg-gray-400
+            opacity-0
+            group-hover:opacity-70
+            transition-all duration-300
+          "
+        />
 
-            {speakersData.map((person, index) => (
-              <div
-                key={index}
-                className="
-                  relative rounded-xl overflow-hidden cursor-pointer
-                  hover:scale-[1.03] transition-all duration-300
-
-                  bg-white border border-gray-200
-                  shadow-md hover:shadow-xl
-
-                "
-                onClick={() =>
-                  person.socialLinks?.linkedin &&
-                  window.open(person.socialLinks.linkedin, "_blank")
-                }
-              >
-                {/* Image */}
-
-                <div
-                  className="
-                    w-full
-                    h-[260px]
-                    sm:h-[280px]
-                    md:h-[300px]
-                    xl:h-[320px]
-                    relative
-                  "
-                >
-                  <img
-                    src={person.image}
-                    alt={person.name}
-                    className="w-full h-full object-cover bg-gray-100 object-cover object-top brightness-75"
-                  />
-
-                  {/* Name & Achievement */}
-                  <div
-                    className="
-                      absolute bottom-0 w-full
-                      bg-gradient-to-t to-transparent
-                      px-4 py-3
-                    "
-                  >
-                    <h3
-                      className="
-                        text-white font-semibold
-                        text-[16px] sm:text-lg
-                      "
-                    >
-                      {person.name}
-                    </h3>
-
-                    <p
-                      className="
-                        text-white
-                        text-[13px] sm:text-sm
-                        mt-1 line-clamp-2
-                      "
-                    >
-
-                      {person.achievements}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* TEXT CONTAINER */}
+        <div className="
+            relative z-10
+            h-full flex flex-col justify-end
+            p-4 transition-colors duration-300
+          "
+        >
+          <h3 className="text-white group-hover:text-black text-lg sm:text-xl font-bold">
+            {person.name}
+          </h3>
+          <p className="text-white group-hover:text-black text-sm sm:text-base mt-1 line-clamp-2">
+            {person.achievements}
+          </p>
         </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+
+
       </main>
 
       {selectedSpeaker && (
@@ -123,3 +235,4 @@ const Speakers: React.FC = () => {
 };
 
 export default Speakers;
+
