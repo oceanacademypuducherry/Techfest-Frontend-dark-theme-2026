@@ -14,7 +14,7 @@ import { useRef } from "react";
 
 
 export default function TicketSummaryCard() {
-  const prevTotalRef = useRef(0);
+  
 
   const location = useLocation();
   const dispatch = useDispatch<AppDispatch>();
@@ -149,6 +149,8 @@ useEffect(() => {
   const discount = totalTickets >= 10 ? totalAmount * 0.1 : 0;
   const totalAmountAfterDiscount = totalAmount - discount;
 
+  
+
   const showDiscountToast = (amount: number) => {
  toast(({ closeToast }) => (
     <div className="flex flex-col items-center justify-center text-center gap-4 px-4 py-6">
@@ -175,13 +177,19 @@ useEffect(() => {
 
   
 useEffect(() => {
-  // show toast when count crosses to 10
-  if (prevTotalRef.current < 10 && totalTickets >= 10) {
+  // 🚫 Do not show popup on mobile
+  if (isMobile) return;
+
+  const prevTotal = Number(sessionStorage.getItem("prevTotalTickets") || 0);
+
+  // show popup ONLY when transitioning TO exactly 10
+  if (prevTotal !== 10 && totalTickets === 10) {
     showDiscountToast(Math.round(discount));
   }
 
-  prevTotalRef.current = totalTickets;
-}, [totalTickets, discount]);
+  sessionStorage.setItem("prevTotalTickets", totalTickets.toString());
+}, [totalTickets, discount, isMobile]);
+
 
 
 

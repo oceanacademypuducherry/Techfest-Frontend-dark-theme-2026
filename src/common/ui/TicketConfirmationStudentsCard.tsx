@@ -439,7 +439,7 @@ useEffect(() => {
 
    {/* ================= INSTITUTE SECTION ================= */}
   {data.isStudent ? (
-    <div className="sm:pb-2 pb-0 pt-0 sm:pt-5">
+    <div className="sm:pb-0 pb-0 pt-0 sm:pt-5">
       <label className="block text-sm sm:text-[16px] font-normal text-gray-600 mb-1">
         College / School <span className="text-red-500">*</span>
       </label>
@@ -529,7 +529,7 @@ useEffect(() => {
       </div>
 
       {/* Helper text */}
-      <div className="mt-1">
+      <div className="mt-2  ">
     {showMinCharHint[index] && (
       <div className="inline-block px-3 py-1 rounded-md
   border border-white
@@ -593,13 +593,7 @@ useEffect(() => {
     {errors.items[index].instituteName.message}
   </p>
 )}
-
-
-
-
-
-
-              </div>
+</div>
             </div>
           </div>
         )

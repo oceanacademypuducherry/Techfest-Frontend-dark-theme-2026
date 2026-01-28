@@ -51,7 +51,7 @@ const TicketSummaryMobile: React.FC<TicketSummaryMobileProps> = ({
   const totalAmount = studentCount * studentPrice + professionalCount * professionalPrice;
   const discount = totalTickets >= 10 ? totalAmount * 0.1 : 0;
   const totalAmountAfterDiscount = totalAmount - discount;
-const prevTotalRef = useRef(0);
+
  
 
  const showDiscountToast = (amount: number) => {
@@ -74,15 +74,23 @@ const prevTotalRef = useRef(0);
 
 
 
-
 useEffect(() => {
-  // show toast when count crosses to 10
-  if (prevTotalRef.current !== 10 && totalTickets === 10) {                                         
+  const prevTotal = Number(
+    sessionStorage.getItem("prevTotalTicketsMobile") || 0
+  );
+
+  // show popup ONLY when transitioning TO exactly 10
+  if (prevTotal !== 10 && totalTickets === 10) {
     showDiscountToast(Math.round(discount));
   }
 
-  prevTotalRef.current = totalTickets;
+  // store current value for next comparison
+  sessionStorage.setItem(
+    "prevTotalTicketsMobile",
+    totalTickets.toString()
+  );
 }, [totalTickets, discount]);
+
 
 
   return (
