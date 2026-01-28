@@ -8,42 +8,65 @@ export default function SpeakersSection() {
   const rowOne = speakersData.filter((_, i) => i % 2 === 0);
   const rowTwo = speakersData.filter((_, i) => i % 2 !== 0);
 
-  const renderSpeakerCard = (speaker, index) => (
-    <div
-      key={index}
+const renderSpeakerCard = (speaker, index) => (
+  <div
+    key={index}
+    onClick={() =>
+      speaker.socialLinks?.linkedin &&
+      window.open(speaker.socialLinks.linkedin, "_blank")
+    }
+    className="
+      relative min-w-[220px] sm:min-w-[260px]
+      max-w-[220px] sm:max-w-[260px]
+      h-[230px] sm:h-[260px]
+      rounded-2xl overflow-hidden
+      cursor-pointer group
+      border border-black
+      bg-gray-800
+    "
+  >
+    {/* IMAGE */}
+    <img
+      src={speaker.image}
+      alt={speaker.name}
       className="
-        relative min-w-[220px] sm:min-w-[260px]
-        max-w-[220px] sm:max-w-[260px]
-        bg-[#0F121A] border border-white/10
-        rounded-2xl overflow-hidden
-        transition-all duration-300
-        hover:border-[#EE4C9C]
-        hover:shadow-[0_0_25px_rgba(238,76,156,0.35)]
-        cursor-pointer
+        absolute inset-0 w-full h-full object-cover object-top
+        transition-all duration-300 brightness-75
+        group-hover:scale-105
       "
-      onClick={() =>
-        speaker.socialLinks?.linkedin &&
-        window.open(speaker.socialLinks.linkedin, "_blank")
-      }
-    >
-      {/* Image */}
-      <img
-        src={speaker.image}
-        alt={speaker.name}
-        className="w-full h-[230px] sm:h-[250px] object-cover object-top brightness-75"
-      />
+    />
 
-      {/* Overlay */}
-      <div className="absolute bottom-0 w-full p-3 text-center bg-gradient-to-t from-black/90 to-transparent">
-        <h3 className="text-white text-[16px] sm:text-lg font-bold">
-          {speaker.name}
-        </h3>
-        <p className="text-white/80 text-xs sm:text-sm mt-1">
-          {speaker.achievements}
-        </p>
-      </div>
+    {/* WHITE OVERLAY ON HOVER */}
+    <div
+      className="
+        absolute inset-0
+        bg-gray-400
+        opacity-0
+        group-hover:opacity-70
+        transition-all duration-300
+      "
+    />
+
+    {/* TEXT CONTAINER */}
+    <div
+      className="
+        relative z-10
+        h-full
+        flex flex-col justify-end
+        p-4
+        transition-colors duration-300
+      "
+    >
+      <h3 className="text-white group-hover:text-black text-lg font-bold">
+        {speaker.name}
+      </h3>
+      <p className="text-white group-hover:text-black text-sm mt-1">
+        {speaker.achievements}
+      </p>
     </div>
-  );
+  </div>
+)
+
 
   return (
     <section className="bg-[#0A0C12] py-6  sm:py-10 overflow-hidden">

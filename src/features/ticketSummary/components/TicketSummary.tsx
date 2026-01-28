@@ -174,7 +174,7 @@ export default function TicketSummary() {
             </div>
           ) : (
             <section className="w-full sm:w-[50%] lg:w-[50%]">
-              <TicketSummaryCard />
+              <TicketSummaryCard />                                 
             </section>
           )}
         </main>

@@ -12,17 +12,26 @@ export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   /* Routes where BACK button should appear */
-  const backButtonRoutes = [
-    "/ticket-booking",
-    "/ticket-summary",
-    "/ticket-confirmation",
-  ];
+ const ticketPages = [
+  "/ticket-booking",
+  "/ticket-summary",
+  "/ticket-confirmation",
+];
 
-  const showBackButton = backButtonRoutes.includes(location.pathname);
+const isTicketPage = ticketPages.includes(location.pathname);
+
+
+  // useEffect(() => {
+  //   setActiveTab(location.pathname);
+  // }, [location.pathname]);
 
   useEffect(() => {
+  // Only auto-set active tab for real routes
+  if (location.pathname !== "/") {
     setActiveTab(location.pathname);
-  }, [location.pathname]);
+  }
+}, [location.pathname]);
+
 
   /* Auto close mobile menu on resize >= 1280px */
   useEffect(() => {
@@ -43,10 +52,23 @@ export default function Navigation() {
     if (section) section.scrollIntoView({ behavior: "smooth" });
   };
 
+  // useEffect(() => {
+  //   if (location.state?.scrollToAbout) scrollToAbout();
+  //   if (location.state?.scrollToPastEvents) scrollToSection();
+  // }, [location]);
+
   useEffect(() => {
-    if (location.state?.scrollToAbout) scrollToAbout();
-    if (location.state?.scrollToPastEvents) scrollToSection();
-  }, [location]);
+  if (location.state?.scrollToPastEvents) {
+    setActiveTab("/past-events");
+    scrollToSection();
+  }
+
+  if (location.state?.scrollToAbout) {
+    setActiveTab("/about");
+    scrollToAbout();
+  }
+}, [location.state]);
+
 
   const handleClick = (e, path) => {
     e.preventDefault();
@@ -115,51 +137,60 @@ export default function Navigation() {
         <div className="hidden xl:flex space-x-10 text-[16px] font-medium items-center">
           {navItems.map(({ path, label, hoverLabel, external }) =>
             external ? (
-              <div key={path} className="relative group text-white/80 cursor-pointer">
-                <span>{label}</span>
+              <div key={path} className="relative group">
+  <a
+    href={path}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-white/80 hover:text-[#01C1FB] cursor-pointer"
+  >
+    {label}
+  </a>
 
-                <a
-                  href={path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute left-1/2 -translate-x-1/2 top-[130%]
-                    px-3 py-[5px] text-sm rounded-md bg-black text-white
-                    opacity-0 scale-95 transition-all duration-300
-                    group-hover:opacity-100 group-hover:scale-100"
-                >
-                  {hoverLabel}
-                </a>
-              </div>
+  {/* Tooltip */}
+  <span
+    className="absolute left-1/2 -translate-x-1/2 top-[130%]
+    px-3 py-1 text-sm rounded-md bg-black text-white
+    opacity-0 scale-95 transition-all duration-300
+    group-hover:opacity-100 group-hover:scale-100
+    whitespace-nowrap"
+  >
+    {hoverLabel}
+  </span>
+</div>
+
             ) : (
               <Link
-                key={path}
-                to={path}
-                onClick={(e) => handleClick(e, path)}
-                className={`relative text-white/80 hover:text-[#01C1FB]
-                after:absolute after:left-0 after:bottom-[-6px]
-                after:w-full after:h-[2px] after:bg-[#01C1FB]
-                after:opacity-0 hover:after:opacity-100 transition-all duration-300
-                ${isActive(path) ? "text-[#01C1FB] after:opacity-100" : ""}`}
-              >
-                {label}
-              </Link>
+  key={path}
+  to={path}
+  onClick={(e) => handleClick(e, path)}
+  className={`relative transition-all duration-300
+    ${isActive(path) ? "text-[#01C1FB]" : "text-white/80 hover:text-[#01C1FB]"}
+    
+    after:absolute after:left-0 after:bottom-[-6px]
+    after:w-full after:h-[2px] after:bg-[#01C1FB]
+    after:transition-all after:duration-300
+    ${isActive(path) ? "after:opacity-100" : "after:opacity-0 hover:after:opacity-100"}
+  `}
+>
+  {label}
+</Link>
+
             )
           )}
 
-          {showBackButton ? (
-            <button
-              onClick={() =>
-                window.history.length > 1 ? navigate(-1) : navigate("/")
-              }
-              className="px-4 py-3 rounded-lg text-white font-semibold
-              bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-              shadow-md hover:scale-105 transition-all flex items-center gap-2"
-            >
-              <span className="text-[25px] leading-none mt-[-4px]">←</span>
-              Ticket Booking
-            </button>
-          ) : (
-            // <Link
+          {isTicketPage ? (
+  <Link
+    to="/ticket-booking"
+    onClick={() => scrollToTop()}
+    className="px-4 py-3 rounded-lg text-white font-semibold
+    bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+    shadow-md hover:scale-105 transition-all"
+  >
+    Book Your Tickets
+  </Link>
+) : (
+   // <Link
             //   to="/ticket-booking"
             //   onClick={(e) => handleClick(e, "/ticket-booking")}
             //   className="px-4 py-3 rounded-lg text-white font-semibold
@@ -168,16 +199,18 @@ export default function Navigation() {
             // >
             //   Book Your Tickets
             // </Link>
-            <button
-              className="px-3 py-3 text-[16px] text-white font-semibold rounded-lg
-              bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-              shadow-lg hover:scale-105 transition-all duration-300
-              flex items-center justify-center"
-            >
-             Tickets Opening Soon
-              <span className="ml-2 text-white text-2xl font-bold">→</span>
-            </button>
-          )}
+  <button
+    className="px-3 py-3 text-[16px] text-white font-semibold rounded-lg
+    bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+    shadow-lg hover:scale-105 transition-all duration-300
+    flex items-center justify-center"
+  >
+    Tickets Opening Soon
+    {/* <span className="ml-2 text-white text-2xl font-bold">→</span> */}
+  </button>
+)}
+
+      
         </div>
       </section>
 
@@ -231,20 +264,21 @@ export default function Navigation() {
             )
           )}
 
-          {showBackButton ? (
-            <button
-              onClick={() =>
-                window.history.length > 1 ? navigate(-1) : navigate("/")
-              }
-              className="px-4 py-3 rounded-lg text-white font-semibold
-              bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-              shadow-md flex items-center gap-2"
-            >
-              <ArrowLeftIcon className="w-5 h-5" />
-              Ticket Booking
-            </button>
-          ) : (
-            // <Link
+          {isTicketPage ? (
+  <Link
+    to="/ticket-booking"
+    onClick={() => {
+      scrollToTop();
+      setMenuOpen(false);
+    }}
+    className="px-4 py-3 rounded-lg text-white font-semibold
+    bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+    text-center shadow-md"
+  >
+    Book Your Tickets
+  </Link>
+) : (
+   // <Link
             //   to="/ticket-booking"
             //   onClick={(e) => handleClick(e, "/ticket-booking")}
             //   className="px-4 py-3 rounded-lg text-white font-semibold
@@ -253,17 +287,19 @@ export default function Navigation() {
             // >
             //   Book Your Tickets
             // </Link>
-            <button
-              // onClick={() => navigate("/ticket-booking")}
-              className="px-0 py-3 text-[15px] text-white font-semibold rounded-lg
-              bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-              shadow-lg hover:scale-105 transition-all duration-300
-              flex items-center justify-center"
-            >
-             Tickets Opening Soon
-              <span className="ml-2 text-2xl font-bold">→</span>
-            </button>
-          )}
+  <button
+    className="px-0 py-3 text-[15px] text-white font-semibold rounded-lg
+    bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+    shadow-lg hover:scale-105 transition-all duration-300
+    flex items-center justify-center"
+  >
+    Tickets Opening Soon
+    {/* <span className="ml-2 text-2xl font-bold">→</span> */}
+  </button>
+)}
+
+           
+          
         </div>
       </div>
     </main>

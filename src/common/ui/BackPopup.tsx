@@ -24,7 +24,7 @@ const Popup: React.FC<PopupProps> = ({
       <div className="bg-[#111827] p-6 rounded-xl shadow-xl w-[90%] max-w-md border border-white/10">
 
         {/* Title */}
-        <h2 className="text-[#FFA908] text-center text-lg font-semibold mb-4">
+        <h2 className="text-[#01C1FB] text-center text-lg font-semibold mb-4">
           {title} !!!
         </h2>
 
@@ -51,13 +51,20 @@ const Popup: React.FC<PopupProps> = ({
           )}
 
           <button
+            // className="
+            //   bg-[#FFA908] text-black px-4 py-2 rounded-lg
+            //   hover:bg-[#ff9f07] hover:shadow-[0_0_15px_rgba(255,169,8,0.45)]
+            //   transition-all
+            // "
             className="
-              bg-[#FFA908] text-black px-4 py-2 rounded-lg
-              hover:bg-[#ff9f07] hover:shadow-[0_0_15px_rgba(255,169,8,0.45)]
+              bg-gradient-to-r from-[#01C1FB] to-[#01C1FB] text-white px-4 py-2 rounded-lg
+              hover:bg-[#ff9f07] ]
               transition-all
             "
             onClick={onConfirm}
           >
+            
+            
             {showCancelButton ? "Yes" : "Ok"}
           </button>
         </div>

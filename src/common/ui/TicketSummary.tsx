@@ -14,7 +14,7 @@ import { useRef } from "react";
 
 
 export default function TicketSummaryCard() {
-  const prevTotalRef = useRef(0);
+  
 
   const location = useLocation();
   const dispatch = useDispatch<AppDispatch>();
@@ -149,6 +149,8 @@ useEffect(() => {
   const discount = totalTickets >= 10 ? totalAmount * 0.1 : 0;
   const totalAmountAfterDiscount = totalAmount - discount;
 
+  
+
   const showDiscountToast = (amount: number) => {
  toast(({ closeToast }) => (
     <div className="flex flex-col items-center justify-center text-center gap-4 px-4 py-6">
@@ -158,8 +160,8 @@ useEffect(() => {
 
       <button
         onClick={closeToast}
-        className="px-6 py-2 rounded-lg bg-yellow-500 text-white font-semibold
-                   hover:bg-yellow-600 transition"
+        className="px-6 py-2 rounded-lg bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] text-white  font-semibold
+                    transition"
       >
         Close
       </button>
@@ -175,13 +177,19 @@ useEffect(() => {
 
   
 useEffect(() => {
-  // show toast when count crosses to 10
-  if (prevTotalRef.current < 10 && totalTickets >= 10) {
+  // 🚫 Do not show popup on mobile
+  if (isMobile) return;
+
+  const prevTotal = Number(sessionStorage.getItem("prevTotalTickets") || 0);
+
+  // show popup ONLY when transitioning TO exactly 10
+  if (prevTotal !== 10 && totalTickets === 10) {
     showDiscountToast(Math.round(discount));
   }
 
-  prevTotalRef.current = totalTickets;
-}, [totalTickets, discount]);
+  sessionStorage.setItem("prevTotalTickets", totalTickets.toString());
+}, [totalTickets, discount, isMobile]);
+
 
 
 
@@ -282,8 +290,8 @@ useEffect(() => {
                 className={`mt-6 w-full ${
                   isCheckoutLoading
                     ? "bg-gray-300 border-gray-400"
-                    : "bg-[#FFA908] border-[#B57600]"
-                } text-[#1a1a1a] py-3 rounded text-[16px] font-[600] border-[1px] md:text-sm`}
+                    : "bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] text-white"
+                } text-[#1a1a1a] py-3 rounded text-[16px] font-[600] border-[0px]`}
               >
                 {isCheckoutLoading ? "Loading..." : "Checkout"}
               </button>
@@ -291,15 +299,15 @@ useEffect(() => {
               <button
                 onClick={handleContinue}
                 disabled={totalTickets === 0 || isLoading}
-                className={`mt-6 w-full py-3 rounded text-[16px] font-[600] border-[1px] md:text-sm 
+                className={`mt-6 w-full py-3 rounded text-[16px] font-[600] border-[0px] 
                 ${
                   totalTickets === 0 || isLoading
                     ? "bg-gray-300 text-gray-600 border-gray-300 cursor-not-allowed"
-                    : "bg-[#FFA908] text-[#1a1a1a] border-[#B57600]"
+                    : "bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] text-white "
                 }`}
               >
                 {isLoading ? "Loading..." : "Continue"}
-              </button>
+              </button>                                 
             )}
           </div>
         </div>

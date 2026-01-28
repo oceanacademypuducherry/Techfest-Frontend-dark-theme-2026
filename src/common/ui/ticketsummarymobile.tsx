@@ -51,7 +51,7 @@ const TicketSummaryMobile: React.FC<TicketSummaryMobileProps> = ({
   const totalAmount = studentCount * studentPrice + professionalCount * professionalPrice;
   const discount = totalTickets >= 10 ? totalAmount * 0.1 : 0;
   const totalAmountAfterDiscount = totalAmount - discount;
-const prevTotalRef = useRef(0);
+
  
 
  const showDiscountToast = (amount: number) => {
@@ -74,15 +74,23 @@ const prevTotalRef = useRef(0);
 
 
 
-
 useEffect(() => {
-  // show toast when count crosses to 10
-  if (prevTotalRef.current !== 10 && totalTickets === 10) {                                         
+  const prevTotal = Number(
+    sessionStorage.getItem("prevTotalTicketsMobile") || 0
+  );
+
+  // show popup ONLY when transitioning TO exactly 10
+  if (prevTotal !== 10 && totalTickets === 10) {
     showDiscountToast(Math.round(discount));
   }
 
-  prevTotalRef.current = totalTickets;
+  // store current value for next comparison
+  sessionStorage.setItem(
+    "prevTotalTicketsMobile",
+    totalTickets.toString()
+  );
 }, [totalTickets, discount]);
+
 
 
   return (
@@ -101,7 +109,7 @@ useEffect(() => {
         <div className="flex justify-between items-center mb-6  pb-4">
           <h2 className="text-white text-[16px] font-bold">Ticket Summary</h2>
           <button
-            className={`bg-yellow-400 text-black py-2 px-4 rounded text-[14px] font-semibold border border-yellow-500 ${
+            className={`bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] text-white py-2 px-4 rounded text-[16px] font-semibold  ${
               totalTickets === 0 ? "opacity-50 cursor-not-allowed" : ""
             }`}
             onClick={onButtonClick}

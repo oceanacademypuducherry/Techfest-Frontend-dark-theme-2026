@@ -194,7 +194,7 @@ export default function About() {
               flex items-center justify-center"
             >
              Tickets Opening Soon
-              <span className="ml-2 text-2xl font-bold">→</span>
+              {/* <span className="ml-2 text-2xl font-bold">→</span> */}
             </button>
 </div>
       </div>

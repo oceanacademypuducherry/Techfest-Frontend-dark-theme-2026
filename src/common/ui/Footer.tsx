@@ -4,10 +4,50 @@ import { BiSupport } from "react-icons/bi";
 import { MdEmail, MdLocationOn } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { scrollToTop } from "../../utils/scrollTo";
+import { Instagram, Linkedin, Youtube, MessageCircle } from "lucide-react";
+
+
 
 export default function Footer() {
   const navigate = useNavigate();
   const location = useLocation();
+
+
+
+const DiscordOutline = ({ size = 22, color = "currentColor" }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 71 55"
+    fill="none"
+    stroke={color}
+    strokeWidth="5.0"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    {/* Outer Discord shape */}
+    <path d="M60.1 4.5c-4.7-2.2-9.7-3.7-14.9-4.4l-2 4
+             c-5.6-.8-11.2-.8-16.8 0l-2-4
+             c-5.2.7-10.2 2.2-14.9 4.4
+             C1.8 16.2-1.3 28.6 0.7 40.8
+             c5.5 4 11.7 7 18.4 8.7l2.9-4
+             c-3.3-1.2-6.4-2.9-9.3-5
+             .8-.6 1.6-1.2 2.4-1.8
+             5.6 2.6 11.8 4 18.4 4
+             s12.8-1.4 18.4-4
+             c.8.6 1.6 1.2 2.4 1.8
+             -2.9 2.1-6 3.8-9.3 5
+             l2.9 4
+             c6.7-1.7 12.9-4.7 18.4-8.7
+             C69.6 27.3 66.6 14.9 60.1 4.5z" />
+
+    {/* Eyes */}
+    <path d="M26 30.5c0 2.2-1.6 4-3.6 4s-3.6-1.8-3.6-4 1.6-4 3.6-4 3.6 1.8 3.6 4z" />
+    <path d="M48.6 30.5c0 2.2-1.6 4-3.6 4s-3.6-1.8-3.6-4 1.6-4 3.6-4 3.6 1.8 3.6 4z" />
+  </svg>
+);
+
+
 
   const scrollToAbout = () => {
     const section = document.getElementById("about_section");
@@ -60,36 +100,53 @@ export default function Footer() {
     </p>
 
     {/* SOCIAL ICONS */}
-    <div className="flex gap-4 mt-6 justify-center md:justify-start">
-      {[
-        { img: linkedin, link: "https://www.linkedin.com/company/74764079", label: "LinkedIn" },
-        { img: instagram, link: "https://www.instagram.com/oceanacademy_official/", label: "Instagram" },
-        { img: youtube, link: "https://www.youtube.com/@ocean_academy", label: "YouTube" },
-        { img: discord, link: "https://discord.gg/TEFER5Kuzu", label: "Discord" },
-      ].map((icon, i) => (
-        <div key={i} className="relative group">
-          <a
-            href={icon.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-10 h-10 bg-white rounded-md flex items-center justify-center
-                       border border-transparent
-                       group-hover:border-[#F3A828]
-                       transition-all duration-200"
-          >
-            <img src={icon.img} className="w-5 h-5" />
-          </a>
+    <div className="flex gap-6 mt-6 justify-center md:justify-start">
+  {[
+    {
+      Icon: Linkedin,
+      link: "https://www.linkedin.com/company/74764079",
+      label: "LinkedIn",
+    },
+    {
+      Icon: Instagram,
+      link: "https://www.instagram.com/oceanacademy_official/",
+      label: "Instagram",
+    },
+    {
+      Icon: Youtube,
+      link: "https://www.youtube.com/@ocean_academy",
+      label: "YouTube",
+    },
+     { Icon: DiscordOutline, link: "https://discord.gg/TEFER5Kuzu", label: "Discord" },
+  ].map(({ Icon, link, label }, i) => (
+    <div key={i} className="relative group">
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white hover:text-[#01C1FB] transition-colors duration-200"
+      >
+        <Icon size={22} strokeWidth={1.8} />
+      </a>
 
-          <span className="absolute -top-9 left-1/2 -translate-x-1/2
-                           bg-black text-white text-xs px-2 py-1 rounded
-                           opacity-0 group-hover:opacity-100
-                           transition-opacity duration-200
-                           whitespace-nowrap pointer-events-none">
-            {icon.label}
-          </span>
-        </div>
-      ))}
+      {/* Tooltip */}
+      <span
+        className="
+          absolute -top-8 left-1/2 -translate-x-1/2
+          bg-black text-white text-xs px-2 py-1 rounded
+          opacity-0 group-hover:opacity-100
+          transition-opacity duration-200
+          whitespace-nowrap pointer-events-none
+        "
+      >
+        {label}
+      </span>
     </div>
+  ))}
+</div>
+
+
+
   </div>
 
   {/* QUICK LINKS */}

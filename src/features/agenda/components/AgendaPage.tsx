@@ -109,14 +109,36 @@ const AgendaPage: React.FC = () => {
       {/* PAGE BACKGROUND */}
       <div className="bg-[#0A0C12] min-h-[50vh] sm:min-h-[80vh] flex items-center justify-center px-2 sm:px-4">
         <div className="text-center max-w-2xl">
-          {/* TITLE */}
-          <h1 className="text-[28px] sm:text-[44px] font-semibold text-white mb-4">
-            Our Agenda is
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]">
-              Coming Soon
-            </span>
-          </h1>
+
+{/* COMING SOON BLOCK */}
+<div className="flex flex-col items-center gap-2 mb-8">
+
+  {/* MAIN TEXT */}
+  <h1
+    className="text-[40px] sm:text-[56px] font-semibold tracking-tight
+               text-transparent bg-clip-text
+               bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]
+               drop-shadow-[0_0_18px_rgba(0,194,255,0.35)]">
+    Coming Soon
+  </h1>
+
+  {/* SUB TEXT */}
+  <p className="text-gray-300 text-sm sm:text-base tracking-wide">
+    Stay tuned for updates
+  </p>
+
+  {/* ANIMATED UNDERLINE */}
+  <div className="relative w-36 h-[3px] overflow-hidden mt-0">
+    <span
+      className="absolute inset-0
+                 bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]
+                 animate-[slide_1.5s_ease-in-out_infinite]">
+    </span>
+  </div>
+
+</div>
+
+
 
           {/* SUB TEXT */}
           <p className="text-gray-300 text-[16px] sm:text-[18px] leading-7 mb-8">
