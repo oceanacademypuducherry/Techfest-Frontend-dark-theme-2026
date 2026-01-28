@@ -164,7 +164,7 @@ const DiscordOutline = ({ size = 22, color = "currentColor" }) => (
     <h3 className="text-sm font-semibold text-white tracking-wider mb-4">EXPLORE</h3>
     <ul className="space-y-3 text-sm text-gray-400">
       <li onClick={() => handleFooterClick("/past-events")} className="hover:text-white cursor-pointer">Past Events</li>
-      <li onClick={() => window.open("https://techfest.oceanacademy.in", "_blank")} className="hover:text-white cursor-pointer">Past Editions</li>
+      <li onClick={() => window.open("https://techfest25.oceanacademy.in", "_blank")} className="hover:text-white cursor-pointer">Past Editions</li>
     </ul>
   </div>
 
@@ -185,8 +185,8 @@ const DiscordOutline = ({ size = 22, color = "currentColor" }) => (
                 >
                   oatechfest@gmail.com
                 </Link> </div>
-  <div className="flex items-center gap-2"> <FaPhoneAlt /> 0413-2204580 </div>
-  <div className="flex items-center gap-2"> <MdLocationOn /> PTU, Puducherry </div>
+  <div className="flex items-center gap-2"> <FaPhoneAlt /> 0413-22 </div>
+  <div className="flex items-center gap-2"> <MdLocationOn /> JIPMER, Puducherry </div>
 </div>
 
 

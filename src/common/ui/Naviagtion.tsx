@@ -199,15 +199,18 @@ const isTicketPage = ticketPages.includes(location.pathname);
             // >
             //   Book Your Tickets
             // </Link>
-  <button
-    className="px-3 py-3 text-[16px] text-white font-semibold rounded-lg
+    <button
+  disabled
+  className="
+    px-7 py-3 text-[16px] text-white font-semibold rounded-lg
     bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-    shadow-lg hover:scale-105 transition-all duration-300
-    flex items-center justify-center"
-  >
-    Tickets Opening Soon
-    {/* <span className="ml-2 text-white text-2xl font-bold">→</span> */}
-  </button>
+    cursor-not-allowed
+    shadow-lg
+    flex items-center justify-center
+  "
+>
+  Tickets Opening Soon
+</button>
 )}
 
       
@@ -287,15 +290,18 @@ const isTicketPage = ticketPages.includes(location.pathname);
             // >
             //   Book Your Tickets
             // </Link>
-  <button
-    className="px-0 py-3 text-[15px] text-white font-semibold rounded-lg
+   <button
+  disabled
+  className="
+    px-4 py-3 text-[16px] text-white font-semibold rounded-lg
     bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-    shadow-lg hover:scale-105 transition-all duration-300
-    flex items-center justify-center"
-  >
-    Tickets Opening Soon
-    {/* <span className="ml-2 text-2xl font-bold">→</span> */}
-  </button>
+    cursor-not-allowed
+    shadow-lg
+    flex items-center justify-center
+  "
+>
+  Tickets Opening Soon
+</button>
 )}
 
            

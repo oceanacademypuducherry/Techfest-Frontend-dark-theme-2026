@@ -123,15 +123,18 @@ export default function HomeMain() {
 
             
             <button
-              // onClick={() => navigate("/ticket-booking")}
-              className="px-7 py-3 text-[16px] font-semibold rounded-lg
-              bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-              shadow-lg hover:scale-105 transition-all duration-300
-              flex items-center justify-center"
-            >
-             Tickets Opening Soon
-              {/* <span className="ml-2 text-2xl font-bold">→</span> */}
-            </button>
+  disabled
+  className="
+    px-7 py-3 text-[16px] font-semibold rounded-lg
+    bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+    cursor-not-allowed
+    shadow-lg
+    flex items-center justify-center
+  "
+>
+  Tickets Opening Soon
+</button>
+
             {/* View Agenda */}
             <button
               onClick={() => navigate("/agenda")}
@@ -159,12 +162,12 @@ export default function HomeMain() {
           >
             <div className="flex items-center text-white gap-2">
               <FaCalendarAlt className="text-white text-[18px]" />
-              March 15, 2026
+              March 22, 2026
             </div>
 
             <div className="flex items-center text-white gap-2">
               <FaLocationDot className="text-white text-[20px]" />
-              PTU, Puducherry
+               JIPMER, Puducherry
             </div>
           </div>
 

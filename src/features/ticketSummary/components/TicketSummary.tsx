@@ -105,7 +105,20 @@ export default function TicketSummary() {
   return (
     <>
       <Navigation />
-
+{/* ---------- BACK BUTTON ---------- */}
+<div
+  className="
+    hidden sm:inline-flex items-center cursor-pointer
+    border border-white/30 rounded-md
+    fixed top-36 left-4 z-50
+    px-3 py-1
+    hover:bg-white/10 transition
+  "
+  onClick={() => navigate(-1)}
+>
+  <span className="text-white text-2xl mr-2">←</span>
+  <span className="text-white font-semibold text-lg">Back</span>
+</div>
       {/* PAGE BACKGROUND */}
       <div className="min-h-screen bg-[#0A0C12]">
         <main
