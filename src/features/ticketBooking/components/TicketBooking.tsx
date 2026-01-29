@@ -42,12 +42,18 @@ export default function TicketBooking() {
     <>
       <div className="bg-[#0B0F1A] min-h-screen w-full text-gray-300">
         <Navigation />
-   {/* ---------- BACK BUTTON ---------- */}
+  
+
+
+
+
+        <main className="w-[95%] mx-auto max-w-[700px] mt-6">
+       {/* ---------- BACK BUTTON ---------- */}
 <div
   className="
     hidden sm:inline-flex items-center cursor-pointer
     border border-white/30 rounded-md
-    fixed top-36 left-4 z-50
+     top-36 left-84 z-50
     px-3 py-1
     hover:bg-white/10 transition
   "
@@ -57,16 +63,10 @@ export default function TicketBooking() {
   <span className="text-white font-semibold text-lg">Back</span>
 </div>
 
-
-
-
-        <main className="w-[95%] mx-auto max-w-[700px] mt-6">
-      
-
           {/* ---------- HEADER ---------- */}
           <section className="flex justify-between items-center w-full">
             <div>
-              <h2 className="mt-6 mb-4 text-[30px] sm:text-[36px] font-semibold text-white">
+              <h2 className="mt-8 mb-4 text-[30px] sm:text-[36px] font-semibold text-white">
                 Ticket{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]">
                   Booking

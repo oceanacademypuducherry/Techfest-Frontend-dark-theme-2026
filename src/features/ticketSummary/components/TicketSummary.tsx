@@ -105,22 +105,10 @@ export default function TicketSummary() {
   return (
     <>
       <Navigation />
-{/* ---------- BACK BUTTON ---------- */}
-<div
-  className="
-    hidden sm:inline-flex items-center cursor-pointer
-    border border-white/30 rounded-md
-    fixed top-36 left-4 z-50
-    px-3 py-1
-    hover:bg-white/10 transition
-  "
-  onClick={() => navigate(-1)}
->
-  <span className="text-white text-2xl mr-2">←</span>
-  <span className="text-white font-semibold text-lg">Back</span>
-</div>
+
       {/* PAGE BACKGROUND */}
-      <div className="min-h-screen bg-[#0A0C12]">
+      <div className="min-h-screen  bg-[#0A0C12]">
+ 
         <main
           className="w-[100%] md:w-[95%] mx-auto sm:pt-[60px] pt-[30px]
                      flex flex-col gap-5 justify-center sm:flex-row
@@ -135,6 +123,20 @@ export default function TicketSummary() {
 
           {/* LEFT SECTION */}
           <section className="w-[95%] sm:w-[90%] md:w-[50%] lg:w-[40%] mx-auto">
+                   {/* ---------- BACK BUTTON ---------- */}
+<div
+  className="
+    hidden sm:inline-flex items-center cursor-pointer
+    border border-white/30 rounded-md
+     top-36 left-56 z-50
+    px-3 py-1 mb-4
+    hover:bg-white/10 transition
+  "
+  onClick={() => navigate(-1)}
+>
+  <span className="text-white text-2xl mr-2">←</span>
+  <span className="text-white font-semibold text-lg">Back</span>
+</div>
             <h2
               className="mt-0 mb-4 text-[30px] text-transparent bg-clip-text
                          bg-gradient-to-r from-[#E5E7EB] to-[#9CA3AF]

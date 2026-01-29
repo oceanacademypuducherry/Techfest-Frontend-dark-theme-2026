@@ -7,9 +7,10 @@ import { useConfirmationFormContext } from "../../features/ticketSummary/context
 import { initiateRazorpay } from "../../service";
 import { setLoader } from "../../features/ticketConfirmation/services";
 import Lottie from "lottie-react";
-import { ALERT } from "../../assets/images";
+import { ALERT, CONFETTI } from "../../assets/images";
 import { toast } from "react-toastify";
 import { useRef } from "react";
+import { FaTruckField } from "react-icons/fa6";
 
 
 
@@ -151,28 +152,47 @@ useEffect(() => {
 
   
 
-  const showDiscountToast = (amount: number) => {
- toast(({ closeToast }) => (
-    <div className="flex flex-col items-center justify-center text-center gap-4 px-4 py-6">
-      <h2 className="text-2xl md:text-3xl font-bold text-green-400">
-        🎉 10% discount applied!
-      </h2>
+const showDiscountToast = (amount: number) => {
+  toast(
+    ({ closeToast }) => (
+      <div className="relative w-full h-full overflow-hidden rounded-xl">
+        {/* LEFT CONFETTI */}
+        <div className="absolute left-0 top-0 h-full w-1/3 pointer-events-none z-0">
+          <Lottie animationData={CONFETTI} loop={true} autoplay style={{ width: "100%", height: "100%" }} />
+        </div>
 
-      <button
-        onClick={closeToast}
-        className="px-6 py-2 rounded-lg bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] text-white  font-semibold
-                    transition"
-      >
-        Close
-      </button>
-    </div>
-  ));
+        {/* RIGHT CONFETTI */}
+        <div className="absolute right-0 top-0 h-full w-1/3 pointer-events-none z-0">
+          <Lottie animationData={CONFETTI} loop={true} autoplay style={{ width: "100%", height: "100%" }} />
+        </div>
 
+        {/* CONTENT */}
+        <div className="relative z-10 flex flex-col items-center justify-center text-center gap-4 px-6 py-8">
+          <h2 className="text-3xl font-bold text-green-400">
+           🎉10% discount applied!
+          </h2>
 
-
-
-
+          <button
+            onClick={closeToast}
+            className="px-6 py-2 rounded-lg bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+                       text-white font-semibold transition hover:scale-105"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    ),
+    {
+      className:
+        "!p-0 !overflow-hidden !relative !bg-[#1F2937] !text-white",
+    }
+  );
 };
+
+
+
+
+
 
 
   

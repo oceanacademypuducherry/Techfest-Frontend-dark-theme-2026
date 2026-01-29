@@ -222,20 +222,7 @@ const handleConfirm = () => {
     <>
     <div className="bg-[#0A0C12]  min-h-screen">
       <Navigation />
-      {/* ---------- BACK BUTTON ---------- */}
-<div
-  className="
-    hidden sm:inline-flex items-center cursor-pointer
-    border border-white/30 rounded-md
-    fixed top-36 left-4 z-50
-    px-3 py-1
-    hover:bg-white/10 transition
-  "
-  onClick={() => navigate(-1)}
->
-  <span className="text-white text-2xl mr-2">←</span>
-  <span className="text-white font-semibold text-lg">Back</span>
-</div>
+ 
       {/* {showPopup && isSessionExpired && (
         <div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50'>
           <div className='bg-white p-8 rounded-lg text-center'>
@@ -321,6 +308,7 @@ const handleConfirm = () => {
             onClick={handleCloseSummary}
           />
         )}
+             
         {/* Vertical Number Indicator */}
 
        {totalForms != 1 && (
@@ -368,6 +356,21 @@ const handleConfirm = () => {
               </div>
             </div>
           )} */}
+{/* ---------- BACK BUTTON ---------- */}
+<div
+  className="
+    hidden sm:inline-flex
+    w-fit
+    items-center cursor-pointer
+    border border-white/30 rounded-md
+    px-3 py-1 ml-8
+    hover:bg-white/10 transition
+  "
+  onClick={() => navigate(-1)}
+>
+  <span className="text-white text-2xl mr-2">←</span>
+  <span className="text-white font-semibold text-lg">Back</span>
+</div>
 
         {studentCount >= 1 && professionalCount >= 1 && (
   <div className="flex flex-col ml-8 max-sm:ml-1">

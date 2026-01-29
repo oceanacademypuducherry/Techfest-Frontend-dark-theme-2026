@@ -60,6 +60,11 @@ const [showMinCharHint, setShowMinCharHint] = useState<Record<number, boolean>>(
 
 const [showOtherInput, setShowOtherInput] = useState<{ [key: number]: boolean }>({})
 const [otherCollege, setOtherCollege] = useState<{ [key: number]: string }>({})
+// Reuse college checkbox state
+const [reuseCollege, setReuseCollege] = useState<Record<number, boolean>>({})
+// Watch first student's college name
+const primaryCollegeName = watch('items.0.instituteName')
+
 
 
 // const fetchColleges = async (search: string) => {
@@ -145,7 +150,7 @@ const handleCollegeChange = (index: number, value: string) => {
   debounceTimer.current = setTimeout(() => {
     fetchColleges(value)
     setShowDropdown(prev => ({ ...prev, [index]: true }))
-  }, 500)
+  }, 1500)
 }
 
 
@@ -226,7 +231,7 @@ useEffect(() => {
   data-index={index}
   className={`w-full max-w-[100%] border-[1.5px] sm:max-w-[90%] h-auto bg-white shadow-md rounded-lg 
     ${data.isStudent ? 'border border-[#00C2FF]' : 'border border-[#FF5FA2]'}`}
->
+>   
 
               {/* Header */}
               <div
@@ -440,6 +445,61 @@ useEffect(() => {
    {/* ================= INSTITUTE SECTION ================= */}
   {data.isStudent ? (
     <div className="sm:pb-0 pb-0 pt-0 sm:pt-5">
+      {/* ===== REUSE COLLEGE CHECKBOX (Only for 2nd student onwards) ===== */}
+{index > 0 && (
+  <div className="flex items-center gap-2 mb-2">
+    <input
+      type="checkbox"
+      id={`reuse-college-${index}`}
+      checked={reuseCollege[index] || false}
+      onChange={e => {
+        const checked = e.target.checked
+
+        setReuseCollege(prev => ({
+          ...prev,
+          [index]: checked,
+        }))
+
+        if (checked && primaryCollegeName) {
+  // Update local input state (UI)
+  setInputValues(prev => ({
+    ...prev,
+    [index]: primaryCollegeName,
+  }))
+
+  // Update react-hook-form value
+  setValue(
+    `items.${index}.instituteName`,
+    primaryCollegeName,
+    { shouldValidate: true }
+  )
+
+  setShowDropdown(prev => ({ ...prev, [index]: false }))
+  setShowOtherInput(prev => ({ ...prev, [index]: false }))
+}
+ else {
+  setInputValues(prev => ({
+    ...prev,
+    [index]: '',
+  }))
+
+  setValue(`items.${index}.instituteName`, '', {
+    shouldValidate: true,
+  })
+}
+
+      }}
+      className="w-4 h-4 accent-[#00C2FF]"
+    />
+    <label
+      htmlFor={`reuse-college-${index}`}
+      className="text-sm text-gray-600 cursor-pointer"
+    >
+      Use same college as Person 1
+    </label>
+  </div>
+)}
+
       <label className="block text-sm sm:text-[16px] font-normal text-gray-600 mb-1">
         College / School <span className="text-red-500">*</span>
       </label>
@@ -449,19 +509,30 @@ useEffect(() => {
         ref={el => (dropdownRefs.current[index] = el)}
       >
         <input
-          type="text"
-          placeholder="Enter your college / school name"
-          value={inputValues[index] || ''}
-          {...register(`items.${index}.instituteName`)}
-          className="w-full border rounded-lg px-3 py-2 pr-10 text-sm h-[48px]"
-          onChange={e => handleCollegeChange(index, e.target.value)}
-          
-        />    
+  type="text"
+  placeholder="Enter your college / school name"
+  value={inputValues[index] || ''}
+  {...register(`items.${index}.instituteName`)}
+  disabled={reuseCollege[index]}
+  className={`w-full border rounded-lg px-3 py-2 pr-10 text-sm h-[48px]
+    ${reuseCollege[index] ? 'bg-gray-100 cursor-not-allowed' : ''}`}
+  onChange={e =>
+    !reuseCollege[index] &&
+    handleCollegeChange(index, e.target.value)
+  }
+/>
+   
 
         {/* Chevron */}
         <button
   type="button"
-  className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded-md hover:bg-gray-100"
+  disabled={reuseCollege[index]}
+  className={`absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded-md
+    ${
+      reuseCollege[index]
+        ? 'opacity-50 cursor-not-allowed'
+        : 'hover:bg-gray-100'
+    }`}
   onClick={() => {
     if ((inputValues[index] || '').length >= 3) {
       fetchColleges(inputValues[index])

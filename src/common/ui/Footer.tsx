@@ -185,7 +185,7 @@ const DiscordOutline = ({ size = 22, color = "currentColor" }) => (
                 >
                   oatechfest@gmail.com
                 </Link> </div>
-  <div className="flex items-center gap-2"> <FaPhoneAlt /> 0413-22 </div>
+  <div className="flex items-center gap-2"> <FaPhoneAlt /> 0413-2240580 </div>
   <div className="flex items-center gap-2"> <MdLocationOn /> JIPMER, Puducherry </div>
 </div>
 

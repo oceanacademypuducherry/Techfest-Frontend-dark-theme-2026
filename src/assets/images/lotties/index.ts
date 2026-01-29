@@ -6,6 +6,8 @@ import tea from "./tea.json";
 import BIRD from "./bird.json";
 import loaderLottie from "./loader.json";
 import downloadLottie from  "./downloading.json";
-import FIREWORKS from "./fireworks.json"
-import ALERT from "./alert.json"
-export { FAILURE_ANIMATION, AUTO, BIRD, SUCCESS_ANIMATION, eror,tea,loaderLottie,downloadLottie,FIREWORKS,ALERT}
+import FIREWORKS from "./fireworks.json";
+import ALERT from "./alert.json";
+import BLAST from "./blast.json";
+import CONFETTI from "./Confetti.json"
+export { FAILURE_ANIMATION, AUTO, BIRD, SUCCESS_ANIMATION, eror,tea,loaderLottie,downloadLottie,FIREWORKS,ALERT,BLAST, CONFETTI}

@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
  import { toast } from "react-toastify";
  import { useRef } from "react";
+import { CONFETTI } from "../../assets/images";
+import Lottie from "lottie-react";
 
 interface TicketSummaryMobileProps {
   setIsBottomSheetOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -57,6 +59,15 @@ const TicketSummaryMobile: React.FC<TicketSummaryMobileProps> = ({
  const showDiscountToast = (amount: number) => {
   toast(({ closeToast }) => (
     <div className="flex flex-col items-center justify-center text-center gap-2 px-3 py-4">
+      {/* LEFT CONFETTI */}
+              <div className="absolute left-0 top-0 h-full w-1/3 pointer-events-none z-0">
+                <Lottie animationData={CONFETTI} loop={true} autoplay style={{ width: "100%", height: "100%" }} />
+              </div>
+      
+              {/* RIGHT CONFETTI */}
+              <div className="absolute right-0 top-0 h-full w-1/3 pointer-events-none z-0">
+                <Lottie animationData={CONFETTI} loop={true} autoplay style={{ width: "100%", height: "100%" }} />
+              </div>
       <h2 className="text-lg sm:text-xl font-bold text-green-400">
         🎉 10% discount applied!
       </h2>

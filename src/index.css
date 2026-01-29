@@ -324,7 +324,7 @@ body {
   background: #22c55e !important; /* green progress bar */
 }
 .Toastify__close-button {
-  color: #ef4444 !important;
+  color: white !important;
   margin-top: 10px;
   margin-right: 10px;
 }
