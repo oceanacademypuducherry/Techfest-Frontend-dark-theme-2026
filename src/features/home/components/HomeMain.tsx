@@ -165,10 +165,15 @@ export default function HomeMain() {
               March 22, 2026
             </div>
 
-            <div className="flex items-center text-white gap-2">
-              <FaLocationDot className="text-white text-[20px]" />
-               JIPMER, Puducherry
-            </div>
+             <a
+    href="https://www.google.com/maps/search/?api=1&query=JIPMER+Puducherry"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center text-white gap-2 hover:text-blue-400 transition cursor-pointer"
+  >
+    <FaLocationDot className="text-white text-[20px]" />
+    JIPMER, Puducherry
+  </a>
           </div>
 
           {/* Countdown */}

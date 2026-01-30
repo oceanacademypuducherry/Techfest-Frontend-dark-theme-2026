@@ -125,20 +125,53 @@
 // export default Speakers;
 
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Footer, Navigation } from "../../../common/ui";
-import { speakersData } from "../utils/speaker";
 import SpeakerModal from "./SpeakerModal";
+import { UserAPI } from "../../../service";
+
+interface Speaker {
+  _id: string;
+  image: string;
+  name: string;
+  position: string;
+  currentCompany: string;
+  linkedinUrl?: string;
+}
 
 const Speakers: React.FC = () => {
-  const [selectedSpeaker, setSelectedSpeaker] = useState(null);
+  const [speakers, setSpeakers] = useState<Speaker[]>([]);
+  const [selectedSpeaker, setSelectedSpeaker] = useState<Speaker | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const fetchSpeakers = async () => {
+      try {
+        const res = await UserAPI.get("/speaker/get");
+
+        const speakerList: Speaker[] =
+          Array.isArray(res.data)
+            ? res.data
+            : res.data?.data || [];
+
+        setSpeakers(speakerList);
+      } catch (error) {
+        console.error("Failed to load speakers:", error);
+        setSpeakers([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchSpeakers();
+  }, []);
 
   return (
     <>
       <Navigation />
 
-      <main className="bg-[#0A0C12] px-3 sm:px-6 md:px-0 xl:px-10 text-center">
-        {/* Heading */}
+      <main className="bg-[#0A0C12] px-3 sm:px-6 md:px-0 xl:px-10 text-center min-h-screen">
+        {/* HEADING */}
         <h2 className="mb-4 pt-5 text-[28px] sm:text-4xl md:text-5xl font-semibold text-gray-200">
           Voices of{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E64F8F] to-[#671AD2]">
@@ -146,93 +179,99 @@ const Speakers: React.FC = () => {
           </span>
         </h2>
 
-        <p className="text-cyan-600 text-[16px] sm:text-[18px] mb-8">
+        <p className="text-cyan-600 text-[16px] sm:text-[18px] mb-10">
           Meet our speakers — accomplished professionals shaping the future of technology and innovation.
         </p>
 
-        
-      {/* Speakers Grid */}
-<div className="mx-auto max-w-[1600px] px-2 sm:px-6 md:px-12 lg:px-20 pb-16">
-  <div className="
-      grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4
-      gap-5
-      justify-items-center
-    "
-  >
-    {speakersData.map((person, index) => (
-      <div
-        key={index}
-        onClick={() =>
-          person.socialLinks?.linkedin &&
-          window.open(person.socialLinks.linkedin, "_blank")
-        }
-        className="
-          relative w-full max-w-[340px]
-          h-[280px]
-          rounded-2xl overflow-hidden
-          cursor-pointer group
-          border border-black
-          bg-gray-800
-          transition-transform duration-300
-          hover:scale-105
-        "
-      >
-        {/* IMAGE */}
-        <img
-          src={person.image}
-          alt={person.name}
-          className="
-            absolute inset-0 w-full h-full object-cover object-top
-            transition-all duration-300 brightness-75
-            group-hover:scale-105
-          "
-        />
-
-        {/* WHITE OVERLAY ON HOVER */}
-        <div
-          className="
-            absolute inset-0
-            bg-gray-400
-            opacity-0
-            group-hover:opacity-70
-            transition-all duration-300
-          "
-        />
-
-        {/* TEXT CONTAINER */}
-        <div className="
-            relative z-10
-            h-full flex flex-col justify-end
-            p-4 transition-colors duration-300
-          "
-        >
-          <h3 className="text-white group-hover:text-black text-lg sm:text-xl font-bold">
-            {person.name}
-          </h3>
-          <p className="text-white group-hover:text-black text-sm sm:text-base mt-1 line-clamp-2">
-            {person.achievements}
+        {/* LOADING */}
+        {loading && (
+          <p className="text-white text-center py-20">
+            Loading speakers...
           </p>
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
+        )}
 
+        {/* SPEAKERS GRID */}
+        {!loading && (
+          <div className="mx-auto max-w-[1600px] px-2 sm:px-6 md:px-12 lg:px-20 pb-16">
+            <div className="
+              grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4
+              gap-6
+              justify-items-center
+            ">
+              {speakers.map((person) => (
+                <div
+                  key={person._id}
+                  onClick={() => setSelectedSpeaker(person)}
+                  className="
+                    relative w-full max-w-[340px]
+                    h-[300px]
+                    rounded-2xl overflow-hidden
+                    cursor-pointer group
+                    border border-black
+                    bg-gray-800
+                    transition-transform duration-300
+                    hover:scale-105
+                  "
+                >
+                  {/* IMAGE */}
+                  <img
+                    src={person.image}
+                    alt={person.name}
+                    className="
+                      absolute inset-0 w-full h-full
+                      object-cover object-top
+                    
+                      transition-transform duration-300
+                      group-hover:scale-105
+                    "
+                  />
 
+                  {/* OVERLAY */}
+                  <div className="
+                    absolute inset-0
+                    bg-black/40
+                    group-hover:bg-white/40
+                    transition-all duration-300
+                  " />
 
+                  {/* TEXT */}
+                  <div className="
+                    relative z-10
+                    h-full flex flex-col justify-end
+                    p-4
+                  ">
+                    <h3 className="text-white group-hover:text-black text-lg sm:text-xl font-bold">
+                      {person.name}
+                    </h3>
 
+                    <p className="text-white/90 group-hover:text-black text-sm font-bold">
+                      {person.position}
+                    </p>
+
+                    <p className="text-white group-hover:text-black text-xs mt-1 font-semibold">
+                      {person.currentCompany}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </main>
 
+      {/* MODAL */}
       {selectedSpeaker && (
         <SpeakerModal
           speaker={selectedSpeaker}
           onClose={() => setSelectedSpeaker(null)}
         />
       )}
+
       <Footer />
     </>
   );
 };
 
 export default Speakers;
+
 

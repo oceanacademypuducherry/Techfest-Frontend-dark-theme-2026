@@ -150,7 +150,7 @@ const handleCollegeChange = (index: number, value: string) => {
   debounceTimer.current = setTimeout(() => {
     fetchColleges(value)
     setShowDropdown(prev => ({ ...prev, [index]: true }))
-  }, 1500)
+  }, 1000)
 }
 
 
