@@ -77,67 +77,89 @@ export const CertificateDownload = () => {
   
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center overflow-hidden relative bg-cover bg-center">
-      {/* Backdrop Blur Effect */}
-      <div className="fixed inset-0 backdrop-blur-sm bg-opacity-50 w-full flex items-center justify-center z-10"></div>
+  <div className="min-h-screen bg-[#0A0C12] flex flex-col items-center overflow-hidden relative">
+    {/* Backdrop */}
+    <div className="fixed inset-0  backdrop-blur-sm z-0"></div>
 
-      {/* Decorative Images */}
-      <div className="absolute top-0 right-0 translate-x-[50%] sm:translate-x-[30%] -translate-y-[50%] sm:-translate-y-[42%]">
-        <img src={CERTIFICATE_RANGOLI} alt="Decorative" />
-      </div>
-      <div className="absolute bottom-0 left-0 -translate-x-[30%] translate-y-[40%] hidden sm:block">
-        <img src={CERTIFICATE_RANGOLI} alt="Decorative" />
-      </div>
+    {/* Decorative Images */}
+    <div className="absolute top-36 right-0 translate-x-[50%] sm:translate-x-[30%] -translate-y-[50%] sm:-translate-y-[42%] z-0">
+  <img
+    src={CERTIFICATE_RANGOLI}
+    alt="Decorative"
+    className="blur-[4px] opacity-70"
+  />
+</div>
 
-      <main className="z-20 w-full">
-        {/* Header */}
-        <header className="flex flex-col items-center justify-start 2xl:gap-[430px] xl:gap-[130px] lg:gap-[100px] md:gap-[50px] gap-3 p-6 text-center sm:flex-row">
-          <div className="w-[250px] md:w-[280px]">
-            <img src={logo} className="object-cover" alt="TechFest Logo" />
-          </div>
-          <h1 className="text-xl sm:text-2xl lg:text-4xl font-bold mt-4 md:mt-0">
-            CLAIM YOUR CERTIFICATE
-          </h1>
-          <div></div>
-        </header>
+<div className="absolute bottom-0 left-0 -translate-x-[30%] translate-y-[40%] hidden sm:block z-0">
+  <img
+    src={CERTIFICATE_RANGOLI}
+    alt="Decorative"
+    className="blur-[4px] opacity-70"
+  />
+</div>
 
-        {/* Navigation */}
-        <Navigation />
 
-        {/* <section className="absolute bottom-[80px] right-[20px]">
-          <CertificateNavigation />
-        </section> */}
+    <main className="z-10 w-full">
+      {/* Navigation */}
+      <Navigation />
 
-        {/* Form Section */}
-        <section className="flex items-center justify-center p-3 mt-30 sm:mt-[100px]">
-          <div className="w-full flex flex-col gap-3 max-w-md bg-white p-6 md:p-8 rounded-lg shadow-md text-center relative z-10">
-            <h2 className="text-xl sm:text-2xl font-semibold">Enter the User ID</h2>
-            <input
-              type="text"
-              value={uid}
-              onChange={(e) => setUid(e.target.value)}
-              placeholder="Enter your User ID Eg:OATF001"
-              className="w-full p-2 border-b-2 border-black focus:outline-none focus:border-b-2 focus:border-yellow-500 mt-4"
-            />
+      {/* Heading */}
+      <section className="text-center mt-20 sm:mt-28 px-4">
+       <h1
+  className="text-2xl sm:text-3xl lg:text-4xl font-extrabold
+  text-transparent bg-clip-text
+  bg-gradient-to-r
+  from-[#01C1FB]
+  via-[#9B8CFF]
+  to-[#FF6FB1]"
+>
+  CLAIM YOUR CERTIFICATE
+</h1>
 
- {/* Error Message */}
- {error && (
-              <p className="text-red-500 text-sm font-semibold mt-2">{error}</p>
-            )}
-            <button
-              onClick={handleClaim}
-              disabled={loading}
-              className={`w-full bg-yellow-500 text-white py-2 rounded-lg transition mt-6 ${
-                loading
-                  ? "opacity-50 cursor-not-allowed"
-                  : "hover:bg-yellow-600"
-              }`}
-            >
-              {loading ? "Processing..." : "Claim"}
-            </button>
-          </div>
-        </section>
-      </main>
-    </div>
-  );
+
+
+        {/* <p className="text-gray-400 mt-2 text-sm sm:text-base">
+          Enter your User ID to download your certificate
+        </p> */}
+      </section>
+
+      {/* Form Section */}
+      <section className="flex items-center justify-center px-4 mt-8">
+        <div className="w-full max-w-md bg-[#111827] border border-white/10 p-6 md:p-8 rounded-xl shadow-lg text-center">
+          <h2 className="text-lg sm:text-xl font-semibold text-white">
+            Enter the User ID
+          </h2>
+
+          <input
+            type="text"
+            value={uid}
+            onChange={(e) => setUid(e.target.value)}
+            placeholder="Enter your User ID Eg:OATF001"
+            className="w-full mt-5 bg-transparent border-b-2 border-white/30 text-white placeholder-gray-400 py-2 focus:outline-none"
+          />
+
+          {/* Error Message */}
+          {error && (
+            <p className="text-red-400 text-sm font-medium mt-3">
+              {error}
+            </p>
+          )}
+
+          <button
+            onClick={handleClaim}
+            disabled={loading}
+            className={`w-full mt-6 py-2 rounded-lg font-semibold transition ${
+              loading
+                ? "text-white bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] cursor-not-allowed"
+                : "text-white bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] "
+            }`}
+          >
+            {loading ? "Processing..." : "Claim"}
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
+);
+
 };

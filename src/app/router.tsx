@@ -58,6 +58,10 @@ const router = createBrowserRouter([
   {
     path:"privacy-policy",
     element: <PrivacyPolicy />
+  },
+  {
+    path: "certificate-design",
+    element: <CertificateDesign />,
   }
 ]);
 

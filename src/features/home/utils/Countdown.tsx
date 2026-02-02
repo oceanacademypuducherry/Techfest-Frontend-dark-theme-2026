@@ -76,7 +76,7 @@ export default function Countdown() {
   }, []);
 
   function calculateTimeLeft() {
-    const targetDate = new Date("2026-03-15T08:30:00");
+    const targetDate = new Date("2026-03-22T08:30:00");
     const now = new Date();
     const difference = targetDate.getTime() - now.getTime();
 

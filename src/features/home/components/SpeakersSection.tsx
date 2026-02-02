@@ -177,9 +177,7 @@ export default function SpeakersSection() {
   const [speakers, setSpeakers] = useState<Speaker[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  /* =======================
-     FETCH SPEAKERS
-  ======================= */
+ 
   useEffect(() => {
     const fetchSpeakers = async () => {
       try {
