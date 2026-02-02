@@ -201,7 +201,11 @@ const Speakers: React.FC = () => {
               {speakers.map((person) => (
                 <div
                   key={person._id}
-                  onClick={() => setSelectedSpeaker(person)}
+            onClick={() => {
+      if (person.linkedinUrl) {
+        window.open(person.linkedinUrl, "_blank", "noopener,noreferrer");
+      }
+    }}
                   className="
                     relative w-full max-w-[340px]
                     h-[300px]
@@ -260,12 +264,12 @@ const Speakers: React.FC = () => {
       </main>
 
       {/* MODAL */}
-      {selectedSpeaker && (
+      {/* {selectedSpeaker && (
         <SpeakerModal
           speaker={selectedSpeaker}
           onClose={() => setSelectedSpeaker(null)}
         />
-      )}
+      )} */}
 
       <Footer />
     </>
