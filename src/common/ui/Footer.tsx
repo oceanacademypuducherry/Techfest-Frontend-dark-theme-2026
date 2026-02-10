@@ -186,7 +186,16 @@ const DiscordOutline = ({ size = 22, color = "currentColor" }) => (
                   oatechfest@gmail.com
                 </Link> </div>
   <div className="flex items-center gap-2"> <FaPhoneAlt /> 0413-2240580 </div>
-  <div className="flex items-center gap-2"> <MdLocationOn /> JIPMER, Puducherry </div>
+ <a
+  href="https://www.google.com/maps?q=JIPMER,+Puducherry"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 text-gray-400 "
+>
+  <MdLocationOn size={18} />
+  JIPMER, Puducherry
+</a>
+
 </div>
 
 

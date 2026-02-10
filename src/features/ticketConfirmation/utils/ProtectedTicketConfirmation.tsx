@@ -8,6 +8,7 @@ const ProtectedTicketConfirmation = () => {
   return studentsTicketCount > 0 || workingProfTicketCount > 0 ? (
     <TicketConfirmation />
   ) : (
+    
     <Navigate to="/ticket-summary" replace />
   );
 };

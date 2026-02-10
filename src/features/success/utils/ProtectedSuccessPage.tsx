@@ -5,8 +5,8 @@ import TicketSuccess from "../components/TicketSuccess";
 const ProtectedTicketSuccess = () => {
   const paymentHistoryId = sessionStorage.getItem("paymentHistoryId")
 
-  // return paymentHistoryId ? <TicketSuccess /> : <Navigate to="/" replace />;
-  return <TicketSuccess />;
+  return paymentHistoryId ? <TicketSuccess /> : <Navigate to="/" replace />;
+  // return <TicketSuccess />;
 
 };
 

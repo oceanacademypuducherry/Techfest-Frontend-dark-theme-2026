@@ -9,6 +9,9 @@ import { CertificateDownload } from "../features/certificateDownload";
 import CertificateDesign from "../features/certificateDownload/ui/CertificateDesign";
 import {PrivacyPolicy} from "../features/privacyPolicy/components"
 import SponsorsPage from "../features/home/components/SponsorsPage";
+import ProtectedTicketBooking from "../features/ticketBooking/utils/ProtectedTicketBooking";
+import ProtectedTicketSummary from "../features/ticketSummary/utils/ProtectedTicketSummary";
+import ProtectedTicketCancel from "../features/failure/utils/ProtectedTicketCancel";
 
 const router = createBrowserRouter([
   {
@@ -27,21 +30,34 @@ const router = createBrowserRouter([
   path: "sponsors",
     element: <SponsorsPage />,
   },
-  {
+  // {
+  //   path: "ticket-booking",
+  //   element: <TicketBooking />,
+  // },
+  // {
+  //   path: "ticket-summary",
+  //   element: <TicketSummary />,
+  // },
+
+   {
     path: "ticket-booking",
-    element: <TicketBooking />,
+    element: <ProtectedTicketBooking />,
   },
   {
     path: "ticket-summary",
-    element: <TicketSummary />,
+    element: <ProtectedTicketSummary />,
   },
   {
     path: "ticket-confirmation",
     element: <ProtectedTicketConfirmation />,
   },
-  {
+  // {
+  //   path: "ticket-cancel",
+  //   element: <TicketCancel />,
+  // },
+   {
     path: "ticket-cancel",
-    element: <TicketCancel />,
+    element: <ProtectedTicketCancel />,
   },
   {
     path: "ticket-success",
