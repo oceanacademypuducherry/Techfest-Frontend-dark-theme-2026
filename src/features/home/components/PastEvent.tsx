@@ -263,16 +263,18 @@ export default function PastEvent() {
 </Link> */}
 
 
-          <button
-              // onClick={() => navigate("/ticket-booking")}
-              className="px-7 py-3 text-[16px] font-semibold rounded-lg
-              bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-              shadow-lg hover:scale-105 transition-all duration-300
-              flex items-center justify-center"
-            >
-             Tickets Opening Soon
-              <span className="ml-2 text-2xl font-bold">→</span>
-            </button>
+           <button
+  disabled
+  className="
+    px-7 py-3 text-[16px] text-white font-semibold rounded-lg
+    bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+    cursor-not-allowed
+    shadow-lg
+    flex items-center justify-center
+  "
+>
+  Tickets Opening Soon
+</button>
         </div>
 
       </main>
