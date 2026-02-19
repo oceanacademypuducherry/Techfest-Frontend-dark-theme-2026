@@ -30,35 +30,35 @@ const router = createBrowserRouter([
   path: "sponsors",
     element: <SponsorsPage />,
   },
-  // {
-  //   path: "ticket-booking",
-  //   element: <TicketBooking />,
-  // },
-  // {
-  //   path: "ticket-summary",
-  //   element: <TicketSummary />,
-  // },
-
-   {
+  {
     path: "ticket-booking",
-    element: <ProtectedTicketBooking />,
+    element: <TicketBooking />,
   },
   {
     path: "ticket-summary",
-    element: <ProtectedTicketSummary />,
+    element: <TicketSummary />,
   },
+
+  //  {
+  //   path: "ticket-booking",
+  //   element: <ProtectedTicketBooking />,
+  // },
+  // {
+  //   path: "ticket-summary",
+  //   element: <ProtectedTicketSummary />,
+  // },
   {
     path: "ticket-confirmation",
     element: <ProtectedTicketConfirmation />,
   },
-  // {
-  //   path: "ticket-cancel",
-  //   element: <TicketCancel />,
-  // },
-   {
+  {
     path: "ticket-cancel",
-    element: <ProtectedTicketCancel />,
+    element: <TicketCancel />,
   },
+  //  {
+  //   path: "ticket-cancel",
+  //   element: <ProtectedTicketCancel />,
+  // },
   {
     path: "ticket-success",
     element: <ProtectedTicketSuccess />,

@@ -130,7 +130,7 @@ useEffect(() => {
             Unlock the future of technology at TechFest 2026. Connect with innovators, explore emerging ideas, and be part of a celebration of innovation and learning.
           </p>
 
-          {/* Buttons */}
+          
           {/* <div className="flex justify-center sm:mt-10 mt-10 gap-4 flex-wrap">
 
             {/* Book Tickets */}
@@ -197,16 +197,15 @@ useEffect(() => {
     ) : (
       /* ❌ EVENT NOT STARTED */
       <button
-        disabled
-        className="
-          px-7 py-3 text-[16px] font-semibold rounded-lg
-          bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-          cursor-not-allowed shadow-lg
-          flex items-center justify-center
-        "
-      >
-        Tickets Opening Soon
-      </button>
+              onClick={() => navigate("/ticket-booking")}
+              className="px-7 py-3 text-[16px] font-semibold rounded-lg
+              bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+              shadow-lg hover:scale-105 transition-all duration-300
+              flex items-center justify-center"
+            >
+              Book Your Tickets
+              <span className="ml-2 text-2xl font-bold">→</span>
+            </button> 
     )
   )}
 
@@ -236,20 +235,33 @@ useEffect(() => {
             className="flex justify-center items-center gap-6
             sm:mt-10 mt-10 text-white/70 text-[15px]"
           >
-            <div className="flex items-center text-white gap-2">
-              <FaCalendarAlt className="text-white text-[18px]" />
-              March 22, 2026
-            </div>
+            <div className="flex items-center gap-2">
+  {/* Icon size */}
+  <FaCalendarAlt className="text-white text-[22px]" />
 
-             <a
-    href="https://www.google.com/maps/search/?api=1&query=JIPMER+Puducherry"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center text-white gap-2 hover:text-blue-400 transition cursor-pointer"
-  >
-    <FaLocationDot className="text-white text-[20px]" />
-    JIPMER, Puducherry
-  </a>
+  {/* Text size */}
+  <span className="text-white text-[22px]">
+    March 22, 2026
+  </span>
+</div>
+
+
+        <a
+  href="https://www.google.com/maps/search/?api=1&query=JIPMER+Auditorium+Puducherry"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 hover:text-blue-400 transition cursor-pointer"
+>
+  {/* Icon size */}
+  <FaLocationDot className="text-white text-[22px]" />
+
+  {/* Text size */}
+  <span className="text-white text-[22px]">
+    JIPMER Auditorium, Puducherry
+  </span>
+</a>
+
+
           </div>
 
           {/* Countdown */}

@@ -252,7 +252,7 @@ export default function PastEvent() {
 
         {/* BUTTON */}
         <div className="flex justify-center mt-0 sm:mt-10">
-          {/* <Link
+          <Link
   to="/ticket-booking"
   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
   className="px-6 py-3 rounded-lg text-white font-semibold
@@ -260,10 +260,10 @@ export default function PastEvent() {
     hover:scale-105 transition-all"
 >
   Book Your Tickets
-</Link> */}
+</Link>
 
 
-           <button
+           {/* <button
   disabled
   className="
     px-7 py-3 text-[16px] text-white font-semibold rounded-lg
@@ -274,7 +274,7 @@ export default function PastEvent() {
   "
 >
   Tickets Opening Soon
-</button>
+</button> */}
         </div>
 
       </main>

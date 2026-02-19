@@ -177,16 +177,16 @@ export default function About() {
   />
 </div>
 <div className="flex justify-center mt-6">
-  {/* <Link
-    to="/ticket-booking"
-    onClick={(e) => handleClick(e, "/ticket-booking")}
-    className="px-4 py-3 rounded-lg text-white font-semibold
-      bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-      shadow-md hover:scale-105 transition-all"
-  >
-    Book Your Tickets
-  </Link> */}
-   <button
+   <Link
+  to="/ticket-booking"
+  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+  className="px-6 py-3 rounded-lg text-white font-semibold
+    bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+    hover:scale-105 transition-all"
+>
+  Book Your Tickets
+</Link>
+   {/* <button
   disabled
   className="
     px-7 py-3 text-[16px] text-white font-semibold rounded-lg
@@ -197,7 +197,7 @@ export default function About() {
   "
 >
   Tickets Opening Soon
-</button>
+</button> */}
 </div>
       </div>
     </section>

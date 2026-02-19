@@ -190,27 +190,27 @@ const isTicketPage = ticketPages.includes(location.pathname);
     Book Your Tickets
   </Link>
 ) : (
-   // <Link
-            //   to="/ticket-booking"
-            //   onClick={(e) => handleClick(e, "/ticket-booking")}
-            //   className="px-4 py-3 rounded-lg text-white font-semibold
-            //   bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-            //   shadow-md hover:scale-105 transition-all"
-            // >
-            //   Book Your Tickets
-            // </Link>
-    <button
-  disabled
-  className="
-    px-7 py-3 text-[16px] text-white font-semibold rounded-lg
-    bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-    cursor-not-allowed
-    shadow-lg
-    flex items-center justify-center
-  "
->
-  Tickets Opening Soon
-</button>
+   <Link
+              to="/ticket-booking"
+              onClick={(e) => handleClick(e, "/ticket-booking")}
+              className="px-4 py-3 rounded-lg text-white font-semibold
+              bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+              shadow-md hover:scale-105 transition-all"
+            >
+              Book Your Tickets
+            </Link>
+//     <button
+//   disabled
+//   className="
+//     px-7 py-3 text-[16px] text-white font-semibold rounded-lg
+//     bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+//     cursor-not-allowed
+//     shadow-lg
+//     flex items-center justify-center
+//   "
+// >
+//   Tickets Opening Soon
+// </button>
 )}
 
       

@@ -168,16 +168,16 @@ export default function SponsorsSection() {
 {/* Buttons Row */}
 <div className="flex justify-center gap-4 mt-5 sm:mt-10 flex-wrap">
   {/* Book Your Tickets Button */}
-  {/* <Link
-    to="/ticket-booking"
-    onClick={(e) => handleClick(e, "/ticket-booking")}
-    className="w-40 sm:w-48 md:w-56 px-4 sm:px-6 py-3 rounded-lg text-white font-semibold text-sm sm:text-base md:text-lg
-      bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-      shadow-md hover:scale-105 transition-all"
-  >
-    Book Your Tickets
-  </Link> */}
-   <button
+   <Link
+  to="/ticket-booking"
+  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+  className="px-6 py-3 rounded-lg text-white font-semibold
+    bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+    hover:scale-105 transition-all"
+>
+  Book Your Tickets
+</Link>
+   {/* <button
   disabled
   className="
     px-7 py-3 text-[16px] text-white font-semibold rounded-lg
@@ -188,7 +188,7 @@ export default function SponsorsSection() {
   "
 >
   Tickets Opening Soon
-</button>
+</button> */}
   {/* View Sponsors Button */}
   <button
           onClick={() => {
