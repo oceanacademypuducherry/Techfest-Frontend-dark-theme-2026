@@ -20,12 +20,11 @@ export default function SponsorsSection() {
   const partnerLogos = [
     { src: NAMMAFLUTTER, alt: "Namma Flutter" },
     { src: FOUNDERX, alt: "FounderX" },
-    { src: SNIPPET, alt: "Snippet" },
     { src: AIC, alt: "AIC" },
     { src: SFM, alt: "SFM" },
     { src: BOIKO, alt: "BOIKO" }, 
     { src: FIA, alt: "FIA" },
-    { src: divyam, alt: "Divyam" },
+  
   ];
 
  
@@ -74,22 +73,22 @@ export default function SponsorsSection() {
           </div>
 
           {/* ---------- DESKTOP & TABLET VIEW ---------- */}
-          <div className="hidden sm:grid grid-cols-4 md:grid-cols-5 lg:grid-cols-8 gap-8 justify-items-center mt-6">
-            {partnerLogos.map((item, index) => (
-  <div key={item.alt} className="flex items-center justify-center">
-    <img
-      src={item.src}
-      alt={item.alt}
-      className={`
-        h-8 sm:h-12 md:h-12 lg:h-16 object-contain
-        ${index !== 0 &&  index !==2 ? "white-logo" : ""}
-      `}
-    />
-  </div>
-))}
-
-          </div>
-
+          <div className="hidden sm:grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 
+                gap-8 justify-center place-items-center 
+                mt-6 max-w-5xl mx-auto">
+  {partnerLogos.map((item, index) => (
+    <div key={item.alt} className="flex items-center justify-center">
+      <img
+        src={item.src}
+        alt={item.alt}
+        className={`
+          h-8 sm:h-12 md:h-12 lg:h-16 object-contain
+          ${index !== 0 ? "white-logo" : ""}
+        `}
+      />
+    </div>
+  ))}
+</div>
           {/* ---------- MOBILE VIEW (Marquee) ---------- */}
           <div className="sm:hidden mt-6">
             <Marquee pauseOnHover speed={25} gradient={false}>
@@ -114,54 +113,31 @@ export default function SponsorsSection() {
         </div>
       </div>
 
-      {/* ================= ASSOCIATE SPONSORS ================= */}
-      <div className="max-w-6xl mx-auto mt-6 px-4 text-center">
+                          
+     {/* ================= OUR SPONSORS ================= */}
+<div className="max-w-6xl mx-auto mt-16 px-4 text-center">
 
-  {/* Section Title */}
-  
-
-  {/* ================= DESKTOP & MOBILE LAYOUT ================= */}
-  <div className="flex flex-col items-center gap-6">
-
-  {/* Section Title */}
-  <h2 className="text-[#01C1FB] text-[18px] sm:text-[24px] font-semibold mb-0 sm:mb-6">
+  <h2 className="text-[#01C1FB] text-[20px] sm:text-[26px] font-semibold mb-10">
     Our Sponsors
   </h2>
 
-  {/* Sponsors Row */}
-  <div className="flex flex-col sm:flex-row items-center justify-center  gap-10 sm:gap-16">
-
-    {/* Event Sponsor */}
-    <div className="flex flex-col items-center gap-3 sm:gap-6">
-      <span className="font-semibold text-white text-lg">Event Sponsor</span>
-      <img
-        src={HIRENOW}
-        alt="HIRENOW"
-        className="h-[65px] sm:h-[68px] object-contain filter brightness-0 invert"
-      />
-    </div>
-
-    {/* Associate Sponsors */}
-    <div className="flex flex-col items-center gap-2">
-      <span className="font-semibold text-white text-lg">Associate Sponsors</span>
-      <div className="flex flex-row items-center gap-6 mt-1">
-        <img
-          src={JPINFOTECH}
-          alt="JP Infotech"
-          className="h-[80px] object-contain filter brightness-0 invert"
-        />
-        <img
-          src={DUSKCODER}
-          alt="DuskCoder"
-          className="h-8 sm:h-10 object-contain filter brightness-0 invert"
-        />
-      </div>
-    </div>
-
+  <div className="flex flex-wrap justify-center items-center gap-12">
+    <img
+      src={HIRENOW}
+      alt="HIRENOW"
+      className="h-[65px] sm:h-[75px] object-contain filter brightness-0 invert"
+    />
+    <img
+      src={JPINFOTECH}
+      alt="JP Infotech"
+      className="h-[75px] object-contain filter brightness-0 invert"
+    />
+    <img
+      src={DUSKCODER}
+      alt="DuskCoder"
+      className="h-10 sm:h-12 object-contain filter brightness-0 invert"
+    />
   </div>
-</div>
-
-
 
 </div>
 

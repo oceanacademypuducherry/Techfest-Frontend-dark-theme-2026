@@ -170,7 +170,8 @@ const Speakers: React.FC = () => {
     <>
       <Navigation />
 
-      <main className="bg-[#0A0C12] px-3 sm:px-6 md:px-0 xl:px-10 text-center min-h-screen">
+      {/* <main className="bg-[#0A0C12] px-3 sm:px-6 md:px-0 xl:px-10 text-center min-h-screen"> */}
+        <main className="bg-[#0A0C12] px-3 sm:px-6 md:px-0 xl:px-10 py-28 text-center ">
         {/* HEADING */}
         <h2 className="mb-4 pt-5 text-[28px] sm:text-4xl md:text-5xl font-semibold text-gray-200">
           Voices of{" "}
@@ -184,14 +185,14 @@ const Speakers: React.FC = () => {
         </p>
 
         {/* LOADING */}
-        {loading && (
+        {/* {loading && (
           <p className="text-white text-center py-20">
             Loading speakers...
           </p>
-        )}
+        )} */}
 
         {/* SPEAKERS GRID */}
-        {!loading && (
+         {/* {!loading && (
           <div className="mx-auto max-w-[1600px] px-2 sm:px-6 md:px-12 lg:px-20 pb-16">
             <div className="
               grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4
@@ -216,9 +217,9 @@ const Speakers: React.FC = () => {
                     transition-transform duration-300
                     hover:scale-105
                   "
-                >
+                > */}
                   {/* IMAGE */}
-                  <img
+                   {/* <img
                     src={person.image}
                     alt={person.name}
                     className="
@@ -228,18 +229,18 @@ const Speakers: React.FC = () => {
                       transition-transform duration-300
                       group-hover:scale-105
                     "
-                  />
+                  />  */}
 
                   {/* OVERLAY */}
-                  <div className="
+                   {/* <div className="
                     absolute inset-0
                     bg-black/40
                     group-hover:bg-white/40
                     transition-all duration-300
-                  " />
+                  " />  */}
 
                   {/* TEXT */}
-                  <div className="
+                   {/* <div className="
                     relative z-10
                     h-full flex flex-col justify-end
                     p-4
@@ -260,16 +261,58 @@ const Speakers: React.FC = () => {
               ))}
             </div>
           </div>
-        )}
+        )}  */}
+
+         {/* COMING SOON SECTION */}
+      <div className="mt-16 flex flex-col items-center">
+
+        <h1 className="
+  text-3xl md:text-4xl 
+  font-semibold
+  leading-[1.2]          
+  pb-2                
+  bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]
+  bg-clip-text text-transparent
+">
+  Coming Soon
+</h1>
+
+        <p className="text-white/60 mt-6 text-lg">
+          Stay tuned for updates
+        </p>
+        
+  <div className="relative w-36 h-[3px] overflow-hidden mt-1">
+    <span
+      className="absolute inset-0
+                 bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]
+                 animate-[slide_1.5s_ease-in-out_infinite]">
+    </span>
+  </div>
+
+        <p className="text-white/70 mt-6 max-w-2xl leading-relaxed">
+          We’re curating an inspiring lineup of keynote speakers,
+          tech leaders, and innovators. The full speakers list will
+          be announced shortly.
+        </p>
+
+        <div className="mt-10">
+          <button
+            className="
+              px-6 py-3 rounded-full
+              border border-white/20
+              text-white
+              hover:bg-white hover:text-black
+              transition duration-300
+            "
+          >
+            Speaker Lineup • Updates Coming Soon
+          </button>
+        </div>
+
+      </div>
       </main>
 
-      {/* MODAL */}
-      {/* {selectedSpeaker && (
-        <SpeakerModal
-          speaker={selectedSpeaker}
-          onClose={() => setSelectedSpeaker(null)}
-        />
-      )} */}
+     
 
       <Footer />
     </>

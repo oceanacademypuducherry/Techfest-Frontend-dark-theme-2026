@@ -19,13 +19,11 @@ import {
 const platinumSponsors = [
   { src: HIRENOW, alt: "HireNow" },
   { src: DUSKCODER, alt: "DuskCoder" },
-  { src: divyam, alt: "Divyam" },
 ];
 
 const goldSponsors = [
   { src: FOUNDERX, alt: "FounderX" },
   { src: DUSKCODER, alt: "DuskCoder" },
-  { src: divyam, alt: "Divyam" },
   { src: BOIKO, alt: "Boiko" },
 ];
 
@@ -33,7 +31,6 @@ const silverSponsors = [
   { src: AIC, alt: "AIC" },
   { src: SFM, alt: "SFM" },
   { src: DUSKCODER, alt: "DuskCoder" },
-  { src: divyam, alt: "Divyam" },
   { src: BOIKO, alt: "Boiko" },
 ];
 
@@ -42,7 +39,7 @@ const bronzeSponsors = [
   { src: FIA, alt: "FIA" },
   { src: AIC, alt: "AIC" },
   { src: DUSKCODER, alt: "DuskCoder" },
-  { src: divyam, alt: "Divyam" },
+ 
   { src: BOIKO, alt: "Boiko" },
 ];
 
@@ -78,7 +75,7 @@ const SponsorsPage: React.FC = () => {
             color="#01C1FB"
             sponsors={platinumSponsors}
             logoSize="h-16"
-            grid="grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+            grid="grid-cols-1 sm:grid-cols-2 md:grid-cols-2"
             description="Platinum sponsors are our most prestigious partners, providing exceptional support and strategic guidance to elevate the TechFest experience."
           />
 
@@ -88,7 +85,7 @@ const SponsorsPage: React.FC = () => {
             color="#EE4C9C"
             sponsors={goldSponsors}
             logoSize="h-14"
-            grid="grid-cols-2 sm:grid-cols-3 md:grid-cols-4"
+            grid="grid-cols-2 sm:grid-cols-3 md:grid-cols-3"
             description="Gold sponsors play a vital role in supporting TechFest with resources, mentorship, and active involvement in nurturing upcoming talent."
           />
 
@@ -98,7 +95,7 @@ const SponsorsPage: React.FC = () => {
             color="#01C1FB"
             sponsors={silverSponsors}
             logoSize="h-12"
-            grid="grid-cols-2 sm:grid-cols-3 md:grid-cols-5"
+            grid="grid-cols-2 sm:grid-cols-3 md:grid-cols-4"
             description="Silver sponsors contribute significantly by providing essential support, tools, and opportunities to help us deliver an outstanding TechFest."
           />
 
@@ -108,7 +105,7 @@ const SponsorsPage: React.FC = () => {
             color="#EE4C9C"
             sponsors={bronzeSponsors}
             logoSize="h-10"
-            grid="grid-cols-2 sm:grid-cols-3 md:grid-cols-6"
+            grid="grid-cols-2 sm:grid-cols-3 md:grid-cols-5"
             description="Bronze sponsors help make TechFest accessible and inclusive, supporting our mission to inspire and empower the next generation of tech innovators."
           />
 
