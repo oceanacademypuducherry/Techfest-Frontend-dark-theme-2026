@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 export default function About() {
 
   const topStats = [
-    { icon: FaMicrophone, color: "#00C2FF", value: "25+", label: "Speakers" },
-    { icon: PiBuildingFill, color: "#EE4C9C", value: "3", label: "Halls" },
-    { icon: FaUsers, color: "#8A63FF", value: "600+", label: "Attendees" },
-    { icon: FaBook, color: "#00C075", value: "10+", label: "Topics" },
+    { icon: FaMicrophone, color: "#00C2FF", value: "30+", label: "Speakers" },
+    { icon: PiBuildingFill, color: "#EE4C9C", value: "4", label: "Halls" },
+    { icon: FaUsers, color: "#8A63FF", value: "800+", label: "Attendees" },
+    { icon: FaBook, color: "#00C075", value: "20+", label: "Topics" },
   ];
 
   function darkenColor(hex, amount = 0.3) {

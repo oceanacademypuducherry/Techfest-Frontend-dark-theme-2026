@@ -1,16 +1,4 @@
-export { default as leftYellow } from "./leftyellow.svg";
-export { default as leftSpiral } from "./leftSpriral.svg";
-export { default as spiral3} from "./spiral3.svg";
-export { default as code} from "./code.svg";
-export { default as fragments} from "./fragment.png";
-export { default as js} from "./js.svg";
-export { default as python } from "./python.svg";
-export { default as twingle } from "./twingle.svg";
-export { default as fragmentSlide } from "./fragmentSlide.png";
-export { default as fragmentDivide } from "./fragmentDivide.png"; 
-export { default as sign } from "./sign.png"; 
-export { default as upArrow } from "./upArrow.png"; 
-export { default as topLayer } from "./topLayer.png";
+
 export { default as bgOA } from "./bgOA.svg";
 // export {default as AIC } from "./AIC.svg";
 // export { default as boiko } from "./boiko.svg";
@@ -19,3 +7,10 @@ export { default as bgOA } from "./bgOA.svg";
 // export {default as ofia } from "./ofia.svg";
 // export { default as SFM} from "./SFM.svg";
 export { default as partners } from "./partners.svg";
+export { default as certificateshape1 } from "./certificateshape1.png";
+export { default as certificateshape2 } from "./certificateshape2.png";
+export { default as certificateshape3 } from "./certificateshape3.png";
+export { default as certificateshape4 } from "./certificateshape4.png";
+export { default as rectangle } from "./rectangle.png";
+export { default as stripe } from "./stripe.png";
+export { default as circle } from "./circle.png";

@@ -232,37 +232,34 @@ useEffect(() => {
 
           {/* Date & Location */}
           <div
-            className="flex justify-center items-center gap-6
-            sm:mt-10 mt-10 text-white/70 text-[15px]"
-          >
-            <div className="flex items-center gap-2">
-  {/* Icon size */}
-  <FaCalendarAlt className="text-white text-[22px]" />
-
-  {/* Text size */}
-  <span className="text-white text-[22px]">
-    March 22, 2026
-  </span>
-</div>
-
-
-        <a
-  href="https://www.google.com/maps/search/?api=1&query=JIPMER+Auditorium+Puducherry"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex items-center gap-2 hover:text-blue-400 transition cursor-pointer"
+  className="
+    flex flex-col sm:flex-row
+    justify-center items-center
+    gap-4 sm:gap-6
+    mt-10 text-white/70 text-[15px]
+  "
 >
-  {/* Icon size */}
-  <FaLocationDot className="text-white text-[22px]" />
+  {/* Date */}
+  <div className="flex items-center gap-2">
+    <FaCalendarAlt className="text-white text-[18px] sm:text-[22px]" />
+    <span className="text-white text-[18px] sm:text-[22px]">
+      March 22, 2026
+    </span>
+  </div>
 
-  {/* Text size */}
-  <span className="text-white text-[22px]">
-    JIPMER Auditorium, Puducherry
-  </span>
-</a>
-
-
-          </div>
+  {/* Location */}
+  <a
+    href="https://www.google.com/maps/search/?api=1&query=JIPMER+Auditorium+Puducherry"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 hover:text-blue-400 transition cursor-pointer"
+  >
+    <FaLocationDot className="text-white text-[18px] sm:text-[22px]" />
+    <span className="text-white text-[18px] sm:text-[22px] text-center sm:text-left">
+      JIPMER Auditorium, Puducherry
+    </span>
+  </a>
+</div>
 
           {/* Countdown */}
           <div className="mt-12">
