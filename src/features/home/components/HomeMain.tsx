@@ -267,7 +267,7 @@ useEffect(() => {
   className="
     text-white
     text-[18px]
-    sm:text-[18px]
+    sm:text-[22px]
     md:text-[22px]
     leading-snug
     [@media(max-width:360px)]:text-[17px]
