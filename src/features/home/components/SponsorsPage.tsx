@@ -248,7 +248,7 @@ const SponsorsPage: React.FC = () => {
       alt={item.alt}
       className={`${
         index === 2
-          ? "h-[120px]"      // 3rd logo size
+          ? "h-[110px]"      // 3rd logo size
           : index === 3
           ? "h-[230px]"      // 4th logo size
           : "h-[50px]"       // Other logos
