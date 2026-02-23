@@ -249,23 +249,43 @@ useEffect(() => {
   </div>
 
   {/* Location */}
-  <a
+<a
   href="https://www.google.com/maps/search/?api=1&query=JIPMER+Auditorium+Puducherry"
   target="_blank"
   rel="noopener noreferrer"
   className="
     inline-flex
-    items-center
+    items-start
     gap-2
-    text-center
+    text-start
     hover:text-blue-400 transition cursor-pointer
   "
 >
-  <FaLocationDot className="text-white text-[18px] sm:text-[22px] shrink-0" />
+  <FaLocationDot className="text-white text-[18px] sm:text-[22px] mt-[1px] shrink-0" />
 
-  <span className="text-white text-[18px] sm:text-[22px] leading-snug">
+ <span
+  className="
+    text-white
+    text-[18px]
+    sm:text-[18px]
+    md:text-[22px]
+    leading-snug
+    [@media(max-width:360px)]:text-[17px]
+  "
+>
+  
+  {/* Single line for md and above (≥768px) */}
+  <span className="hidden md:inline">
     Dr. APJ Abdul Kalam Auditorium - JIPMER, Puducherry
   </span>
+
+  {/* Two-line version for below 768px */}
+  <span className="flex flex-col self-center  md:hidden">
+    <span>Dr. APJ Abdul Kalam Auditorium -</span>
+    <span className="self-center"> JIPMER, Puducherry</span>
+  </span>
+
+</span>
 </a>
 </div>
 
