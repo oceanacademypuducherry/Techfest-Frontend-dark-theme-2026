@@ -8,4 +8,8 @@ export { default as NAMMAFLUTTER } from "./namma_flutter.svg";
 export { default as SFM } from "./sfm.svg";
 export { default as SNIPPET } from "./snippet.svg";
 export { default as HIRENOW} from "./hirenow.svg";
-export { default as divyam } from "./Divyam.svg";
+
+export { default as Nammasocials } from "./Nammasocials.png";
+export { default as Lecture_head } from "./lecture_head.png";
+export { default as Namma } from "./namma.png";
+export { default as Lecture } from "./lecture.png";

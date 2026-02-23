@@ -187,19 +187,19 @@
 
 export default function SpeakersComingSoon() {
   return (
-    <section className=" bg-[#070B14] py-10 px-6 text-center">
+    <section className=" bg-[#070B14] py-10 px-4 sm:px-6 text-center">
 
       {/* TOP SMALL TITLE */}
-      <div className="flex items-center justify-center gap-4 mb-6">
+      <div className="flex items-center justify-center gap-2 sm:gap-4 mb-6">
         <span className="h-[2px] w-24 bg-gradient-to-l from-[#01C1FB] to-transparent" />
-        <span className="text-[#01C1FB] text-lg tracking-wide">
+        <span className="text-[#01C1FB] sm:text-[18px] text-[17px] tracking-[0.0em] sm:tracking-[0.1em]">
           Expert Speakers
         </span>
         <span className="h-[2px] w-24 bg-gradient-to-r from-[#01C1FB] to-transparent" />
       </div>
 
       {/* MAIN HEADING */}
-      <h2 className="text-4xl md:text-5xl font-semibold text-white">
+      <h2 className="text-[28px] sm:text-4xl md:text-5xl font-semibold text-white">
         Learn from the <span className="text-[#00C2FF]">Industry</span>
         <br />
         <span className="bg-gradient-to-r from-[#00C2FF] via-[#9b5de5] to-[#EE4C9C] bg-clip-text text-transparent">

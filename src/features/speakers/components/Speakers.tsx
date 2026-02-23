@@ -171,7 +171,7 @@ const Speakers: React.FC = () => {
       <Navigation />
 
       {/* <main className="bg-[#0A0C12] px-3 sm:px-6 md:px-0 xl:px-10 text-center min-h-screen"> */}
-        <main className="bg-[#0A0C12] px-3 sm:px-6 md:px-0 xl:px-10 py-28 text-center ">
+        <main className="bg-[#0A0C12] px-3 sm:px-6 md:px-0 xl:px-10 py-14 sm:py-28 text-center ">
         {/* HEADING */}
         <h2 className="mb-4 pt-5 text-[28px] sm:text-4xl md:text-5xl font-semibold text-gray-200">
           Voices of{" "}

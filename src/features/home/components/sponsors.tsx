@@ -1,16 +1,18 @@
 import { MouseEvent } from "react";
 import {
-  SFM,
-  AIC,
-  BOIKO,
-  DUSKCODER,
-  FIA,
-  FOUNDERX,
+
+  
+
   NAMMAFLUTTER,
-  JPINFOTECH,
-  SNIPPET,
-  HIRENOW,
-  divyam,
+  FOUNDERX,
+  Namma,
+  Lecture,
+  SFM,
+  BOIKO,
+  FIA,
+  
+  
+  
 } from "../../../assets/images";
 import Marquee from "react-fast-marquee";
 import { Link, useNavigate } from "react-router-dom"; 
@@ -20,7 +22,8 @@ export default function SponsorsSection() {
   const partnerLogos = [
     { src: NAMMAFLUTTER, alt: "Namma Flutter" },
     { src: FOUNDERX, alt: "FounderX" },
-    { src: AIC, alt: "AIC" },
+    { src: Namma, alt: "Namma" },
+    { src: Lecture, alt: "Lecture" },
     { src: SFM, alt: "SFM" },
     { src: BOIKO, alt: "BOIKO" }, 
     { src: FIA, alt: "FIA" },
@@ -61,7 +64,7 @@ export default function SponsorsSection() {
 
       {/* ================= EVENT SPONSORS ================= */}
       <div className="relative max-w-7xl mx-auto mt-10 sm:mt-14 rounded-2xl p-[2px]">
-        <div className=" px-4 py-3 sm:py-10 overflow-hidden">
+        <div className=" px-4 py-3 sm:py-0 overflow-hidden">
 
           {/* Label */}
           <div
@@ -69,7 +72,7 @@ export default function SponsorsSection() {
             text-[#01C1FB] sm:px-7 py-3 rounded-full font-semibold
             text-[18px] sm:text-[24px]"
           >
-            Event Partners
+            Our Partners
           </div>
 
           {/* ---------- DESKTOP & TABLET VIEW ---------- */}
@@ -79,13 +82,20 @@ export default function SponsorsSection() {
   {partnerLogos.map((item, index) => (
     <div key={item.alt} className="flex items-center justify-center">
       <img
-        src={item.src}
-        alt={item.alt}
-        className={`
-          h-8 sm:h-12 md:h-12 lg:h-16 object-contain
-          ${index !== 0 ? "white-logo" : ""}
-        `}
-      />
+  src={item.src}
+  alt={item.alt}
+  className={`
+    object-contain
+    ${
+      index === 2
+        ? "h-24"   // 3rd image
+        : index === 3
+        ? "h-52"   // 4th image
+        : "h-8 sm:h-12 md:h-12 lg:h-16"    // Other images
+    }
+    ${index !== 0 ? "white-logo" : ""}
+  `}
+/>
     </div>
   ))}
 </div>
@@ -96,13 +106,20 @@ export default function SponsorsSection() {
                 {partnerLogos.map((item, index) => (
   <div key={item.alt} className="flex items-center justify-center">
     <img
-      src={item.src}
-      alt={item.alt}
-      className={`
-        h-7 object-contain
-        ${index !== 0 && index !==2 ? "white-logo" : ""}
-      `}
-    />
+  src={item.src}
+  alt={item.alt}
+  className={`
+    object-contain
+    ${
+      index === 2
+        ? "h-[4.25rem]"      // 3rd image mobile
+        : index === 3
+        ? "h-28"     // 4th image mobile
+        : "h-7"      // Other images
+    }
+    ${index !== 0 ? "white-logo" : ""}
+  `}
+/>
   </div>
 ))}
 
@@ -113,33 +130,7 @@ export default function SponsorsSection() {
         </div>
       </div>
 
-                          
-     {/* ================= OUR SPONSORS ================= */}
-<div className="max-w-6xl mx-auto mt-16 px-4 text-center">
-
-  <h2 className="text-[#01C1FB] text-[20px] sm:text-[26px] font-semibold mb-10">
-    Our Sponsors
-  </h2>
-
-  <div className="flex flex-wrap justify-center items-center gap-12">
-    <img
-      src={HIRENOW}
-      alt="HIRENOW"
-      className="h-[65px] sm:h-[75px] object-contain filter brightness-0 invert"
-    />
-    <img
-      src={JPINFOTECH}
-      alt="JP Infotech"
-      className="h-[75px] object-contain filter brightness-0 invert"
-    />
-    <img
-      src={DUSKCODER}
-      alt="DuskCoder"
-      className="h-10 sm:h-12 object-contain filter brightness-0 invert"
-    />
-  </div>
-
-</div>
+ 
 
 {/* Buttons Row */}
 <div className="flex justify-center gap-4 mt-5 sm:mt-10 flex-wrap">
