@@ -236,27 +236,27 @@ const SponsorsPage: React.FC = () => {
 
           {/* ================= PARTNER LOGOS ================= */}
           <div className="flex justify-center">
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-
-   {partners.map((item, index) => (
-  <div
-    key={item.alt}
-    className="h-32 bg-white/95 border rounded-xl flex items-center justify-center p-1 sm:p-2  transition duration-300"
-  >
-    <img
-      src={item.src}
-      alt={item.alt}
-      className={`${
-        index === 2
-          ? "h-[110px]"      // 3rd logo size
-          : index === 3
-          ? "h-[230px]"      // 4th logo size
-          : "h-[50px]"       // Other logos
-      } w-auto object-contain mix-blend-multiply`}
-    />
-  </div>
-))}
-
+  <div className="flex flex-wrap justify-center gap-6 max-w-[1000px]">
+    {partners.map((item, index) => (
+      <div
+        key={item.alt}
+        className="w-[160px] h-32 bg-white/95 border rounded-xl 
+                   flex items-center justify-center 
+                   p-2 transition duration-300"
+      >
+        <img
+          src={item.src}
+          alt={item.alt}
+          className={`${
+            index === 2
+              ? "h-[110px]"
+              : index === 3
+              ? "h-[230px]"
+              : "h-[50px]"
+          } w-auto object-contain mix-blend-multiply`}
+        />
+      </div>
+    ))}
   </div>
 </div>
 

@@ -152,7 +152,7 @@ import {
   stripe
 } from '../../../assets/images/certificateImages'
 
-import techfest from '../../../assets/images/hero/techfest3.png'
+import techfest from '../../../assets/images/hero/TechFest_New.png'
 
 export default function CertificateDesign() {
   return (
@@ -232,9 +232,9 @@ export default function CertificateDesign() {
 
           {/* Title */}
           <div className="text-center mt-4">
-            <h1 className="text-[42px] tracking-[6px] font-semibold text-[#050A30]">
+            <h1 className="text-[42px] tracking-[6px] font-bold text-[#050A30]">
               CERTIFICATE{' '}
-              <span className="font-normal text-[#545454]">
+              <span className="font-semibold text-[#545454]">
                 of Participation
               </span>
             </h1>
