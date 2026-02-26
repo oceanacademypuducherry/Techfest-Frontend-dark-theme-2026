@@ -173,26 +173,26 @@ const Speakers: React.FC = () => {
       {/* <main className="bg-[#0A0C12] px-3 sm:px-6 md:px-0 xl:px-10 text-center min-h-screen"> */}
         <main className="bg-[#0A0C12] px-3 sm:px-6 md:px-0 xl:px-10 py-14 sm:py-28 text-center ">
         {/* HEADING */}
-        <h2 className="mb-4 pt-5 text-[28px] sm:text-4xl md:text-5xl font-semibold text-gray-200">
+        {/* <h2 className="mb-4 pt-5 text-[28px] sm:text-4xl md:text-5xl font-semibold text-gray-200">
           Voices of{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E64F8F] to-[#671AD2]">
             Techfest
           </span>
-        </h2>
+        </h2> */}
 
-        <p className="text-cyan-600 text-[16px] sm:text-[18px] mb-10">
+        {/* <p className="text-cyan-600 text-[16px] sm:text-[18px] mb-10">
           Meet our speakers — accomplished professionals shaping the future of technology and innovation.
-        </p>
+        </p> */}
 
         {/* LOADING */}
-        {loading && (
+        {/* {loading && (
           <p className="text-white text-center py-20">
             Loading speakers...
           </p>
-        )}
+        )} */}
 
         {/* SPEAKERS GRID */}
-         {!loading && (
+         {/* {!loading && (
           <div className="mx-auto max-w-[1600px] px-2 sm:px-6 md:px-12 lg:px-20 pb-16">
             <div className="
               grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4
@@ -218,7 +218,7 @@ const Speakers: React.FC = () => {
                     hover:scale-105
                   "
                 >
-                  {/* IMAGE */}
+                  
                    <img
                     src={person.image}
                     alt={person.name}
@@ -231,7 +231,6 @@ const Speakers: React.FC = () => {
                     "
                   /> 
 
-                  {/* OVERLAY */}
                    <div className="
                     absolute inset-0
                     bg-black/40
@@ -239,7 +238,6 @@ const Speakers: React.FC = () => {
                     transition-all duration-300
                   " /> 
 
-                  {/* TEXT */}
                    <div className="
                     relative z-10
                     h-full flex flex-col justify-end
@@ -261,10 +259,10 @@ const Speakers: React.FC = () => {
               ))}
             </div>
           </div>
-        )} 
+        )}  */}
 
          {/* COMING SOON SECTION */}
-      {/* <div className="mt-16 flex flex-col items-center">
+      <div className="mt-16 flex flex-col items-center">
 
         <h1 className="
   text-3xl md:text-4xl 
@@ -309,7 +307,7 @@ const Speakers: React.FC = () => {
           </button>
         </div>
 
-      </div> */}
+      </div>
       </main>
 
      
