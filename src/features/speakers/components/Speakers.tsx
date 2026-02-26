@@ -185,14 +185,14 @@ const Speakers: React.FC = () => {
         </p>
 
         {/* LOADING */}
-        {/* {loading && (
+        {loading && (
           <p className="text-white text-center py-20">
             Loading speakers...
           </p>
-        )} */}
+        )}
 
         {/* SPEAKERS GRID */}
-         {/* {!loading && (
+         {!loading && (
           <div className="mx-auto max-w-[1600px] px-2 sm:px-6 md:px-12 lg:px-20 pb-16">
             <div className="
               grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4
@@ -217,9 +217,9 @@ const Speakers: React.FC = () => {
                     transition-transform duration-300
                     hover:scale-105
                   "
-                > */}
+                >
                   {/* IMAGE */}
-                   {/* <img
+                   <img
                     src={person.image}
                     alt={person.name}
                     className="
@@ -229,18 +229,18 @@ const Speakers: React.FC = () => {
                       transition-transform duration-300
                       group-hover:scale-105
                     "
-                  />  */}
+                  /> 
 
                   {/* OVERLAY */}
-                   {/* <div className="
+                   <div className="
                     absolute inset-0
                     bg-black/40
                     group-hover:bg-white/40
                     transition-all duration-300
-                  " />  */}
+                  " /> 
 
                   {/* TEXT */}
-                   {/* <div className="
+                   <div className="
                     relative z-10
                     h-full flex flex-col justify-end
                     p-4
@@ -261,10 +261,10 @@ const Speakers: React.FC = () => {
               ))}
             </div>
           </div>
-        )}  */}
+        )} 
 
          {/* COMING SOON SECTION */}
-      <div className="mt-16 flex flex-col items-center">
+      {/* <div className="mt-16 flex flex-col items-center">
 
         <h1 className="
   text-3xl md:text-4xl 
@@ -309,7 +309,7 @@ const Speakers: React.FC = () => {
           </button>
         </div>
 
-      </div>
+      </div> */}
       </main>
 
      

@@ -76,26 +76,30 @@ export default function SponsorsSection() {
           </div>
 
           {/* ---------- DESKTOP & TABLET VIEW ---------- */}
-          <div className="hidden sm:grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 
-                gap-8 justify-center place-items-center 
-                mt-6 max-w-5xl mx-auto">
+  <div className="hidden sm:grid grid-cols-6 gap-6 mt-6 max-w-5xl mx-auto">
   {partnerLogos.map((item, index) => (
-    <div key={item.alt} className="flex items-center justify-center">
+    <div
+      key={item.alt}
+      className={`
+        flex items-center justify-center
+        ${index === 6 ? "col-span-6" : ""}
+      `}
+    >
       <img
-  src={item.src}
-  alt={item.alt}
-  className={`
-    object-contain
-    ${
-      index === 2
-        ? "h-24"   // 3rd image
-        : index === 3
-        ? "h-52"   // 4th image
-        : "h-8 sm:h-12 md:h-12 lg:h-16"    // Other images
-    }
-    ${index !== 0 ? "white-logo" : ""}
-  `}
-/>
+        src={item.src}
+        alt={item.alt}
+        className={`
+          object-contain
+          ${
+            index === 2
+              ? "h-24"
+              : index === 3
+              ? "h-34"
+              : "h-8 sm:h-12 md:h-12 lg:h-16"
+          }
+          ${index !== 0 ? "white-logo" : ""}  
+        `}
+      />
     </div>
   ))}
 </div>
