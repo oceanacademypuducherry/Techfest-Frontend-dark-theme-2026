@@ -7,6 +7,9 @@
       "hosting": {
         "oa-techfest2026": [
           "oa-techfest2026"
+        ],
+        "oa-techfest2026-test": [
+          "oa-techfest2026-test"
         ]
       }
     }
