@@ -1,26 +1,18 @@
 {
-  "hosting": [
-    {
-      "target": "oa-techfest2026",
-      "public": "dist",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
-    },
-    {
-      "target": "oa-techfest2026-test",
-      "public": "dist",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
+  "projects": {
+    "default": "techfest-177ef"
+  },
+  "targets": {
+    "techfest-177ef": {
+      "hosting": {
+        "oa-techfest2026": [
+          "oa-techfest2026"
+        ],
+        "oa-techfest2026-test": [
+          "oa-techfest2026-test"
+        ]
+      }
     }
-  ]
+  },
+  "etags": {}
 }

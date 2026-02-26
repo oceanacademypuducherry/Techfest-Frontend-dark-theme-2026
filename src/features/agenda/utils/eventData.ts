@@ -49,93 +49,7 @@ type HallSchedule = {
 
 export const eventData: HallSchedule[] = [
   {
-    hall: "Mark Hall",
-    events: [
-    {
-        id: 1,
-        time: "8:30 am - 9:30 am",
-        title: "🎤 Let the show begin!",
-        speakers: [],
-        description: "Registration and Onboarding 📝"
-      },
-      {
-        id: 2,
-        time: "9:30 am - 10:30 am",
-        title: "🙏 Vanakkam to TechFest Puducherry 2025!!",
-        speakers: [],
-        description: "Keynote Presentation - Chief Guest Welcome  🚀 (Happening in Musk hall)"
-      },
-     
-      {
-        id: 18,
-        time: "10:30 am - 11:30 am",
-        title: "🚀 Future of App Development: What's Next? 📱",
-        speakers: [
-          { id: 11, name: "Bharath", img: bharath,achievements: 'Flutter Engineer at Dhoshi', },
-        ],
-      }, 
-      
-      {
-        id: 13,
-        time: "11.30 am - 12:30 pm",
-        title: "🤖 Opportunities for AI Agents: 🎨 Designers | 💻 Developers | 🚀 Entrepreneurs",
-        speakers: [
-          { id: 1, name: "Gokul Rangarajan", img: gokul_rangarajanimg, achievements: 'General Partner at Pitchworks Venture Studio', },
-        ],
-      },
-      {
-        id: 5,
-        time: "12:30 pm - 01.45 pm",
-        title: "We still got rest of the day waiting!",
-        speakers: [],
-        description: getLunch()
-      },
-    
-      {
-        id: 23,
-        time: "1:45 pm - 02:30 pm",
-        title: "🔥 Fireside Chat: Startup Ignition - How to Turn 💡 Ideas into 🌍 Impact",
-        speakers: [
-          { id: 8, name: "Vishnu Vardhan", img: vishnuVardhan, achievements: 'Chief Executive Officer - AIC-PECF', },
-          { id: 9, name: "Dakshin", img: dakshin,  achievements: "FounderX: Building The World's Largest Startup Ecosystem", },
-        ],
-       
-      },
-      {
-        id: 16,
-        time: "2:30 pm - 03.15 pm",
-        title: "Data Science: Where We Are Today & Where We're Going 🚀📊",
-        speakers: [
-          { id: 23, name: "Harish Kumar", img: harishkumar, achievements: "JAVA | JS | Rest API | Manage Software Development Cycle | Speaks about Science & Tech", },
-        ],
-      },
-      {
-        id: 7,
-        time: "3:15 pm - 03.45 pm",
-        title: "Thaeneer...☕ Idaivelai....☕",
-        speakers: [],
-        description: getTeaBreakAnimation()
-      },
-      
-      {
-        id: 4,
-        time: "03:45 pm - 04.30 pm",
-        title: "Essential Non-Tech Skills to Master 🎯 ",
-        speakers: [
-          { id: 4, name: "Radha Rengachari", img: radha_rengachariimg, achievements: 'CEO at SPIKRA | Co-Founder at Astravue.com', },
-        ],
-      },
-      {
-        id: 9,
-        time: "04:30 pm - 05.15 pm",
-        title: "Almost end of the show ✌️",
-        speakers: [],
-        description: "Great discussions lead to great impact—let’s keep the momentum going!"
-      }
-    ],
-  },
-  {
-    hall: "Musk Hall",
+    hall: "Kalam Hall",
     events: [
       {
         id: 10,
@@ -234,7 +148,185 @@ export const eventData: HallSchedule[] = [
     ],
   },
   {
-    hall: "Sundar Hall",
+    hall: "Dennis Hall",
+    events: [
+    {
+        id: 1,
+        time: "8:30 am - 9:30 am",
+        title: "🎤 Let the show begin!",
+        speakers: [],
+        description: "Registration and Onboarding 📝"
+      },
+      {
+        id: 2,
+        time: "9:30 am - 10:30 am",
+        title: "🙏 Vanakkam to TechFest Puducherry 2025!!",
+        speakers: [],
+        description: "Keynote Presentation - Chief Guest Welcome  🚀 (Happening in Musk hall)"
+      },
+     
+      {
+        id: 18,
+        time: "10:30 am - 11:30 am",
+        title: "🚀 Future of App Development: What's Next? 📱",
+        speakers: [
+          { id: 11, name: "Bharath", img: bharath,achievements: 'Flutter Engineer at Dhoshi', },
+        ],
+      }, 
+      
+      {
+        id: 13,
+        time: "11.30 am - 12:30 pm",
+        title: "🤖 Opportunities for AI Agents: 🎨 Designers | 💻 Developers | 🚀 Entrepreneurs",
+        speakers: [
+          { id: 1, name: "Gokul Rangarajan", img: gokul_rangarajanimg, achievements: 'General Partner at Pitchworks Venture Studio', },
+        ],
+      },
+      {
+        id: 5,
+        time: "12:30 pm - 01.45 pm",
+        title: "We still got rest of the day waiting!",
+        speakers: [],
+        description: getLunch()
+      },
+    
+      {
+        id: 23,
+        time: "1:45 pm - 02:30 pm",
+        title: "🔥 Fireside Chat: Startup Ignition - How to Turn 💡 Ideas into 🌍 Impact",
+        speakers: [
+          { id: 8, name: "Vishnu Vardhan", img: vishnuVardhan, achievements: 'Chief Executive Officer - AIC-PECF', },
+          { id: 9, name: "Dakshin", img: dakshin,  achievements: "FounderX: Building The World's Largest Startup Ecosystem", },
+        ],
+       
+      },
+      {
+        id: 16,
+        time: "2:30 pm - 03.15 pm",
+        title: "Data Science: Where We Are Today & Where We're Going 🚀📊",
+        speakers: [
+          { id: 23, name: "Harish Kumar", img: harishkumar, achievements: "JAVA | JS | Rest API | Manage Software Development Cycle | Speaks about Science & Tech", },
+        ],
+      },
+      {
+        id: 7,
+        time: "3:15 pm - 03.45 pm",
+        title: "Thaeneer...☕ Idaivelai....☕",
+        speakers: [],
+        description: getTeaBreakAnimation()
+      },
+      
+      {
+        id: 4,
+        time: "03:45 pm - 04.30 pm",
+        title: "Essential Non-Tech Skills to Master 🎯 ",
+        speakers: [
+          { id: 4, name: "Radha Rengachari", img: radha_rengachariimg, achievements: 'CEO at SPIKRA | Co-Founder at Astravue.com', },
+        ],
+      },
+      {
+        id: 9,
+        time: "04:30 pm - 05.15 pm",
+        title: "Almost end of the show ✌️",
+        speakers: [],
+        description: "Great discussions lead to great impact—let’s keep the momentum going!"
+      }
+    ],
+  },
+  
+  {
+    hall: "Steve Hall",
+    events: [
+    {
+        id: 20,
+        time: "8:30 am - 9:30 am",
+        title: "🎤 Let the show begin!",
+        speakers: [],
+        description: "Registration and Onboarding 📝"
+      },
+      {
+        id: 21,
+        time: "9:30 am - 10:30 am",
+        title: "🙏 Vanakkam to TechFest Puducherry 2025!!",
+        speakers: [],
+        description: "Keynote Presentation - Chief Guest Welcome  🚀 (Happening in Musk hall)"
+      },
+       {
+        id: 12,
+        time: "10:30 am - 11:30 am",
+        title: "🔐 Cryptography : Shielding the Digital World 🌍 and Shaping the Future of 🛡️ CyberSecurity",
+        speakers: [
+          { id: 2, name: "Vijayakumar B", img: vijayakumarimg,  achievements: 'Security Consultant at NatWest Group', },
+          // { id: 15, name: "Speaker 15", img: placeholder },
+        ],
+      },
+        {
+        id: 15,
+        time: "11.30 am - 12:30 pm",
+        title: "Public Cloud : The Foundation for Modern Business Transformation ☁️",
+        speakers: [
+          { id: 3, name: "Rajan Kannan", img: rajan_Kannanimg, achievements: 'Associate Software Engineer at JP Morgan Chase & Co.', },
+        ],
+      },
+    
+      {
+        id: 24,
+        time: "12.30 pm - 01:45 pm",
+        title: "We still got rest of the day waiting!",
+        speakers: [],
+        description: getLunch()
+      },
+   
+      {
+        id: 25,
+        time: "01.45 pm - 02:30 pm",
+        title: "🌐 The Future of Immersive Technologies: AR 🕶️ | VR 🎮 | MR ✨ | Metaverse 🚀 Experiences",
+        speakers: [
+          { id: 12, name: "Vishal ", img: vishal, achievements: 'AR VR MR | GenAI | Growth Hacking ', },
+        ],
+      },
+      {
+        id: 26,
+        time: "02:30 pm - 03.15 pm",
+        title: "🧠 Problem Solving for Product Based Company",
+        speakers: [
+          { id: 13, name: "Usha kiran", img: ushakiran,  achievements: 'Programmer • Zoho • iOS Developer', },
+        ],
+      }, 
+      {
+        id: 27,
+        time: "3:30 pm - 03.45 pm",
+        title: "Thaeneer...☕ Idaivelai....☕",
+        speakers: [],
+        description: getTeaBreakAnimation()
+      },
+ {
+        id: 22,
+        time: "03:45 pm - 04.30 pm",
+        title: "Fullstack Development Roadmap 2025 🚀",
+        speakers: [
+          { id: 17, name: "Kamalakannan", img: kamalakannan, achievements: "Founder of Kwapio & Qubernet Inc, and ex-Kissflow", },
+        ],
+      },
+      // {
+      //   id: 4,
+      //   time: "03:45 pm - 04.30 pm",
+      //   title: "Essential Non-Tech Skills to Master 🎯 ",
+      //   speakers: [
+      //     { id: 4, name: "Radha Rengachari", img: radha_rengachariimg },
+      //   ],
+      // },
+      {
+        id: 29,
+        time: "04:30 pm - 05.15 pm",
+        title: "Almost end of the show ✌️",
+        speakers: [],
+        description: "Great discussions lead to great impact—let’s keep the momentum going!"
+      }
+    ],
+  },
+  {
+    hall: "Pichai Hall",
     events: [
     {
         id: 20,
