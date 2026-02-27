@@ -181,7 +181,7 @@ const Speakers: React.FC = () => {
         </h2>
 
         <p className="text-cyan-600 text-[16px] sm:text-[18px] mb-10">
-          Meet our speakers — accomplished professionals shaping the future of technology and innovation.
+          Meet our speakers who are accomplished professionals shaping the future of technology and innovation.
         </p>
 
         {/* LOADING */}
@@ -249,7 +249,7 @@ const Speakers: React.FC = () => {
                       {person.name}
                     </h3>
 
-                    <p className="text-white/90 group-hover:text-black text-sm font-bold">
+                    <p className="text-white/90 group-hover:text-black text-sm font-semibold">
                       {person.position}
                     </p>
 
