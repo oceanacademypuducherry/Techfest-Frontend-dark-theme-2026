@@ -40,8 +40,8 @@ export const CertificateDownload = () => {
   
     try {
       const response = await axios.post(
-        // `https://techfest-api-y5x6yhhkmq-el.a.run.app/app/certificate/create/${uid}`,
-        `https://techfest-test-api-y5x6yhhkmq-el.a.run.app/app/certificate/create/${uid}`,
+        `https://techfest-api-y5x6yhhkmq-el.a.run.app/app/certificate/create/${uid}`,
+        // `https://techfest-test-api-y5x6yhhkmq-el.a.run.app/app/certificate/create/${uid}`,
         // `http://127.0.0.1:5001/oceanlivereact/asia-south1/techfest_test_api/app/certificate/create/${uid}`,
         {},
         {

@@ -70,10 +70,10 @@ export const eventData: HallSchedule[] = [
        {
         id: 3,
         time: "10:30 am - 11:30 am",
-        title: "🤖 GenAI in action: Insights into LLM and Innovation  🚀",
+        title: "From Idea to MVP (prototype) : The Fast Track to Monetization 🚀",
         speakers: [
-          { id: 5, name: "Baskar Kothandapani", img:  baskar_kothandapaniimg, achievements:
-      'Product Designer & Technical Leader - vThink Global Technologies', },
+          { id: 5, name: "Megavarman", img:  baskar_kothandapaniimg, achievements:
+      'Co-founder & CFO, Pristyn Automations Pvt. Ltd', },
         ],
       },
         {
@@ -168,9 +168,9 @@ export const eventData: HallSchedule[] = [
       {
         id: 18,
         time: "10:30 am - 11:30 am",
-        title: "🚀 Future of App Development: What's Next? 📱",
+        title: "🚀 Flutter Mobile App Dev - AI",
         speakers: [
-          { id: 11, name: "Bharath", img: bharath,achievements: 'Flutter Engineer at Dhoshi', },
+          { id: 11, name: "Justin Benito", img: bharath,achievements: 'Founder, Lime Green Studios', },
         ],
       }, 
       
@@ -193,9 +193,9 @@ export const eventData: HallSchedule[] = [
       {
         id: 23,
         time: "1:45 pm - 02:30 pm",
-        title: "🔥 Fireside Chat: Startup Ignition - How to Turn 💡 Ideas into 🌍 Impact",
+        title: "AI in the Digital World: Jobs, Disruption & the Future of Opportunity",
         speakers: [
-          { id: 8, name: "Vishnu Vardhan", img: vishnuVardhan, achievements: 'Chief Executive Officer - AIC-PECF', },
+          { id: 8, name: "Jason", img: vishnuVardhan, achievements: 'Chief Executive Officer - AIC-PECF', },
           { id: 9, name: "Dakshin", img: dakshin,  achievements: "FounderX: Building The World's Largest Startup Ecosystem", },
         ],
        
@@ -219,9 +219,9 @@ export const eventData: HallSchedule[] = [
       {
         id: 4,
         time: "03:45 pm - 04.30 pm",
-        title: "Essential Non-Tech Skills to Master 🎯 ",
+        title: "Data Science : From Big Data to Decision Intelligence",
         speakers: [
-          { id: 4, name: "Radha Rengachari", img: radha_rengachariimg, achievements: 'CEO at SPIKRA | Co-Founder at Astravue.com', },
+          { id: 4, name: "Singaravel Chockalingam", img: radha_rengachariimg, achievements: 'CEO at SPIKRA | Co-Founder at Astravue.com', },
         ],
       },
       {
@@ -263,9 +263,9 @@ export const eventData: HallSchedule[] = [
         {
         id: 15,
         time: "11.30 am - 12:30 pm",
-        title: "Public Cloud : The Foundation for Modern Business Transformation ☁️",
+        title: "MetaVerse",
         speakers: [
-          { id: 3, name: "Rajan Kannan", img: rajan_Kannanimg, achievements: 'Associate Software Engineer at JP Morgan Chase & Co.', },
+          { id: 3, name: "Sai Srikar Kadiyam", img: rajan_Kannanimg, achievements: 'Strategic Growth Consultant Web4, Web3, XR, AI Evangelist', },
         ],
       },
     

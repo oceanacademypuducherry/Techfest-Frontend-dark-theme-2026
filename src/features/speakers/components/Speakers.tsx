@@ -218,7 +218,7 @@ const Speakers: React.FC = () => {
                     hover:scale-105
                   "
                 >
-                  {/* IMAGE */}
+                  
                    <img
                     src={person.image}
                     alt={person.name}
@@ -231,7 +231,6 @@ const Speakers: React.FC = () => {
                     "
                   /> 
 
-                  {/* OVERLAY */}
                    <div className="
                     absolute inset-0
                     bg-black/40
@@ -239,7 +238,6 @@ const Speakers: React.FC = () => {
                     transition-all duration-300
                   " /> 
 
-                  {/* TEXT */}
                    <div className="
                     relative z-10
                     h-full flex flex-col justify-end

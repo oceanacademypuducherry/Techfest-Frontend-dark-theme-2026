@@ -215,7 +215,10 @@ export default function TicketBooking() {
 
   {/* DROPDOWN CONTENT */}
   <div
-    className={`transition-all duration-700 overflow-hidden ${
+    // className={`transition-all duration-700 overflow-hidden ${
+    
+  className={`transition-all duration-700 overflow-hidden relative z-10 ${
+
       isWorkingProfOpen
         ? "max-h-[500px] opacity-100 pointer-events-auto"
         : "max-h-0 opacity-0 pointer-events-none"
@@ -273,7 +276,9 @@ export default function TicketBooking() {
           </div>
 
           {/* ---------- CONTINUE BUTTON ---------- */}
-          <div className="sticky bottom-12 md:bottom-0 py-6 flex justify-center">
+          {/* <div className="sticky bottom-12 md:bottom-0 py-6 flex justify-center"> */}
+          <div className="sticky bottom-12 md:bottom-0 py-6 flex justify-center z-50">
+
             <button
               // className={`bg-[#FFA908] text-black p-4 w-[500px] rounded-lg font-semibold
               className={`bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] text-white text-[18px] p-4 w-[500px] rounded-lg font-semibold
