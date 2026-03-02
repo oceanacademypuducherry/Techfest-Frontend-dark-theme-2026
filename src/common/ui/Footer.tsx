@@ -193,7 +193,7 @@ const DiscordOutline = ({ size = 22, color = "currentColor" }) => (
   className="flex items-center gap-2 text-gray-400 "
 >
   <MdLocationOn size={18} />
-  JIPMER, Puducherry
+  JIPMER - Auditorium, Puducherry
 </a>
 
 </div>
