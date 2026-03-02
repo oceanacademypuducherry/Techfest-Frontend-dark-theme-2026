@@ -187,7 +187,7 @@ const DiscordOutline = ({ size = 22, color = "currentColor" }) => (
                 </Link> </div>
   <div className="flex items-center gap-2"> <FaPhoneAlt /> 0413-2240580 </div>
  <a
-  href="https://www.google.com/maps?q=JIPMER,+Puducherry"
+  href="https://www.google.com/maps/search/?api=1&query=JIPMER+Auditorium+Puducherry"
   target="_blank"
   rel="noopener noreferrer"
   className="flex items-center gap-2 text-gray-400 "

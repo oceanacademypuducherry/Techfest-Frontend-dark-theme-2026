@@ -10,9 +10,12 @@ import {
   CODE_CLASH_2025
 } from "../../../assets/images/pastEvent";
 import { Link } from "react-router-dom";
+import React, { forwardRef } from "react";
 
-export default function PastEvent() {
+const PastEvent = forwardRef((props, ref) => {
   const PINK = "#F467B5";
+  
+
 
   const eventData = [
     { images: TECHFEST, title: "🌐 Witness the next wave of innovation begin!" },
@@ -29,78 +32,11 @@ export default function PastEvent() {
   const [techFest, ...otherEvents] = eventData;
 
   return (
-    <article id="past_events" className="bg-bgcolor text-white py-8 sm:py-12 px-4">
+     <article
+  id="past_events"
+  className="bg-bgcolor text-white py-8 sm:py-12 px-4 scroll-mt-40"
+>
       <main className="max-w-6xl mx-auto text-center">
-{/* Badge */}
-        {/* <div
-          className="inline-block bg-white/5 text-[#01C1FB]
-          text-[16px] px-6 py-3 mb-0 sm:mb-5 rounded-full border border-[#01C1FB]/30 backdrop-blur"
-        >
-          Past Event
-        </div> */}
-       
-
-       
-
-
-{/* <div className="flex flex-col items-center gap-2 mb-6">
-  <span className="text-[#01C1FB] text-[13px] tracking-widest font-semibold uppercase">
-    About the Event
-  </span>
-  <span className="h-[2px] w-32 bg-gradient-to-r from-transparent via-[#01C1FB] to-transparent"></span>
-</div> */}
-
-{/* <div className="flex justify-center mb-6">
-  <div className="
-    px-6 py-2
-    text-[13px] tracking-widest font-semibold uppercase
-    text-white
-    rounded-full
-    bg-gradient-to-r from-cyan-400 to-pink-500
-    shadow-[0_0_20px_rgba(0,193,251,0.6)]
-  ">
-    About the Event
-  </div>
-</div> */}
-
-{/* <div className="flex justify-center mb-6">
-  <div className="flex items-center overflow-hidden rounded-full border border-white/10 bg-white/5">
-    <div className="px-3 py-2 bg-[#01C1FB] text-black">
-      📅
-    </div>
-    <div className="px-5 py-2 text-[13px] tracking-widest uppercase text-white font-semibold">
-      About the Event
-    </div>
-  </div>
-</div> */}
-
-
-{/* <div className="flex justify-center mb-6">
-  <div className="p-[1px] rounded-full bg-gradient-to-r from-cyan-400 to-pink-500">
-    <div className="
-      px-6 py-2
-      rounded-full
-      bg-[#0B0F1A]
-      text-[13px] tracking-widest uppercase
-      text-white font-semibold
-    ">
-      About the Event
-    </div>
-  </div>
-</div> */}
-
-
-{/* <div className="flex justify-center mb-6">
-  <div className="
-    px-6 py-2
-    bg-pink-500
-    text-white
-    text-[13px] tracking-widest uppercase font-semibold
-    clip-path-[polygon(0_0,100%_0,90%_50%,100%_100%,0_100%,10%_50%)]
-  ">
-    About the Event
-  </div>
-</div> */}
 
 
 <div className="flex items-center justify-center gap-2 sm:gap-4 mt-6 mb-6">
@@ -113,37 +49,7 @@ export default function PastEvent() {
   <span className="h-[1px] sm:h-[4px] w-24 bg-gradient-to-r from-[#01C1FB] to-transparent"></span>
 </div>
 
-{/* <div className="flex justify-center mb-6">
-  <div className="
-    px-6 py-2
-    rounded-full
-    bg-white/10
-    backdrop-blur-lg
-    border border-white/20
-    text-white
-    text-[13px] tracking-widest uppercase font-semibold
-  ">
-    About the Event
-  </div>
-</div> */}
 
-
-{/* <div className="flex items-center justify-center gap-3 mb-6">
-  <span className="w-6 h-[2px] bg-[#01C1FB]"></span>
-  <span className="w-2 h-2 border border-[#01C1FB] rotate-45"></span>
-
-  <div className="
-    px-5 py-2
-    border border-[#01C1FB]
-    text-[#01C1FB]
-    text-[13px] tracking-widest uppercase font-semibold
-  ">
-    About the Event
-  </div>
-
-  <span className="w-2 h-2 border border-[#01C1FB] rotate-45"></span>
-  <span className="w-6 h-[2px] bg-[#01C1FB]"></span>
-</div> */}
 
 
 
@@ -280,4 +186,5 @@ export default function PastEvent() {
       </main>
     </article>
   );
-}
+});
+export default PastEvent;

@@ -57,17 +57,17 @@ const isTicketPage = ticketPages.includes(location.pathname);
   //   if (location.state?.scrollToPastEvents) scrollToSection();
   // }, [location]);
 
-  useEffect(() => {
-  if (location.state?.scrollToPastEvents) {
-    setActiveTab("/past-events");
-    scrollToSection();
-  }
+//   useEffect(() => {
+//   if (location.state?.scrollToPastEvents) {
+//     setActiveTab("/past-events");
+//     scrollToSection();
+//   }
 
-  if (location.state?.scrollToAbout) {
-    setActiveTab("/about");
-    scrollToAbout();
-  }
-}, [location.state]);
+//   if (location.state?.scrollToAbout) {
+//     setActiveTab("/about");
+//     scrollToAbout();
+//   }
+// }, [location.state]);
 
 
   const handleClick = (e, path) => {
@@ -83,11 +83,10 @@ const isTicketPage = ticketPages.includes(location.pathname);
     }
 
     if (path === "/past-events") {
-      location.pathname === "/"
-        ? scrollToSection()
-        : navigate("/", { state: { scrollToPastEvents: true } });
-      return;
-    }
+  navigate("/#past_events");
+  setMenuOpen(false);
+  return;
+}
 
     scrollToTop();
     navigate(path);
@@ -308,6 +307,6 @@ const isTicketPage = ticketPages.includes(location.pathname);
           
         </div>
       </div>
-    </main>
+    </main> 
   );
 }

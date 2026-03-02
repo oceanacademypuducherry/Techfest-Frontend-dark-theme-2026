@@ -1,7 +1,5 @@
-
-
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { UserAPI } from "../../../service";
 
 /* =======================
@@ -21,18 +19,42 @@ export default function SpeakersSection() {
 
   const [speakers, setSpeakers] = useState<Speaker[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
- 
+  /* =======================
+     SCROLL TOP
+  ======================= */
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
+  /* =======================
+     MOBILE DETECTION
+  ======================= */
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 640); // Tailwind sm breakpoint
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  /* =======================
+     FETCH SPEAKERS
+  ======================= */
   useEffect(() => {
     const fetchSpeakers = async () => {
       try {
         const res = await UserAPI.get("/speaker/get");
 
-        // ✅ API returns { success, data: [] }
         const speakerList: Speaker[] =
-          Array.isArray(res.data)
-            ? res.data
-            : res.data?.data || [];
+          Array.isArray(res.data) ? res.data : res.data?.data || [];
 
         setSpeakers(speakerList);
       } catch (error) {
@@ -47,10 +69,32 @@ export default function SpeakersSection() {
   }, []);
 
   /* =======================
+     REORDER FOR MOBILE
+  ======================= */
+const processedSpeakers = useMemo(() => {
+  const agnelIndex = speakers.findIndex(
+    (s) => s.name.toLowerCase() === "agnel john"
+  );
+
+  // If not found OR already 3rd → return original
+  if (agnelIndex === -1 || agnelIndex === 2) return speakers;
+
+  const updated = [...speakers];
+
+  // Swap Agnel with 3rd position (index 2)
+  [updated[2], updated[agnelIndex]] = [
+    updated[agnelIndex],
+    updated[2],
+  ];
+
+  return updated;
+}, [speakers]);
+
+  /* =======================
      SPLIT INTO 2 ROWS
   ======================= */
-  const rowOne = speakers.filter((_, i) => i % 2 === 0);
-  const rowTwo = speakers.filter((_, i) => i % 2 !== 0);
+  const rowOne = processedSpeakers.filter((_, i) => i % 2 === 0);
+const rowTwo = processedSpeakers.filter((_, i) => i % 2 !== 0);
 
   /* =======================
      SPEAKER CARD
@@ -80,25 +124,29 @@ export default function SpeakersSection() {
           absolute inset-0 w-full h-full
           object-cover object-top
           transition-transform duration-300
-           group-hover:scale-105
+          group-hover:scale-105
         "
       />
 
       {/* OVERLAY */}
-      <div className="
+      <div
+        className="
         absolute inset-0
         bg-black/40
         group-hover:bg-white/40
         transition-all duration-300
-      " />
+      "
+      />
 
       {/* TEXT */}
-      <div className="
+      <div
+        className="
         relative z-10
         h-full
         flex flex-col justify-end
         p-4
-      ">
+      "
+      >
         <h3 className="text-white group-hover:text-black text-lg font-bold">
           {speaker.name}
         </h3>
@@ -115,7 +163,7 @@ export default function SpeakersSection() {
   );
 
   /* =======================
-     LOADING STATE
+     LOADING
   ======================= */
   if (loading) {
     return (
@@ -140,7 +188,7 @@ export default function SpeakersSection() {
       </div>
 
       {/* HEADING */}
-      <h2 className="text-center text-4xl md:text-5xl font-semibold text-white">
+      <h2 className="text-center text-[28px] sm:text-4xl md:text-5xl font-semibold text-white">
         Learn from the <span className="text-[#00C2FF]">Industry</span>
         <br />
         <span className="bg-gradient-to-r from-[#00C2FF] via-[#9b5de5] to-[#EE4C9C] bg-clip-text text-transparent">

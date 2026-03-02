@@ -1,6 +1,6 @@
 export const FAQ_DATA = [
   {
-    question: "How can I book my ticket for TechFest 2025?",
+    question: "How can I book my ticket for TechFest 2026?",
     answer:
       'You can book your ticket directly at <a href="/ticket-booking" target="_blank" rel="noopener noreferrer" class="text-blue-500 underline">TechFest Ticket Booking</a>. Simply select your ticket category, enter your details, and complete the payment process.',
   },
@@ -10,17 +10,17 @@ export const FAQ_DATA = [
       "No, currently we only offer online ticket bookings. All tickets must be booked through our official website.",
   },
   {
-    question: "What can I expect from TechFest 2025?",
+    question: "What can I expect from TechFest 2026?",
     answer:
-      "TechFest 2025 is your gateway to future technology—explore innovations, learn from experts, and connect with visionaries shaping tomorrow. Expand your knowledge and grow your network at this ultimate tech platform.",
+      "TechFest 2026 is your gateway to future technology—explore innovations, learn from experts, and connect with visionaries shaping tomorrow. Expand your knowledge and grow your network at this ultimate tech platform.",
   },
   {
-    question: "What are the benefits of attending TechFest 2025?",
+    question: "What are the benefits of attending TechFest 2026?",
     answer:
-      "As a participant, you will experience sessions from 22 expert speakers across 5 states, all in one place. Gain insights from thought leaders and innovators who are shaping the future of technology.",
+      "As a participant, you will experience sessions from 30 expert speakers, all in one place. Gain insights from thought leaders and innovators who are shaping the future of technology.",
   },
   {
-    question: "What’s included in the Starter Kit for TechFest 2025?",
+    question: "What’s included in the Starter Kit for TechFest 2026?",
     answer:
       "The Starter Kit includes a notepad, pen, event booklet, and a carry bag to help you make the most of the event.",
   },
@@ -33,7 +33,7 @@ export const FAQ_DATA = [
     question:
       "I booked my ticket but haven’t received the confirmation email. What should I do?",
     answer:
-      "Check your spam or junk folder. If you still haven’t received the email, contact our support team at oceandocuments@gmail.com for assistance.",
+      "Check your spam or junk folder. If you still haven’t received the email, contact our support team at oatechfest@gmail.com for assistance.",
   },
   {
     question:

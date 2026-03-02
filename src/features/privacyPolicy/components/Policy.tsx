@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
             </h1>
 
             <p className="text-center max-w-2xl text-[16px] sm:text-lg md:text-xl text-white">
-              Thank you for visiting our website and booking a ticket for OA TechFest 2025. 
+              Thank you for visiting our website and booking a ticket for OA TechFest 2026. 
               By registering, you agree to the terms outlined in this Privacy Policy.
             </p>
           </div>
@@ -99,7 +99,7 @@ export default function PrivacyPolicy() {
             </h1>
 
             <p className="text-center max-w-2xl text-[16px] sm:text-lg md:text-xl text-white">
-              By registering for OA TechFest 2025, you agree to these terms.
+              By registering for OA TechFest 2026, you agree to these terms.
             </p>
           </div>
 
