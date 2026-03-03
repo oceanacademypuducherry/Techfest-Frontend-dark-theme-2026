@@ -24,16 +24,17 @@ const navigate = useNavigate();
 const pastEventsRef = useRef(null);
 
 useEffect(() => {
-  if (location.hash) {
-    const element = document.querySelector(location.hash);
-    if (element) {
-      setTimeout(() => {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }, 100);
-    }
+  if (!location.hash) return;
+
+  const element = document.querySelector(location.hash);
+
+  if (element) {
+    setTimeout(() => {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 150);
   }
 }, [location]);
 
@@ -49,7 +50,7 @@ useEffect(() => {
       <About />
       <SpeakersSection />
      <Sponsors />
-      <PastEvent ref={pastEventsRef} />
+      <PastEvent />
        <Footer />
     </main>
   );

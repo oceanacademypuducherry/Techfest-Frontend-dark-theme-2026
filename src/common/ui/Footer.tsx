@@ -59,24 +59,20 @@ const DiscordOutline = ({ size = 22, color = "currentColor" }) => (
     if (section) section.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleFooterClick = (path) => {
-    if (path === "/about") {
-      location.pathname === "/"
-        ? scrollToAbout()
-        : navigate("/", { state: { scrollToAbout: true } });
-      return;
-    }
+const handleFooterClick = (path) => {
+  if (path === "/about") {
+    navigate("/#about_section");
+    return;
+  }
 
-    if (path === "/past-events") {
-      location.pathname === "/"
-        ? scrollToPastEvents()
-        : navigate("/", { state: { scrollToPastEvents: true } });
-      return;
-    }
+  if (path === "/past-events") {
+    navigate("/#past_events");
+    return;
+  }
 
-    scrollToTop();
-    navigate(path);
-  };
+  scrollToTop();
+  navigate(path);
+};
 
   return (
     <footer className="bg-gradient-to-b from-[#0B0F1A] to-[#060913] text-gray-300">
@@ -193,7 +189,7 @@ const DiscordOutline = ({ size = 22, color = "currentColor" }) => (
   className="flex items-center gap-2 text-gray-400 "
 >
   <MdLocationOn size={18} />
-  JIPMER, Puducherry
+  JIPMER - Auditorium, Puducherry
 </a>
 
 </div>
