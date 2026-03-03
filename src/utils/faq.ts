@@ -22,7 +22,7 @@ export const FAQ_DATA = [
   {
     question: "What’s included in the Starter Kit for TechFest 2026?",
     answer:
-      "The Starter Kit includes a notepad, pen, event booklet, and a carry bag to help you make the most of the event.",
+      "The Starter Kit includes a notepad, pen, event booklet, swag stickers and a carry bag to help you make the most of the event.",
   },
   {
     question: "Can I cancel my ticket after booking?",

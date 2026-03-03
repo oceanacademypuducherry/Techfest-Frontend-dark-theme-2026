@@ -24,12 +24,16 @@ export default function SpeakersSection() {
   /* =======================
      SCROLL TOP
   ======================= */
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, []);
+  
+
+    useEffect(() => {
+    if (location.state?.scrollToTop) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }, [location]);
 
   /* =======================
      MOBILE DETECTION
@@ -217,7 +221,12 @@ const rowTwo = processedSpeakers.filter((_, i) => i % 2 !== 0);
       {/* VIEW ALL */}
       <div className="flex justify-center mt-14">
         <button
-          onClick={() => navigate("/speakers")}
+        onClick={() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setTimeout(() => navigate("/speakers"), 400);
+  }}
+
+
           className="
             bg-gradient-to-r from-pink-500 to-purple-500
             px-7 py-3 rounded-lg
