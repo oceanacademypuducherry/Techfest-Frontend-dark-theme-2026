@@ -37,8 +37,19 @@ import GayathriSeeniraj from "./speakers2026/Gayathry Seeniraja.png";
 import Megavarman from "./speakers2026/Megavaruman.png";
 import NavinKumar from "./speakers2026/Navin Kumar.png";
 import Prashanth from "./speakers2026/Prashanth Radhakrishnan.png";
-import SivakamiUma from "./speakers2026/Sivakami Uma Muthukumar.png"
-
+import SivakamiUma from "./speakers2026/Sivakami Uma Muthukumar.png";
+import JustinBenito from "./speakers2026/JustinBenito .png";
+import AdeitiaBoniface from "./speakers2026/AdeitiaBoniface.jpeg";
+import SaiSrikarKadiyam from "./speakers2026/SaiSrikarKadiyam.jpeg";
+import Sanjeev from "./speakers2026/sanjeev.png";
+import Gokulrangarajan from "./speakers2026/gokulrangarajan.png";
+import MSRahul from "./speakers2026/MS Rahul.png";
+import Tamil_Arasan from "./speakers2026/Tamil_Arasan.png";
+import Arunachalam from "./speakers2026/arunachalam.jpeg";
+import Harishkumar from "./speakers2026/HarishKumar.png";
+import Dakshin from "./speakers2026/dakshin.jpeg";
+import Alexander from "./speakers2026/Alexander Golla.jpeg";
+import Thina from "./speakers2026/SurendarThina.jpeg";
 export {
   // baskar_kothandapaniimg,
   // dakshin,
@@ -76,6 +87,19 @@ export {
   GayathriSeeniraj,
   Megavarman,
   NavinKumar,
-  SivakamiUma
+  SivakamiUma,
+  JustinBenito,
+  AdeitiaBoniface,
+  SaiSrikarKadiyam,
+  Sanjeev,
+  Prashanth,
+  Gokulrangarajan,
+  MSRahul,
+  Tamil_Arasan,
+  Arunachalam,
+  Harishkumar,
+  Dakshin,
+  Alexander,
+  Thina
 
 };

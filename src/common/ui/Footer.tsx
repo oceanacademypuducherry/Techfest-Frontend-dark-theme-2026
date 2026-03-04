@@ -90,7 +90,7 @@ const handleFooterClick = (path) => {
 
   {/* LEFT: BRAND + SOCIAL ICONS */}
   <div className="flex flex-col items-center md:items-start">
-    <h2 className="text-xl font-semibold text-white">Tech Fest 2026</h2>
+    <h2 className="text-xl font-semibold text-white">TechFest 2026</h2>
     <p className="text-sm text-gray-400 mt-4 leading-6 max-w-[360px]">
       Join us for the biggest tech celebration of the year. Innovation, inspiration, and incredible experiences await.
     </p>
@@ -220,7 +220,7 @@ const handleFooterClick = (path) => {
         </div>
 
         <p>
-          <span className="text-white font-medium">Tech Fest 2026</span> — All rights reserved.
+          <span className="text-white font-medium">TechFest 2026</span> — All rights reserved.
         </p>
       </div>
     </footer>

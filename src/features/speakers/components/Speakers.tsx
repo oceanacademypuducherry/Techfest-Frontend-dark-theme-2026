@@ -183,7 +183,7 @@ const Speakers: React.FC = () => {
         <h2 className="mb-4 pt-5 text-[28px] sm:text-4xl md:text-5xl font-semibold text-gray-200">
           Voices of{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E64F8F] to-[#671AD2]">
-            Techfest
+            TechFest
           </span>
         </h2>
 
