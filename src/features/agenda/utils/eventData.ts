@@ -1,26 +1,34 @@
 
+// import {
+//   gokul_rangarajanimg,
+//   vijayakumarimg,
+//   radha_rengachariimg,
+//   rajan_Kannanimg,
+//   baskar_kothandapaniimg,
+//   sanjivy,
+//   sudhakarNS,
+//   dakshin,
+//   vishnuVardhan,
+
+//   sivakami,
+//   nishanth,
+//   anandh,
+//   ushakiran,
+//   vishal,
+//   bharath,
+//   shahira,
+//   kamalakannan,
+//   havilah,
+//   chako,
+//   harini,cailassam,jayekumar,harishkumar,musee,
+// } from "../../../assets/images/speakers/index"
+
 import {
-  gokul_rangarajanimg,
-  vijayakumarimg,
-  radha_rengachariimg,
-  rajan_Kannanimg,
-  baskar_kothandapaniimg,
-  sanjivy,
-  sudhakarNS,
-  dakshin,
-  vishnuVardhan,
-  placeholder,
-  sivakami,
-  nishanth,
-  anandh,
-  ushakiran,
-  vishal,
-  bharath,
-  shahira,
-  kamalakannan,
-  havilah,
-  chako,
-  harini,cailassam,jayekumar,harishkumar,musee, karthik
+  Deepesh,
+  Jason_Samuel,
+  karthik,
+    placeholder,
+  
 } from "../../../assets/images/speakers/index"
 import { getTeaBreakAnimation } from "./teaLottie";
 import { getLunch } from "./lunchLottie";
@@ -61,7 +69,7 @@ export const eventData: HallSchedule[] = [
       {
         id: 11,
         time: "9:30 am - 10:30 am",
-        title: "🙏 Vanakkam to TechFest Puducherry 2025!!",
+        title: "🙏 Vanakkam to TechFest Puducherry 2026!!",
         description: "Keynote Presentation - Chief Guest Welcome 🚀 ",
         speakers: [
           { id: 25, name: "Karthik Balaraman", img: karthik,  achievements: "Founder, CEO, Ocean Academy | Career Strategist | Mentor | Speaker | Product Designer",},
@@ -72,23 +80,20 @@ export const eventData: HallSchedule[] = [
         time: "10:30 am - 11:30 am",
         title: "From Idea to MVP (prototype) : The Fast Track to Monetization 🚀",
         speakers: [
-          { id: 5, name: "Megavarman", img:  baskar_kothandapaniimg, achievements:
+          { id: 5, name: "Megavarman", img:  placeholder, achievements:
       'Co-founder & CFO, Pristyn Automations Pvt. Ltd', },
         ],
       },
         {
         id: 4,
         time: "11.30 am - 12:30 pm",
-        title: "🖌️ Designer vs  🖥️ Developer vs 🧑‍🔬 Tester (Panel Discussion) ",
+        title: "The Next Tech Wave after AI: The Rise of DeepTech (Panel Discussion) ",
         speakers: [
-          { id: 6, name: "Sanjivy", img: sanjivy, achievements: 'Software Engineer at Striim', },
-          { id: 7, name: "Sudhakar", img: sudhakarNS, achievements: 'Senior Software Engineer at Siemens.', },
-          { id:10, name: "Ananda kumar" , img:anandh, achievements:
+          { id: 6, name: "Sai Srikar Kadiam", img: placeholder, achievements: 'Software Engineer at Striim', },
+          { id: 7, name: "Gokul Rangarajan", img: placeholder, achievements: 'Senior Software Engineer at Siemens.', },
+          { id:10, name: "Murali" , img:placeholder, achievements:
       'Automation Tester (Functional Automation / API Testing / Data Engineering)',},
-          { id: 14, name: "Nishanth" , img:nishanth, achievements: 'Designer at Siemens',},
-          { id: 16, name: "Shahira Begam" , img:shahira, achievements:
-      'Senior Software Engineer at Siemens.',},
-          { id: 18, name: "Havilah" , img:havilah,  achievements: "UI/UX Designer at Wowlabz",}
+          { id: 14, name: "MS rahul" , img:placeholder, achievements: 'Designer at Siemens',}
         ],
       },
       
@@ -102,23 +107,22 @@ export const eventData: HallSchedule[] = [
         {
         id: 6,
         time: "1:45 pm - 02:30 pm",
-        title: "🤖 AI in Hiring: Revolution or 🚧 Roadblock for Fresh Graduates? ( 🎙️ PO-TA Panel Discussion)",
+        title: "From Student to Creator: Building Authority on Social Media ( Panel Discussion )",
         speakers: [
-          { id: 1, name: "Gokul Rangarajan", img: gokul_rangarajanimg, achievements: 'General Partner at Pitchworks Venture Studio', },
-          { id: 21, name: "Cailassame N", img: cailassam, achievements: "Placement Officer at Sri Manakula Vinayagar Engineering College",},
-          { id: 22, name: "Dr.Jayekumar", img: jayekumar, achievements: "Professor & Placement Officer at Manakula vinayagar institute of technology", },
-          { id:24, name:" Pugazhendhi Musee", img: musee, achievements: "Concept Architect Skill Bench - Vision skill school Founder - Bodhi Garden school Concept Business consultation",},
-          { id: 23, name: "Harish Kumar", img: harishkumar,  achievements: "JAVA | JS | Rest API | Manage Software Development Cycle | Speaks about Science & Tech", },
+          { id: 1, name: "Sivakami", img: placeholder, achievements: 'General Partner at Pitchworks Venture Studio', },
+          { id: 21, name: "Thamizh", img: placeholder, achievements: "Placement Officer at Sri Manakula Vinayagar Engineering College",},
+          { id: 22, name: "Harizone", img: placeholder, achievements: "Professor & Placement Officer at Manakula vinayagar institute of technology", },
+          { id:24, name:"Arunachalam", img: placeholder, achievements: "Concept Architect Skill Bench - Vision skill school Founder - Bodhi Garden school Concept Business consultation",},
         ],
       },
       
       {
         id: 16,
         time: "2:30 pm - 03.15 pm",
-        title: "⚡ Lightning Talks: Side Hustle 💼🔥 Start Earning with Your Passion & 🧠🚀 Bio-Hack Your Mind for Peak Performance!",
+        title: "How to build better AI Agents: Best practices and Adoption patterns",
         speakers: [
-          { id: 19, name: "Dr. Chackochen Mathai", img: chako,  achievements: "Success Coach & Psychologist | Franchise Expert | Business Mentor | Speaker | Corporate Sales Trainer | Growth Strategist 🚀"},
-          { id: 20, name: "Dr. J. S. Harini", img: harini, achievements: "Clinical Hypnotherapist & Mind Mastery Coach", }
+          { id: 19, name: "Gayathri Perumal ", img: placeholder,  achievements: "Success Coach & Psychologist | Franchise Expert | Business Mentor | Speaker | Corporate Sales Trainer | Growth Strategist 🚀"},
+
         ],
       },
       {
@@ -133,7 +137,7 @@ export const eventData: HallSchedule[] = [
         time: "3:45 pm - 04.30 pm",
         title: "💼LinkedIn Mastery: Building an Impactful Profile to Kickstart Your Career 🌟 ",
         speakers: [
-          { id: 15, name: "Sivakami Uma Muthukumar", img: sivakami, achievements:
+          { id: 15, name: "Sivakami Uma Muthukumar", img: placeholder, achievements:
       'Personal Branding Strategist | Storytelling Advocate | Thought Leadership Coach', },
         ],
       },
@@ -160,7 +164,7 @@ export const eventData: HallSchedule[] = [
       {
         id: 2,
         time: "9:30 am - 10:30 am",
-        title: "🙏 Vanakkam to TechFest Puducherry 2025!!",
+        title: "🙏 Vanakkam to TechFest Puducherry 2026!!",
         speakers: [],
         description: "Keynote Presentation - Chief Guest Welcome  🚀 (Happening in Musk hall)"
       },
@@ -170,16 +174,17 @@ export const eventData: HallSchedule[] = [
         time: "10:30 am - 11:30 am",
         title: "🚀 Flutter Mobile App Dev - AI",
         speakers: [
-          { id: 11, name: "Justin Benito", img: bharath,achievements: 'Founder, Lime Green Studios', },
+          { id: 11, name: "Justin Benito", img: placeholder,achievements: 'Founder, Lime Green Studios', },
         ],
       }, 
       
       {
         id: 13,
         time: "11.30 am - 12:30 pm",
-        title: "🤖 Opportunities for AI Agents: 🎨 Designers | 💻 Developers | 🚀 Entrepreneurs",
+        title: "Who Will Lead the Data Era: AI Engineers or Data Analysts?",
         speakers: [
-          { id: 1, name: "Gokul Rangarajan", img: gokul_rangarajanimg, achievements: 'General Partner at Pitchworks Venture Studio', },
+          { id: 1, name: "Sanjivee", img: placeholder, achievements: 'General Partner at Pitchworks Venture Studio', },
+           { id: 1, name: "Prashanth", img: placeholder, achievements: 'General Partner at Pitchworks Venture Studio', },
         ],
       },
       {
@@ -195,8 +200,8 @@ export const eventData: HallSchedule[] = [
         time: "1:45 pm - 02:30 pm",
         title: "AI in the Digital World: Jobs, Disruption & the Future of Opportunity",
         speakers: [
-          { id: 8, name: "Jason", img: vishnuVardhan, achievements: 'Chief Executive Officer - AIC-PECF', },
-          { id: 9, name: "Dakshin", img: dakshin,  achievements: "FounderX: Building The World's Largest Startup Ecosystem", },
+          { id: 8, name: "Jason", img: placeholder, achievements: 'Chief Executive Officer - AIC-PECF', },
+          { id: 9, name: "Dakshin", img: placeholder,  achievements: "FounderX: Building The World's Largest Startup Ecosystem", },
         ],
        
       },
@@ -205,7 +210,7 @@ export const eventData: HallSchedule[] = [
         time: "2:30 pm - 03.15 pm",
         title: "Data Science: Where We Are Today & Where We're Going 🚀📊",
         speakers: [
-          { id: 23, name: "Harish Kumar", img: harishkumar, achievements: "JAVA | JS | Rest API | Manage Software Development Cycle | Speaks about Science & Tech", },
+          { id: 23, name: "Harish Kumar", img: placeholder, achievements: "JAVA | JS | Rest API | Manage Software Development Cycle | Speaks about Science & Tech", },
         ],
       },
       {
@@ -221,7 +226,7 @@ export const eventData: HallSchedule[] = [
         time: "03:45 pm - 04.30 pm",
         title: "Data Science : From Big Data to Decision Intelligence",
         speakers: [
-          { id: 4, name: "Singaravel Chockalingam", img: radha_rengachariimg, achievements: 'CEO at SPIKRA | Co-Founder at Astravue.com', },
+          { id: 4, name: "Singaravel Chockalingam", img: placeholder, achievements: 'CEO at SPIKRA | Co-Founder at Astravue.com', },
         ],
       },
       {
@@ -247,7 +252,7 @@ export const eventData: HallSchedule[] = [
       {
         id: 21,
         time: "9:30 am - 10:30 am",
-        title: "🙏 Vanakkam to TechFest Puducherry 2025!!",
+        title: "🙏 Vanakkam to TechFest Puducherry 2026!!",
         speakers: [],
         description: "Keynote Presentation - Chief Guest Welcome  🚀 (Happening in Musk hall)"
       },
@@ -256,7 +261,7 @@ export const eventData: HallSchedule[] = [
         time: "10:30 am - 11:30 am",
         title: "🔐 Cryptography : Shielding the Digital World 🌍 and Shaping the Future of 🛡️ CyberSecurity",
         speakers: [
-          { id: 2, name: "Vijayakumar B", img: vijayakumarimg,  achievements: 'Security Consultant at NatWest Group', },
+          { id: 2, name: "Vijayakumar B", img: placeholder,  achievements: 'Security Consultant at NatWest Group', },
           // { id: 15, name: "Speaker 15", img: placeholder },
         ],
       },
@@ -265,7 +270,7 @@ export const eventData: HallSchedule[] = [
         time: "11.30 am - 12:30 pm",
         title: "MetaVerse",
         speakers: [
-          { id: 3, name: "Sai Srikar Kadiyam", img: rajan_Kannanimg, achievements: 'Strategic Growth Consultant Web4, Web3, XR, AI Evangelist', },
+          { id: 3, name: "Sai Srikar Kadiyam", img: placeholder, achievements: 'Strategic Growth Consultant Web4, Web3, XR, AI Evangelist', },
         ],
       },
     
@@ -280,9 +285,10 @@ export const eventData: HallSchedule[] = [
       {
         id: 25,
         time: "01.45 pm - 02:30 pm",
-        title: "🌐 The Future of Immersive Technologies: AR 🕶️ | VR 🎮 | MR ✨ | Metaverse 🚀 Experiences",
+        title: "Inside Product-Based Hiring: What Recruiters Actually Look For?",
         speakers: [
-          { id: 12, name: "Vishal ", img: vishal, achievements: 'AR VR MR | GenAI | Growth Hacking ', },
+          { id: 12, name: "HR Naveen", img: placeholder, achievements: 'AR VR MR | GenAI | Growth Hacking ', },
+            { id: 12, name: "Harish Kumar", img: placeholder, achievements: 'AR VR MR | GenAI | Growth Hacking ', },
         ],
       },
       {
@@ -290,7 +296,7 @@ export const eventData: HallSchedule[] = [
         time: "02:30 pm - 03.15 pm",
         title: "🧠 Problem Solving for Product Based Company",
         speakers: [
-          { id: 13, name: "Usha kiran", img: ushakiran,  achievements: 'Programmer • Zoho • iOS Developer', },
+          { id: 13, name: "Usha kiran", img: placeholder,  achievements: 'Programmer • Zoho • iOS Developer', },
         ],
       }, 
       {
@@ -305,7 +311,7 @@ export const eventData: HallSchedule[] = [
         time: "03:45 pm - 04.30 pm",
         title: "Fullstack Development Roadmap 2025 🚀",
         speakers: [
-          { id: 17, name: "Kamalakannan", img: kamalakannan, achievements: "Founder of Kwapio & Qubernet Inc, and ex-Kissflow", },
+          { id: 17, name: "Kamalakannan", img: placeholder, achievements: "Founder of Kwapio & Qubernet Inc, and ex-Kissflow", },
         ],
       },
       // {
@@ -338,7 +344,7 @@ export const eventData: HallSchedule[] = [
       {
         id: 21,
         time: "9:30 am - 10:30 am",
-        title: "🙏 Vanakkam to TechFest Puducherry 2025!!",
+        title: "🙏 Vanakkam to TechFest Puducherry 2026!!",
         speakers: [],
         description: "Keynote Presentation - Chief Guest Welcome  🚀 (Happening in Musk hall)"
       },
@@ -347,7 +353,7 @@ export const eventData: HallSchedule[] = [
         time: "10:30 am - 11:30 am",
         title: "🔐 Cryptography : Shielding the Digital World 🌍 and Shaping the Future of 🛡️ CyberSecurity",
         speakers: [
-          { id: 2, name: "Vijayakumar B", img: vijayakumarimg,  achievements: 'Security Consultant at NatWest Group', },
+          { id: 2, name: "Vijayakumar B", img: placeholder,  achievements: 'Security Consultant at NatWest Group', },
           // { id: 15, name: "Speaker 15", img: placeholder },
         ],
       },
@@ -356,7 +362,7 @@ export const eventData: HallSchedule[] = [
         time: "11.30 am - 12:30 pm",
         title: "Public Cloud : The Foundation for Modern Business Transformation ☁️",
         speakers: [
-          { id: 3, name: "Rajan Kannan", img: rajan_Kannanimg, achievements: 'Associate Software Engineer at JP Morgan Chase & Co.', },
+          { id: 3, name: "Rajan Kannan", img: placeholder, achievements: 'Associate Software Engineer at JP Morgan Chase & Co.', },
         ],
       },
     
@@ -373,7 +379,7 @@ export const eventData: HallSchedule[] = [
         time: "01.45 pm - 02:30 pm",
         title: "🌐 The Future of Immersive Technologies: AR 🕶️ | VR 🎮 | MR ✨ | Metaverse 🚀 Experiences",
         speakers: [
-          { id: 12, name: "Vishal ", img: vishal, achievements: 'AR VR MR | GenAI | Growth Hacking ', },
+          { id: 12, name: "Vishal ", img: placeholder, achievements: 'AR VR MR | GenAI | Growth Hacking ', },
         ],
       },
       {
@@ -381,7 +387,7 @@ export const eventData: HallSchedule[] = [
         time: "02:30 pm - 03.15 pm",
         title: "🧠 Problem Solving for Product Based Company",
         speakers: [
-          { id: 13, name: "Usha kiran", img: ushakiran,  achievements: 'Programmer • Zoho • iOS Developer', },
+          { id: 13, name: "Usha kiran", img: placeholder,  achievements: 'Programmer • Zoho • iOS Developer', },
         ],
       }, 
       {
@@ -396,7 +402,7 @@ export const eventData: HallSchedule[] = [
         time: "03:45 pm - 04.30 pm",
         title: "Fullstack Development Roadmap 2025 🚀",
         speakers: [
-          { id: 17, name: "Kamalakannan", img: kamalakannan, achievements: "Founder of Kwapio & Qubernet Inc, and ex-Kissflow", },
+          { id: 17, name: "Kamalakannan", img: placeholder, achievements: "Founder of Kwapio & Qubernet Inc, and ex-Kissflow", },
         ],
       },
       // {
