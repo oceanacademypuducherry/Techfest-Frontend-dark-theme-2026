@@ -211,7 +211,7 @@ export const eventData: HallSchedule[] = [
         ],
       },
 
-      { id: 21, time: "04:30 pm - 05.15 pm", title: "Almost end of the show ✌️", speakers: [], description: "Great discussions lead to great impact—let’s keep the momentum going!" },
+      { id: 21, time: "04:30 pm - 05:30 pm", title: "Almost end of the show ✌️", speakers: [], description: "Great discussions lead to great impact—let’s keep the momentum going!" },
     ],
   },
 
@@ -348,7 +348,7 @@ export const eventData: HallSchedule[] = [
         ],
       },
 
-      { id: 39, time: "3:25 pm - 03.40 pm", title: "Thaeneer...☕ Idaivelai....☕", speakers: [], description: getTeaBreakAnimation() },
+      { id: 39, time: "3:25 pm - 03:40 pm", title: "Thaeneer...☕ Idaivelai....☕", speakers: [], description: getTeaBreakAnimation() },
 
       {
         id: 40,
