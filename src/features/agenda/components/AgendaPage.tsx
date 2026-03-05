@@ -7,7 +7,7 @@ import { scrollToTop } from "../../../utils/scrollTo";
 const AgendaPage: React.FC = () => {
   const [selectedHall, setSelectedHall] = useState("Kalam Hall");
  const halls = ["Kalam Hall", "Dennis Hall", "Steve Hall", "Pichai Hall"];
-
+ const [isSticky, setIsSticky] = useState(false);
   // Filter events based on selected hall
   const filteredEvents =
     eventData.find(event => event.hall === selectedHall)?.events || [];
@@ -15,6 +15,25 @@ const AgendaPage: React.FC = () => {
   useEffect(() => {
     scrollToTop();
   }, [selectedHall]);
+
+
+
+useEffect(() => {
+  const handleScroll = () => {
+    if (window.innerWidth < 500) {   // 👈 only below 500px
+      if (window.scrollY > 220) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    } else {
+      setIsSticky(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   // 🔽 DOWNLOAD HANDLER
   // const handleDownloadSchedule = () => {
@@ -49,16 +68,20 @@ const AgendaPage: React.FC = () => {
         </div>
 
         {/* HALL TOGGLE */}
-        <div
-          className="flex flex-col md:flex-row justify-center items-center
-                     px-3 sm:px-6 py-3 mb-8 sticky top-0 z-10 sm:static"
-        >
-          <HallToggle
-            halls={halls}
-            selectedHall={selectedHall}
-            setSelectedHall={setSelectedHall}
-          />
-        </div>
+  <div
+  className={`
+  flex flex-col md:flex-row justify-center items-center
+  px-3 sm:px-6 py-3 mb-8
+  ${isSticky ? "fixed top-[100px]  left-0 w-full z-30 bg-[#0A0C12]" : ""}
+  md:static
+  `}
+>
+  <HallToggle
+    halls={halls}
+    selectedHall={selectedHall}
+    setSelectedHall={setSelectedHall}
+  />
+</div>
 
         {/* EVENT CARDS */}
         <div className="space-y-6 w-[92%] max-w-screen-xl mb-12 mx-auto">
