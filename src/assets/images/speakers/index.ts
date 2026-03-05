@@ -50,6 +50,11 @@ import Harishkumar from "./speakers2026/HarishKumar.png";
 import Dakshin from "./speakers2026/dakshin.jpeg";
 import Alexander from "./speakers2026/Alexander Golla.jpeg";
 import Thina from "./speakers2026/SurendarThina.jpeg";
+import Murali from "./speakers2026/Murali.png";
+import Deepak from "./speakers2026/Deepak Kumar.png";
+import Deekshanya from "./speakers2026/Deekshanya.png";
+import Andrew from "./speakers2026/Andrew.png";
+import Thanajayan from "./speakers2026/Thanajayan.png";
 export {
   // baskar_kothandapaniimg,
   // dakshin,
@@ -100,6 +105,11 @@ export {
   Harishkumar,
   Dakshin,
   Alexander,
-  Thina
+  Thina,
+  Deepak,
+  Murali,
+  Deekshanya,
+  Andrew,
+  Thanajayan
 
 };
