@@ -12,7 +12,9 @@ import {
   Deepak,
   Deepesh,
   GayathriPerumal,
+  GayathriSeeniraj,
   Gokulrangarajan,
+  Hari,
   Harishkumar,
   Jason_Samuel,
   JustinBenito,
@@ -29,6 +31,7 @@ import {
     Tamil_Arasan,
     Thanajayan,
     Thina,
+    Vignesh,
   
 } from "../../../assets/images/speakers/index";
 import { getTeaBreakAnimation } from "./teaLottie";
@@ -100,7 +103,7 @@ export const eventData: HallSchedule[] = [
       {
         id: 7,
         time: "2:00 pm - 02:40 pm",
-        title: "WEB-3, WEB-4",
+        title: "Blockchain and the Next Internet: Web3 to Web4",
         speakers: [
           { id: 5, name: "Sai Srikar Kadiyam", img: SaiSrikarKadiyam, achievements: "Strategic Growth Consultant, Web4, Web3, XR, AI Evangelist" },
         ],
@@ -110,9 +113,9 @@ export const eventData: HallSchedule[] = [
         id: 8,
         time: "2:45 pm - 03:25 pm",
         // title: "How to build better AI Agents: Best practices and Adoption patterns",
-        title: "Title coming soon",
+        title: "The Developer’s AI Stack: A Framework for the Next Generation of Builders",
         speakers: [
-          { id: 6, name: "Speaker", img: placeholder, achievements: "Designation" },
+          { id: 6, name: "Vignesh Murugan", img: Vignesh, achievements: "Software Engineer - VGTS | Founding Member - Rebel/Stack Community" },
         ],
       },
 
@@ -122,9 +125,9 @@ export const eventData: HallSchedule[] = [
         id: 10,
         time: "3:40 pm - 04:30 pm",
         // title: "💼LinkedIn Mastery: Building an Impactful Profile to Kickstart Your Career 🌟",
-        title: "Title coming soon",
+        title: "From developer to devops: Deploying your first app to Cloud (GCP & AWS)",
         speakers: [
-          { id: 7, name: "Speaker", img: placeholder, achievements: "Designation" },
+          { id: 7, name: "Sanjivy Kumaravel", img: Sanjeev, achievements: "Associate Software Engineer, JPMorgan Chase" },
         ],
       },
 
@@ -172,7 +175,7 @@ export const eventData: HallSchedule[] = [
         speakers: [
           { id: 29, name: "Sivakami Uma Muthukumar", img: SivakamiUma, achievements: "Personal Branding Strategist | Storytelling Advocate" },
            { id: 30, name: "Tamil Arasan", img: Tamil_Arasan, achievements: "Co-Founder, FounderX Venture Partners" },
-            // { id: 31, name: "Harizone", img: placeholder, achievements: "Director (Fractional Head of Product), Banyan Software" },
+            { id: 31, name: "Hari", img: Hari, achievements: "YouTuber, Hari zone" },
              { id: 32, name: "Arunachalam S", img: Arunachalam, achievements: "Co-Founder | Founder & CEO, Social Sculpt | Personal Branding" },
         ],
       },
@@ -257,7 +260,7 @@ export const eventData: HallSchedule[] = [
         id: 27,
         time: "02:00 pm - 02:40 pm",
         title: `⚡ Lightning Talks: Self-Love in a Competitive World: 
-        Thriving Without Burning Out (20) & How to be in your full potential and attain peak performance`,
+        Thriving Without Burning Out & How to be in your full potential and attain peak performance`,
         speakers: [
           { id: 17, name: "Deekshanya ", img: Deekshanya, achievements: "Life Coach" },
           { id: 18, name: "Alexander Golla", img: Alexander, achievements: "Mindset Coach" },
@@ -269,10 +272,10 @@ export const eventData: HallSchedule[] = [
       {
         id: 28,
         time: "02:45 pm - 03:25 pm",
-        // title: "🧠 Problem Solving for Product Based Company",
-        title: "Title coming soon",
+   
+        title: "Career Transformation and Growth Mindset",
         speakers: [
-          { id: 19, name: "Speaker", img: placeholder, achievements: "Designation" },
+          { id: 19, name: "Gayathry Seeniraja", img: GayathriSeeniraj, achievements: "Director Laurier Consultancy Services LLP & HRG PERSONALITY STUDIO" },
         ],
       },
 

@@ -55,6 +55,8 @@ import Deepak from "./speakers2026/Deepak Kumar.png";
 import Deekshanya from "./speakers2026/Deekshanya.png";
 import Andrew from "./speakers2026/Andrew.png";
 import Thanajayan from "./speakers2026/Thanajayan.png";
+import Hari from "./speakers2026/Hari Zone.jpeg";
+import Vignesh from "./speakers2026/vignesh_murugan.png";
 export {
   // baskar_kothandapaniimg,
   // dakshin,
@@ -110,6 +112,8 @@ export {
   Murali,
   Deekshanya,
   Andrew,
-  Thanajayan
+  Thanajayan,
+  Hari,
+  Vignesh
 
 };
