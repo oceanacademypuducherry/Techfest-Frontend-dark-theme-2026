@@ -57,6 +57,7 @@ import Andrew from "./speakers2026/Andrew.png";
 import Thanajayan from "./speakers2026/Thanajayan.png";
 import Hari from "./speakers2026/Hari Zone.jpeg";
 import Vignesh from "./speakers2026/vignesh_murugan.png";
+import Yuvaraj from "./speakers2026/Yuvaraj Muthu.png";
 export {
   // baskar_kothandapaniimg,
   // dakshin,
@@ -114,6 +115,7 @@ export {
   Andrew,
   Thanajayan,
   Hari,
-  Vignesh
+  Vignesh,
+  Yuvaraj 
 
 };

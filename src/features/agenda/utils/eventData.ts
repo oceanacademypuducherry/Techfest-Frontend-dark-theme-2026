@@ -32,6 +32,7 @@ import {
     Thanajayan,
     Thina,
     Vignesh,
+    Yuvaraj,
   
 } from "../../../assets/images/speakers/index";
 import { getTeaBreakAnimation } from "./teaLottie";
@@ -92,11 +93,14 @@ export const eventData: HallSchedule[] = [
       {
         id: 5,
         time: "12:00 pm - 12:40 pm",
-        title: "Think like a Hacker: The Security Mindset That Defines Elite Engineers",
+        title:"Title coming soon",
         speakers: [
-          { id: 4, name: "Adeitia Boniface", img: AdeitiaBoniface, achievements: "Director (Fractional Head of Product), Banyan Software" },
+          { id: 4, name: "Speaker", img: placeholder, achievements: "Designtion" },
         ],
+       
       },
+
+
 
       { id: 6, time: "12:40 pm - 02:00 pm", title: "We still got rest of the day waiting!", speakers: [], description: getLunch() },
 
@@ -231,13 +235,13 @@ export const eventData: HallSchedule[] = [
         title: "AI in the Digital World: Jobs, Disruption & the Future of Opportunity",
         speakers: [
           { id: 15, name: "Jason - Samuel", img: Jason_Samuel, achievements: "CEO, Zemuria Inc. | Venture Operator" },
-            { id: 34, name: "Dakshin", img:   Dakshin, achievements: "Co-Founder & Managing Partner, FounderX Venture Partners" }
+          { id: 34, name: "Dakshin", img:   Dakshin, achievements: "Co-Founder & Managing Partner, FounderX Venture Partners" }
         ],
       },
 
       {
         id: 25,
-        time: "11:15 am - 11:55 pm",
+        time: "11:15 am - 11:55 am",
         title: "Importance of Building Communities in this AI Disrupted World",
         speakers: [
           { id: 16, name: "Deepak Kumar", img: Deepak, achievements: "Founder, DNA Community" },
@@ -247,10 +251,10 @@ export const eventData: HallSchedule[] = [
 
       {
         id: 42,
-        time: "12:00 am - 12:40 pm",
-        title: "From Student Desk to a Million Dollar Company- Why founder's mindset is the ultimate hack for your career.",
+        time: "12:00 pm - 12:40 pm",
+        title: "Beyond UI/UX: Unlocking Opportunities in Product, AI & Emerging Tech",
         speakers: [
-          { id: 20, name: "Megavaruman", img: Megavarman, achievements: "Co-founder & CFO, Pristyn Automations Pvt. Ltd" },
+          { id: 20, name: "Yuvaraj Muthu", img: Yuvaraj, achievements: "Founder, Payan Design Studio" },
         ],
       },
 
@@ -273,9 +277,9 @@ export const eventData: HallSchedule[] = [
         id: 28,
         time: "02:45 pm - 03:25 pm",
    
-        title: "Career Transformation and Growth Mindset",
+         title: "From Student Desk to a Million Dollar Company- Why founder's mindset is the ultimate hack for your career.",
         speakers: [
-          { id: 19, name: "Gayathry Seeniraja", img: GayathriSeeniraj, achievements: "Director Laurier Consultancy Services LLP & HRG PERSONALITY STUDIO" },
+          { id: 19, name: "Megavaruman", img: Megavarman, achievements: "Co-founder & CFO, Pristyn Automations Pvt. Ltd" },
         ],
       },
 
@@ -284,11 +288,14 @@ export const eventData: HallSchedule[] = [
       {
         id: 30,
         time: "03:40 pm - 04:30 pm",
-        // title: "Fullstack Development Roadmap 2025 🚀",
-        title: "Title coming soon",
+       
+        title: "Think like a Hacker: The Security Mindset That Defines Elite Engineers",
         speakers: [
-          { id: 36, name: "Speaker", img: placeholder, achievements: "Designation" },
+          { id: 36, name: "Adeitia Boniface", img: AdeitiaBoniface, achievements: "Director (Fractional Head of Product), Banyan Software" },
         ],
+
+
+        
       },
 
       { id: 31, time: "04:30 pm - 05:30 pm", title: "Almost end of the show ✌️", speakers: [], description: "Great discussions lead to great impact—let’s keep the momentum going!" },

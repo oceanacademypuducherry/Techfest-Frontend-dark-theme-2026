@@ -20,20 +20,19 @@ const AgendaPage: React.FC = () => {
 
 useEffect(() => {
   const handleScroll = () => {
-    if (window.innerWidth < 500) {   // 👈 only below 500px
-      if (window.scrollY > 220) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
+    if (window.scrollY > 220) {
+      setIsSticky(true);
     } else {
       setIsSticky(false);
     }
   };
 
   window.addEventListener("scroll", handleScroll);
+
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
+
+ 
 
   // 🔽 DOWNLOAD HANDLER
   // const handleDownloadSchedule = () => {
@@ -71,9 +70,8 @@ useEffect(() => {
   <div
   className={`
   flex flex-col md:flex-row justify-center items-center
-  px-3 sm:px-6 py-3 mb-8
-  ${isSticky ? "fixed top-[100px]  left-0 w-full z-30 bg-[#0A0C12]" : ""}
-  md:static
+  px-3 sm:px-6 py-4 mb-4
+  ${isSticky ? "fixed top-[100px] md:top-[120px] left-0 w-full z-30 bg-[#0A0C12]" : ""}
   `}
 >
   <HallToggle
