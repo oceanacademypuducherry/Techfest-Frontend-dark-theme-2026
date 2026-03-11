@@ -19,6 +19,7 @@ import {
   Jason_Samuel,
   JustinBenito,
   karthik,
+    Meerthika,
     Megavarman,
     MSRahul,
     Murali,
@@ -93,9 +94,9 @@ export const eventData: HallSchedule[] = [
       {
         id: 5,
         time: "12:00 pm - 12:40 pm",
-        title:"Title coming soon",
+        title:"Building a First Principle Open Source Project from Scratch",
         speakers: [
-          { id: 4, name: "Speaker", img: placeholder, achievements: "Designtion" },
+          { id: 4, name: "Meerthika", img: Meerthika, achievements:"Community Lead, RootSprout" },
         ],
        
       },
@@ -189,10 +190,10 @@ export const eventData: HallSchedule[] = [
       {
         id: 17,
         time: "02:00 pm - 02:40 pm",
-        // title: "Academia in the AI Era: Adapting, Evolving, Leading",
-        title: "Title coming soon",
+        title: "Academia in the AI Era: Adapting, Evolving, Leading",
+        // title: "Title coming soon",
         speakers: [
-          { id: 11, name: "Speaker", img: placeholder, achievements: "Designtion" },
+          { id: 11, name: "Karthik Balaraman", img: karthik, achievements: "Founder, CEO, Ocean Academy | Career Strategist | Mentor | Speaker | Product Designer" },
           // { id: 12, name: "Dakshin", img: placeholder, achievements: "FounderX: Building The World's Largest Startup Ecosystem" },
         ],
       },
