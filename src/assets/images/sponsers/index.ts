@@ -13,3 +13,8 @@ export { default as Nammasocials } from "./Nammasocials.png";
 export { default as Lecture_head } from "./lecture_head.png";
 export { default as Namma } from "./namma.png";
 export { default as Lecture } from "./lecture.png";
+export { default as BobMaassy } from "./Bob Maassy.png";
+export { default as PSP } from "./PSP.png";
+export { default as Sequestera } from "./Sequestera.png";
+export { default as SMVEC } from "./SMVEC.png";
+export { default as Unstop } from "./Unstop.png";

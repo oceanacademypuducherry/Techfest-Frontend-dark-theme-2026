@@ -193,6 +193,11 @@ import {
   SFM,
   BOIKO,
   FIA,
+  BobMaassy,
+  PSP,
+  Sequestera,
+  SMVEC,
+  Unstop,
   
   
   
@@ -201,16 +206,25 @@ import {
 /* ================= PARTNERS ================= */
 
 const partners = [
-  { src: NAMMAFLUTTER, alt: "NammaFlutter" },
-  { src: FOUNDERX, alt: "FounderX" },
-  { src: Nammasocials, alt: "Nammasocials" },
-  { src: Lecture_head, alt: "Lecture_head" },
-    { src: SFM, alt: "SFM" },
-  { src: BOIKO, alt: "Boiko" },
-  { src: FIA, alt: "FIA" },
-
+  { src: SMVEC, alt: "SMVEC", size: "h-[280px]" },
+  { src: Unstop, alt: "Unstop", size: "h-[120px]" },
+   { src: FOUNDERX, alt: "FounderX", size: "h-[50px]" },
+   { src: BOIKO, alt: "Boiko", size: "h-[50px]" },
+  { src: NAMMAFLUTTER, alt: "NammaFlutter", size: "h-[50px]" },
+ 
+  { src: Nammasocials, alt: "Nammasocials", size: "h-[110px]" },
+  { src: FIA, alt: "FIA", size: "h-[50px]" },
+  { src: Lecture_head, alt: "Lecture_head", size: "h-[150px]" },
+   { src: Sequestera, alt: "Sequestera", size: "h-[130px]" },
+  { src: SFM, alt: "SFM", size: "h-[50px]" },
+  
+  
+  { src: BobMaassy, alt: "Bob Maassy", size: "h-[100px]" },
+  { src: PSP, alt: "PSP", size: "h-[110px]" },
+ 
+  
+  
 ];
-
 const SponsorsPage: React.FC = () => {
   return (
     <>
@@ -220,7 +234,7 @@ const SponsorsPage: React.FC = () => {
         <div className="max-w-[1200px] mx-auto">
 
           {/* ================= HEADER ================= */}
-          <div className="flex flex-col items-center mb-12">
+          <div className="flex flex-col items-center mb-8 sm:mb-12">
             <h2 className="mt-6 mb-4 text-[30px] sm:text-[38px] font-semibold text-white">
               Our{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]">
@@ -236,28 +250,23 @@ const SponsorsPage: React.FC = () => {
 
           {/* ================= PARTNER LOGOS ================= */}
           <div className="flex justify-center">
-  <div className="flex flex-wrap justify-center gap-6 max-w-[1000px]">
-    {partners.map((item, index) => (
-      <div
-        key={item.alt}
-        className="w-[160px] h-32 bg-white/95 border rounded-xl 
-                   flex items-center justify-center 
-                   p-2 transition duration-300"
-      >
-        <img
-          src={item.src}
-          alt={item.alt}
-          className={`${
-            index === 2
-              ? "h-[110px]"
-              : index === 3
-              ? "h-[230px]"
-              : "h-[50px]"
-          } w-auto object-contain mix-blend-multiply`}
-        />
-      </div>
-    ))}
-  </div>
+  <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 max-w-[1100px] mx-auto">
+  {partners.map((item) => (
+    <div
+      key={item.alt}
+      className={`w-[140px] sm:w-[150px] md:w-[160px] h-32 bg-white/95 border rounded-xl
+                  flex items-center justify-center
+                  ${item.alt === "SMVEC" || item.alt === "Lecture_head" ? "" : "p-2"}
+                  transition duration-300`}
+    >
+      <img
+        src={item.src}
+        alt={item.alt}
+        className={`${item.size} w-auto object-contain mix-blend-multiply`}
+      />
+    </div>
+  ))}
+</div>
 </div>
 
         </div>

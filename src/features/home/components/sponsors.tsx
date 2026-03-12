@@ -10,6 +10,11 @@ import {
   SFM,
   BOIKO,
   FIA,
+  BobMaassy,
+  PSP,
+  Sequestera,
+  SMVEC,
+  Unstop,
   
   
   
@@ -20,15 +25,20 @@ import { Link, useNavigate } from "react-router-dom";
 export default function SponsorsSection() {
   const navigate = useNavigate(); 
   const partnerLogos = [
-    { src: NAMMAFLUTTER, alt: "Namma Flutter" },
-    { src: FOUNDERX, alt: "FounderX" },
+  { src: SMVEC, alt: "SMVEC" },
+    { src: Unstop, alt: "Unstop"},
+     { src: FOUNDERX, alt: "FounderX" },
+    { src: BOIKO, alt: "BOIKO" },
+   { src: NAMMAFLUTTER, alt: "Namma Flutter" },
     { src: Namma, alt: "Namma" },
+     { src: FIA, alt: "FIA" },
     { src: Lecture, alt: "Lecture" },
+    { src: Sequestera, alt: "Sequestera"},
     { src: SFM, alt: "SFM" },
-    { src: BOIKO, alt: "BOIKO" }, 
-    { src: FIA, alt: "FIA" },
-  
-  ];
+    { src: BobMaassy, alt: "Bob Maassy"},
+    { src: PSP, alt: "PSP" },
+    
+];
 
  
 
@@ -66,6 +76,7 @@ export default function SponsorsSection() {
       <div className="relative max-w-7xl mx-auto mt-10 sm:mt-14 rounded-2xl p-[2px]">
         <div className=" px-4 py-3 sm:py-0 overflow-hidden">
 
+
           {/* Label */}
           <div
             className="absolute -top-7 left-1/2 -translate-x-1/2
@@ -76,30 +87,44 @@ export default function SponsorsSection() {
           </div>
 
           {/* ---------- DESKTOP & TABLET VIEW ---------- */}
-  <div className="hidden sm:grid grid-cols-6 gap-6 mt-6 max-w-5xl mx-auto">
+  <div className="hidden sm:grid grid-cols-6 gap-x-6 mt-6 max-w-5xl mx-auto">
   {partnerLogos.map((item, index) => (
     <div
       key={item.alt}
       className={`
         flex items-center justify-center
-        ${index === 6 ? "col-span-6" : ""}
+       
       `}
     >
       <img
-        src={item.src}
-        alt={item.alt}
-        className={`
-          object-contain
-          ${
-            index === 2
-              ? "h-24"
-              : index === 3
-              ? "h-34"
-              : "h-8 sm:h-12 md:h-12 lg:h-16"
-          }
-          ${index !== 0 ? "white-logo" : ""}  
-        `}
-      />
+  src={item.src}
+  alt={item.alt}
+  className={`
+    object-contain
+    ${
+      index === 0
+        ? "h-38"
+        : index === 1
+        ? "h-28"
+        : index === 2
+        ? "h-[45px]"
+        : index === 3
+        ? "h-[40px]"
+        : index === 5
+        ? "h-[90px]"
+        : index === 7
+        ? "h-36"
+        : index === 8
+        ? "h-30"
+        : index === 10 
+        ? "h-28"
+        : index === 11 
+        ? "h-28"
+        : "h-8 sm:h-12 md:h-12 lg:h-16"
+    }
+    ${[0,4,10,11].includes(index) ? "" : "white-logo"}
+  `}
+/>
     </div>
   ))}
 </div>
@@ -115,13 +140,27 @@ export default function SponsorsSection() {
   className={`
     object-contain
     ${
-      index === 2
-        ? "h-[4.25rem]"      // 3rd image mobile
+      index === 0
+        ? "h-[4.25rem]"
+      :index === 1
+        ? "h-[4.25rem]"
+        : index === 2
+        ? "h-28"
         : index === 3
-        ? "h-28"     // 4th image mobile
-        : "h-7"      // Other images
+        ? "h-12"
+        : index === 5
+        ? "h-12"
+        : index === 7
+        ? "h-12"
+        : index === 7
+        ? "h-12"
+        : index === 10
+        ? "h-12"
+        : index === 11
+        ? "h-12"
+        : "h-7"
     }
-    ${index !== 0 ? "white-logo" : ""}
+    ${[0,4,11,10].includes(index) ? "" : "white-logo"}
   `}
 />
   </div>
@@ -148,18 +187,7 @@ export default function SponsorsSection() {
 >
   Book Your Tickets
 </Link>
-   {/* <button
-  disabled
-  className="
-    px-7 py-3 text-[16px] text-white font-semibold rounded-lg
-    bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-    cursor-not-allowed
-    shadow-lg
-    flex items-center justify-center
-  "
->
-  Tickets Opening Soon
-</button> */}
+   
   {/* View Sponsors Button */}
   <button
           onClick={() => {
