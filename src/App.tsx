@@ -30,3 +30,29 @@
 // }
 
 // export default App
+
+import {useEffect} from "react";
+import ReactPixel from "react-facebook-pixel";
+
+const App = () => {
+
+  useEffect(() => {
+
+    const options = {
+      autoConfig: true,
+      debug: false
+    };
+
+    ReactPixel.init("888098090705416", {}, options);
+    ReactPixel.pageView();
+
+  }, []);
+
+  return (
+    <div>
+      <h1>React TypeScript Website</h1>
+    </div>
+  );
+};
+
+export default App;

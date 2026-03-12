@@ -370,9 +370,9 @@ export const eventData: HallSchedule[] = [
         id: 38,
         time: "02:45 pm - 03:25 pm",
         // title: "🧠 Problem Solving for Product Based Company",
-        title: "Entrepreneurship: Ideas Are Everywhere. The Courage to Decide Is Not",
+        title: "Carbon, Cost & Opportunity: Technology in the Economics of Climate & Entrepreneurship: Ideas Are Everywhere. The Courage to Decide Is Not",
         speakers: [
-          // { id: 24, name: "Speaker", img: placeholder, achievements: "Designation" },
+          { id: 24, name: "Deepesh K", img: Deepesh, achievements: "Co-Founder, You & I Trips | Climate Tech & Carbon Solutions" },
           { id: 41, name: "Karneish", img: Karneish, achievements: "Founder & CEO, ManaGenz" },
         ],
       },
