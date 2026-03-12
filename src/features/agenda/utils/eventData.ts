@@ -3,10 +3,13 @@
 
 import {
   AdeitiaBoniface,
+  Aditya,
   AgnelJohn,
   Alexander,
   Andrew,
   Arunachalam,
+  Arunmozhivarman,
+  Athvik,
   Dakshin,
   Deekshanya,
   Deepak,
@@ -18,6 +21,8 @@ import {
   Harishkumar,
   Jason_Samuel,
   JustinBenito,
+  Kamalakkannan,
+  Karneish,
   karthik,
     Meerthika,
     Megavarman,
@@ -26,9 +31,13 @@ import {
     NavinKumar,
     placeholder,
     Prashanth,
+    Rodick,
     SaiSrikarKadiyam,
+    Sakthivel,
     Sanjeev,
+    Shaik,
     SivakamiUma,
+    Sivasankaran,
     Tamil_Arasan,
     Thanajayan,
     Thina,
@@ -145,13 +154,18 @@ export const eventData: HallSchedule[] = [
     events: [
       { id: 12, time: "8:30 am - 9:30 am", title: "🎤 Let the show begin!", speakers: [], description: "Registration and Onboarding 📝" },
 
-      { id: 13, time: "9:30 am - 10:30 am",
+      { id: 13, time: "9:30 am - 10:00 am",
         title: "🙏 Vanakkam to TechFest Puducherry 2026!!",
         description: "Keynote Presentation - Chief Guest Welcome 🚀",
         speakers: [
           { id: 1, name: "Karthik Balaraman", img: karthik, achievements: "Founder, CEO, Ocean Academy | Career Strategist | Mentor | Speaker | Product Designer" },
         ], },
 
+        { id: 44, time: "10:00 am - 10:30 am",
+        title: "🎤 Special Address by the Chief Guest",
+        speakers: [
+          { id: 44, name: "Chinnakannan Sivasankaran", img: Sivasankaran  , achievements: "Chairman and Founder, SIVA Group" },
+        ], },
       {
         id: 14,
         time: "10:30 am - 11:10 am",
@@ -246,7 +260,8 @@ export const eventData: HallSchedule[] = [
         title: "Importance of Building Communities in this AI Disrupted World",
         speakers: [
           { id: 16, name: "Deepak Kumar", img: Deepak, achievements: "Founder, DNA Community" },
-           { id: 35, name: "G Surendar Thina", img:   Thina, achievements: "Founder, Think Digital" }
+           { id: 35, name: "G Surendar Thina", img:   Thina, achievements: "Founder, Think Digital" },
+            { id: 38, name: "Arunmozhivarman R", img:   Arunmozhivarman, achievements: "Founder, Varman Consulting Labs" }
         ],
       },
 
@@ -313,27 +328,28 @@ export const eventData: HallSchedule[] = [
       {
         id: 34,
         time: "10:30 am - 11:10 am",
-        title: "Now or Never: Why Students Must Build Startups Before Graduation",
+        title: "Now or Never: Why Students Must Build Startups Before Graduation & From Idea to Income: Building Tech Products That Actually Pay While Still in College",
         speakers: [
           { id: 21, name: "Andrew surjit Ronald", img: Andrew, achievements: "Founder & CEO, Arviona Labs" },
+          { id: 22, name: "Thanajayan", img: Thanajayan, achievements: "Co-Founder, ForgetiX" },
         ],
       },
 
       {
         id: 35,
         time: "11:15 am - 11:55 am",
-        title: "From Idea to Income: Building Tech Products That Actually Pay While Still in College",
+        title: "Personal Branding",
         speakers: [
-          { id: 22, name: "Thanajayan", img: Thanajayan, achievements: "Co-Founder, ForgetiX" },
+          // { id: 39, name: "Speaker", img: placeholder, achievements: "Designation" },
+          { id: 40, name: "Sakthivel A", img: Sakthivel, achievements: "Personal Branding Xpand | Branding Company" },
         ],
       },
        {
         id: 43,
         time: "12:00 pm - 12:40 pm",
-        // title: "From Idea to Income: Building Tech Products That Actually Pay While Still in College",
-        title: "Title coming soon",
+        title: "Runway X Interactive card game - Startup Edition",
         speakers: [
-          { id: 37, name: "Speaker", img: placeholder, achievements: "Designation" },
+          { id: 37, name: "Kamalakkannan Durairaju ", img: Kamalakkannan, achievements: "Founder & Chief Storyteller, Naadan comics" },
         ],
       },
 
@@ -343,9 +359,10 @@ export const eventData: HallSchedule[] = [
         id: 37,
         time: "02:00 pm - 02:40 pm",
         // title: "🌐 The Future of Immersive Technologies: AR 🕶️ | VR 🎮 | MR ✨ | Metaverse 🚀 Experiences",
-        title: "Title coming soon",
+        title: "Pitch Perfect: Mastering the Art of Startup Pitching & Idea or Illusion? How to Validate Your Startup Idea",
         speakers: [
-          { id: 23, name: "Speaker", img: placeholder, achievements: "Designation" },
+          { id: 23, name: "Rodick J", img: Rodick, achievements: "Founder's Office - Strategic Initiatives & Partnerships, AIWO" },
+          { id: 43, name: "Aditya Ganesh", img: Aditya, achievements: "Founder & CEO, The Origin Chapter" },
         ],
       },
 
@@ -353,9 +370,10 @@ export const eventData: HallSchedule[] = [
         id: 38,
         time: "02:45 pm - 03:25 pm",
         // title: "🧠 Problem Solving for Product Based Company",
-        title: "Title coming soon",
+        title: "Entrepreneurship: Ideas Are Everywhere. The Courage to Decide Is Not",
         speakers: [
-          { id: 24, name: "Speaker", img: placeholder, achievements: "Designation" },
+          // { id: 24, name: "Speaker", img: placeholder, achievements: "Designation" },
+          { id: 41, name: "Karneish", img: Karneish, achievements: "Founder & CEO, ManaGenz" },
         ],
       },
 
@@ -365,9 +383,10 @@ export const eventData: HallSchedule[] = [
         id: 40,
         time: "03:40 pm - 04:30 pm",
         // title: "Fullstack Development Roadmap 2025 🚀",
-        title: "Title coming soon",
+        title: "Beyond Borders: From Studying Abroad to Building AI Startups & Network to Net Worth: The Power of Meaningful Connections",
         speakers: [
-          { id: 25, name: "Speaker", img: placeholder, achievements: "Designation" },
+          { id: 25, name: "LJ Shaik", img: Shaik, achievements: "Founder & CEO, Hamhey" },
+          { id: 42, name: "Athvik Amith Kumar", img: Athvik, achievements: "Founder, ZoZoconnect" },
         ],
       },
 

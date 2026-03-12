@@ -60,6 +60,14 @@ import Vignesh from "./speakers2026/vignesh_murugan.png";
 import Yuvaraj from "./speakers2026/Yuvaraj Muthu.png";
 import Meerthika  from "./speakers2026/Meerthika.jpeg";
 import Shaik  from "./speakers2026/Shaik.jpeg";
+import Arunmozhivarman from "./speakers2026/Arunmozhivarman.png";
+import Karneish from "./speakers2026/Karneish.jpeg";
+import Kamalakkannan from "./speakers2026/Kamalakkannan Durairaju.jpeg";
+import Aditya  from "./speakers2026/Aditya Ganesh.jpeg";
+import Athvik  from "./speakers2026/Athvik Amith Kumar.jpeg";
+import Sakthivel  from "./speakers2026/sakthivel.jpeg";
+import Rodick  from "./speakers2026/Rodick.png";
+import Sivasankaran  from "./speakers2026/Chinnakannan Sivasankaran.png";
 export {
   // baskar_kothandapaniimg,
   // dakshin,
@@ -120,6 +128,13 @@ export {
   Vignesh,
   Yuvaraj,
   Meerthika,
-  Shaik
-
+  Shaik,
+  Arunmozhivarman,
+  Karneish,
+  Kamalakkannan,
+Aditya,
+Athvik,
+Sakthivel,
+Rodick,
+Sivasankaran
 };
