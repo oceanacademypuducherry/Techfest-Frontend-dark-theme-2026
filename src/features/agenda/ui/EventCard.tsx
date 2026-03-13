@@ -111,6 +111,7 @@ interface EventProps {
   title: string;
   speakers: Speaker[];
   description?: string | ReactNode;
+  isHighlight?: boolean;
 }
 
 const EventCard: React.FC<EventProps> = ({
@@ -118,6 +119,7 @@ const EventCard: React.FC<EventProps> = ({
   title,
   speakers,
   description,
+  isHighlight
 }) => {
   const borderStyles = [
     "rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px]",
@@ -133,12 +135,28 @@ const EventCard: React.FC<EventProps> = ({
   const isRowLayout = speakers.length > 2;
 
   return (
-    <div className="bg-[#0F172A] border border-[#0F172A] rounded-xl p-2 sm:p-4 shadow-md hover:shadow-xl transition-all">
-      
+    // <div className="bg-[#0F172A] border border-[#0F172A] rounded-xl p-2 sm:p-4 shadow-md hover:shadow-xl transition-all">
+     <div
+  className={`rounded-xl ${
+    isHighlight
+      ? "p-[1.5px] bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]"
+      : ""
+  }`}
+>
+  <div
+    className={`rounded-xl p-3 sm:p-5 shadow-md transition-all
+    ${
+      isHighlight
+        ? "bg-[#0F172A]/90"
+        : "bg-[#0F172A] border border-[#0F172A] hover:shadow-xl"
+    }`}
+  >
       {/* Time (mobile) */}
-      <span className="sm:hidden block text-xs bg-[#1e293b] text-[#bc588e] px-3 py-1 rounded-md w-fit ml-auto mb-1">
-        {time}
-      </span>
+      {!isHighlight && (
+  <span className="sm:hidden block text-xs bg-[#1e293b] text-[#bc588e] px-3 py-1 rounded-md w-fit ml-auto mb-1">
+    {time}
+  </span>
+)}
 
       {/* Title + Desktop Time */}
       <div className="flex justify-between items-start">
@@ -146,10 +164,11 @@ const EventCard: React.FC<EventProps> = ({
           {title}
         </h3>
 
-        <span className="hidden sm:flex items-center gap-2 text-sm bg-[#1e293b] text-[#bc588e] px-3 py-1 rounded-md">
-         
-          {time}
-        </span>
+        {!isHighlight && (
+  <span className="hidden sm:flex items-center gap-2 text-sm bg-[#1e293b] text-[#bc588e] px-3 py-1 rounded-md">
+    {time}
+  </span>
+)}
       </div>
 
       {/* Speakers */}
@@ -237,6 +256,7 @@ const EventCard: React.FC<EventProps> = ({
       ) : (
         <p className="text-white text-sm mt-3">{description}</p>
       )}
+    </div>
     </div>
   );
 };

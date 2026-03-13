@@ -183,9 +183,6 @@
 import React from "react";
 import { Footer, Navigation } from "../../../common/ui";
 import {
-
-  
-
   NAMMAFLUTTER,
   FOUNDERX,
   Nammasocials,
@@ -198,9 +195,16 @@ import {
   Sequestera,
   SMVEC,
   Unstop,
-  
-  
-  
+  Chatur,
+  Bala,
+  jpinfotech,
+  CloudBees,
+  DataClad,
+  Yashika,
+  Abinesh,
+  Juno,
+  Thiru,
+  DNA,
 } from "../../../assets/images";
 
 /* ================= PARTNERS ================= */
@@ -208,33 +212,85 @@ import {
 const partners = [
   { src: SMVEC, alt: "SMVEC", size: "h-[280px]" },
   { src: Unstop, alt: "Unstop", size: "h-[120px]" },
-   { src: FOUNDERX, alt: "FounderX", size: "h-[50px]" },
-   { src: BOIKO, alt: "Boiko", size: "h-[50px]" },
+  { src: FOUNDERX, alt: "FounderX", size: "h-[50px]" },
+  { src: BOIKO, alt: "Boiko", size: "h-[50px]" },
   { src: NAMMAFLUTTER, alt: "NammaFlutter", size: "h-[50px]" },
- 
   { src: Nammasocials, alt: "Nammasocials", size: "h-[110px]" },
   { src: FIA, alt: "FIA", size: "h-[50px]" },
+  { src: DNA, alt: "DNA", size: "h-[120px]" },
   { src: Lecture_head, alt: "Lecture_head", size: "h-[150px]" },
-   { src: Sequestera, alt: "Sequestera", size: "h-[130px]" },
+  { src: Sequestera, alt: "Sequestera", size: "h-[130px]" },
   { src: SFM, alt: "SFM", size: "h-[50px]" },
-  
-  
   { src: BobMaassy, alt: "Bob Maassy", size: "h-[100px]" },
   { src: PSP, alt: "PSP", size: "h-[110px]" },
- 
-  
-  
 ];
+
+/* ================= SPONSORS ================= */
+
+const sponsors = [
+  { src: Chatur, alt: "Chatur", size: "h-[280px]" },
+  { src: Bala, alt: "Bala", size: "h-[120px]" },
+  { src: DataClad, alt: "DataClad", size: "h-[120px]" },
+  
+  { src: CloudBees, alt: "CloudBees", size: "h-[280px]" },
+  
+  { src: Thiru, alt: "Thiru", size: "h-[110px]" },
+  { src: jpinfotech, alt: "jpinfotech", size: "h-[120px]" },
+  { src: Juno, alt: "Juno", size: "h-[280px]" },
+  { src: Abinesh, alt: "Abinesh", size: "h-[120px]" },
+  { src: Yashika, alt: "Yashika", size: "h-[120px]" },
+];
+
 const SponsorsPage: React.FC = () => {
   return (
     <>
       <Navigation />
 
-      <main className="min-h-screen bg-[#0A0C12] px-4 sm:px-6 xl:px-10 pb-10 text-center">
+      <main className="min-h-screen bg-[#0A0C12] px-4 sm:px-6 xl:px-10 pb-6 pt-10 text-center">
         <div className="max-w-[1200px] mx-auto">
 
-          {/* ================= HEADER ================= */}
+          
+
+          {/* ================= SPONSORS HEADER ================= */}
+
           <div className="flex flex-col items-center mb-8 sm:mb-12">
+            <h2 className="text-[30px] sm:text-[38px] font-semibold text-white">
+              Our{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]">
+                Sponsors
+              </span>
+            </h2>
+
+            <p className="text-gray-300 sm:text-[18px] text-[16px] max-w-3xl leading-7">
+              We are grateful to our sponsors for supporting TechFest and
+              helping us create an impactful technology event.
+            </p>
+          </div>
+
+          {/* ================= SPONSOR LOGOS ================= */}
+
+          <div className="flex justify-center">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 max-w-[1100px] mx-auto">
+              {sponsors.map((item) => (
+                <div
+                  key={item.alt}
+                  className="w-[160px] sm:w-[150px] md:w-[160px] h-32 bg-white/95 border rounded-xl
+                  flex items-center justify-center p-2"
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className={`${item.size} w-auto object-contain mix-blend-multiply`}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+
+{/* ================= PARTNERS HEADER ================= */}
+
+          <div className="flex flex-col items-center mb-8 mt-10 sm:mb-12">
             <h2 className="mt-6 mb-4 text-[30px] sm:text-[38px] font-semibold text-white">
               Our{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]">
@@ -249,26 +305,29 @@ const SponsorsPage: React.FC = () => {
           </div>
 
           {/* ================= PARTNER LOGOS ================= */}
-          <div className="flex justify-center">
-  <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 max-w-[1100px] mx-auto">
-  {partners.map((item) => (
-    <div
-      key={item.alt}
-      className={`w-[140px] sm:w-[150px] md:w-[160px] h-32 bg-white/95 border rounded-xl
-                  flex items-center justify-center
-                  ${item.alt === "SMVEC" || item.alt === "Lecture_head" ? "" : "p-2"}
-                  transition duration-300`}
-    >
-      <img
-        src={item.src}
-        alt={item.alt}
-        className={`${item.size} w-auto object-contain mix-blend-multiply`}
-      />
-    </div>
-  ))}
-</div>
-</div>
 
+          <div className="flex justify-center mb-16">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 max-w-[1100px] mx-auto">
+              {partners.map((item) => (
+                <div
+                  key={item.alt}
+                  className={`w-[160px] sm:w-[150px] md:w-[160px] h-32 bg-white/95 border rounded-xl
+                  flex items-center justify-center
+                  ${
+                    item.alt === "SMVEC" || item.alt === "Lecture_head"
+                      ? ""
+                      : "p-2"
+                  }`}
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className={`${item.size} w-auto object-contain mix-blend-multiply`}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </main>
 

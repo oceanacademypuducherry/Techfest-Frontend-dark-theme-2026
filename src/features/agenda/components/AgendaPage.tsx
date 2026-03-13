@@ -90,6 +90,7 @@ useEffect(() => {
               title={event.title}
               speakers={event.speakers || []}
               description={event.description}
+               isHighlight={event.isHighlight}
             />
           ))}
         </div>
