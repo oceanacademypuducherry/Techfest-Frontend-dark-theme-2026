@@ -7,6 +7,7 @@
                                                                                                                     AgnelJohn,
                                                                                                                     Alexander,
                                                                                                                     Andrew,
+                                                                                                                    Aravind,
                                                                                                                     Arunachalam,
                                                                                                                     Arunmozhivarman,
                                                                                                                     Athvik,
@@ -176,6 +177,7 @@
                                                                                                                           speakers: [
                                                                                                                             { id: 8, name: "Sanjivy Kumaravel", img: Sanjeev, achievements: "Associate Software Engineer, JPMorgan Chase" },
                                                                                                                             { id: 26, name: "Prashanth Radhakrishnan", img: Prashanth, achievements: "Founder & CEO, TeachGrid" },
+                                                                                                                              { id: 46, name: "Aravind Kumar J", img: Aravind, achievements: "Lead Software Engineer - Platforms Analytics, Freshworks" },
                                                                                                                           ],
                                                                                                                         },
 
@@ -355,7 +357,7 @@
                                                                                                                           title: "Instagram smiles vs real emotions: how Digital tools are transforming Mental wellness & From Burnout to Balance: How Digital Tools Are Transforming Mental Wellness & Personal Branding",
                                                                                                                           speakers: [
                                                                                                                             { id: 39, name: "Hima Verma", img: Hima, achievements: "Podcast host" },
-                                                                                                                             { id: 40, name: "Dr. Suriya", img: surya, achievements: "Founder" },
+                                                                                                                             { id: 40, name: "Dr. Suriya", img: surya, achievements: "Founder, Mental Health Space" },
                                                                                                                             { id: 40, name: "Sakthivel A", img: Sakthivel, achievements: "Personal Branding Xpand | Branding Company" },
                                                                                                                           ],
                                                                                                                         },

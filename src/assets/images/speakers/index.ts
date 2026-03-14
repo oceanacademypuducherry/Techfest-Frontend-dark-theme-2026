@@ -30,7 +30,7 @@ import placeholder from "./placeholder.png";
 // 2026
 import karthik from "./speakers png/karthik.png";
 import Deepesh from "./speakers2026/deepesh.png";
-import Jason_Samuel from "./speakers2026/Jason - Samuel.png";
+import Jason_Samuel from "./speakers2026/jason.png";
 import AgnelJohn from "./speakers2026/Agnel John.png";
 import GayathriPerumal from "./speakers2026/Gayathri Perumal.png";
 import GayathriSeeniraj from "./speakers2026/Gayathry Seeniraja.png";
@@ -70,6 +70,8 @@ import Rodick  from "./speakers2026/Rodick.png";
 import Sivasankaran  from "./speakers2026/Chinnakannan Sivasankaran.png";
 import Hima  from "./speakers2026/Hima.jpeg";
 import surya  from "./speakers2026/surya.jpeg";
+import Aravind  from "./speakers2026/Aravind.jpeg";
+
 export {
   // baskar_kothandapaniimg,
   // dakshin,
@@ -140,5 +142,6 @@ Sakthivel,
 Rodick,
 Sivasankaran,
 surya,
-Hima
+Hima,
+Aravind
 };
