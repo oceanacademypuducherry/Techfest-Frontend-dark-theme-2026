@@ -68,6 +68,8 @@ import Athvik  from "./speakers2026/Athvik Amith Kumar.jpeg";
 import Sakthivel  from "./speakers2026/sakthivel.jpeg";
 import Rodick  from "./speakers2026/Rodick.png";
 import Sivasankaran  from "./speakers2026/Chinnakannan Sivasankaran.png";
+import Hima  from "./speakers2026/Hima.jpeg";
+import surya  from "./speakers2026/surya.jpeg";
 export {
   // baskar_kothandapaniimg,
   // dakshin,
@@ -136,5 +138,7 @@ Aditya,
 Athvik,
 Sakthivel,
 Rodick,
-Sivasankaran
+Sivasankaran,
+surya,
+Hima
 };

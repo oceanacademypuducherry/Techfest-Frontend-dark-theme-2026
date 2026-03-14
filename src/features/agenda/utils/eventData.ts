@@ -19,6 +19,7 @@
                                                                                                                     Gokulrangarajan,
                                                                                                                     Hari,
                                                                                                                     Harishkumar,
+                                                                                                                    Hima,
                                                                                                                     Jason_Samuel,
                                                                                                                     JustinBenito,
                                                                                                                     Kamalakkannan,
@@ -38,6 +39,7 @@
                                                                                                                       Shaik,
                                                                                                                       SivakamiUma,
                                                                                                                       Sivasankaran,
+                                                                                                                      surya,
                                                                                                                       Tamil_Arasan,
                                                                                                                       Thanajayan,
                                                                                                                       Thina,
@@ -350,9 +352,10 @@
                                                                                                                         {
                                                                                                                           id: 35,
                                                                                                                           time: "11:15 am - 11:55 am",
-                                                                                                                          title: "Personal Branding",
+                                                                                                                          title: "Instagram smiles vs real emotions: how Digital tools are transforming Mental wellness & From Burnout to Balance: How Digital Tools Are Transforming Mental Wellness & Personal Branding",
                                                                                                                           speakers: [
-                                                                                                                            // { id: 39, name: "Speaker", img: placeholder, achievements: "Designation" },
+                                                                                                                            { id: 39, name: "Hima Verma", img: Hima, achievements: "Podcast host" },
+                                                                                                                             { id: 40, name: "Dr. Suriya", img: surya, achievements: "Founder" },
                                                                                                                             { id: 40, name: "Sakthivel A", img: Sakthivel, achievements: "Personal Branding Xpand | Branding Company" },
                                                                                                                           ],
                                                                                                                         },
