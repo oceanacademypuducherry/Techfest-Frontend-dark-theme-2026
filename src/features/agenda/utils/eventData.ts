@@ -169,7 +169,7 @@
                                                                                                                           { id: 44, time: "09:50 am - 10:20 am",
                                                                                                                           title: "🎤 Special Address by the Chief Guest",
                                                                                                                           speakers: [
-                                                                                                                            { id: 44, name: "Chinnakannan Sivasankaran", img: Sivasankaran  , achievements: "Chairman and Founder, SIVA Group" },
+                                                                                                                            { id: 44, name: "Chinnakannan Sivasankaran", img: Sivasankaran  , achievements: "Founder Aircel, Mentor Aiwo" },
                                                                                                                           ], },
                                                                                                                         {
                                                                                                                           id: 14,
@@ -257,7 +257,7 @@
                                                                                                                           title: "AI in the Digital World: Jobs, Disruption & the Future of Opportunity",
                                                                                                                           speakers: [
                                                                                                                             { id: 15, name: "Jason - Samuel", img: Jason_Samuel, achievements: "CEO, Zemuria Inc. | Venture Operator" },
-                                                                                                                            { id: 34, name: "Dakshin", img:   Dakshin, achievements: "Co-Founder & Managing Partner, FounderX Venture Partners" }
+                                                                                                                            { id: 34, name: "Dakshin", img:   Dakshin, achievements: "Founder & Managing Partner, FounderX Venture Partners" }
                                                                                                                           ],
                                                                                                                         },
 
