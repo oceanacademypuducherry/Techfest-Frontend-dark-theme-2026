@@ -71,6 +71,7 @@ import Sivasankaran  from "./speakers2026/Chinnakannan Sivasankaran.png";
 import Hima  from "./speakers2026/Hima.jpeg";
 import surya  from "./speakers2026/surya.jpeg";
 import Aravind  from "./speakers2026/Aravind.jpeg";
+import Vasanth  from "./speakers2026/Vasanth.png";
 
 export {
   // baskar_kothandapaniimg,
@@ -143,5 +144,6 @@ Rodick,
 Sivasankaran,
 surya,
 Hima,
-Aravind
+Aravind,
+Vasanth
 };

@@ -44,6 +44,7 @@
                                                                                                                       Tamil_Arasan,
                                                                                                                       Thanajayan,
                                                                                                                       Thina,
+                                                                                                                      Vasanth,
                                                                                                                       Vignesh,
                                                                                                                       Yuvaraj,
                                                                                                                     
@@ -224,6 +225,7 @@
                                                                                                                           speakers: [
                                                                                                                             { id: 13, name: "Navin kumar", img: NavinKumar, achievements: "Recruitment Specialist | Founder–Talent Connector" },
                                                                                                                             { id: 33, name: "Harish Kumar", img: Harishkumar, achievements: "Lead Engineer, Manage Engine (A division of ZOHO Corp)" },
+                                                                                                                            { id: 47, name: "Vasanth Vijayabaskar", img: Vasanth, achievements: "Chief Strategy Officer, HCL GUVI" },
                                                                                                                           ],
                                                                                                                         },
 

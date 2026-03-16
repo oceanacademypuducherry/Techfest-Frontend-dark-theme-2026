@@ -90,7 +90,8 @@ const primaryCollegeName = watch('items.0.instituteName')
 const fetchColleges = async (search: string) => {
   try {
     const res = await axios.get(
-      'https://techfest-test-api-y5x6yhhkmq-el.a.run.app/app/college/data',
+      'https://techfest-api-y5x6yhhkmq-el.a.run.app/app/college/data',
+      
       {
         params: { search },
       }
@@ -512,7 +513,17 @@ useEffect(() => {
   type="text"
   placeholder="Enter your college / school name"
   value={inputValues[index] || ''}
-  {...register(`items.${index}.instituteName`)}
+ {...register(`items.${index}.instituteName`, {
+  required: "Institute name is required",
+  minLength: {
+    value: 3,
+    message: "Institute name must be at least 3 characters"
+  },
+  pattern: {
+    value: /^[A-Za-z\s.\-]+$/,
+    message: "Only letters allowed"
+  }
+})}
   disabled={reuseCollege[index]}
   className={`w-full border rounded-lg px-3 py-2 pr-10 text-sm h-[48px]
     ${reuseCollege[index] ? 'bg-gray-100 cursor-not-allowed' : ''}`}
@@ -644,17 +655,27 @@ useEffect(() => {
     </label>
 
     <input
-      type="text"
-      placeholder="Company / Organization Name"
-      className="w-full border rounded-lg px-3 py-2 text-sm h-[48px]"
-       {...register(`items.${index}.instituteName`)}
-      onChange={e =>
-        handleInputChange(
-          `items.${index}.instituteName`,
-          e.target.value
-        )
-      }
-    />
+  type="text"
+  placeholder="Company / Organization Name"
+  className="w-full border rounded-lg px-3 py-2 text-sm h-[48px]"
+  {...register(`items.${index}.instituteName`, {
+    required: "Organization name is required",
+    minLength: {
+      value: 3,
+      message: "Organization name must be at least 3 characters"
+    },
+    pattern: {
+      value: /^[A-Za-z\s.\-&]+$/,
+      message: "Enter a valid organization name"
+    }
+  })}
+  onChange={e =>
+    handleInputChange(
+      `items.${index}.instituteName`,
+      e.target.value
+    )
+  }
+/>
   </div>
 )}
 
