@@ -111,7 +111,7 @@ export default function TicketBooking() {
           <span className="animate-pulse bg-white/10 w-48 h-6 inline-block rounded-md"></span>
         ) : activePlan?.type ? (
           `${activePlan.type.charAt(0).toUpperCase() +
-            activePlan.type.slice(1)} tickets are limited!`
+            activePlan.type.slice(1)} bird tickets are limited!`
         ) : (
           "No tickets are available"
         )}

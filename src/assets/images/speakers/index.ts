@@ -76,6 +76,7 @@ import Jeganathan  from "./speakers2026/Jeganathan.jpeg";
 import mohamedShahid from "./speakers2026/Mohammed Shahid .jpeg";
 import arun from "./speakers2026/Arun.png";
 import rishab from "./speakers2026/rishab.jpeg"
+import Bharathy from "./speakers2026/Bharathy.jpg"
 
 export {
   // baskar_kothandapaniimg,
@@ -153,5 +154,6 @@ Vasanth,
 Jeganathan,
 mohamedShahid,
 arun,
-rishab
+rishab,
+Bharathy
 };

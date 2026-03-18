@@ -50,7 +50,8 @@
                                                                                                                       Yuvaraj,
                                                                                                                       mohamedShahid,
                                                                                                                       arun,
-                                                                                                                      rishab
+                                                                                                                      rishab,
+                                                                                                                      Bharathy
                                                                                                                     
                                                                                                                   } from "../../../assets/images/speakers/index";
                                                                                                                   import { getTeaBreakAnimation } from "./teaLottie";
@@ -167,7 +168,7 @@
                                                                                                                           title: "🙏 Vanakkam to TechFest Puducherry 2026!!",
                                                                                                                           description: "Keynote Presentation - Chief Guest Welcome 🚀",
                                                                                                                           speakers: [
-                                                                                                                            { id: 1, name: "Karthik Balaraman", img: karthik, achievements: "Founder, CEO, Ocean Academy | Career Strategist | Mentor | Speaker | Product Designer" },
+                                                                                                                            { id: 1, name: "Karthik Balaraman", img: karthik, achievements: "Founder, Ocean Academy" },
                                                                                                                           ], },
 
                                                                                                                           { id: 44, time: "09:50 am - 10:20 am",
@@ -197,7 +198,7 @@
                                                                                                                             { id: 10, name: "Gokul Rangarajan", img: Gokulrangarajan, achievements: "General Partner, Pitchworks Venture Studio" },
                                                                                                                             { id: 27, name: "Murali Sundaram", img: Murali, achievements: "Visionary in Emerging Technologies | GenAI, Quantum Computing & Space Technology" },
                                                                                                                             { id: 28, name: "MS Rahul", img: MSRahul, achievements: "Founder & CEO, Aeroin Spacetech" },
-                                                                                                                            { id: 50, name: "Arun Prasath S", img: arun, achievements: "CEO & Co-founder - Xwall.io" },
+                                                                                                                            { id: 50, name: "Arun Prasath S", img: arun, achievements: "CEO & Co-founder, Xwall.io" },
                                                                                                                           ],
                                                                                                                         },
                                                                                                                         {
@@ -220,8 +221,8 @@
                                                                                                                           title: "Academia in the AI Era: Adapting, Evolving, Leading",
                                                                                                                           // title: "Title coming soon",
                                                                                                                           speakers: [
-                                                                                                                            { id: 11, name: "Karthik Balaraman", img: karthik, achievements: "Founder, CEO, Ocean Academy | Career Strategist | Mentor | Speaker | Product Designer" },
-                                                                                                                            // { id: 12, name: "Dakshin", img: placeholder, achievements: "FounderX: Building The World's Largest Startup Ecosystem" },
+                                                                                                                            { id: 11, name: "Karthik Balaraman", img: karthik, achievements: "Founder, Ocean Academy" },
+                                                                                                                            { id: 12, name: "Dr A Bharathy", img: Bharathy, achievements: "Assistant Professor, Head Management Studies, PUCC" },
                                                                                                                           ],
                                                                                                                         },
 
@@ -233,6 +234,7 @@
                                                                                                                             { id: 13, name: "Navin kumar", img: NavinKumar, achievements: "Recruitment Specialist | Founder–Talent Connector" },
                                                                                                                             { id: 33, name: "Harish Kumar", img: Harishkumar, achievements: "Lead Engineer, Manage Engine (A division of ZOHO Corp)" },
                                                                                                                             { id: 47, name: "Vasanth Vijayabaskar", img: Vasanth, achievements: "Chief Strategy Officer, HCL GUVI" },
+                                                                                                                            { id: 48, name: "Sriram Dakshan", img: placeholder, achievements: " HR Manager, NCompass" },
                                                                                                                           ],
                                                                                                                         },
 
@@ -363,11 +365,11 @@
                                                                                                                         {
                                                                                                                           id: 35,
                                                                                                                           time: "11:15 am - 11:55 am",
-                                                                                                                          title: "Instagram smiles vs real emotions: how Digital tools are transforming Mental wellness & From Burnout to Balance: How Digital Tools Are Transforming Mental Wellness & Personal Branding",
+                                                                                                                          title: "Instagram smiles vs real emotions: how Digital tools are transforming Mental wellness & From Burnout to Balance: How Digital Tools Are Transforming Mental Wellness                                                                     ",
                                                                                                                           speakers: [
                                                                                                                             { id: 39, name: "Hima Verma", img: Hima, achievements: "Podcast host" },
                                                                                                                              { id: 40, name: "Dr. Suriya", img: surya, achievements: "Founder, Mental Health Space" },
-                                                                                                                            { id: 40, name: "Sakthivel A", img: Sakthivel, achievements: "Personal Branding Xpand | Branding Company" },
+                                                                                                                            // { id: 40, name: "Sakthivel A", img: Sakthivel, achievements: "Personal Branding Xpand | Branding Company" },
                                                                                                                           ],
                                                                                                                         },
                                                                                                                         {
