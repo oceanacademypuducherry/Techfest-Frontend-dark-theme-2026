@@ -22,6 +22,7 @@
                                                                                                                     Harishkumar,
                                                                                                                     Hima,
                                                                                                                     Jason_Samuel,
+                                                                                                                    Jeganathan,
                                                                                                                     JustinBenito,
                                                                                                                     Kamalakkannan,
                                                                                                                     Karneish,
@@ -47,6 +48,9 @@
                                                                                                                       Vasanth,
                                                                                                                       Vignesh,
                                                                                                                       Yuvaraj,
+                                                                                                                      mohamedShahid,
+                                                                                                                      arun,
+                                                                                                                      rishab
                                                                                                                     
                                                                                                                   } from "../../../assets/images/speakers/index";
                                                                                                                   import { getTeaBreakAnimation } from "./teaLottie";
@@ -101,7 +105,7 @@
                                                                                                                           time: "11:15 am - 11:55 am",
                                                                                                                           title: "How to build better AI Agents: Best practices and Adoption patterns",
                                                                                                                           speakers: [
-                                                                                                                            { id: 3, name: "Gayathri Perumal", img: GayathriPerumal, achievements: "Engineer, Supermileage" },
+                                                                                                                            { id: 3, name: "Rishab Bhattacharyya", img: rishab, achievements: "Product Leader, Ford Pro" },
                                                                                                                           ],
                                                                                                                         },
 
@@ -124,7 +128,7 @@
                                                                                                                           time: "2:00 pm - 02:40 pm",
                                                                                                                           title: "Blockchain and the Next Internet: Web3 to Web4",
                                                                                                                           speakers: [
-                                                                                                                            { id: 5, name: "Sai Srikar Kadiyam", img: SaiSrikarKadiyam, achievements: "Strategic Growth Consultant, Web4, Web3, XR, AI Evangelist" },
+                                                                                                                            { id: 5, name: "Sai Srikar Kadiyam(metasai)", img: SaiSrikarKadiyam, achievements: "Founder & CEO, Thoughtography Creations" },
                                                                                                                           ],
                                                                                                                         },
 
@@ -179,6 +183,8 @@
                                                                                                                             { id: 8, name: "Sanjivy Kumaravel", img: Sanjeev, achievements: "Associate Software Engineer, JPMorgan Chase" },
                                                                                                                             { id: 26, name: "Prashanth Radhakrishnan", img: Prashanth, achievements: "Founder & CEO, TeachGrid" },
                                                                                                                               { id: 46, name: "Aravind Kumar J", img: Aravind, achievements: "Lead Software Engineer - Platforms Analytics, Freshworks" },
+                                                                                                                              { id: 48, name: "Jeganathan", img: Jeganathan, achievements: "Associate Manager, GUVI" },
+                                                                                                                            { id: 49, name: "Mohammed Shahid", img: mohamedShahid, achievements: "Associate Consultant, DataClad" },
                                                                                                                           ],
                                                                                                                         },
 
@@ -187,10 +193,11 @@
                                                                                                                           time: "11:15 am - 11:55 am",
                                                                                                                           title: "The Next Tech Wave after AI: The Rise of DeepTech",
                                                                                                                           speakers: [
-                                                                                                                            { id: 9, name: "Sai Srikar Kadiyam", img: SaiSrikarKadiyam, achievements: "Strategic Growth Consultant, Web4, Web3, XR, AI Evangelist" },
+                                                                                                                            { id: 9, name: "Sai Srikar Kadiyam(metasai)", img: SaiSrikarKadiyam, achievements: "Founder & CEO, Thoughtography Creations" },
                                                                                                                             { id: 10, name: "Gokul Rangarajan", img: Gokulrangarajan, achievements: "General Partner, Pitchworks Venture Studio" },
                                                                                                                             { id: 27, name: "Murali Sundaram", img: Murali, achievements: "Visionary in Emerging Technologies | GenAI, Quantum Computing & Space Technology" },
                                                                                                                             { id: 28, name: "MS Rahul", img: MSRahul, achievements: "Founder & CEO, Aeroin Spacetech" },
+                                                                                                                            { id: 50, name: "Arun Prasath S", img: arun, achievements: "CEO & Co-founder - Xwall.io" },
                                                                                                                           ],
                                                                                                                         },
                                                                                                                         {

@@ -41,13 +41,31 @@ export const formValidationSchema = yup.object({
         // 👇 ADD THIS LINE
         isStudent: yup.boolean().required(),
 
+        // instituteName: yup.string().when('isStudent', {
+        //   is: true,
+        //   then: schema =>
+        //     schema.required('College / School name is required'),
+        //   otherwise: schema =>
+        //     schema.required('Organization name is required'),
+        // }),
         instituteName: yup.string().when('isStudent', {
-          is: true,
-          then: schema =>
-            schema.required('College / School name is required'),
-          otherwise: schema =>
-            schema.required('Organization name is required'),
-        }),
+  is: true,
+  then: schema =>
+    schema
+      .required('College / School name is required')
+      .min(5, 'College name must be at least 5 characters')
+      .matches(
+        /^[A-Za-z][A-Za-z\s.\-&]{2,}$/,
+        'Enter a valid college name'
+      ),
+  otherwise: schema =>
+    schema
+      .required('Organization name is required')
+      .matches(
+        /^[A-Za-z][A-Za-z\s.\-&]{2,}$/,
+        'Enter a valid organization name'
+      ),
+}),                                                                                             
       })
     )
     .min(1, 'At least one student must be added')

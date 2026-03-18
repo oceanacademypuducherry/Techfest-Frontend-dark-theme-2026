@@ -223,7 +223,7 @@ const EventCard: React.FC<EventProps> = ({
             {/* Short text */}
 <p className="
   mt-1 text-gray-400 text-[14px]
-  w-full sm:w-[460px] md:w-[625px] lg:w-[355px]
+  w-full sm:w-[460px] md:w-[625px] lg:w-[455px]
   whitespace-normal break-words
   lg:truncate lg:whitespace-nowrap
 ">

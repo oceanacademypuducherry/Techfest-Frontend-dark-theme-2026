@@ -1,4 +1,4 @@
-import { FaCheck } from "react-icons/fa6";
+import { FaCheckDouble  } from "react-icons/fa6";
 import { Footer, Navbar, Navigation } from "../../../common/ui";
 import { BsInfoCircle } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
@@ -64,38 +64,78 @@ export default function TicketBooking() {
 </div>
 
           {/* ---------- HEADER ---------- */}
-          <section className="flex justify-between items-center w-full">
-            <div>
-              <h2 className="mt-8 mb-4 text-[30px] sm:text-[36px] font-semibold text-white">
-                Ticket{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]">
-                  Booking
-                </span>
-              </h2>
+          <section className="w-full">
+  
+  {/* ✅ Row: Title (left) + Info Icon (right) */}
+  <div className="flex justify-between items-center">
+    
+    {/* LEFT SIDE */}
+    <h2 className="mt-8 mb-4 text-[30px] sm:text-[36px] font-semibold text-white">
+      Ticket{" "}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#EE4C9C]">
+        Booking
+      </span>
+    </h2>
 
-              <p className="text-green-400 text-xl font-medium mt-2 max-sm:text-[17px]">
-                {isLoading ? (
-                  <span className="animate-pulse bg-white/10 w-32 h-6 inline-block rounded-md"></span>
-                ) : activePlan ? (
-                  `Now ${
-                    activePlan.type.charAt(0).toUpperCase() +
-                    activePlan.type.slice(1)
-                  } birds is open`
-                ) : (
-                  "Ticket booking is closed"
-                )}
-              </p>
-            </div>
+    {/* RIGHT SIDE INFO ICON */}
+    <div
+      className="border border-white/10 shadow-md rounded-full p-2 
+                 flex items-center justify-center bg-[#111827] cursor-pointer"
+      onClick={() => setIsPopupOpen(true)}
+    >
+      <BsInfoCircle className="text-[20px] text-gray-400" />
+    </div>
 
-            {/* Info Icon */}
-            <div
-              className="border border-white/10 shadow-md rounded-full p-2 
-                         flex items-center justify-center bg-[#111827] cursor-pointer"
-              onClick={() => setIsPopupOpen(true)}
-            >
-              <BsInfoCircle className="text-[24px] text-gray-400" />
-            </div>
-          </section>
+  </div>
+
+  {/* ✅ Status text */}
+  <p className="text-green-400 text-xl font-medium mt-2 max-sm:text-[17px]">
+    {isLoading ? (
+      <span className="animate-pulse bg-white/10 w-32 h-6 inline-block rounded-md"></span>
+    ) : activePlan ? (
+      `Now ${
+        activePlan.type.charAt(0).toUpperCase() +
+        activePlan.type.slice(1)
+      } birds is open🤩🥳`
+    ) : (
+      "Ticket booking is closed"
+    )}
+  </p>
+
+  {/* ✅ Info section (unchanged) */}
+  <div className="mt-4">
+    <li className="flex gap-2 text-red-400">
+      <BsInfoCircle className="text-[20px]" />
+      <span className="text-[16px] sm:text-[18px] font-semibold">
+        {isLoading ? (
+          <span className="animate-pulse bg-white/10 w-48 h-6 inline-block rounded-md"></span>
+        ) : activePlan?.type ? (
+          `${activePlan.type.charAt(0).toUpperCase() +
+            activePlan.type.slice(1)} tickets are limited!`
+        ) : (
+          "No tickets are available"
+        )}
+      </span>
+    </li>
+
+    <ul className="flex flex-col gap-2 mt-3">
+      <li className="flex gap-2 text-green-400 items-center">
+        <FaCheckDouble className="w-5 h-5 flex-shrink-0" />
+        <span className="text-[16px] sm:text-[18px] font-semibold">
+          Get a Participation E-Certificate and Showcase Your Achievement
+        </span>
+      </li>
+
+      <li className="flex gap-2 text-green-400 items-center">
+        <FaCheckDouble className="w-5 h-5 flex-shrink-0" />
+        <span className="text-[16px] sm:text-[18px] font-semibold">
+          Get 10% off when purchasing 10 or more tickets!
+        </span>
+      </li>
+    </ul>
+  </div>
+
+</section>
 
           <Popup
             isVisible={isPopupOpen}
@@ -243,7 +283,7 @@ export default function TicketBooking() {
           </article>
 
           {/* ---------- INFO ---------- */}
-          <div className="mt-12">
+          {/* <div className="mt-12">
             <li className="flex gap-2 text-red-400">
               <BsInfoCircle className="text-[24px]" />
               <span className="text-[18px] font-semibold">
@@ -273,7 +313,7 @@ export default function TicketBooking() {
                 </span>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* ---------- CONTINUE BUTTON ---------- */}
           {/* <div className="sticky bottom-12 md:bottom-0 py-6 flex justify-center"> */}

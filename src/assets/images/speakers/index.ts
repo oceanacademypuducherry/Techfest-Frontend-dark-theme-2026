@@ -72,6 +72,10 @@ import Hima  from "./speakers2026/Hima.jpeg";
 import surya  from "./speakers2026/surya.jpeg";
 import Aravind  from "./speakers2026/Aravind.jpeg";
 import Vasanth  from "./speakers2026/Vasanth.png";
+import Jeganathan  from "./speakers2026/Jeganathan.jpeg";
+import mohamedShahid from "./speakers2026/Mohammed Shahid .jpeg";
+import arun from "./speakers2026/Arun.png";
+import rishab from "./speakers2026/rishab.jpeg"
 
 export {
   // baskar_kothandapaniimg,
@@ -145,5 +149,9 @@ Sivasankaran,
 surya,
 Hima,
 Aravind,
-Vasanth
+Vasanth,
+Jeganathan,
+mohamedShahid,
+arun,
+rishab
 };
