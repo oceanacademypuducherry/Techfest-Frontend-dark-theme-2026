@@ -147,7 +147,7 @@ useEffect(() => {
   const totalAmount =
     studentCount * studentPrice + professionalCount * professionalPrice;
 
-  const discount = totalTickets >= 10 ? totalAmount * 0.1 : 0;
+  const discount = totalTickets >= 5 ? totalAmount * 0.1 : 0;
   const totalAmountAfterDiscount = totalAmount - discount;
 
   
@@ -203,7 +203,7 @@ useEffect(() => {
   const prevTotal = Number(sessionStorage.getItem("prevTotalTickets") || 0);
 
   // show popup ONLY when transitioning TO exactly 10
-  if (prevTotal !== 10 && totalTickets === 10) {
+  if (prevTotal !== 5 && totalTickets === 5) {
     showDiscountToast(Math.round(discount));
   }
 

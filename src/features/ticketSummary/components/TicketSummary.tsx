@@ -149,7 +149,7 @@ export default function TicketSummary() {
             </h2>
 
             <p className="mt-3 text-gray-300 font-semibold max-sm:text-[14px]">
-              Get 10% off when purchasing 10 or more tickets!
+              Get 10% off when purchasing 5 or more tickets!
             </p>
 
             <div className="mt-5 flex flex-col gap-7">

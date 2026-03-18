@@ -60,7 +60,7 @@ const ViewSummaryBottomsheet: React.FC<ViewSummaryBottomsheetProps> = ({
   const totalAmount =
     studentCount * studentPrice + professionalCount * professionalPrice;
 
-  const discount = totalTickets >= 10 ? totalAmount * 0.1 : 0;
+  const discount = totalTickets >= 5 ? totalAmount * 0.1 : 0;
   const totalAmountAfterDiscount = totalAmount - discount;
 
   return (

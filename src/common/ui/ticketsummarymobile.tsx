@@ -51,7 +51,7 @@ const TicketSummaryMobile: React.FC<TicketSummaryMobileProps> = ({
   const studentPrice = filteredPlans[0]?.price || 0;
   const professionalPrice = filteredPlans[1]?.price || 0;
   const totalAmount = studentCount * studentPrice + professionalCount * professionalPrice;
-  const discount = totalTickets >= 10 ? totalAmount * 0.1 : 0;
+  const discount = totalTickets >= 5 ? totalAmount * 0.1 : 0;
   const totalAmountAfterDiscount = totalAmount - discount;
 
  
@@ -91,7 +91,7 @@ useEffect(() => {
   );
 
   // show popup ONLY when transitioning TO exactly 10
-  if (prevTotal !== 10 && totalTickets === 10) {
+  if (prevTotal !== 5 && totalTickets === 5) {
     showDiscountToast(Math.round(discount));
   }
 

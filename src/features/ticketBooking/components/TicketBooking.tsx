@@ -129,7 +129,7 @@ export default function TicketBooking() {
       <li className="flex gap-2 text-green-400 items-center">
         <FaCheckDouble className="w-5 h-5 flex-shrink-0" />
         <span className="text-[16px] sm:text-[18px] font-semibold">
-          Get 10% off when purchasing 10 or more tickets!
+          Get 10% off when purchasing 5 or more tickets!
         </span>
       </li>
     </ul>

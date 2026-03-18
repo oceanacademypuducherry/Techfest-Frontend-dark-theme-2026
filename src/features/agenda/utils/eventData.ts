@@ -222,7 +222,7 @@
                                                                                                                           // title: "Title coming soon",
                                                                                                                           speakers: [
                                                                                                                             { id: 11, name: "Karthik Balaraman", img: karthik, achievements: "Founder, Ocean Academy" },
-                                                                                                                            { id: 12, name: "Dr A Bharathy", img: Bharathy, achievements: "Assistant Professor, Head Management Studies, PUCC" },
+                                                                                                                            { id: 12, name: "Dr. A Bharathy", img: Bharathy, achievements: "Assistant Professor, Head Management Studies, PUCC" },
                                                                                                                           ],
                                                                                                                         },
 
@@ -234,7 +234,7 @@
                                                                                                                             { id: 13, name: "Navin kumar", img: NavinKumar, achievements: "Recruitment Specialist | Founder–Talent Connector" },
                                                                                                                             { id: 33, name: "Harish Kumar", img: Harishkumar, achievements: "Lead Engineer, Manage Engine (A division of ZOHO Corp)" },
                                                                                                                             { id: 47, name: "Vasanth Vijayabaskar", img: Vasanth, achievements: "Chief Strategy Officer, HCL GUVI" },
-                                                                                                                            { id: 48, name: "Sriram Dakshan", img: placeholder, achievements: " HR Manager, NCompass" },
+                                                                                                                            { id: 48, name: "Sriram Dakshan", img: Dakshin, achievements: " HR Manager, NCompass" },
                                                                                                                           ],
                                                                                                                         },
 
