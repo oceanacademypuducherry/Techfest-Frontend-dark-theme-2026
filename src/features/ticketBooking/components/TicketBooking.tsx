@@ -317,8 +317,8 @@ export default function TicketBooking() {
 
           {/* ---------- CONTINUE BUTTON ---------- */}
           {/* <div className="sticky bottom-12 md:bottom-0 py-6 flex justify-center"> */}
-          <div className="sticky bottom-12 md:bottom-0 py-6 flex justify-center z-50">
-
+         <div className="sticky bottom-0 left-0 w-screen -mx-[calc((100vw-100%)/1)] z-50 bg-[#0B0F1A] px-6  py-6 flex justify-center">
+ 
             <button
               // className={`bg-[#FFA908] text-black p-4 w-[500px] rounded-lg font-semibold
               className={`bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C] text-white text-[18px] p-4 w-[500px] rounded-lg font-semibold
@@ -331,7 +331,8 @@ export default function TicketBooking() {
               disabled={data.length === 0}
             >
               Continue
-            </button>
+            </button>   
+                             
           </div>
         </main>
 

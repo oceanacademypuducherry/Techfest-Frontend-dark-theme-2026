@@ -51,7 +51,8 @@
                                                                                                                       mohamedShahid,
                                                                                                                       arun,
                                                                                                                       rishab,
-                                                                                                                      Bharathy
+                                                                                                                      Bharathy,
+                                                                                                                      Dakshan
                                                                                                                     
                                                                                                                   } from "../../../assets/images/speakers/index";
                                                                                                                   import { getTeaBreakAnimation } from "./teaLottie";
@@ -206,7 +207,8 @@
                                                                                                                           time: "12:00 pm - 12:40 pm",
                                                                                                                           title: "From Student to Creator: Building Authority on Social Media",
                                                                                                                           speakers: [
-                                                                                                                            { id: 29, name: "Sivakami Uma Muthukumar", img: SivakamiUma, achievements: "Personal Branding Strategist | Storytelling Advocate" },
+                                                                                                                            
+                                                                                                                            { id: 29, name: "Dakshin", img:   Dakshin, achievements: "Founder & Managing Partner, FounderX Venture Partners" },
                                                                                                                             { id: 30, name: "Tamil Arasan", img: Tamil_Arasan, achievements: "Co-Founder, FounderX Venture Partners" },
                                                                                                                               { id: 31, name: "Hari", img: Hari, achievements: "YouTuber, Hari zone" },
                                                                                                                               { id: 32, name: "Arunachalam S", img: Arunachalam, achievements: "Co-Founder | Founder & CEO, Social Sculpt | Personal Branding" },
@@ -234,7 +236,7 @@
                                                                                                                             { id: 13, name: "Navin kumar", img: NavinKumar, achievements: "Recruitment Specialist | Founder–Talent Connector" },
                                                                                                                             { id: 33, name: "Harish Kumar", img: Harishkumar, achievements: "Lead Engineer, Manage Engine (A division of ZOHO Corp)" },
                                                                                                                             { id: 47, name: "Vasanth Vijayabaskar", img: Vasanth, achievements: "Chief Strategy Officer, HCL GUVI" },
-                                                                                                                            { id: 48, name: "Sriram Dakshan", img: Dakshin, achievements: " HR Manager, NCompass" },
+                                                                                                                            { id: 48, name: "Shriram Dakshan", img: Dakshan, achievements: " HR Manager, NCompass" },
                                                                                                                           ],
                                                                                                                         },
 
@@ -243,7 +245,7 @@
                                                                                                                         {
                                                                                                                           id: 20,
                                                                                                                           time: "03:40 pm - 04:30 pm",
-                                                                                                                          title: "Career Growth & Opportunities in the Tech Industry",
+                                                                                                                          title: "Tech with AI is Leverage for the Future",
                                                                                                                           speakers: [
                                                                                                                             { id: 14, name: "Agnel John", img: AgnelJohn, achievements: "EdTech Founder, Error Makes Clever" },
                                                                                                                           ],
@@ -355,20 +357,24 @@
                                                                                                                         {
                                                                                                                           id: 34,
                                                                                                                           time: "10:30 am - 11:10 am",
-                                                                                                                          title: "Now or Never: Why Students Must Build Startups Before Graduation & From Idea to Income: Building Tech Products That Actually Pay While Still in College",
+                                                                                                                          title:"Network to Net Worth: The Power of Meaningful Connections & Carbon, Cost & Opportunity: Technology in the Economics of Climate",
+                                                                                                                      
                                                                                                                           speakers: [
-                                                                                                                            { id: 21, name: "Andrew surjit Ronald", img: Andrew, achievements: "Founder & CEO, Arviona Labs" },
-                                                                                                                            { id: 22, name: "Thanajayan", img: Thanajayan, achievements: "Co-Founder, ForgetiX" },
+                                                                                                                            { id: 42, name: "Athvik Amith Kumar", img: Athvik, achievements: "Founder, ZoZoconnect" },
+                                                                                                                             { id: 24, name: "Deepesh K", img: Deepesh, achievements: "Co-Founder, You & I Trips | Climate Tech & Carbon Solutions" },
+                                                                                                                        
+                                                                                                                            
                                                                                                                           ],
                                                                                                                         },
 
                                                                                                                         {
                                                                                                                           id: 35,
                                                                                                                           time: "11:15 am - 11:55 am",
-                                                                                                                          title: "Instagram smiles vs real emotions: how Digital tools are transforming Mental wellness & From Burnout to Balance: How Digital Tools Are Transforming Mental Wellness                                                                     ",
+                                                                                                                           title: "Beyond Borders: From Studying Abroad to Building AI Startups & From Idea to Income: Building Tech Products That Actually Pay While Still in College",
+                                                                                                                          
                                                                                                                           speakers: [
-                                                                                                                            { id: 39, name: "Hima Verma", img: Hima, achievements: "Podcast host" },
-                                                                                                                             { id: 40, name: "Dr. Suriya", img: surya, achievements: "Founder, Mental Health Space" },
+                                                                                                                             { id: 25, name: "LJ Shaik", img: Shaik, achievements: "Founder & CEO, Hamhey" },
+                                                                                                                             { id: 22, name: "Thanajayan", img: Thanajayan, achievements: "Co-Founder, ForgetiX" },
                                                                                                                             // { id: 40, name: "Sakthivel A", img: Sakthivel, achievements: "Personal Branding Xpand | Branding Company" },
                                                                                                                           ],
                                                                                                                         },
@@ -386,7 +392,7 @@
                                                                                                                         {
                                                                                                                           id: 37,
                                                                                                                           time: "02:00 pm - 02:40 pm",
-                                                                                                                          // title: "🌐 The Future of Immersive Technologies: AR 🕶️ | VR 🎮 | MR ✨ | Metaverse 🚀 Experiences",
+                                                                                                                          
                                                                                                                           title: "Pitch Perfect: Mastering the Art of Startup Pitching & Idea or Illusion? How to Validate Your Startup Idea",
                                                                                                                           speakers: [
                                                                                                                             { id: 23, name: "Rodick J", img: Rodick, achievements: "Founder's Office - Strategic Initiatives & Partnerships, AIWO" },
@@ -397,10 +403,10 @@
                                                                                                                         {
                                                                                                                           id: 38,
                                                                                                                           time: "02:45 pm - 03:25 pm",
-                                                                                                                          // title: "🧠 Problem Solving for Product Based Company",
-                                                                                                                          title: "Carbon, Cost & Opportunity: Technology in the Economics of Climate & Entrepreneurship: Ideas Are Everywhere. The Courage to Decide Is Not",
+                                                                                                                         
+                                                                                                                          title: "Now or Never: Why Students Must Build Startups Before Graduation & Entrepreneurship: Ideas Are Everywhere. The Courage to Decide Is Not",
                                                                                                                           speakers: [
-                                                                                                                            { id: 24, name: "Deepesh K", img: Deepesh, achievements: "Co-Founder, You & I Trips | Climate Tech & Carbon Solutions" },
+                                                                                                                               { id: 21, name: "Andrew surjit Ronald", img: Andrew, achievements: "Founder & CEO, Arviona Labs" },
                                                                                                                             { id: 41, name: "Karneish", img: Karneish, achievements: "Founder & CEO, ManaGenz" },
                                                                                                                           ],
                                                                                                                         },
@@ -410,11 +416,12 @@
                                                                                                                         {
                                                                                                                           id: 40,
                                                                                                                           time: "03:40 pm - 04:30 pm",
-                                                                                                                          // title: "Fullstack Development Roadmap 2025 🚀",
-                                                                                                                          title: "Beyond Borders: From Studying Abroad to Building AI Startups & Network to Net Worth: The Power of Meaningful Connections",
+                                                                                                                          title: "Instagram smiles vs real emotions: how Digital tools are transforming Mental wellness",
+                                                                                                                         
                                                                                                                           speakers: [
-                                                                                                                            { id: 25, name: "LJ Shaik", img: Shaik, achievements: "Founder & CEO, Hamhey" },
-                                                                                                                            { id: 42, name: "Athvik Amith Kumar", img: Athvik, achievements: "Founder, ZoZoconnect" },
+                                                                                                                           
+                                                                                                                            { id: 39, name: "Hima Verma", img: Hima, achievements: "Podcast host" },
+                                                                                                                            //  { id: 40, name: "Dr. Suriya", img: surya, achievements: "Founder, Mental Health Space" },
                                                                                                                           ],
                                                                                                                         },
 
