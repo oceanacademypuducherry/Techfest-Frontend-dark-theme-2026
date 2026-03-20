@@ -4,6 +4,7 @@ import Navigation from "../../../common/ui/Naviagtion";
 import { CertificateNavigation } from "../ui";
 import { fetchCertificate } from "../services";
 import axios from "axios";
+import { UserAPI } from "../../../service";
 
 export const CertificateDownload = () => {
   const [uid, setUid] = useState(""); // State to track UID input
@@ -39,15 +40,23 @@ export const CertificateDownload = () => {
     setError(""); // Reset error message before request
   
     try {
-      const response = await axios.post(
-        `https://techfest-api-y5x6yhhkmq-el.a.run.app/app/certificate/create/${uid}`,
-        // `https://techfest-test-api-y5x6yhhkmq-el.a.run.app/app/certificate/create/${uid}`,
-        // `http://127.0.0.1:5001/oceanlivereact/asia-south1/techfest_test_api/app/certificate/create/${uid}`,
-        {},
-        {
-          responseType: "blob",
-        }
-      );
+      // const response = await axios.post(
+      //   // `https://techfest-api-y5x6yhhkmq-el.a.run.app/app/certificate/create/${uid}`,
+      //   `https://techfest-test-api-y5x6yhhkmq-el.a.run.app/app/certificate/create/${uid}`,
+      //   // `http://127.0.0.1:5001/oceanlivereact/asia-south1/techfest_test_api/app/certificate/create/${uid}`,
+      //   {},
+      //   {
+      //     responseType: "blob",
+      //   }
+      // );
+
+      const response = await UserAPI.post(
+    `/certificate/create/${uid}`,
+    {},
+    {
+      responseType: "blob",
+    }
+  );
   
       // Create a blob and download the file
       const blob = new Blob([response.data], { type: "image/jpeg" });

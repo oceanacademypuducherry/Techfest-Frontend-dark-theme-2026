@@ -78,6 +78,9 @@ import arun from "./speakers2026/Arun.png";
 import rishab from "./speakers2026/rishab.jpeg"
 import Bharathy from "./speakers2026/Bharathy.jpg"
 import Dakshan from "./speakers2026/Dakshan.jpeg"
+import Auxilia from "./speakers2026/Auxilia.png";
+import JAYEKUMAR from "./speakers2026/JAYEKUMAR.png"
+import Harini1 from "./speakers2026/Harini1.png"
 
 export {
   // baskar_kothandapaniimg,
@@ -157,5 +160,8 @@ mohamedShahid,
 arun,
 rishab,
 Bharathy,
-Dakshan
+Dakshan,
+Auxilia,
+JAYEKUMAR,
+Harini1
 };

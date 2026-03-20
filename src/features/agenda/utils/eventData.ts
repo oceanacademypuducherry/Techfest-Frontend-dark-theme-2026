@@ -52,7 +52,10 @@
                                                                                                                       arun,
                                                                                                                       rishab,
                                                                                                                       Bharathy,
-                                                                                                                      Dakshan
+                                                                                                                      Dakshan,
+                                                                                                                      Auxilia,
+                                                                                                                      JAYEKUMAR,
+                                                                                                                      Harini1
                                                                                                                     
                                                                                                                   } from "../../../assets/images/speakers/index";
                                                                                                                   import { getTeaBreakAnimation } from "./teaLottie";
@@ -224,7 +227,10 @@
                                                                                                                           // title: "Title coming soon",
                                                                                                                           speakers: [
                                                                                                                             { id: 11, name: "Karthik Balaraman", img: karthik, achievements: "Founder, Ocean Academy" },
+                                                                                                                             { id: 52, name: "Dr. Jayekumar", img: JAYEKUMAR, achievements: "Dean - Placement, Manakula Vinayagar Institute of Technology" },
                                                                                                                             { id: 12, name: "Dr. A Bharathy", img: Bharathy, achievements: "Assistant Professor, Head Management Studies, PUCC" },
+                                                                                                                            { id: 40, name: "Auxilia Michael", img: Auxilia, achievements: "Professor, Sri Manakula Vinayagar Engineering College" },
+                                                                                                                           
                                                                                                                           ],
                                                                                                                         },
 
@@ -236,7 +242,7 @@
                                                                                                                             { id: 13, name: "Navin kumar", img: NavinKumar, achievements: "Recruitment Specialist | Founder–Talent Connector" },
                                                                                                                             { id: 33, name: "Harish Kumar", img: Harishkumar, achievements: "Lead Engineer, Manage Engine (A division of ZOHO Corp)" },
                                                                                                                             { id: 47, name: "Vasanth Vijayabaskar", img: Vasanth, achievements: "Chief Strategy Officer, HCL GUVI" },
-                                                                                                                            { id: 48, name: "Shriram Dakshan", img: Dakshan, achievements: " HR Manager, NCompass" },
+                                                                                                                            { id: 51, name: "Shriram Dakshan", img: Dakshan, achievements: " HR Manager, NCompass" },
                                                                                                                           ],
                                                                                                                         },
 
@@ -301,7 +307,7 @@
                                                                                                                           Thriving Without Burning Out & How to be in your full potential and attain peak performance`,
                                                                                                                           speakers: [
                                                                                                                             { id: 17, name: "Deekshanya ", img: Deekshanya, achievements: "Life Coach" },
-                                                                                                                            { id: 18, name: "Alexander Golla", img: Alexander, achievements: "Mindset Coach" },
+                                                                                                                            { id: 18, name: "Dr J S Harini", img: Harini1, achievements: "SreeVyom - The School of Infinite Wisdom" },
                                                                                                                           ],
                                                                                                                           
                                                                                                                         },
