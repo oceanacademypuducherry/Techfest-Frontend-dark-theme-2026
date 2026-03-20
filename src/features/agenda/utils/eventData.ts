@@ -303,10 +303,9 @@
                                                                                                                         {
                                                                                                                           id: 27,
                                                                                                                           time: "02:00 pm - 02:40 pm",
-                                                                                                                          title: `⚡ Lightning Talks: Self-Love in a Competitive World: 
-                                                                                                                          Thriving Without Burning Out & How to be in your full potential and attain peak performance`,
+                                                                                                                          title: `⚡ Lightning Talks: How to be in your full potential and attain peak performance`,
                                                                                                                           speakers: [
-                                                                                                                            { id: 17, name: "Deekshanya ", img: Deekshanya, achievements: "Life Coach" },
+                                                                                                                            // { id: 17, name: "Deekshanya ", img: Deekshanya, achievements: "Life Coach" },
                                                                                                                             { id: 18, name: "Dr J S Harini", img: Harini1, achievements: "SreeVyom - The School of Infinite Wisdom" },
                                                                                                                           ],
                                                                                                                           
