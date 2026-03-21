@@ -188,7 +188,7 @@
                                                                                                                             { id: 8, name: "Sanjivy Kumaravel", img: Sanjeev, achievements: "Associate Software Engineer, JPMorgan Chase" },
                                                                                                                             { id: 26, name: "Prashanth Radhakrishnan", img: Prashanth, achievements: "Founder & CEO, TeachGrid" },
                                                                                                                               { id: 46, name: "Aravind Kumar J", img: Aravind, achievements: "Lead Software Engineer - Platforms Analytics, Freshworks" },
-                                                                                                                              { id: 48, name: "Jeganathan", img: Jeganathan, achievements: "Associate Manager, GUVI" },
+                                                                                                                              // { id: 48, name: "Jeganathan", img: Jeganathan, achievements: "Associate Manager, GUVI" },
                                                                                                                             { id: 49, name: "Mohammed Shahid", img: mohamedShahid, achievements: "Associate Consultant, DataClad" },
                                                                                                                           ],
                                                                                                                         },

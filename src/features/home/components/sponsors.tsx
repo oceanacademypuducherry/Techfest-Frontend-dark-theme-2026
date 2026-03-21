@@ -31,8 +31,29 @@ import {
 } from "../../../assets/images";
 import Marquee from "react-fast-marquee";
 import { Link, useNavigate } from "react-router-dom"; 
+import { useEffect, useState } from "react";
+import { UserAPI } from "../../../service"; // adjust path if needed
 
 export default function SponsorsSection() {
+
+  const [eventStatus, setEventStatus] = useState(false);
+const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+  const fetchEventStatus = async () => {
+    try {
+      const res = await UserAPI.get("/speaker/get");
+      setEventStatus(res.data.eventStatus);
+    } catch (error) {
+      console.error("Error fetching event status:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchEventStatus();
+}, []);
+
   const navigate = useNavigate(); 
   const partnerLogos = [
   { src: SMVEC, alt: "SMVEC" },
@@ -388,10 +409,19 @@ const sponsorLogos = [
   {/* Book Your Tickets Button */}
    <Link
   to="/ticket-booking"
-  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-  className="px-6 py-3 rounded-lg text-white font-semibold
+  onClick={(e) => {
+    if (eventStatus) {
+      e.preventDefault(); // 🚫 stop navigation
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }}
+  className={`
+    px-6 py-3 rounded-lg text-white font-semibold
     bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-    hover:scale-105 transition-all"
+    transition-all
+    ${eventStatus ? "opacity-50 cursor-not-allowed" : "hover:scale-105"}
+  `}
 >
   Book Your Tickets
 </Link>

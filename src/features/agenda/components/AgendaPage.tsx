@@ -35,14 +35,14 @@ useEffect(() => {
  
 
   // 🔽 DOWNLOAD HANDLER
-  // const handleDownloadSchedule = () => {
-  //   const link = document.createElement("a");
-  //   link.href = "/agenda-full-schedule.pdf";
-  //   link.download = "TechFest_Agenda_Schedule.pdf";
-  //   document.body.appendChild(link);
-  //   link.click();
-  //   document.body.removeChild(link);
-  // };
+  const handleDownloadSchedule = () => {
+    const link = document.createElement("a");
+    link.href = "/agenda-full-schedule.pdf";
+    link.download = "TechFest_Agenda_Schedule.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <>
@@ -96,7 +96,7 @@ useEffect(() => {
         </div>
 
         {/* DOWNLOAD BUTTON */}
-        {/* <div className="flex justify-center mb-16">
+        <div className="flex justify-center mb-16">
           <button
             onClick={handleDownloadSchedule}
             className="px-8 py-3 rounded-full
@@ -106,7 +106,7 @@ useEffect(() => {
           >
             Download Full Schedule
           </button>
-        </div> */}
+        </div>
 
         <Footer />
       </div>

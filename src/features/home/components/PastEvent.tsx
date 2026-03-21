@@ -11,10 +11,30 @@ import {
 } from "../../../assets/images/pastEvent";
 import { Link } from "react-router-dom";
 import React, { forwardRef } from "react";
+import { useEffect, useState } from "react";
+import { UserAPI } from "../../../service"; // adjust path if needed
 
 const PastEvent = forwardRef((props, ref) => {
   const PINK = "#F467B5";
   
+
+const [eventStatus, setEventStatus] = useState(false);
+const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+  const fetchEventStatus = async () => {
+    try {
+      const res = await UserAPI.get("/speaker/get");
+      setEventStatus(res.data.eventStatus);
+    } catch (error) {
+      console.error("Error fetching event status:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchEventStatus();
+}, []);
 
 
   const eventData = [
@@ -158,29 +178,25 @@ const PastEvent = forwardRef((props, ref) => {
 
         {/* BUTTON */}
         <div className="flex justify-center mt-0 sm:mt-10">
-          <Link
+         <Link
   to="/ticket-booking"
-  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-  className="px-6 py-3 rounded-lg text-white font-semibold
+  onClick={(e) => {
+    if (eventStatus) {
+      e.preventDefault(); // 🚫 stop navigation
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }}
+  className={`
+    px-6 py-3 rounded-lg text-white font-semibold
     bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-    hover:scale-105 transition-all"
+    transition-all
+    ${eventStatus ? "opacity-50 cursor-not-allowed" : "hover:scale-105"}
+  `}
 >
   Book Your Tickets
 </Link>
 
-
-           {/* <button
-  disabled
-  className="
-    px-7 py-3 text-[16px] text-white font-semibold rounded-lg
-    bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-    cursor-not-allowed
-    shadow-lg
-    flex items-center justify-center
-  "
->
-  Tickets Opening Soon
-</button> */}
         </div>
 
       </main>

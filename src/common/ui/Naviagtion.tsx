@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import { scrollToTop } from "../../utils/scrollTo";
 import techfestImg from "../../assets/images/hero/techfest.png";
 import { ArrowLeftIcon } from "@heroicons/react/24/solid";
+import { UserAPI } from "../../service";
+
+
 
 export default function Navigation() {
   const location = useLocation();
@@ -20,7 +23,23 @@ export default function Navigation() {
 
 const isTicketPage = ticketPages.includes(location.pathname);
 
+const [eventStatus, setEventStatus] = useState(false);
+const [loading, setLoading] = useState(true);
 
+useEffect(() => {
+  const fetchEventStatus = async () => {
+    try {
+      const res = await UserAPI.get("/speaker/get");
+      setEventStatus(res.data.eventStatus);
+    } catch (error) {
+      console.error("Error fetching event status:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchEventStatus();
+}, []);
   // useEffect(() => {
   //   setActiveTab(location.pathname);
   // }, [location.pathname]);
@@ -52,22 +71,7 @@ const isTicketPage = ticketPages.includes(location.pathname);
     if (section) section.scrollIntoView({ behavior: "smooth" });
   };
 
-  // useEffect(() => {
-  //   if (location.state?.scrollToAbout) scrollToAbout();
-  //   if (location.state?.scrollToPastEvents) scrollToSection();
-  // }, [location]);
 
-//   useEffect(() => {
-//   if (location.state?.scrollToPastEvents) {
-//     setActiveTab("/past-events");
-//     scrollToSection();
-//   }
-
-//   if (location.state?.scrollToAbout) {
-//     setActiveTab("/about");
-//     scrollToAbout();
-//   }
-// }, [location.state]);
 
 
   const handleClick = (e, path) => {
@@ -190,26 +194,24 @@ const isTicketPage = ticketPages.includes(location.pathname);
   </Link>
 ) : (
    <Link
-              to="/ticket-booking"
-              onClick={(e) => handleClick(e, "/ticket-booking")}
-              className="px-4 py-3 rounded-lg text-white font-semibold
-              bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-              shadow-md hover:scale-105 transition-all"
-            >
-              Book Your Tickets
-            </Link>
-//     <button
-//   disabled
-//   className="
-//     px-7 py-3 text-[16px] text-white font-semibold rounded-lg
-//     bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
-//     cursor-not-allowed
-//     shadow-lg
-//     flex items-center justify-center
-//   "
-// >
-//   Tickets Opening Soon
-// </button>
+  to="/ticket-booking"
+  onClick={(e) => {
+    if (eventStatus) {
+      e.preventDefault(); // 🚫 stop navigation
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }}
+  className={`
+    px-6 py-3 rounded-lg text-white font-semibold
+    bg-gradient-to-r from-[#01C1FB] to-[#EE4C9C]
+    transition-all
+    ${eventStatus ? "opacity-50 cursor-not-allowed" : "hover:scale-105"}
+  `}
+>
+  Book Your Tickets
+</Link>
+
 )}
 
       
