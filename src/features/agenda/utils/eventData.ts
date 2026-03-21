@@ -421,7 +421,7 @@
                                                                                                                         {
                                                                                                                           id: 40,
                                                                                                                           time: "03:40 pm - 04:30 pm",
-                                                                                                                          title: "Instagram smiles vs real emotions: how Digital tools are transforming Mental wellness",
+                                                                                                                          title: "From voice to vision : women shaping Tech",
                                                                                                                          
                                                                                                                           speakers: [
                                                                                                                            
