@@ -409,26 +409,27 @@
                                                                                                                           id: 38,
                                                                                                                           time: "02:45 pm - 03:25 pm",
                                                                                                                          
-                                                                                                                          title: "Now or Never: Why Students Must Build Startups Before Graduation & Entrepreneurship: Ideas Are Everywhere. The Courage to Decide Is Not",
+                                                                                                                          title: "Why Students Must Build Startups Before Graduation & Ideas Are Everywhere, the Courage to Decide Is Not & From voice to vision: women shaping Tech",
                                                                                                                           speakers: [
                                                                                                                                { id: 21, name: "Andrew surjit Ronald", img: Andrew, achievements: "Founder & CEO, Arviona Labs" },
                                                                                                                             { id: 41, name: "Karneish", img: Karneish, achievements: "Founder & CEO, ManaGenz" },
+                                                                                                                             { id: 39, name: "Hima Verma", img: Hima, achievements: "Podcast host" },
                                                                                                                           ],
                                                                                                                         },
 
                                                                                                                         { id: 39, time: "3:25 pm - 03:40 pm", title: "Thaeneer...☕ Idaivelai....☕", speakers: [], description: getTeaBreakAnimation() },
 
-                                                                                                                        {
-                                                                                                                          id: 40,
-                                                                                                                          time: "03:40 pm - 04:30 pm",
-                                                                                                                          title: "From voice to vision: women shaping Tech",
+                                                                                                                        // {
+                                                                                                                        //   id: 40,
+                                                                                                                        //   time: "03:40 pm - 04:30 pm",
+                                                                                                                        //   title: "From voice to vision: women shaping Tech",
                                                                                                                          
-                                                                                                                          speakers: [
+                                                                                                                        //   speakers: [
                                                                                                                            
-                                                                                                                            { id: 39, name: "Hima Verma", img: Hima, achievements: "Podcast host" },
-                                                                                                                            //  { id: 40, name: "Dr. Suriya", img: surya, achievements: "Founder, Mental Health Space" },
-                                                                                                                          ],
-                                                                                                                        },
+                                                                                                                        //     { id: 39, name: "Hima Verma", img: Hima, achievements: "Podcast host" },
+                                                                                                                           
+                                                                                                                        //   ],
+                                                                                                                        // },
 
                                                                                                                         { id: 41, time: "04:30 pm - 05:30 pm", title: "Almost end of the show ✌️", speakers: [], description: "Great discussions lead to great impact—let’s keep the momentum going!" },
                                                                                                                       ],
