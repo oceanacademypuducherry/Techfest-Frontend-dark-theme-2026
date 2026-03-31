@@ -36,7 +36,7 @@ useEffect(() => {
   return (
     <>
       <div
-        className="relative w-full sm:min-h-[90svh] min-h-[80svh]
+        className="relative w-full sm:min-h-[70svh] min-h-[80svh]
         text-white py-10 sm:py-16 px-2  sm:px-4 overflow-hidden"
       >
 
@@ -125,10 +125,14 @@ useEffect(() => {
           {/* Subtitle */}
           <p
             className=" text-white text-[16px] sm:text-[18px]
-            max-w-[690px] mx-auto"
+            max-w-[950px] mx-auto"
           >
-            Unlock the future of technology at TechFest 2026. Connect with innovators, explore emerging ideas, and be part of a celebration of innovation and learning.
-          </p>
+            {/* Unlock the future of technology at TechFest 2026. Connect with innovators, explore emerging ideas, and be part of a celebration of innovation and learning. */}
+Each and every one of you made Techfest 2026 truly magical and successful, your energy and support brought it to life ✨
+
+From the bottom of our hearts, thank you for being part of this incredible journey ❤️ We are deeply grateful for all the love and support.
+
+We love you all 🤍 and can’t wait to welcome you again at Techfest 2027! 🎉          </p>
 
           
           {/* <div className="flex justify-center sm:mt-10 mt-10 gap-4 flex-wrap">
@@ -290,9 +294,9 @@ useEffect(() => {
 </div>
 
           {/* Countdown */}
-          <div className="mt-12">
+          {/* <div className="mt-12">
             <Countdown />
-          </div>
+          </div> */}
 
         </div>
       </div>

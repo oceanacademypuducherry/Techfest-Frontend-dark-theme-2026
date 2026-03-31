@@ -81,6 +81,7 @@ import Dakshan from "./speakers2026/Dakshan.jpeg"
 import Auxilia from "./speakers2026/Auxilia.png";
 import JAYEKUMAR from "./speakers2026/JAYEKUMAR.png"
 import Harini1 from "./speakers2026/Harini1.png"
+import Vijay from "./speakers2026/vijay.png"
 
 export {
   // baskar_kothandapaniimg,
@@ -163,5 +164,6 @@ Bharathy,
 Dakshan,
 Auxilia,
 JAYEKUMAR,
-Harini1
+Harini1,
+Vijay
 };

@@ -55,7 +55,8 @@
                                                                                                                       Dakshan,
                                                                                                                       Auxilia,
                                                                                                                       JAYEKUMAR,
-                                                                                                                      Harini1
+                                                                                                                      Harini1,
+                                                                                                                      Vijay
                                                                                                                     
                                                                                                                   } from "../../../assets/images/speakers/index";
                                                                                                                   import { getTeaBreakAnimation } from "./teaLottie";
@@ -229,7 +230,7 @@
                                                                                                                             { id: 11, name: "Karthik Balaraman", img: karthik, achievements: "Founder, Ocean Academy" },
                                                                                                                              { id: 52, name: "Dr. Jayekumar", img: JAYEKUMAR, achievements: "Dean - Placement, Manakula Vinayagar Institute of Technology" },
                                                                                                                             { id: 12, name: "Dr. A Bharathy", img: Bharathy, achievements: "Assistant Professor, Head Management Studies, PUCC" },
-                                                                                                                            { id: 40, name: "Auxilia Michael", img: Auxilia, achievements: "Professor, Sri Manakula Vinayagar Engineering College" },
+                                                                                                                            { id: 40, name: "Auxilia Michael", img: Auxilia, achievements: "Professor, Head of the Department of Computer Science and Engineering and Business Systems, Sri Manakula Vinayagar Engineering College" },
                                                                                                                            
                                                                                                                           ],
                                                                                                                         },
@@ -330,7 +331,7 @@
                                                                                                                         
                                                                                                                           title: "Think like a Hacker: The Security Mindset That Defines Elite Engineers",
                                                                                                                           speakers: [
-                                                                                                                            { id: 36, name: "Adeitia Boniface", img: AdeitiaBoniface, achievements: "Director (Fractional Head of Product), Banyan Software" },
+                                                                                                                            { id: 36, name: "Vijayakumar B", img: Vijay, achievements: "Security Consultant, NatWest Group" },
                                                                                                                           ],
 
 
